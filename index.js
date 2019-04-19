@@ -10,7 +10,7 @@ const watchFilepath = path.resolve(watchDir, watchFileName);
 const root = path.dirname(__filename);
 const serverPort = 8000;
 const rootWikiPath = path.resolve(root, renamedFileName);
-const commitScriptPath = path.resolve(root, 'script', 'commit.sh');
+const commitScriptPath = path.resolve(root, 'scripts', 'commit.sh');
 
 const config = {
   watchFileName,
