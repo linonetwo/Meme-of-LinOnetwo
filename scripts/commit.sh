@@ -5,4 +5,4 @@ cd $basepath
 
 git add -A
 git commit -m "doc: update wiki"
-git push origin master
+git push
