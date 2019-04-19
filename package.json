@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "start": "node index.js",
-    "load": "sh script/load.sh",
-    "unload": "sh script/unload.sh"
+    "load": "sh scripts/load.sh",
+    "unload": "sh scripts/unload.sh"
   }
 }
