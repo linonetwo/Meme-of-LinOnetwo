@@ -8,7 +8,7 @@ const renamedFileName = 'index.html';
 const watchDir = path.resolve(process.env.HOME, 'Downloads');
 const watchFilepath = path.resolve(watchDir, watchFileName);
 const root = path.dirname(__filename);
-const serverPort = 11012;
+const serverPort = 11013;
 const rootWikiPath = path.resolve(root, renamedFileName);
 const commitScriptPath = path.resolve(root, 'scripts', 'commit.sh');
 
@@ -26,8 +26,8 @@ console.log(`current config \n ${JSON.stringify(config, null, '\t')}\n`);
 
 http
   .createServer(function(req, res) {
-    if (req.url !== `/${renamedFileName}`) {
-      res.writeHead(302, { Location: `http://127.0.0.1:${serverPort}/${renamedFileName}` });
+    if (req.url !== `/${watchFileName}`) {
+      res.writeHead(302, { Location: `http://127.0.0.1:${serverPort}/${watchFileName}` });
       res.end();
       return;
     }
@@ -39,7 +39,7 @@ http
   })
   .listen(serverPort);
 
-console.log(`wiki start at http://127.0.0.1:${serverPort}/${renamedFileName}`);
+console.log(`wiki start at http://127.0.0.1:${serverPort}/${watchFileName}`);
 
 /** https://davidwalsh.name/javascript-debounce-function */
 function debounce(func, wait, immediate) {
