@@ -8,7 +8,7 @@ const renamedFileName = 'index.html';
 const watchDir = path.resolve(process.env.HOME, 'Downloads');
 const watchFilepath = path.resolve(watchDir, watchFileName);
 const root = path.dirname(__filename);
-const serverPort = 11013;
+const serverPort = 11012;
 const rootWikiPath = path.resolve(root, renamedFileName);
 const commitScriptPath = path.resolve(root, 'scripts', 'commit.sh');
 
