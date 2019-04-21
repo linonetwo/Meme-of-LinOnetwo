@@ -1,0 +1,85 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.19" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>在 TW 里自制 JS 宏: Meme of LinOnetwo — LinOnetwo's meme and thoughts</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-%E5%8F%8D%E6%80%9D tc-tagged-%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82 " data-tags="反思 技术细节" data-tiddler-title="在 TW 里自制 JS 宏"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+在 TW 里自制 JS 宏
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 21st April 2019 at 4:41pm
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+ 反思
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span><span class="tc-tag-list-item">
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+ 技术细节
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><p>我想试试能不能复用某个整理好的列表，把半结构化的列表转述为自然语言句子，于是做了一个宏 <a class="tc-tiddlylink tc-tiddlylink-resolves" href="%25E5%2588%2597%25E8%25A1%25A8%25E8%25BD%25AC%25E5%258F%25A5%25E5%25AD%2590%25E5%25AE%258F.html">列表转句子宏</a>，花了快一个小时来试错。</p><p><a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/static/JavaScript%2520Macros.html" rel="noopener noreferrer" target="_blank">官方文档</a>里给了一些<a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/tree/master/core/modules/macros" rel="noopener noreferrer" target="_blank">官方 JS 宏</a>作为例子，因为我只想在 JS 函数里拿到输入，并做简单转换，所以我找了一个名字看起来就像简单输入输出的 <a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/macros/makedatauri.js" rel="noopener noreferrer" target="_blank">makedatauri</a> ，没想到我在没有 Intellisense 的情况下犯了一个错误，我在尝试把</p><pre><code>exports.params = [
+	{name: &quot;text&quot;},
+	{name: &quot;type&quot;}
+];</code></pre><p>改为</p><pre><code>exports.params = [{ name: 'text', defalue: '' }];</code></pre><p>的过程中错把它改成了</p><pre><code>// 并没有 text 这个用法！但我在脑中给了它一个合理化的解释：系统会把这个对象里的字段名 text 作为 name，而内容 'listtext' 作为默认值。但是实际上并不是这样的！
+exports.params = [{ text: 'listtext' }];</code></pre><p>我还一直没发现错误，因为完全没有任何错误提示。而作为例子的 <code>makedatauri</code> 却一直能运行，我想找到使一个能运行而另一个不的关键点。</p><p>我做了很多实验，比如尝试发现 <a class="tc-tiddlylink-external" href="https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/macros/makedatauri.js" rel="noopener noreferrer" target="_blank">makedatauri</a> 里面开头处的注释是不是它得以运行的关键。</p><pre><code>/*\
+title: $:/core/modules/macros/makedatauri.js
+type: application/javascript
+module-type: macro
+Macro to convert a string of text to a data URI
+&lt;&lt;makedatauri text:&quot;Text to be converted&quot; type:&quot;text/vnd.tiddlywiki&quot;&gt;&gt;
+\*/</code></pre><p>后来我发现这些全删了都没事。</p><p>我又进入到 <a class="tc-tiddlylink-external" href="https://onetwo.ren/Meme-of-LinOnetwo/#%24%3A%2Fcore%2Fmodules%2Fmacros%2Fmakedatauri.js" rel="noopener noreferrer" target="_blank">https://onetwo.ren/Meme-of-LinOnetwo/#$:/core/modules/macros/makedatauri.js</a> 去看是不是得把我的宏放到 <code>$:/core/modules/macros/xxx.js</code> 里面它才能运行，后来我发现并不是这样，因为<a class="tc-tiddlylink-external" href="https://groups.google.com/forum/#!topic/tiddlywiki/mU8r3778ky0" rel="noopener noreferrer" target="_blank">另一个跟我一样困扰的人写的例子</a>就不用放进去。</p><p>我还通过观察其他系统自带宏，猜测是不是要加上 <code>$:/tags/Macro</code> 这个 tag 才能生效，但我发现这个 tag 与宏是否生效无关。</p><p>最终，当我停止实验，回过头认真回顾<a class="tc-tiddlylink-external" href="https://tiddlywiki.com/dev/static/JavaScript%2520Macros.html" rel="noopener noreferrer" target="_blank">官方 API 文档</a>后，我才发现，原来我传给 <code>exports.params</code> 的值格式错了，而习惯了 TypeScript Intellisense 之后我默认自己不会在这种格式问题上犯错 —— 这是一个错误的信念，在环境变化后我本应该关闭它。</p></div>
+
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>

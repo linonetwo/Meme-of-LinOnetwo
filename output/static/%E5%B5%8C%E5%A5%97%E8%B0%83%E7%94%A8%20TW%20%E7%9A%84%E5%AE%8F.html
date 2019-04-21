@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="generator" content="TiddlyWiki" />
+<meta name="tiddlywiki-version" content="5.1.19" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+<meta name="mobile-web-app-capable" content="yes"/>
+<meta name="format-detection" content="telephone=no">
+<link id="faviconLink" rel="shortcut icon" href="favicon.ico">
+<link rel="stylesheet" href="static.css">
+<title>嵌套调用 TW 的宏: Meme of LinOnetwo — LinOnetwo's meme and thoughts</title>
+</head>
+<body class="tc-body">
+
+<section class="tc-story-river">
+<p><div class="tc-tiddler-frame tc-tiddler-view-frame tc-tiddler-exists   tc-tagged-%E6%8A%80%E6%9C%AF%E7%BB%86%E8%8A%82 " data-tags="技术细节" data-tiddler-title="嵌套调用 TW 的宏"><div class="tc-tiddler-title">
+<div class="tc-titlebar">
+<span class="tc-tiddler-controls">
+<span class=" tc-reveal"><button aria-label="more" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fmore-tiddler-actions" title="More actions"></button><div class=" tc-reveal" hidden="true"></div></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="edit" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fedit" title="Edit this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal"><button aria-label="close" class="tc-btn-invisible tc-btn-%24%3A%2Fcore%2Fui%2FButtons%2Fclose" title="Close this tiddler"></button></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span><span class=" tc-reveal" hidden="true"></span>
+</span>
+
+<span>
+
+<span class="tc-tiddler-title-icon" style="fill:;">
+
+</span>
+
+
+
+<h2 class="tc-title">
+嵌套调用 TW 的宏
+</h2>
+
+</span>
+
+</div>
+
+<div class="tc-tiddler-info tc-popup-handle tc-reveal" hidden="true"></div>
+</div><div class=" tc-reveal" hidden="true"></div>
+<div class=" tc-reveal">
+<div class="tc-subtitle">
+<a class="tc-tiddlylink tc-tiddlylink-missing" href=".html">
+
+</a> 21st April 2019 at 3:13pm
+</div>
+</div>
+<div class=" tc-reveal">
+<div class="tc-tags-wrapper"><span class="tc-tag-list-item">
+<span class="tc-tag-label tc-btn-invisible" draggable="true" style="background-color:;
+fill:#333333;
+color:#333333;">
+ 技术细节
+</span>
+<span class="tc-drop-down tc-reveal" hidden="true"></span></span></div>
+</div>
+
+<div class="tc-tiddler-body tc-reveal"><p><a class="tc-tiddlylink-external" href="https://bimlas.gitlab.io/tw5-locator/" rel="noopener noreferrer" target="_blank">https://bimlas.gitlab.io/tw5-locator/</a> 给出的调用方法是 <code>&lt;&lt;locator-view &quot;Ford family&quot;&gt;&gt;</code> 这样，有一个匿名参数。</p><p>我希望把 <code>&lt;&lt;currentTiddler&gt;&gt;</code> 宏作为其参数，但是根据<a class="tc-tiddlylink-external" href="https://tiddlywiki.com/static/Concatenating%2520text%2520and%2520variables%2520using%2520macro%2520substitution.html" rel="noopener noreferrer" target="_blank">调用宏的文档</a>，不能直接写 <code>&lt;&lt;locator-view &lt;&lt;currentTiddler&gt;&gt; &gt;&gt;</code>。</p><p>所以我只好去看 tw5-locator 的源码，在 <code>$:/plugins/bimlas/locator/view</code> 里看到发现原来这个匿名参数的定义是 <code>\define locator-view(baseTitle finalFilter=&quot;&quot;)</code> 中的 <code>baseTitle</code>。</p><p>所以我最后是这样调用的：</p><pre><code>&lt;$macrocall $name=&quot;locator-view&quot; baseTitle=&lt;&lt;currentTiddler&gt;&gt; /&gt;</code></pre></div>
+
+
+
+</div>
+
+</p>
+</section>
+</body>
+</html>
