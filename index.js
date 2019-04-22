@@ -58,6 +58,9 @@ function debounce(func, wait, immediate) {
   };
 }
 
+const commitEveryHalfHour = debounce(() => {
+  execSync(`/bin/sh ${commitScriptPath}`, () => {});
+}, (1000 * 3600) / 2);
 
 fs.watch(
   watchDir,
@@ -71,7 +74,7 @@ fs.watch(
       }
       fs.rename(watchFilepath, rootWikiPath, err => {
         if (!err) {
-          execSync(`/bin/sh ${commitScriptPath}`, () => {});
+          commitEveryHalfHour();
         }
       });
     });
