@@ -2,17 +2,20 @@
   "name": "wiki",
   "version": "1.0.0",
   "main": "index.js",
-  "repository": "git@gitlab.com:DiamondYuan/wiki.git",
-  "author": "Diamondyuan <admin@diamondyuan.com>",
+  "repository": "git@github.com:linonetwo/Meme-of-LinOnetwo.git",
+  "author": "linonetwo <linonetwo012@gmail.com>",
   "license": "MIT",
   "scripts": {
     "start:html": "node serveAndWatchHTML.js",
     "start:nodejs": "tiddlywiki MemeOfLinonetwo --listen",
-    "build:nodejs2html": "tiddlywiki MemeOfLinonetwo --build index",
+    "build:nodejs2html": "tiddlywiki MemeOfLinonetwo --build index && mv ./MemeOfLinonetwo/output/index.html ./index.html && rm -r ./MemeOfLinonetwo/output",
     "load": "sh scripts/load.sh",
     "unload": "sh scripts/unload.sh"
   },
   "dependencies": {
     "tiddlywiki": "^5.1.21"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.2.0"
   }
 }
