@@ -1,6 +1,7 @@
 const fs = require('fs');
 const path = require('path');
 const $tw = require('tiddlywiki/boot/boot.js').TiddlyWiki();
+const execSync = require('child_process').execSync;
 
 const tiddlyWikiPort = 11012;
 const tiddlyWikiFolder = path.join(__dirname, 'MemeOfLinonetwo');
