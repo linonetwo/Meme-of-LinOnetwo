@@ -1,0 +1,13 @@
+a.tc-tiddlylink-external, a.tc-tiddlylink-external:visited {
+  box-decoration-break: clone;
+  font-weight: 700;
+  color: #8357d7;
+}
+a.tc-tiddlylink-external:hover {
+  background-color: #21D4FD;
+  background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);
+
+    background-clip: border-box;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

@@ -1,0 +1,10 @@
+created: 20190422071458974
+modified: 20200409033738139
+tags: 时间旅行 想法
+title: 通过 React Hooks 探索时空悖论
+tmap.id: e8c6ce69-17c7-409a-8336-3f515b809613
+type: text/vnd.tiddlywiki
+
+hooks 就像一次次时空循环里面的行为，而最终渲染的结果就是读者看到的东西。
+
+不过 hooks 没有引入概率，所以没法适用若维科夫自洽原则。

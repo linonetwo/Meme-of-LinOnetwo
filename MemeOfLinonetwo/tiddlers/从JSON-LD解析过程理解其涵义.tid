@@ -1,0 +1,8 @@
+created: 20190510081349524
+modified: 20200409033736588
+tags: 技术细节 想法
+title: 从JSON-LD解析过程理解其涵义
+tmap.id: 11dc5b95-fa86-4643-b34a-2525e4eeace3
+type: text/vnd.tiddlywiki
+
+今天看 https://www.rubensworks.net/blog/2019/03/13/streaming-rdf-parsers/ 里面写了如何一步步解析 JSON-LD，并转换成 n3 （ turtle 的超集），感觉很清晰地说明了每一个 JSON-LD 里的符号的涵义。
