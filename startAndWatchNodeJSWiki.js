@@ -36,6 +36,7 @@ const buildHTMLEveryMinute = debounce(() => {
 
 fs.watch(
   tiddlyWikiFolder,
+  { recursive: true },
   debounce(() => {
     buildHTMLEveryMinute();
     commitEveryHalfHour();
