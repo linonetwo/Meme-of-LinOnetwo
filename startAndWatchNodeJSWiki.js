@@ -37,7 +37,7 @@ const commitEveryHalfHour = debounce(() => {
 }, (1000 * 3600) / 2);
 const buildHTMLEveryMinute = debounce(() => {
   console.log('building HTML');
-  execSync(`cd ${__dirname} && npm run build:nodejs2html`, () => {});
+  execSync(`cd ${projectFolder} && npm run build:nodejs2html`, () => {});
 }, 1000 * 60);
 
 fs.watch(
