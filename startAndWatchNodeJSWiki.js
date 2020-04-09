@@ -34,11 +34,11 @@ function debounce(func, wait, immediate) {
 const commitEveryHalfHour = debounce(() => {
   console.log('pushing to Git');
   execSync(`/bin/sh ${commitScriptPath}`, () => {});
-}, 1000 * 10);
+}, (1000 * 3600) / 2);
 const buildHTMLEveryMinute = debounce(() => {
   console.log('building HTML');
   execSync(`cd ${__dirname} && npm run build:nodejs2html`, () => {});
-}, 1000 * 5);
+}, 1000 * 60);
 
 fs.watch(
   tiddlyWikiFolder,
