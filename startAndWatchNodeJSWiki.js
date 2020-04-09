@@ -3,8 +3,12 @@ const path = require('path');
 const $tw = require('tiddlywiki/boot/boot.js').TiddlyWiki();
 const execSync = require('child_process').execSync;
 
-const tiddlyWikiPort = 11012;
-const tiddlyWikiFolder = path.join(__dirname, 'MemeOfLinonetwo');
+const tiddlyWikiPort = require('./package.json').port;
+const wikiFolderName = require('./package.json').name
+
+const projectFolder = path.dirname(__filename);
+const tiddlyWikiFolder = path.join(__dirname, wikiFolderName);
+const commitScriptPath = path.resolve(projectFolder, 'scripts', 'commit.sh');
 
 $tw.boot.argv = [tiddlyWikiFolder, '--listen', `port=${tiddlyWikiPort}`];
 
@@ -28,16 +32,21 @@ function debounce(func, wait, immediate) {
 }
 
 const commitEveryHalfHour = debounce(() => {
+  console.log('pushing to Git');
   execSync(`/bin/sh ${commitScriptPath}`, () => {});
-}, (1000 * 3600) / 2);
+}, 1000 * 10);
 const buildHTMLEveryMinute = debounce(() => {
+  console.log('building HTML');
   execSync(`cd ${__dirname} && npm run build:nodejs2html`, () => {});
-}, 1000 * 60);
+}, 1000 * 5);
 
 fs.watch(
   tiddlyWikiFolder,
   { recursive: true },
-  debounce(() => {
+  debounce((_, fileName) => {
+    if (fileName === 'output') return;
+    console.log(`${fileName} change`);
+
     buildHTMLEveryMinute();
     commitEveryHalfHour();
   }, 100)

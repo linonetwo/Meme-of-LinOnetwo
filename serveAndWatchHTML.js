@@ -7,16 +7,16 @@ const watchFileName = 'tiddlywiki.html';
 const renamedFileName = 'index.html';
 const watchDir = path.resolve(process.env.HOME, 'Downloads');
 const watchFilepath = path.resolve(watchDir, watchFileName);
-const root = path.dirname(__filename);
-const serverPort = 11012;
-const rootWikiPath = path.resolve(root, renamedFileName);
-const commitScriptPath = path.resolve(root, 'scripts', 'commit.sh');
+const projectFolder = path.dirname(__filename);
+const serverPort = require('./package.json').port;
+const rootWikiPath = path.resolve(projectFolder, renamedFileName);
+const commitScriptPath = path.resolve(projectFolder, 'scripts', 'commit.sh');
 
 const config = {
   watchFileName,
   watchDir,
   watchFilepath,
-  root,
+  projectFolder,
   serverPort,
   rootWikiPath,
   commitScriptPath,

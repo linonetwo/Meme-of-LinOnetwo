@@ -1,0 +1,10 @@
+created: 20200409072213379
+modified: 20200409072246238
+tags: Index
+title: 人事
+tmap.id: c653b246-ef01-4f3d-a41d-4ff70db98a91
+type: text/vnd.tiddlywiki
+
+逐步记录公开的朋友关系。
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
