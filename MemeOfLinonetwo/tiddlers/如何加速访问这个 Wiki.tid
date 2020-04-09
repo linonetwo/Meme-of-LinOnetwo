@@ -1,0 +1,12 @@
+created: 20190422095750692
+modified: 20200409033737728
+tags: 技术细节
+title: 如何加速访问这个 Wiki
+tmap.id: 308f1e02-9811-4431-a1c6-f703862d05c2
+type: text/vnd.tiddlywiki
+
+由于 TiddlyWiki 是巨大的单页面应用（ >=5M ），而这个 TW 又部署在 GithubPages 上，我在自己的 $$SwitchyOmega^α$$ 内加上了一条：
+
+`URL Regex`： `^https?://onetwo.ren/Meme-of-LinOnetwo`
+
+以便通过高速代理访问这个 Wiki，但直接访问我挂在这个域名上的其他网站。

@@ -1,0 +1,10 @@
+p > code, li > code {
+  box-decoration-break: clone;
+  border: none;
+  padding: .1rem .3rem .2rem;
+  border-radius: .2rem;
+
+  background: linear-gradient(to right,#fce4ed,#ffe8cc);
+
+  color: #2e2f3e;
+}

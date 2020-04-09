@@ -1,0 +1,52 @@
+created: 20190421082226557
+modified: 20200409033737807
+tags: 反思 技术细节
+title: 在 TW 里自制 JS 宏
+tmap.id: 910ab342-192b-4628-a7e9-172297dae42a
+type: text/vnd.tiddlywiki
+
+我想试试能不能复用某个整理好的列表，把半结构化的列表转述为自然语言句子，于是做了一个宏 [[列表转句子宏]]，花了快一个小时来试错。
+
+[[官方文档|https://tiddlywiki.com/dev/static/JavaScript%2520Macros.html]]里给了一些[[官方 JS 宏|https://github.com/Jermolene/TiddlyWiki5/tree/master/core/modules/macros]]作为例子，因为我只想在 JS 函数里拿到输入，并做简单转换，所以我找了一个名字看起来就像简单输入输出的 [[makedatauri|https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/macros/makedatauri.js]] ，没想到我在没有 Intellisense 的情况下犯了一个错误，我在尝试把
+
+```js
+exports.params = [
+	{name: "text"},
+	{name: "type"}
+];
+```
+
+改为
+
+```js
+exports.params = [{ name: 'text', defalue: '' }];
+```
+
+的过程中错把它改成了
+
+```js
+// 并没有 text 这个用法！但我在脑中给了它一个合理化的解释：系统会把这个对象里的字段名 text 作为 name，而内容 'listtext' 作为默认值。但是实际上并不是这样的！
+exports.params = [{ text: 'listtext' }];
+```
+
+我还一直没发现错误，因为完全没有任何错误提示。而作为例子的 `makedatauri` 却一直能运行，我想找到使一个能运行而另一个不的关键点。
+
+我做了很多实验，比如尝试发现 [[makedatauri|https://github.com/Jermolene/TiddlyWiki5/blob/master/core/modules/macros/makedatauri.js]] 里面开头处的注释是不是它得以运行的关键。
+
+```js
+/*\
+title: $:/core/modules/macros/makedatauri.js
+type: application/javascript
+module-type: macro
+Macro to convert a string of text to a data URI
+<<makedatauri text:"Text to be converted" type:"text/vnd.tiddlywiki">>
+\*/
+```
+
+后来我发现这些全删了都没事。
+
+我又进入到 [[https://onetwo.ren/Meme-of-LinOnetwo/#$:/core/modules/macros/makedatauri.js|https://onetwo.ren/Meme-of-LinOnetwo/#%24%3A%2Fcore%2Fmodules%2Fmacros%2Fmakedatauri.js]] 去看是不是得把我的宏放到 `$:/core/modules/macros/xxx.js` 里面它才能运行，后来我发现并不是这样，因为[[另一个跟我一样困扰的人写的例子|https://groups.google.com/forum/#!topic/tiddlywiki/mU8r3778ky0]]就不用放进去。
+
+我还通过观察其他系统自带宏，猜测是不是要加上 `$:/tags/Macro` 这个 tag 才能生效，但我发现这个 tag 与宏是否生效无关。
+
+最终，当我停止实验，回过头认真回顾[[官方 API 文档|https://tiddlywiki.com/dev/static/JavaScript%2520Macros.html]]后，我才发现，原来我传给 `exports.params` 的值格式错了，而习惯了 TypeScript Intellisense 之后我默认自己不会在这种格式问题上犯错 —— 这是一个错误的信念，在环境变化后我本应该关闭它。

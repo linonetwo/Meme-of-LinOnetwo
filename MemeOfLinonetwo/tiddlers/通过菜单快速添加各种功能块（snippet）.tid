@@ -1,0 +1,57 @@
+created: 20200408090817142
+creator: Lin Onetwo - 林一二
+modified: 20200409033738127
+modifier: Lin Onetwo - 林一二
+tags: 自改TW tiddlywiki
+title: 通过菜单快速添加各种功能块（snippet）
+tmap.id: 9b0ccc63-01d7-4aab-83fa-438e10f5cfb6
+type: text/vnd.tiddlywiki
+
+通过菜单快速添加各种功能块（ macro 、 transclusion 等等），比如 `<$transclude tiddler="$:/plugins/reidgould/dpbd/templates/view/Board" mode="inline" />` 这样的看板就没法像notion 一样通过 /kanban 来加入。
+
+!! 解决办法0（最佳）：
+
+# 打开编辑器，点击图章按钮stamp ({{$:/core/images/stamp}})
+# 这会创建一个带 `$:/tags/TextEditor/Snippet` tag 的 tiddler，里面的内容就会出现在图章的下拉列表里了
+
+---
+
+!! 解决办法1：
+
+# 添加一个标题为 `<xxx 你想拖动添加的macro或任意文本 />` 的 tiddler
+# 把内容类型设置为一个自己喜欢的特殊的类型，比如我是用 `application/draggable` （我把 `application/draggable` 也如此炮制让它可以被从右边拖过来，省得自己每次要打一遍）
+# 这样以后，这个 tiddler 就会出现在侧边栏的「更多（里面可以按『最近、标签、类型、草稿』等筛选来查看 tiddler）→类型（里面列出了『js、css、text』等不同类型的 tiddler）-application/draggable」里面了
+# 拖动列表里列出的内容到编辑区域，即相当于复制该内容到编辑区域，于是就不用再记住自己的几十个 macro 宏了，直接拖放即可
+
+之所以用类型，是因为这个菜单里显示的 tiddler 比较少，而且也可以看到一些别的 tiddler。
+
+---
+
+!! 解决办法2（较佳）：
+
+# 添加一个标题为 `<xxx 你想拖动添加的macro或任意文本 />` 的 tiddler
+# 加上一个 `snippet` 的 tag
+# 然后用标题为 `snippet` 的 tiddler [[添加侧边栏标签页]]
+# 然后用[[列出某一标签的所有标题]]这个宏在这个标题为 `snippet` 的 tiddler 里列出所有含有 `snippet` tag 的 tiddler，它们就会显示在右边的侧边栏里了
+# 此后三击 `snippet` tab 中的文本全选一行的文本，然后先向上拖动再拖到编辑器里（横向拖动会被识别为选择文本，先向上才会识别为拖放），就可以把文本拖动到编辑器里了（当然，复制黏贴也行）
+
+!! 解决办法3：
+
+# 添加一个标题为 `Snippet Bar` 的 tiddler
+# 加上一个 `$:/tags/EditTemplate` 的 tag
+# 这样在编辑时，snippet 列表就会出现在文本编辑器的下方了
+# 此后三击 `snippet` tab 中的文本全选一行的文本，然后先向上拖动再拖到编辑器里（横向拖动会被识别为选择文本，先向上才会识别为拖放），就可以把文本拖动到编辑器里了（当然，复制黏贴也行）
+
+2 和 3 的不足之处是：
+
+# 没法直接拖动，如果用 `<$draggable></$draggable>` widget，拖动结束后并不会放置文本到编辑器里。
+# 如果用 `<$link></$link>`，则拖动结束后，文本内若有空格，就会自动加上 `[[ ]]` 使他变成链接的形式。
+
+---
+
+我还希望能更方便地唤出这个 snippet 并让它自动隐藏：
+
+[img[old notion with graggable block|https://windows-cdn.softpedia.com/screenshots/Notion_1.png]]
+像旧版的 Notion 一样，通过鼠标靠边来唤出，那么我就可以让它直接显示所有打了 snippet 标签的 tiddler 了。
+
+可能得写一个插件才能做到。

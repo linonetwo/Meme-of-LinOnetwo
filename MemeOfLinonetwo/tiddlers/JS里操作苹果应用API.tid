@@ -1,0 +1,17 @@
+created: 20190504052637597
+modified: 20200409033736884
+tags: Web前端 技术细节
+title: JS里操作苹果应用API
+tmap.id: 8b6b26ce-63d3-4ee7-bc08-793e47d30f7d
+type: text/vnd.tiddlywiki
+
+看 https://github.com/BaksiLi/AlfredWorkflows/blob/master/Index/DarkOrLight/DarkOrLight.sh
+里面的 
+
+```sh
+Script="tell app \"System Events\" to tell appearance preferences to set dark mode to $dark"
+
+osascript -e "$Script"
+```
+
+应该在 JS 里面调用 `exec` 就好了，以后写 Electron 应用可能会用到。

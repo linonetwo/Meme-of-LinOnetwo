@@ -1,0 +1,28 @@
+created: 20200408120217503
+creator: Lin Onetwo - 林一二
+modified: 20200409033737278
+modifier: Lin Onetwo - 林一二
+tags: tiddlywiki 自改TW
+title: 快速创建新笔记按钮
+tmap.id: e78646ab-1644-4415-bc98-2eaa7cc929c3
+type: text/vnd.tiddlywiki
+
+<fieldset>
+	<legend>快速添加</legend>
+
+	<$button>
+		<$action-sendmessage $message="tm-new-tiddler" title=<<now "YYYY-MM-DD">> tags="想法" />
+	添加新想法
+	</$button>
+
+	<$button>
+		<$action-sendmessage $message="tm-new-tiddler" title="xxx" text="""<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />""" />
+	添加新Tag
+	</$button>
+
+	<$button>
+		<$action-sendmessage $message="tm-new-tiddler" title="xxx" tags="列表整理" text="# " />
+	添加新列表
+	</$button>
+
+</fieldset>
