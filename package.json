@@ -1,5 +1,6 @@
 {
-  "name": "wiki",
+  "port": 11012,
+  "name": "MemeOfLinonetwo",
   "version": "1.0.0",
   "main": "index.js",
   "repository": "git@github.com:linonetwo/Meme-of-LinOnetwo.git",
