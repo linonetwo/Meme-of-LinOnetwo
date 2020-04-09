@@ -1,0 +1,15 @@
+created: 20190602054847836
+creator: Lin Onetwo
+modified: 20200409033737207
+modifier: Lin Onetwo
+tags: 想法
+title: 我怎么会把「避免子组件」看成「兔子组件」？
+tmap.id: 6fef5b43-e932-4a7c-906a-90b73d3c4231
+type: text/vnd.tiddlywiki
+
+今天在知乎看到一个问题「react组件传递回调函数如何避免子组件重新渲染？」，我就很疑惑 React 什么时候又出了新概念，什么是兔子组件？
+往下翻却发现没有一个人回答到点上的，没人在讨论兔子组件，难道这是一个 React 15 时代之前就有的众所周知的概念？带着这样的疑惑我在评论区建议题主修改问题…
+
+https://www.zhihu.com/question/324759787
+
+后来发现原来是我把「避」直接自动修复成了「避免」，然后把「免子组件」理解成了「兔子组件」

@@ -1,0 +1,129 @@
+created: 20200217072041725
+creator: Lin Onetwo - 林一二
+modified: 20200409033738461
+modifier: Lin Onetwo - 林一二
+tags: 模因学 工具设计
+title: 模因管理系统构想
+tmap.id: 825f5f03-7291-45ff-90e8-53a7bcac968c
+type: text/vnd.tiddlywiki
+
+本文是 June 24, 2018 在北京的集智俱乐部注意力与知识管理群线下聚会的分享稿。
+
+---
+
+{{模因学}}
+
+难以用计算机管理的逆模因：写作范式与同类文档大相径庭导致规则系统不识别、机器学习系统误分类；过于平庸的用词（文档中各种词出现概率很平均，而且都是语料库中的常用词）导致 tfidf 或类似算法失效。
+
+
+!! 管理模因
+
+段落级标签
+
+把文章以自然段分割，在每个自然段内进行上下文无关的提取，自动为自然段加 tag，并保留每个 tag 的源谱（来源知识图谱），包含 tag 的类型和原文。
+
+
+在模因通路中只需要知道 how 的人，也能用这个源谱来增加决策信心、报备上级。
+
+```xml
+  <pmlj:NodeSet rdf:about="http://inference-web.org/2007/primer/examples/proofs/tonys/answer_2/ns1.owl#ns1">
+    <pmlj:hasConclusion>
+      <pmlp:Information>
+        <pmlp:hasRawString rdf:datatype="http://www.w3.org/2001/XMLSchema#string">(subClassOf CRAB SHELLFISH)</pmlp:hasRawString>
+        <pmlp:hasLanguage rdf:resource="http://inference-web.org/registry/LG/KIF.owl#KIF"/>
+      </pmlp:Information>
+    </pmlj:hasConclusion>
+    <pmlj:ConsequentOf>
+      <pmlj:InferenceStep>
+        <pmlj:hasIndex rdf:datatype="http://www.w3.org/2001/XMLSchema#int">0</hasIndex>
+        <pmlj:hasInferenceRule rdf:resource="http://inference-web.org/registry/DPR/Told.owl#Told"/>
+        <pmlj:hasSourceUsage>
+          <pmlp:SourceUsage>
+            <pmlp:hasSource>
+              <pmlp:DocumentFragmentByOffset>
+                <pmlp:hasFromOffset rdf:datatype="http://www.w3.org/2001/XMLSchema#int">56</pmlp:hasFromOffset>
+                <pmlp:hasDocument rdf:resource="http://inference-web.org/registry/ONT/STOntology.owl#STOntology"/>
+                <pmlp:hasToOffset rdf:datatype="http://www.w3.org/2001/XMLSchema#int">82</pmlp:hasToOffset>
+              </pmlp:DocumentFragmentByOffset>
+            </pmlp:hasSource>
+            <pmlp:hasUsageDateTime rdf:datatype="http://www.w3.org/2001/XMLSchema#dateTime">2005-10-17T10:30:00Z</pmlp:hasUsageDateTime>
+          </pmlp:SourceUsage>
+        </pmlj:hasSourceUsage>
+      </pmlj:InferenceStep>
+    </pmlj:isConsequentOf>
+  </pmlj:NodeSet>
+```
+
+
+系统设计：
+需要有易用的界面让用户标注数据、维护词库、维护提取规则（类似于集搜客这样的可视化爬虫编辑器）
+
+---
+
+从知识库里做聚合
+
+sematic-media-wiki 主要应用于游戏 wiki 这个拥有大量互联数据的领域，互联数据来自于游戏里各种类之间的关系，例如《异星工厂》wiki 里「热能采掘机」需要由三种资源来合成，那么这三种资源自己的页面内也会显示出它们能用于合成「热能采掘机」。一些高级的聚合也可以做出来，例如显示某种资源能制造的开采速度最快的机器。
+
+系统设计：
+需要有输入简单的查询语句的界面，需要让知识库暴露出 API 供查询
+
+---
+
+一种数据，多种视图
+
+Todo 列表能用看板来查看它的「Todo、Doing、Done」维度，也能用日程表来查看它的时间维度，也能用「时间块」来操作它的「所用时长」维度。
+
+系统设计：
+需要让数据和展示分离，数据使用开放数据格式存储
+
+---
+
+区分内部和外部：个人知识图谱、推荐外部
+因材施教，给出到达某个模因的知识通路
+得先有个人知识图谱，才能理解用户的路径
+
+冷启动的时候可以用受控自然语言接口
+
+---
+
+管理反模因
+
+反模因作用于人的过程，常常表现为一个操作流程，例如 Brown-Peterson Task，让受试者在形成短期记忆（背单词）之后一直做大数减小数这样需要占用短期记忆的重复脑力劳动。
+
+code is meme：把模因和反模因作用于人的流程写成代码，例如 anki 的卡片回放
+
+用处：
+用户不小心浏览了黄赌毒信息后就让他一直填验证码，因此能忘记大半黄赌毒信息
+
+环境抽离，建议你到附近走走或是上个厕所倒倒垃圾整理一下书桌，离开电脑手机或是书，让自己有时间自我反省产生愧疚感
+玩游戏的时候我们会选择部分忘记现实，就像在梦中许多常识被抑制，就像我们现在想不起我们其实是《真实人生》游戏的玩家一样。
+针对这个观察结果（玩游戏的时候我们会选择部分忘记现实），我们可以有针对性地构造反制方法，将这个反制方法放进任务管理系统里面，让系统推荐
+
+
+系统设计：
+要能方便地制作自定义流程，例如 anki 卡片回放、pre commit hook、强制制作脑图、关闭某类网页后强制做十道小学数学题
+
+{{极限Todo}}
+
+---
+
+管理逆模因
+
+导致受体自我毁灭的逆模因：
+克苏鲁神话知识导致知情者疯狂和失去交流能力，有关吸毒的知识导致吸毒者失去传播信息的欲望和优势。
+应该尽早干涉这些模因，防止它们对我造成影响。
+
+没有多少信息量的日常谈话也具有逆模因性，例如「吃了没。吃了。哦对了，早上我说的那个，就是，呃，你做了吗那个。哪个？就是上次项目那个。哦好像做了我回去看看。」人脑不适合处理这种信息，对其进行分析会很容易走神，但这个句子中其实包含了有关项目管理的知识，可能哪天能派上用场，或者未来用于做人物画像也是可以的。
+
+逆模因位点：时事（有关消耗品的知识）、已完成的事情（事件切割理论）
+如果未来知识管理系统能实时辅助社会工程的话，就能检索当下能用的逆模因用来建立信任或者岔开话题（说车轱辘话，实际没传递信息量但也不会令人不适）。
+
+---
+
+让模因流动起来
+
+模因之所以为模因是因为它能传播，能影响智能系统的决策过程。因此模因管理系统要有把收集起来的模因放出去的能力。
+
+互联网的去中心化假设：每个人都能有一台自己的服务器，用自己的服务器发布自己的动态、分享照片，这些信息上都有语义标注，所以可以被爬虫和其他人的服务器识别和理解，因此信息可以通过爬虫传播、被别的服务器用于推理。
+
+永不下线的服务器（手机）和 IPFS

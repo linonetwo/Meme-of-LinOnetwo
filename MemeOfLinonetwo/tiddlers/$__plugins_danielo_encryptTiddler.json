@@ -1,0 +1,101 @@
+{
+    "tiddlers": {
+        "$:/plugins/danielo/encryptTiddler/Changelog": {
+            "title": "$:/plugins/danielo/encryptTiddler/Changelog",
+            "text": "!! V2.1\n* Added control panel.\n* Added ability to batch encrypt and decrypt tiddlers.\n* Added some documentation an language strings.\n\n"
+        },
+        "$:/plugins/danielo/encryptTiddler/control-panel/batch-encrypt": {
+            "title": "$:/plugins/danielo/encryptTiddler/control-panel/batch-encrypt",
+            "caption": "Batch Encryption",
+            "text": "\\define lingo-base() $:/language/Search/\n<<lingo Filter/Hint>>\n{{$:/plugins/danielo/encryptTiddler/language/batch}}\n\n<$linkcatcher to=\"$:/temp/encrypt/filter\">\n\n<div class=\"tc-search tc-advanced-search\">\n<$edit-text tiddler=\"$:/temp/encrypt/filter\" type=\"search\" tag=\"input\" default=\"\" placeholder=\"filter tiddlers\"/>\n<$button popup=<<qualify \"$:/state/filterDropdown\">> class=\"tc-btn-invisible\">\n{{$:/core/images/down-arrow}}\n</$button>\n<$reveal state=\"$:/temp/encrypt/filter\" type=\"nomatch\" text=\"\">\n<$button class=\"tc-btn-invisible\">\n<$action-setfield $tiddler=\"$:/temp/encrypt/filter\" $field=\"text\" $value=\"\"/>\n{{$:/core/images/close-button}}\n</$button>\n\n\n<$edit-text tag=\"input\" tiddler=\"$:/temp/password\" placeholder=\"password\" type=\"password\" default=\"\" col=\"4\"/><$encryptTiddler passwordTiddler=\"$:/temp/password\" filter={{$:/temp/encrypt/filter}}>\n<$button message=\"tw-encrypt-tiddler\">\nEncrypt\n</$button>\n<$button message=\"tw-decrypt-tiddler\">\nDecrypt\n</$button>\n</$encryptTiddler>\n</$reveal>\n</div>\n\n<div class=\"tc-block-dropdown-wrapper\">\n<$reveal state=<<qualify \"$:/state/filterDropdown\">> type=\"nomatch\" text=\"\" default=\"\">\n<div class=\"tc-block-dropdown tc-edit-type-dropdown\">\n<$list filter=\"[all[shadows+tiddlers]tag[$:/tags/Filter]!sort[]] -[[$:/core/Filters/SystemTags]] -[[$:/core/Filters/AllTags]]\"><$link to={{!!filter}}><$transclude field=\"description\"/></$link>\n</$list>\n</div>\n</$reveal>\n</div>\n\n</$linkcatcher>\n\n<$reveal state=\"$:/temp/encrypt/filter\" type=\"nomatch\" text=\"\">\n<$set name=\"resultCount\" value=\"\"\"<$count filter={{$:/temp/encrypt/filter}}/>\"\"\">\n<div class=\"tc-search-results\">\n<<lingo Filter/Matches>>\n<$list filter={{$:/temp/encrypt/filter}} template=\"$:/plugins/danielo/encryptTiddler/ui/listItemTemplate\"/>\n</div>\n</$set>\n</$reveal>"
+        },
+        "$:/plugins/danielo/encryptTiddler/control-panel": {
+            "title": "$:/plugins/danielo/encryptTiddler/control-panel",
+            "tags": "$:/tags/ControlPanel",
+            "caption": "Encrypt Tiddlers",
+            "text": "\\define prefix(name) $:/plugins/danielo/encryptTiddler/control-panel/$name$\n\n<$macrocall $name=\"tabs\" tabsList=\"[all[shadows+tiddlers]prefix[$:/plugins/danielo/encryptTiddler/control-panel/]]\" default=<<prefix \"batch-encrypt\">> state=\"$:/state/encryptTiddler/control-panel/tabs\">>"
+        },
+        "$:/plugins/danielo/encryptTiddler/crypt-batch-button": {
+            "creator": "Danielo",
+            "title": "$:/plugins/danielo/encryptTiddler/crypt-batch-button",
+            "text": "<span title=\"Encrypt/Decrypt tiddler\" class=\"pc-batch-controls\">\n<$reveal state=<<qualify \"$:/state/encrypt\">> type=\"nomatch\" text={{!!title}} animate=\"no\"><$button set=<<qualify \"$:/state/encrypt\">> setTo={{!!title}} class=\"tc-btn-invisible\">{{$:/plugins/danielo/encryptTiddler/unlocked}}</$button></$reveal><$reveal state=<<qualify \"$:/state/encrypt\">> type=\"match\" text={{!!title}} animate=\"no\"><$button set=<<qualify \"$:/state/encrypt\">> setTo=\"\" class=\"tc-btn-invisible\">{{$:/plugins/danielo/encryptTiddler/unlocked}}</$button></$reveal>\n<$encryptTiddler passwordTiddler=\"$:/temp/password\" filter={{$:/temp/encrypt/filter}}><$reveal state=<<qualify \"$:/state/encrypt\">> type=\"match\" text={{!!title}} animate=\"yes\">\n<div class=\"tc-block-dropdown tw-crypt-dropdown\">\n<span class=\"tw-password-field\"><$edit-text tiddler=\"$:/temp/password\" tag=\"input\" type=\"password\" default=\"\" placeholder=\"password\" class=\"tc-edit-texteditor\"/></span>\n<span class=\"tw-crypt-button\"> <$button message=\"tw-encrypt-tiddler\"  set=<<qualify \"$:/state/encrypt\">> setTo=\"\" >Encrypt</$button> <$button message=\"tw-decrypt-tiddler\" set=<<qualify \"$:/state/encrypt\">> setTo=\"\" >Decrypt</$button></span>\n</div>\n</$reveal></$encryptTiddler>\n</span>"
+        },
+        "$:/plugins/danielo/encryptTiddler/crypt-button": {
+            "created": "20140405233000477",
+            "creator": "Danielo",
+            "modified": "20140608121335075",
+            "tags": "$:/tags/ViewToolbar button encrypt export",
+            "title": "$:/plugins/danielo/encryptTiddler/crypt-button",
+            "type": "text/vnd.tiddlywiki",
+            "text": "<span title=\"Encrypt/Decrypt tiddler\"><$transclude tiddler=\"$:/plugins/danielo/encryptTiddler/openPopup\"/>\n</span><$encryptTiddler passwordTiddler=\"$:/temp/password\"><$reveal state=\"$:/state/encrypt\" type=\"match\" text={{!!title}} animate=\"yes\">\n<div class=\"tc-block-dropdown tw-crypt-dropdown\">\n<span class=\"tw-password-field\"><$edit-text tiddler=\"$:/temp/password\" tag=\"input\" type=\"password\" default=\"\" placeholder=\"password\" class=\"tc-edit-texteditor\"/></span>\n<span class=\"tw-crypt-button\"> <$list filter=\"[all[current]!has[encrypted]]\"> <$button message=\"tw-encrypt-tiddler\"  set=\"$:/state/encrypt\" setTo=\"\" >Encrypt</$button></$list><$list filter=\"[is[current]has[encrypted]]\"> <$button message=\"tw-decrypt-tiddler\" set=\"$:/state/encrypt\" setTo=\"\" >Decrypt</$button></$list></span>\n</div>\n</$reveal></$encryptTiddler>\n"
+        },
+        "$:/plugins/danielo/encryptTiddler/Encrypt-Tiddler": {
+            "created": "20140406153742691",
+            "creator": "pepito",
+            "description": "add the hability to encrypt individual tiddlers",
+            "modified": "20141029152631265",
+            "modifier": "Danielo Rodriguez",
+            "tags": "index plugins",
+            "title": "$:/plugins/danielo/encryptTiddler/Encrypt-Tiddler",
+            "type": "text/vnd.tiddlywiki",
+            "caption": "readme",
+            "text": "This plugin adds the ability to encrypt your tiddlers individually. This have several advantages:\n\n* You can specify a different password for each tiddler if you want.\n* You don't have to encrypt your whole wiky.\n* If you forget your password, you only lose a tiddler.\n* It's possible to edit the tiddler content , tags and fields ''except the encrypt field'' after encryption. Decrypting your tiddler will restore it to its original state when you encrypted it. This way you can hide the encrypted tiddlers as a \"different\" thing.\n* You can even encrypt images.\n* You can have sensible data in a day to day wiky.\n* I didn't try this, but theoretically you can apply double encryption by encrypting your wiki too."
+        },
+        "$:/plugins/danielo/encryptTiddler/encrypttiddler.js": {
+            "text": "/*\\\ntitle: $:/plugins/danielo/encryptTiddler/encrypttiddler.js\ntype: application/javascript\nmodule-type: widget\n\nencrypttiddler widget\n\n```\n\n```\n\n\n\\*/\n(function(){\n\n/*jslint node: true, browser: true */\n/*global $tw: false */\n\"use strict\";\n\nvar Widget = require(\"$:/core/modules/widgets/widget.js\").widget;\n\nvar encryptTiddlerWidget = function(parseTreeNode,options) {\n\tthis.initialise(parseTreeNode,options);\n\tthis.addEventListeners([\n\t\t\t{type: \"tw-encrypt-tiddler\", handler: \"handleEncryptevent\"},\n\t\t\t{type: \"tw-decrypt-tiddler\", handler: \"handleDecryptevent\"},\n\t\t\t]);\n};\n\n/*\nInherit from the base widget class\n*/\nencryptTiddlerWidget.prototype = new Widget();\n\n/*\nRender this widget into the DOM\n*/\nencryptTiddlerWidget.prototype.render = function(parent,nextSibling) {\n\tconsole.log(\"Render\");\n\tthis.parentDomNode = parent;\n\tthis.computeAttributes();\n\tthis.execute();\n\tthis.renderChildren(parent,nextSibling);\n};\n\n/*\nCompute the internal state of the widget\n*/\nencryptTiddlerWidget.prototype.execute = function() {\n\t// Get attributes\n\t this.tiddlerTitle=this.getAttribute(\"tiddler\",this.getVariable(\"currentTiddler\"));\n\t this.filter=this.getAttribute(\"filter\",undefined);\n \t this.passwordTiddler=this.getAttribute(\"passwordTiddler\");\n\t// Construct the child widgets\n\tconsole.log(this.targetTiddler);\n\t\tthis.makeChildWidgets();\n};\n\n/*\nSelectively refreshes the widget if needed. Returns true if the widget or any of its children needed re-rendering\n*/\nencryptTiddlerWidget.prototype.refresh = function(changedTiddlers) {\n\tvar changedAttributes = this.computeAttributes();\n\tif(changedAttributes.tiddler || changedAttributes.filter) {\n\t\tthis.refreshSelf();\n\t\treturn true;\n\t} else {\n\t\treturn this.refreshChildren(changedTiddlers);\n\t}\n};\n\nencryptTiddlerWidget.prototype.getTiddlersToProcess = function(){\n\tif(this.filter){ //we have a filter to work with\n\t\treturn this.wiki.filterTiddlers(this.filter);\n\t}else{ //single tiddler case\n\t\tvar tiddler = this.wiki.getTiddler(this.tiddlerTitle);\n\t\treturn tiddler? [tiddler.fields.title] : [];\n\t}\n};\n\nencryptTiddlerWidget.prototype.handleEncryptevent = function(event){\n\tvar password = this.getPassword();\n\tvar tiddlers = this.getTiddlersToProcess();\n\n\tif(tiddlers.length > 0 && password){\n\t\tvar self = this;\n\t\t$tw.utils.each(tiddlers, function(title){\n\t\t\tvar tiddler = self.wiki.getTiddler(title);\n\t\t\tvar fields={text:\"!This is an encrypted Tiddler\",\n\t\t\t\t\t\t\t\t  encrypted:self.encryptFields(title,password)};\n\t\t\tself.saveTiddler(tiddler,fields);\n\t\t});\n\n\t}else{\n\t\tconsole.log(\"We did not find any tiddler to encrypt or password not set!\")\n\t}\n};\n\nencryptTiddlerWidget.prototype.handleDecryptevent = function(event){\n\tvar password =this.getPassword();\n\tvar tiddlers = this.getTiddlersToProcess();\n\n\tif(tiddlers.length > 0 && password){\n\t\tvar self = this;\n\t\t$tw.utils.each(tiddlers, function(title){\n\t\t\tvar tiddler = self.wiki.getTiddler(title);\n\t\t\tvar fields = self.decryptFields(tiddler,password);\n\t\t\tif(fields)self.saveTiddler(tiddler,fields);\n\t\t});\n\t}\n};\n\nencryptTiddlerWidget.prototype.saveTiddler=function(tiddler,fields){\n\tthis.wiki.addTiddler(  new $tw.Tiddler(this.wiki.getModificationFields(),tiddler,this.clearNonStandardFields(tiddler), fields ) )\n}\n\nencryptTiddlerWidget.prototype.encryptFields = function (title,password){\n\tvar jsonData=this.wiki.getTiddlerAsJson(title);\n\treturn $tw.crypto.encrypt(jsonData,password);\n\n};\n\nencryptTiddlerWidget.prototype.decryptFields = function(tiddler,password){\n\t\tvar JSONfields =$tw.crypto.decrypt(tiddler.fields.encrypted,password);\n\t\tif(JSONfields!==null){\n\t\t\treturn JSON.parse(JSONfields);\n\t\t}\n\t\tconsole.log(\"Error decrypting \"+tiddler.fields.title+\". Probably bad password\")\n\t\treturn false\n};\n\nencryptTiddlerWidget.prototype.getPassword = function(){\n\tvar tiddler=this.wiki.getTiddler(this.passwordTiddler);\n\tif(tiddler){\n\t\tvar password=tiddler.fields.text;\n\t\tthis.saveTiddler(tiddler); //reset password tiddler\n\t\treturn password;\n\t}\n\n\treturn false\n};\n\n// This function erases every field of a tiddler that is not standard and also\n// the text field\nencryptTiddlerWidget.prototype.clearNonStandardFields =function(tiddler) {\n\tvar standardFieldNames = \"title tags modified modifier created creator\".split(\" \");\n\t\tvar clearFields = {};\n\t\tfor(var fieldName in tiddler.fields) {\n\t\t\tif(standardFieldNames.indexOf(fieldName) === -1) {\n\t\t\t\tclearFields[fieldName] = undefined;\n\t\t\t}\n\t\t}\n\t\tconsole.log(\"Cleared fields \"+JSON.stringify(clearFields));\n\t\treturn clearFields;\n};\n\nexports.encryptTiddler = encryptTiddlerWidget;\n\n})();",
+            "title": "$:/plugins/danielo/encryptTiddler/encrypttiddler.js",
+            "type": "application/javascript",
+            "module-type": "widget"
+        },
+        "$:/plugins/danielo/encryptTiddler/Filters/encrypted-tiddlers": {
+            "title": "$:/plugins/danielo/encryptTiddler/Filters/encrypted-tiddlers",
+            "description": "All encrypted tiddlers",
+            "filter": "[has[encrypted]]",
+            "tags": "$:/tags/Filter"
+        },
+        "$:/plugins/danielo/encryptTiddler/Filters/normal-unencrypted-tiddlers": {
+            "title": "$:/plugins/danielo/encryptTiddler/Filters/normal-unencrypted-tiddlers",
+            "filter": "[!is[system]!has[encrypted]]",
+            "description": "Non-encrypted normal tiddlers",
+            "tags": "$:/tags/Filter"
+        },
+        "$:/plugins/danielo/encryptTiddler/language/batch": {
+            "title": "$:/plugins/danielo/encryptTiddler/language/batch",
+            "text": "Use below controls to encrypt or decrypt a bunch of tiddlers. Encryption ''controls are hidden'' until you type something in the search box. All listed tiddlers will be affected. The presence of a small padlock (<span class=\"pc-listItem-lock\">{{$:/core/images/locked-padlock}}</span>) next to the tiddler title indicates that particular tiddler is already encrypted."
+        },
+        "$:/plugins/danielo/encryptTiddler/ui/listItemTemplate": {
+            "title": "$:/plugins/danielo/encryptTiddler/ui/listItemTemplate",
+            "text": "<div class=\"tc-menu-list-item\">\n<$link to={{!!title}}>\n<$view field=\"title\"/>\n<$list filter=\"[all[current]has[encrypted]]\">\n<span class=\"pc-listItem-lock\">{{$:/core/images/locked-padlock}}</span>\n</$list>\n</$link>\n</div>"
+        },
+        "$:/plugins/danielo/encryptTiddler/openPopup": {
+            "created": "20140406151910358",
+            "creator": "Danielo",
+            "modified": "20140608121417975",
+            "modifier": "pepito",
+            "tags": "button encrypt export",
+            "title": "$:/plugins/danielo/encryptTiddler/openPopup",
+            "type": "text/vnd.tiddlywiki",
+            "text": "<$reveal state=\"$:/state/encrypt\" type=\"nomatch\" text={{!!title}} animate=\"no\"><$button set=\"$:/state/encrypt\" setTo={{!!title}} class=\"tc-btn-invisible\">{{$:/plugins/danielo/encryptTiddler/unlocked}}</$button></$reveal><$reveal state=\"$:/state/encrypt\" type=\"match\" text={{!!title}} animate=\"no\"><$button set=\"$:/state/encrypt\" setTo=\"\" class=\"tc-btn-invisible\">{{$:/plugins/danielo/encryptTiddler/unlocked}}</$button></$reveal>"
+        },
+        "$:/plugins/danielo/encryptTiddler/styles": {
+            "created": "20140406110705085",
+            "creator": "pepito",
+            "modified": "20140608121510064",
+            "modifier": "pepito",
+            "tags": "$:/tags/Stylesheet encrypt export",
+            "title": "$:/plugins/danielo/encryptTiddler/styles",
+            "type": "text/plain",
+            "text": ".tw-password-field {\n\tdisplay: inline-block;\n\twidth: 55%;\n  font-size:1em;\n  line-height:0;\n  margin:0;\n\tpadding-left:7%;\n}\n\n.pc-batch-controls .tw-crypt-dropdown{\n\tright: 0px;\n}\n\n.pc-batch-controls{\n\t\tposition:relative;\n}\n\n.pc-listItem-lock svg{\n\theight: 1em;\n\twidth: 1em;\n\tfill: #aaaaaa;\n}\n\n/*It is for use in combination with tc-block-dropdown */\n.tw-crypt-dropdown{\n      line-height:0;\n\t\t\tpadding-left:5px;\n\t\t\t}\n\n.tw-password-field input{\n       font-size:0.5em;\n\n}\n\n.tw-crypt-button {\n\tdisplay: inline-block;\n\twidth: 10%;\n}\n\n.tw-crypt-button button{\n\tfont-size:0.5em;\n}\n"
+        },
+        "$:/plugins/danielo/encryptTiddler/unlocked": {
+            "created": "20140406101339943",
+            "creator": "danielo515",
+            "modified": "20140608121532690",
+            "modifier": "danielo515",
+            "tags": "encrypt export",
+            "title": "$:/plugins/danielo/encryptTiddler/unlocked",
+            "type": "text/vnd.tiddlywiki",
+            "text": "<svg version=\"1.1\" id=\"Capa_1\" xmlns=\"http://www.w3.org/2000/svg\" class=\"tc-image-button\"\n\t viewBox=\"0 0 100 100\" style=\"enable-background:new 0 0 100 100;\" xml:space=\"preserve\">\n<g>\n\t<path d=\"M77.555,50H35.304V31.63c0-4.057,1.435-7.521,4.305-10.391c2.87-2.87,6.333-4.305,10.391-4.305\n\t\tc4.056,0,7.52,1.435,10.39,4.305s4.305,6.335,4.305,10.391c0,0.996,0.363,1.857,1.091,2.583c0.727,0.729,1.588,1.09,2.583,1.09\n\t\th3.674c0.995,0,1.856-0.361,2.583-1.09c0.727-0.727,1.091-1.588,1.091-2.583c0-7.079-2.517-13.136-7.549-18.17\n\t\tC63.136,8.428,57.08,5.912,50,5.912c-7.081,0-13.137,2.516-18.169,7.548c-5.033,5.034-7.549,11.091-7.549,18.17V50h-1.837\n\t\tc-1.531,0-2.833,0.536-3.904,1.608c-1.072,1.072-1.607,2.372-1.607,3.902v33.067c0,1.532,0.535,2.832,1.607,3.904\n\t\tc1.071,1.072,2.372,1.608,3.904,1.608h55.11c1.53,0,2.832-0.536,3.904-1.608c1.071-1.072,1.607-2.372,1.607-3.904V55.51\n\t\tc0-1.529-0.536-2.83-1.607-3.902C80.387,50.536,79.085,50,77.555,50z M54.315,72.937V83.72c0,2.173-1.762,3.935-3.935,3.935H49.62\n\t\tc-2.173,0-3.935-1.762-3.935-3.935V72.937c-2.31-1.443-3.852-4.001-3.852-6.925c0-4.511,3.657-8.167,8.167-8.167\n\t\ts8.167,3.657,8.167,8.167C58.167,68.937,56.625,71.495,54.315,72.937z\"/>\n</g>\n</svg>\n"
+        }
+    }
+}

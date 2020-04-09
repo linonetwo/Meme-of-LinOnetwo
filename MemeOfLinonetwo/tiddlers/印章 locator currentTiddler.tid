@@ -1,0 +1,11 @@
+caption: 添加一个使用当前标题的 tiddly locator
+created: 20200408133348115
+creator: Lin Onetwo - 林一二
+modified: 20200409033737885
+modifier: Lin Onetwo - 林一二
+tags: 自改TW $:/tags/TextEditor/Snippet
+title: 印章 locator currentTiddler
+tmap.id: d292decf-76d3-4558-acd5-4a93eaf80dc7
+type: text/vnd.tiddlywiki
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />

@@ -1,0 +1,30 @@
+created: 20200330064647667
+creator: Lin Onetwo - 林一二
+modified: 20200409033736566
+modifier: Lin Onetwo - 林一二
+shorttext: 
+tags: 想法
+title: 以前设定的VoiceControl
+tmap.id: 2c6a02e2-78cc-48c4-84fd-aba272c474a8
+type: text/vnd.tiddlywiki
+
+之前 Mac 刚更新 Voice Control 这个功能的时候，我加了如下几个玩：
+
+```
+When I Said: 亲爱的我们看知乎吧
+While Using: Firefox
+Perform: Open Url
+https://www.zhihu.com/follow
+
+When I Said: 开始学习数学
+While Using: Firefox
+Perform: Open Url
+https://www.bilibili.com/video/av27570699/?p=35
+
+When I Said: 狗子给我打开B站
+While Using: Firefox
+Perform: Open Url
+https://www.bilibili.com
+```
+
+不过几个月之后我就忘了这几条命令了

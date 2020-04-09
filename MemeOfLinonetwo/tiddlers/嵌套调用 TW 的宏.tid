@@ -1,0 +1,18 @@
+created: 20190421070821506
+modified: 20200409033737614
+tags: 技术细节
+title: 嵌套调用 TW 的宏
+tmap.id: ec291180-7968-4e99-8f33-7a2b42718245
+type: text/vnd.tiddlywiki
+
+https://bimlas.gitlab.io/tw5-locator/ 给出的调用方法是 `<<locator-view "Ford family">>` 这样，有一个匿名参数。
+
+我希望把 `<<currentTiddler>>` 宏作为其参数，但是根据[[调用宏的文档|https://tiddlywiki.com/static/Concatenating%2520text%2520and%2520variables%2520using%2520macro%2520substitution.html]]，不能直接写 `<<locator-view <<currentTiddler>> >>`。
+
+所以我只好去看 tw5-locator 的源码，在 `$:/plugins/bimlas/locator/view` 里看到发现原来这个匿名参数的定义是 `\define locator-view(baseTitle finalFilter="")` 中的 `baseTitle`。
+
+所以我最后是这样调用的：
+
+```tiddlywiki
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
+```
