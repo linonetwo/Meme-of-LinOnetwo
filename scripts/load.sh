@@ -10,7 +10,7 @@ cat >wiki.plist <<EOF
         <key>ProgramArguments</key>
         <array>
                 <string>/usr/local/bin/node</string>
-                <string>${basepath}/index.js</string>
+                <string>${basepath}/serveAndWatchHTML.js</string>
         </array>
         <key>RunAtLoad</key>
         <true/>

@@ -6,8 +6,13 @@
   "author": "Diamondyuan <admin@diamondyuan.com>",
   "license": "MIT",
   "scripts": {
-    "start": "node index.js",
+    "start:html": "node serveAndWatchHTML.js",
+    "start:nodejs": "tiddlywiki MemeOfLinonetwo --listen",
+    "build:nodejs2html": "tiddlywiki MemeOfLinonetwo --build index",
     "load": "sh scripts/load.sh",
     "unload": "sh scripts/unload.sh"
+  },
+  "dependencies": {
+    "tiddlywiki": "^5.1.21"
   }
 }
