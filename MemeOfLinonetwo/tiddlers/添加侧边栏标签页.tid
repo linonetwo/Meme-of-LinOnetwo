@@ -1,0 +1,16 @@
+created: 20200408101048436
+creator: Lin Onetwo - 林一二
+modified: 20200409033738404
+modifier: Lin Onetwo - 林一二
+tags: 自改TW
+title: 添加侧边栏标签页
+tmap.id: 81ec8517-feff-40ba-a893-85e6188251b1
+type: text/vnd.tiddlywiki
+
+创建一个笔记，给它添加标签 $:/tags/SideBar，这样右侧侧边栏就会多出一个 tab，选中后，展示的内容就是这个 tiddler 的内容了。
+
+如果想控制这个标签出现的位置，需要给它添加 list-before 字段，字段的值是其它 sidebar 的标题。
+
+于是我创建了[[snippet]]，它可以用于[[通过菜单快速添加各种功能块（snippet）]]。
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />

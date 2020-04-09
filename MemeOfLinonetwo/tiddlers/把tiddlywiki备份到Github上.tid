@@ -1,0 +1,16 @@
+created: 20200408072300139
+creator: Lin Onetwo - 林一二
+modified: 20200409033738615
+modifier: Lin Onetwo - 林一二
+tags: 自改TW
+title: 把tiddlywiki备份到Github上
+tmap.id: 442b0d23-3d8e-4259-ae82-2880167850ae
+type: text/vnd.tiddlywiki
+
+Github 是一个有很多自动化工具（例如 GithubActions）、GUI 工具（GithubDesktop）支持的 BaaS （省心存储服务），所以我打算把 tiddlywiki 备份到上面。
+
+我还希望在自己本地桌面上使用的时候，不要老是弹出「This page is asking you to confirm that you want to leave - data you have entered may not be saved.」这个提示框，这和 Notion 等笔记系统就差别很大。
+
+一般笔记系统都是记完一笔就自动保存，然后可以 command+w 关闭窗口，但 tw 还得手动保存一下，让我觉得很不安心，有点渐渐不爱用它记碎片的东西，因为记个碎片还得有这么多步骤，让我觉得很麻烦。
+
+我决定解决它的这个缺陷。

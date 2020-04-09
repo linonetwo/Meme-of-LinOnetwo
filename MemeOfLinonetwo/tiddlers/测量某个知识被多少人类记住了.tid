@@ -1,0 +1,10 @@
+created: 20190502154700757
+modified: 20200409033738416
+tags: 想法
+title: 测量某个知识被多少人类记住了
+tmap.id: 118e0ae6-fa3f-4793-a0ad-610b9d9b94a3
+type: text/vnd.tiddlywiki
+
+Github 的 star 是用来记住某个库，这样以后想搜某个功能的时候可以更精准地在自己 star 过的库列表里面搜索，避免在 Google 上搜到一些无关信息。
+
+为了增强自己的记忆力，所以很多人会去 star 一个库。从这个角度看，star 数量就衡量了学会这个库的概念和 API 的大致人数。

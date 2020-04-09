@@ -1,0 +1,15 @@
+created: 20190504080229268
+modified: 20200409033736704
+tags: 列表整理
+title: Typescript帮我查出的错
+tmap.id: 0c8b8c39-e25b-4b20-975d-ff7e53deea4f
+type: text/vnd.tiddlywiki
+
+1. condition will always return 'true'
+
+(property) IModelProps.currentIndexToLookAt: number | null
+This condition will always return 'true' since the types '{ idx3d: number; err3d: null; }' and 'number | null' have no overlap.ts(2367)
+
+```js
+useBlinking(props.notDetectedPoints.filter(id => id !== props.currentIndexToLookAt).map(({ idx3d }) => idx3d), detectedPointObjects, BLINK_FPS, [0xff4d4d, 0xb30000]);
+```

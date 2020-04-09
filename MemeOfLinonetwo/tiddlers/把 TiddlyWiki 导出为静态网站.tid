@@ -1,0 +1,26 @@
+created: 20190421101713313
+modified: 20200409033737136
+tags: 技术细节
+title: 把 TiddlyWiki 导出为静态网站
+tmap.id: af74577d-7cb6-4987-9660-d146e9413265
+type: text/vnd.tiddlywiki
+
+把 TiddlyWiki 导出为可被搜索引擎收录的网页，让百度等比较落后的搜索引擎也能收录它，并方便做别的 SEO。
+
+在 Git 仓库里直接执行：
+
+```sh
+tiddlywiki --verbose --load ./index.html --rendertiddler $:/core/templates/alltiddlers.template.html alltiddlers.html text/plain
+```
+
+会导出不知为何没有样式的 HTML 文件。
+
+但是 https://tiddlywiki.com/#Generating%20Static%20Sites%20with%20TiddlyWiki 给出的例子里是有样式的啊？
+
+```sh
+tiddlywiki --verbose --load ./index.html  --rendertiddlers [!is[system]] $:/core/templates/static.tiddler.html static text/plain
+tiddlywiki --verbose --load ./index.html  --rendertiddler $:/core/templates/static.template.html static.html text/plain
+tiddlywiki --verbose --load ./index.html  --rendertiddler $:/core/templates/static.template.css static/static.css text/plain
+
+```
+会导出……也没有样式的单个 HTML 文件。

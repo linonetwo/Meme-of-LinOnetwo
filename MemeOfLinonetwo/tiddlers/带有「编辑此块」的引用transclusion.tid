@@ -1,0 +1,37 @@
+created: 20200408094804792
+creator: Lin Onetwo - 林一二
+modified: 20200409033737348
+modifier: Lin Onetwo - 林一二
+tags: $:/tags/Macro 自改TW
+title: 带有「编辑此块」的引用transclusion
+tmap.id: d396e831-1bae-4a8b-a55e-86444f4bc929
+type: text/vnd.tiddlywiki
+
+\define get-tiddler-name(title)
+<$set name="tid" value="$title$">
+  <$list filter="[all[current]title<tid>]">
+    <$link to=<<tid>>>
+      <$view field="name"><$view field="title"/></$view>
+    </$link>
+  </$list>
+</$set>
+\end
+
+\define get-tiddler-source(title)
+<pre><$text text={{$title$}} /></pre>
+\end
+
+\define get-tiddler-field(title field)
+<$set name="fid" value="$field$">
+  <$list variable="fid-val" filter="[[$title$]get<fid>]"><<fid-val>></$list>
+</$set>
+\end
+
+\define reuse-tiddler(title)
+<$macrocall $name="reuse-pane" content="""
+编辑此块：<<get-tiddler-name "$title$">>
+""" />
+
+{{$title$}}
+
+\end
