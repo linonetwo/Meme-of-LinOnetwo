@@ -1,0 +1,55 @@
+created: 20200219074753223
+creator: Lin Onetwo - 林一二
+debug-duration: 40min
+modified: 20200409033736922
+modifier: Lin Onetwo - 林一二
+tags: 反思 Debug 想法
+title: Google不到报错信息的两种情况
+tmap.id: 4839fd80-7e18-4795-a688-b3eb9364dbba
+type: text/vnd.tiddlywiki
+
+我使用 preload script 来在 electron 的主线程和渲染线程之间通信：
+
+preload.js:
+
+```js
+import { contextBridge, ipcRenderer } from 'electron';
+
+contextBridge.exposeInMainWorld('sync', {
+  fromAnkiDB: ankiDBPath => ipcRenderer.invoke('syncFromAnkiDB', ankiDBPath),
+});
+```
+
+handlers.js: 
+
+```js
+// @flow
+import { ipcMain } from 'electron';
+
+import { getAnkiMetadata } from '../../libs/sync/ankiSqliteImporter';
+
+ipcMain.handle(
+  'syncFromAnkiDB',
+  async (event, ankiDBPath: string = '/Users/linonetwo/Library/Application Support/Anki2/林一二/collection.anki2') => {
+    const deskNames = getAnkiMetadata(ankiDBPath);
+    return deskNames;
+  },
+);
+```
+
+但是我写完一大堆代码，志在必得地启动应用后，却收到报错：
+
+```log
+Error invoking remote method "syncFromAnkiDB" No handler registered for "syncFromAnkiDB"
+```
+
+我想，是不是因为我用 babel-register 来在 handlers.js 里使用 import，（这时候我还没把 preload.js 重构成用 import，它还在用 require('electron') ）所以两边引用的是两个不同的 electron 实例？于是我就动手把它也重构成 import 。但是问题还在。
+
+我就想，是不是新版的 electron API 变化了？于是我重装了 electron ，还顺便[[升级了 node-gyp|https://github.com/nodejs/node-gyp/issues/1917#issuecomment-552101171]]，但是问题还在。
+
+我还在网上一直搜，但是就是搜不到关于这条报错的问题。这其实就意味着：
+
+1. 这是最新的 bug，但 electron 最近的更新好像没有提到这方面的 API 变化
+2. 这不是个常见的 bug，一般只出现在用错 API 或者特殊用法上
+
+这时候我把鼠标放在 `ipcRenderer.invoke` 上，tooltip 显示说，我应该用 `ipcMain.handle` 而不是我之前用的 `ipcMain.invoke`！，原来是我用错了 API 呀，两个文件里的 API 要两两配对的！

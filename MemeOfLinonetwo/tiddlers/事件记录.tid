@@ -1,0 +1,12 @@
+created: 20200409023926170
+creator: Lin Onetwo - 林一二
+modified: 20200409033736611
+modifier: Lin Onetwo - 林一二
+tags: Index
+title: 事件记录
+tmap.id: 1836cdc4-e079-446c-8db1-d31a07c1bd71
+type: text/vnd.tiddlywiki
+
+一些手动记录的日记、梦、debug 经历等等，用程序自动记录的事件请不要加这个 tag。
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />

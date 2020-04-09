@@ -1,0 +1,27 @@
+created: 20200217065630004
+creator: Lin Onetwo - 林一二
+modified: 20200409033738175
+modifier: Lin Onetwo - 林一二
+tags: 模因学 想法
+title: 记忆的可提取性和稳定性
+tmap.id: a33b9a96-7e13-4df2-9e8d-6af440c5d632
+type: text/vnd.tiddlywiki
+
+之前看叶峻峣翻译的[[05 1988：记忆的两个组成成分|https://zhuanlan.zhihu.com/p/99505568]] 了解到 SuperMemo 认为长期记忆的状态可以用「稳定性 stability」和「可提取性 retrievability」两个维度来描述。
+
+在 SuperMemo 的 Wiki [[supermemo.guru/wiki/Retrievability|supermemo.guru/wiki/Retrievability]] 里也有相应的实验数据图示：
+
+[img[在记忆钟中，可提取性随时间降低|https://supermemo.guru/images/thumb/5/5a/Forgettingcurve.jpg/1200px-Forgettingcurve.jpg]]
+
+两个维度的关系在于：
+
+[img[记忆曲线中，竖轴为可提取性，横轴为稳定性|https://pic3.zhimg.com/v2-af6fb96971918714ef1d4a6af01557bf_r.jpg]]
+
+在 溪五七七C57 翻译的[[MIT诺奖大牛2万字雄文：记忆的本质|https://zhuanlan.zhihu.com/p/101491407]]中也提到：
+
+
+<<<
+印迹可能会损坏，从而使记忆永远丧失。但是，印迹也可能暂时无法访问，此时该印迹仍然存在，但无法通过自然方式提取。沉默的印迹，不能通过自然提取线索激活，但可以通过直接光遗传学刺激提取到。
+<<<
+
+这可能说明，可提取性低意味着印迹沉默了，但这个记忆依然是稳定的。
