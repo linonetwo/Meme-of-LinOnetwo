@@ -16,8 +16,5 @@
   },
   "dependencies": {
     "tiddlywiki": "^5.1.21"
-  },
-  "devDependencies": {
-    "gh-pages": "^2.2.0"
   }
 }
