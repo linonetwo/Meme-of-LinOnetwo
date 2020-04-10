@@ -1,6 +1,6 @@
 created: 20200408094804792
 creator: Lin Onetwo - 林一二
-modified: 20200410142923317
+modified: 20200410152104711
 modifier: Lin Onetwo - 林一二
 tags: $:/tags/Macro 自改TW
 title: macro 带有「编辑此块」的引用transclusion
@@ -36,29 +36,9 @@ type: text/vnd.tiddlywiki
 </div>
 \end
 
-\define get-tiddler-name(title)
-<$set name="tid" value="$title$">
-  <$list filter="[all[current]title<tid>]">
-    <$link to=<<tid>>>
-      <$view field="name"><$view field="title"/></$view>
-    </$link>
-  </$list>
-</$set>
-\end
-
-\define get-tiddler-source(title)
-<pre><$text text={{$title$}} /></pre>
-\end
-
-\define get-tiddler-field(title field)
-<$set name="fid" value="$field$">
-  <$list variable="fid-val" filter="[[$title$]get<fid>]"><<fid-val>></$list>
-</$set>
-\end
-
 \define reuse-tiddler(title)
 <$macrocall $name="reuse-pane" content="""
-编辑引文：[[Draft of '<<get-tiddler-name "$title$">>']]
+查看引文：[[$title$]]
 """ />
 
 {{$title$}}
