@@ -1,8 +1,8 @@
 created: 20150319034848355
-modified: 20200409033736762
-tags: $:/tags/Macro
+modified: 20200409141143876
+tags: 自改TW $:/tags/Macro
 title: Table Macros
-tmap.id: e893ed25-8ddf-4a68-80d8-81a1b85a5c59
+tmap.id: a43de2e3-774f-4c3d-9c8a-154a4a1311d0
 type: text/vnd.tiddlywiki
 
 \define TableWizardDisplayTableDummyMacro()

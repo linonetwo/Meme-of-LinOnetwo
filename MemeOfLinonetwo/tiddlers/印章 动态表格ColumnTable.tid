@@ -1,0 +1,9 @@
+caption: 动态表格 每列一个tiddler 行是字段
+created: 20200409142957012
+modified: 20200409143210374
+tags: $:/tags/TextEditor/Snippet [[Table Macros]]
+title: 印章 动态表格ColumnTable
+tmap.id: ab9a01f4-c089-4661-8dbf-549bd0c83958
+type: text/vnd.tiddlywiki
+
+<<ColumnTable "[tag[Column Data]]" "field-filter">>
