@@ -1,0 +1,22 @@
+created: 20200410125639417
+modified: 20200410132236437
+tags: Datalog 想法 元学习
+title: Datalog的用处
+tmap.id: b8ccf26d-85db-454b-850e-82c9d38e8776
+type: text/vnd.tiddlywiki
+
+如果在 tiddlywiki 里可以用 datalog 或是其他描述知识的语言，我能怎么用它呢？
+
+其实一个 tiddler 就是一个 JSON-LD 对象，title 是 @id ，然后可以添加很多个字段。如果在里面用 datascript、N3 等描述语言，可能也就是把 title 看做 @graph 吧，然后可以在图里面加任意的四元组、三元组。
+
+但是如果我在 TiddlyWiki 里描述知识了，它能怎么服务于我的生活、学习和开发呢？
+
+在生活上，我以前设想过简单的场景：
+
+<<reuse-tiddler "内裤管理系统">>
+
+但是我暂时还想不到其他在生活上的用处。
+
+如果服务于学习，TiddlyWiki 最大的用处是作为知识库，作为 Single-Source of Truth，然后导出到 Anki 里，利用<$macrocall $name=列表转句子宏 text={{学习的规律}} />等方法来学会它们。
+
+如果服务于开发，可能的确可以用一个 Graph 来记录某个项目里的计划（但已经有看板了）、debug 的心路历程、某个函数的用处（其实应该用注释，而不是把 TW 当文式编程工具）。但怎么对这些知识进行推理呢？是否会有一个类似 eslint 这样插件化的工具，来提供各种规则，匹配我录入的各种知识，发现一些有「坏味道」的行为习惯呢？但 eslint 我也从没有自己写过规则，那太耗时间了，规则都是来自于大公司（例如 palantir、Facebook）的开发者，而我没听说过推理机有什么规则市场。

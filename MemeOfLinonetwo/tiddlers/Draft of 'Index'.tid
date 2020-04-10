@@ -1,0 +1,37 @@
+created: 20190419034125236
+creator: Lin Onetwo - 林一二
+draft.of: Index
+draft.title: Index
+modified: 20200410144315157
+modifier: Lin Onetwo - 林一二
+tags: tiddlywiki
+title: Draft of 'Index'
+tmap.id: 4380dc9b-67a8-4b2e-a191-40d6b2a249b3
+type: text/vnd.tiddlywiki
+
+{{快速创建新笔记按钮}}
+
+---
+这个知识库主要用于存放林一二偶遇的文字模因，也作为探索过程中堆放待整理的在线内容的目录。
+
+主要关于[[模因学]]、存储各种[[小说点子]]、挖[[工具设计]]的坑。
+
+本知识库部署在 [[Github|https://github.com/linonetwo/Meme-of-LinOnetwo]] 上，有想评论的内容可以在这个仓库里发 issue 。
+
+---
+
+<<reuse-tiddler "tiddlywiki">>
+
+---
+
+我的其他资源如下：
+
+<$macrocall $name=列表转句子宏 text={{我的其他资源库}} />
+
+---
+
+{{如何加速访问这个 Wiki}}
+
+---
+
+<<reuse-tiddler "没加 Tag 的笔记">>
