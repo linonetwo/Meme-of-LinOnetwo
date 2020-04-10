@@ -1,6 +1,6 @@
 created: 20190522140738988
 creator: Lin Onetwo - 林一二
-modified: 20200409033738578
+modified: 20200410083252949
 modifier: Lin Onetwo - 林一二
 tags: 列表整理
 title: 智能音箱的使用场景
@@ -12,4 +12,3 @@ type: text/vnd.tiddlywiki
 # 洗澡的时候记下易逝的灵感（因为这时没法操作其他电子设备）
 # 洗澡的时候问问题（比如我经常在洗澡的时候想拿起手机查黑眼圈的生物学原理）
 # 作为[[脚本管理器|https://onetwo.ren/Alfred%E7%9A%84%E5%85%8D%E8%B4%B9%E5%BC%80%E6%BA%90%E6%9B%BF%E4%BB%A3%E5%93%81Zazu/]]调用第三方 API（把本来繁琐的加入 Anki 背诵的操作变成一句话）
-=
