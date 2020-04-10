@@ -9,6 +9,7 @@ const wikiFolderName = require('./package.json').name
 const projectFolder = path.dirname(__filename);
 const tiddlyWikiFolder = path.join(projectFolder, wikiFolderName);
 const commitScriptPath = path.resolve(projectFolder, 'scripts', 'commit.sh');
+const buildHTMLScriptPath = path.resolve(projectFolder, 'scripts', 'buildHTML.sh');
 
 $tw.boot.argv = [tiddlyWikiFolder, '--listen', `port=${tiddlyWikiPort}`];
 
@@ -37,8 +38,9 @@ const commitEveryHalfHour = debounce(() => {
 }, (1000 * 3600) / 2);
 const buildHTMLEveryMinute = debounce(() => {
   console.log('building HTML');
-  execSync(`cd ${projectFolder} && npm run build:nodejs2html`, () => {});
-}, 1000 * 60);
+  execSync(`/bin/sh ${commitScriptPath}`, () => {});
+  // execSync(`/bin/sh ${buildHTMLScriptPath}`, () => {});
+}, 1000);
 
 fs.watch(
   tiddlyWikiFolder,

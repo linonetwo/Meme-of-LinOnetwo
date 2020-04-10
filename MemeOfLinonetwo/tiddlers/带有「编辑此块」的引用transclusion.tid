@@ -1,11 +1,17 @@
 created: 20200408094804792
 creator: Lin Onetwo - 林一二
-modified: 20200409033737348
+modified: 20200410023727282
 modifier: Lin Onetwo - 林一二
 tags: $:/tags/Macro 自改TW
 title: 带有「编辑此块」的引用transclusion
 tmap.id: d396e831-1bae-4a8b-a55e-86444f4bc929
 type: text/vnd.tiddlywiki
+
+\define reuse-pane(content)
+<div style="display:flex;justify-content:flex-end;">
+  <small style="display:inline-block;background-color:lavender;border-left:3px solid slateblue;padding-left:5px;">$content$</small>
+</div>
+\end
 
 \define get-tiddler-name(title)
 <$set name="tid" value="$title$">

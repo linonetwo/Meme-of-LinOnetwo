@@ -1,6 +1,6 @@
 created: 20200408084953101
 creator: Lin Onetwo - 林一二
-modified: 20200409033737364
+modified: 20200409141244322
 modifier: Lin Onetwo - 林一二
 tags: tiddlywiki 自改TW
 title: 已安装的插件
@@ -13,7 +13,7 @@ type: text/vnd.tiddlywiki
 
 [[tw5-kin-filter|https://bimlas.gitlab.io/tw5-kin-filter/]] 在 Tag 网络上搜索。在 TW 上，Tag 是指向另一个 Tiddler 的有向边，所以通过加 Tag 可以构造出有向图来，进而在图上搜索
 
-[[DynamicTables|https://ooktech.com/jed/ExampleWikis/DynamicTables/]] 自动整理表格
+[[DynamicTables|https://ooktech.com/jed/ExampleWikis/DynamicTables/]] 自动整理表格，这个不是插件，是轻量的宏列表，导入为[[Table Macros]]
 
 [[tiddlymap|http://tiddlymap.org/]] 把笔记作为脑图的节点，是轻量级的 TheBrain 软件
 
