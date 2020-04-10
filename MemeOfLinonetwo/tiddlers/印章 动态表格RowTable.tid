@@ -1,0 +1,9 @@
+caption: 动态表格 每行一个tiddler 列是字段
+created: 20200409142456648
+modified: 20200409143208416
+tags: $:/tags/TextEditor/Snippet [[Table Macros]]
+title: 印章 动态表格RowTable
+tmap.id: dc2e0cfe-48ea-4c8a-8707-e2c5484d0a6e
+type: text/vnd.tiddlywiki
+
+<<RowTable "[tag[Column Data]]" "field-filter">>
