@@ -1,6 +1,6 @@
 created: 20200408094804792
 creator: Lin Onetwo - 林一二
-modified: 20200410042008318
+modified: 20200410070433524
 modifier: Lin Onetwo - 林一二
 tags: $:/tags/Macro 自改TW
 title: macro 带有「编辑此块」的引用transclusion
@@ -8,8 +8,29 @@ tmap.id: d396e831-1bae-4a8b-a55e-86444f4bc929
 type: text/vnd.tiddlywiki
 
 \define reuse-pane(content)
-<div style="display:flex;justify-content:flex-end;">
-  <small style="display:inline-block;background-color:lavender;border-left:3px solid slateblue;padding-left:5px;">$content$</small>
+<style>
+.reuse-pane {
+	position: absolute;
+	right: 10px;
+	width: 4px;
+	height: 1.5em;
+	overflow: hidden;
+	border: 10px solid transparent;
+	border-top: 0;
+	box-sizing: content-box;
+}
+.reuse-pane:hover {
+	width: fit-content;
+}
+.reuse-pane-content {
+	display: inline-block;
+	background-color: lavender;
+	border-left: 4px solid slateblue;
+	padding: 0px 5px;
+}
+</style>
+<div class="reuse-pane">
+  <small class="reuse-pane-content">$content$</small>
 </div>
 \end
 
