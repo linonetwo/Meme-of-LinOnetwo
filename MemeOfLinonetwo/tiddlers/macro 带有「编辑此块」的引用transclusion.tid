@@ -1,6 +1,6 @@
 created: 20200408094804792
 creator: Lin Onetwo - 林一二
-modified: 20200410072010131
+modified: 20200410142923317
 modifier: Lin Onetwo - 林一二
 tags: $:/tags/Macro 自改TW
 title: macro 带有「编辑此块」的引用transclusion
@@ -12,16 +12,17 @@ type: text/vnd.tiddlywiki
 .reuse-pane {
 	position: absolute;
 	right: 10px;
-	width: 4px;
+	width: auto;
+	max-width: 4px;
 	height: 1.5em;
 	overflow: hidden;
 	border: 10px solid transparent;
 	border-top: 0;
 	box-sizing: content-box;
+	transition: max-width 0.5s;
 }
 .reuse-pane:hover {
-  width: max-content;
-	width: fit-content;
+  max-width: 80vw;
 }
 .reuse-pane-content {
 	display: inline-block;
@@ -57,7 +58,7 @@ type: text/vnd.tiddlywiki
 
 \define reuse-tiddler(title)
 <$macrocall $name="reuse-pane" content="""
-编辑此块：<<get-tiddler-name "$title$">>
+编辑引文：[[Draft of '<<get-tiddler-name "$title$">>']]
 """ />
 
 {{$title$}}
