@@ -38,15 +38,14 @@ const commitEveryHalfHour = debounce(() => {
 }, (1000 * 3600) / 2);
 const buildHTMLEveryMinute = debounce(() => {
   console.log('building HTML');
-  execSync(`/bin/sh ${commitScriptPath}`, () => {});
-  // execSync(`/bin/sh ${buildHTMLScriptPath}`, () => {});
-}, 1000);
+  execSync(`/bin/sh ${buildHTMLScriptPath} ${tiddlyWikiFolder}`, () => {});
+}, 1000 * 60);
 
 fs.watch(
   tiddlyWikiFolder,
   { recursive: true },
   debounce((_, fileName) => {
-    if (fileName === 'output') return;
+    if (['output'].includes(fileName)) return;
     console.log(`${fileName} change`);
 
     buildHTMLEveryMinute();
