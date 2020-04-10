@@ -1,0 +1,38 @@
+created: 20200410074926942
+modified: 20200410080325559
+tags: 自改TW
+title: 无操作后定时刷新TiddlyWiki
+tmap.id: 29f34eaf-2899-4a3d-bc59-356337a4cd8b
+type: text/vnd.tiddlywiki
+
+由于我在多开同一 NodeJS TiddlyWiki 实例时遇到的[[问题|https://github.com/Jermolene/TiddlyWiki5/issues/4548]]，我不得不用 WebCatalog 的 JS Code Injection 功能来注入如下的代码，在一分钟无操作后就自动刷新页面。
+
+在主 Wiki App 上，我把 RELOAD_INTERVAL 改到了 6 小时。顶部目录栏的小 App 则是一分钟。
+
+我还加入了刚启动系统时，如果服务器还没启动，就不断刷新，直到服务器启动提供了内容为止。
+
+```js
+const RELOAD_INTERVAL = 1000 * 60;
+const CHECK_ACTIVITY_INTERVAL = 1000 * 3;
+
+let time = new Date().getTime();
+
+const refreshTime = () => {
+  time = new Date().getTime();
+};
+document.addEventListener('keyup', refreshTime);
+document.addEventListener('mousemove', refreshTime);
+document.addEventListener('mouseup', refreshTime);
+
+function refresh() {
+	const serverNotStarted = !document || document.querySelector('.tc-site-title') === null;
+	const notActivatedForLong = new Date().getTime() - time >= RELOAD_INTERVAL;
+  if (serverNotStarted || notActivatedForLong) {
+    window.location.reload(true);
+  } else {
+    setTimeout(refresh, CHECK_ACTIVITY_INTERVAL);
+  }
+}
+
+setTimeout(refresh, CHECK_ACTIVITY_INTERVAL);
+```
