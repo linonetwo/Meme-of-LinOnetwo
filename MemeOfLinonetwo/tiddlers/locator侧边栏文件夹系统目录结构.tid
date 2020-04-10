@@ -1,11 +1,11 @@
-caption: Folders
+caption: 目录结构
 created: 20200408135222925
 creator: Lin Onetwo - 林一二
-modified: 20200409033736835
+modified: 20200410055527621
 modifier: Lin Onetwo - 林一二
 tags: 自改TW $:/tags/SideBar
-title: locator sidebar widget
-tmap.id: 6931b2cc-4531-49e1-a461-b37e7796cd61
+title: locator侧边栏文件夹系统目录结构
+tmap.id: 89c66e50-1a73-40d9-a4d4-f9b08ce14647
 type: text/vnd.tiddlywiki
 
 <<locator-view baseTitle:"Index">>
