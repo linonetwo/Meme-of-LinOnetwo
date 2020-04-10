@@ -7,7 +7,7 @@ const tiddlyWikiPort = require('./package.json').port;
 const wikiFolderName = require('./package.json').name
 
 const projectFolder = path.dirname(__filename);
-const tiddlyWikiFolder = path.join(__dirname, wikiFolderName);
+const tiddlyWikiFolder = path.join(projectFolder, wikiFolderName);
 const commitScriptPath = path.resolve(projectFolder, 'scripts', 'commit.sh');
 
 $tw.boot.argv = [tiddlyWikiFolder, '--listen', `port=${tiddlyWikiPort}`];
