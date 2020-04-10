@@ -16,6 +16,10 @@ cat >wiki.plist <<EOF
         <true/>
         <key>KeepAlive</key>
         <true/>
+        <key>StandardErrorPath</key>
+        <string>/tmp/installNodeJSWatcher.err</string>
+        <key>StandardOutPath</key>
+        <string>/tmp/installNodeJSWatcher.out</string>
 </dict>
 </plist>
 EOF
