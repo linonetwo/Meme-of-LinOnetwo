@@ -1,6 +1,6 @@
 created: 20200408084953101
 creator: Lin Onetwo - 林一二
-modified: 20200409141244322
+modified: 20200410161414927
 modifier: Lin Onetwo - 林一二
 tags: tiddlywiki 自改TW
 title: 已安装的插件
@@ -20,3 +20,17 @@ type: text/vnd.tiddlywiki
 [[TW5-EncryptTiddlerPlugin|https://danielorodriguez.com/TW5-EncryptTiddlerPlugin/]] 可以加密单个 tiddler
 
 [[TW-Favorites|https://kookma.github.io/TW-Favorites/]] 可以快速把 tiddler 添加到收藏夹里
+
+[[Utility|https://kookma.github.io/TW-Utility/#Utility%20Tutorial]] 一些 Macro 的合集，我可能得把它们加到印章里，不然我可记不住它们
+
+[[Trashbin|https://kookma.github.io/TW-Trashbin/]] 防止误删，算是多一层保险吧，虽然已经有 Git 了，但是在 SoLiD 版里可能用得上
+
+[[TodoList|https://kookma.github.io/TW-Todolist/]] 智能化、强大筛选功能的待办清单，可能得打开隐私加密功能我才能用它，适合存储大量挖了不填的坑
+
+[[Timelines|https://kookma.github.io/TW-Timelines/]] 各种美观的时间轴，适合用来做展示。可惜是纯展示的，不能像 Google Calendar 一样用
+
+!! 已安装的插件市场
+
+原来 TiddlyWiki 还能开分布式的插件市场啊。
+
+[[KookmaPluginLibrary|https://kookma.github.io/TW-Trashbin/#%24%3A%2Fconfig%2FKookmaPluginLibrary]] 里面有回收站、Todoist 等插件，都是他个人开发维护的。
