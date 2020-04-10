@@ -1,0 +1,30 @@
+created: 20200409082008624
+modified: 20200409090827544
+tags: TW运维
+title: 制作桌面版 TiddlyWiki App
+tmap.id: 26739503-3015-44a9-8556-cda45fcb89c7
+type: text/vnd.tiddlywiki
+
+!! Chrome
+ 
+# 使用 Chrome 打开本地 TiddlyWiki
+# 在菜单的 「MoreTools」 里面，选择 「Create Shortcut…」
+# 在弹出的对话框里勾选「open as window」
+
+如此即可创建一个外框简约的桌面应用，会默认使用网站的 favicon 作为图标，这个图标修改起来比较麻烦。
+
+缺点是需要在后台开启 Chrome 才能用，而我是开放的 Firefox 的用户（支持互联网发展）。
+
+!! WebCatalog
+
+使用 [[WebCatalog|https://webcatalogapp.com/]]，可以把本地的 TiddlyWiki 变成一个 App，更有笔记应用的感觉。创建应用时可以选择一个图标，我就搜了一下官方 TiddlyWiki 的图标。
+
+而且还可以再创建一个同样的应用，然后在设置里勾选「attached to menu bar」，从而创建一个垂下来的快捷工具。
+
+{{webcatalog-tiddlywiki-menu-app.jpeg}}
+
+缺点是 WebCatalog 免费版只能创建两个应用，从第三个开始得付费，大约 111 CNY 左右。我一直用它做桌面版的 Google Calendar 和 Gmail ，感觉是值这个价格的。
+
+---
+
+有了桌面版 TiddlyWiki 后，搭配[[本地启动的 NodeJS 版的 TW|开机启动TiddlyWiki服务器并自动同步到Github]]提供的自动同步，感觉能初步替代 Notion 了。
