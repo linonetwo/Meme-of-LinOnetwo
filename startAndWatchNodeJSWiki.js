@@ -16,7 +16,7 @@ const frequentlyChangedFileThatShouldBeIgnoredFromWatch = [
   'tiddlers/$__plugins_felixhayashi_tiddlymap_misc_defaultViewHolder.tid',
 ];
 
-$tw.boot.argv = [tiddlyWikiFolder, '--listen', `port=${tiddlyWikiPort}`];
+$tw.boot.argv = [tiddlyWikiFolder, '--listen', `port=${tiddlyWikiPort}`, 'root-tiddler=$:/core/save/lazy-images'];
 
 $tw.boot.boot();
 
