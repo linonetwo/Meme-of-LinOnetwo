@@ -1,0 +1,10 @@
+created: 20200410152132903
+modified: 20200410152238223
+tags: 工具设计 tiddlywiki
+title: 要是有个右键菜单就好了
+tmap.id: 259dbc25-0563-4978-af4d-ff73f09699c2
+type: text/vnd.tiddlywiki
+
+在 TiddlyWiki 里，有各种引用，还有按钮都可能是自定义的。
+
+要是能通过邮件菜单来打开某个按钮或者引用的原文就好了，这样就能很方便地修改它了。
