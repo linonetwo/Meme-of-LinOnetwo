@@ -35,3 +35,7 @@ In `now.json` there is config for deployment, see (zeit.co)[https://zeit.co/home
 [scripts/installNodeJSWatcher.sh](scripts/installNodeJSWatcher.sh) will be executed by npm script `npm run install:nodeJSWatcher`
 
 [scripts/uninstall.sh](scripts/uninstall.sh) will be executed by npm script `npm run uninstall`
+
+## Credit
+
+Scripts are inspired by [DiamondYuan/wiki](https://github.com/DiamondYuan/wiki)
