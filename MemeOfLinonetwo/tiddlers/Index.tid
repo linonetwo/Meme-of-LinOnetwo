@@ -1,7 +1,7 @@
 color: #cbcbcb
 created: 20190419034125236
 creator: Lin Onetwo - 林一二
-modified: 20200411142630917
+modified: 20200411145132135
 modifier: 林一二
 tags: tiddlywiki
 title: Index
@@ -31,7 +31,7 @@ type: text/vnd.tiddlywiki
 
 ---
 
-{{如何加速访问这个 Wiki}}
+<<reuse-tiddler "如何加速访问这个 Wiki">>
 
 ---
 
