@@ -9,7 +9,6 @@ const wikiFolderName = require('./package.json').name;
 const projectFolder = path.dirname(__filename);
 const tiddlyWikiFolder = path.join(projectFolder, wikiFolderName);
 const commitScriptPath = path.resolve(projectFolder, 'scripts', 'commit.sh');
-const buildHTMLScriptPath = path.resolve(projectFolder, 'scripts', 'buildHTML.sh');
 const frequentlyChangedFileThatShouldBeIgnoredFromWatch = [
   'output',
   'tiddlers/$__StoryList.tid',
@@ -41,10 +40,6 @@ const commitEveryHalfHour = debounce(() => {
   console.log('pushing to Git');
   execSync(`/bin/sh ${commitScriptPath}`, () => {});
 }, (1000 * 3600) / 2);
-const buildHTMLEveryMinute = debounce(() => {
-  console.log('building HTML');
-  execSync(`/bin/sh ${buildHTMLScriptPath} ${tiddlyWikiFolder}`, () => {});
-}, 1000 * 60);
 
 fs.watch(
   tiddlyWikiFolder,
@@ -55,7 +50,6 @@ fs.watch(
     }
     console.log(`${fileName} change`);
 
-    buildHTMLEveryMinute();
     commitEveryHalfHour();
   }, 100)
 );
