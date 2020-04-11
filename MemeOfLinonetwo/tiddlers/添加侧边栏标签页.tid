@@ -1,6 +1,6 @@
 created: 20200408101048436
 creator: Lin Onetwo - 林一二
-modified: 20200409033738404
+modified: 20200411091332383
 modifier: Lin Onetwo - 林一二
 tags: 自改TW
 title: 添加侧边栏标签页
@@ -11,6 +11,6 @@ type: text/vnd.tiddlywiki
 
 如果想控制这个标签出现的位置，需要给它添加 list-before 字段，字段的值是其它 sidebar 的标题。
 
-于是我创建了[[snippet]]，它可以用于[[通过菜单快速添加各种功能块（snippet）]]。
+于是我创建了[[更多文本片段]]，它可以用于[[通过菜单快速添加各种功能块（snippet）]]。
 
 <$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
