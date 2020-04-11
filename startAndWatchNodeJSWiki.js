@@ -39,9 +39,9 @@ function debounce(func, wait, immediate) {
 
 const commitEveryHalfHour = debounce(() => {
   try {
-    execSync(`/usr/local/bin/zsh ${commitScriptPath}`);
-    console.log(`Sync to Git: ${syncScriptPath} ${projectFolder}`);
-    execSync(`/usr/local/bin/zsh ${syncScriptPath}`, { cwd: projectFolder });
+    execSync(`/bin/sh ${commitScriptPath}`);
+    console.log(`Sync to Git: /bin/sh ${syncScriptPath} under ${projectFolder}`);
+    execSync(`/bin/sh ${syncScriptPath}`, { cwd: projectFolder });
   } catch (error) {
     console.error('Sync failed');
     console.error(error);
