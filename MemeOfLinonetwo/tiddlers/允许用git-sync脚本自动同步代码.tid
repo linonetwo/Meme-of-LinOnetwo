@@ -1,0 +1,26 @@
+created: 20200411142633739
+keywords: git git-sync shell
+modified: 20200411143001872
+responder: Simon Thum
+tags: TW运维 solution
+title: 允许用git-sync脚本自动同步代码
+tmap.id: 256f9149-2e3d-42e9-8588-7507795d522e
+type: text/vnd.tiddlywiki
+url: https://github.com/simonthum/git-sync
+
+在运行 git-sync 的时候，一开始还没法执行成功，我从 stderr 中发现它说：
+
+```shell
+git-sync: Please use
+
+git-sync:   git config --bool branch.master.sync true
+
+git-sync: to whitelist branch master for synchronization.
+git-sync: Branch master has to have a same-named remote branch
+git-sync: for git-sync to work.
+
+git-sync: (If you don't know what this means, you should change that
+git-sync: before relying on this script. You have been warned.)
+```
+
+所以可能在配置这个仓库的自动同步之前得先执行一次 `git config --bool branch.master.sync true`
