@@ -8,10 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "npm run build:nodejs2html",
-    "start:html": "node serveAndWatchHTML.js",
     "start:nodejs": "tiddlywiki MemeOfLinonetwo --listen",
     "build:nodejs2html": "tiddlywiki MemeOfLinonetwo --build index && mkdir -p ./public && mv ./MemeOfLinonetwo/output/index.html ./public/index.html && rm -r ./MemeOfLinonetwo/output",
-    "install:htmlWatcher": "sh scripts/installHTMLWatcher.sh",
     "install:nodeJSWatcher": "sh scripts/installNodeJSWatcher.sh",
     "uninstall": "sh scripts/uninstall.sh"
   },
