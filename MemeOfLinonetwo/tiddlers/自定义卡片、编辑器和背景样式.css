@@ -11,6 +11,21 @@ body.tc-body {
 	background: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(10px);
 }
+/** 编辑器工具栏浮动 */
+.tc-editor-toolbar {
+	position: sticky;
+	z-index: 499;
+	top: 39px;
+	background: rgba(255, 255, 255, 0.5);
+	backdrop-filter: blur(10px);
+}
+/** 下拉列表当前鼠标悬浮状态的颜色 */
+.tc-block-dropdown a {
+	transition: background-color 0.2s;
+}
+.tc-block-dropdown a:hover {
+	background-color: #EEEEEE;
+}
 /** 去掉预览除了左边框的边框 */
 .tc-tiddler-preview-preview {
 	border: none;

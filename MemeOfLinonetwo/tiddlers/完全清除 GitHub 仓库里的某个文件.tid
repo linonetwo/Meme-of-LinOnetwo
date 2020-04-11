@@ -1,0 +1,17 @@
+created: 20200411114614144
+keywords: git
+modified: 20200411120804476
+responder: help.github.com
+tags: TW运维 solution
+title: 完全清除 GitHub 仓库里的某个文件
+tmap.id: 82737416-076f-43e3-9501-e69478f50d58
+type: text/vnd.tiddlywiki
+url: https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository#purging-a-file-from-your-repositorys-history
+
+下载 bfg，然后按着提示操作就好了：
+
+```shell
+brew install bfg
+bfg --delete-files index.html
+git reflog expire --expire=now --all && git gc --prune=now --aggressive # suggestd by bfg
+```
