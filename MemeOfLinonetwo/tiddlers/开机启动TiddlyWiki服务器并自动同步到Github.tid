@@ -1,5 +1,5 @@
 created: 20200409070239801
-modified: 20200409071304577
+modified: 20200411123305659
 tags: TW运维
 title: 开机启动TiddlyWiki服务器并自动同步到Github
 tmap.id: 25dd6041-fcd3-48d1-9375-26b9d9303d70
@@ -7,7 +7,9 @@ type: text/vnd.tiddlywiki
 
 我在[[linonetwo/Meme-of-LinOnetwo|https://github.com/linonetwo/Meme-of-LinOnetwo]]里面写了[[startAndWatchNodeJSWiki.js|https://github.com/linonetwo/Meme-of-LinOnetwo/blob/master/startAndWatchNodeJSWiki.js]]来自动检测 NodeJS 版 TiddlyWiki 文件夹的变动。
 
-发生变化后，会等待 30 分钟，如果这段时间都没有新的变化，则自动提交一个 git commit，并 push 到 Github。同时还会每分钟自动打包一个 HTML 版的 index.html 用于 Github Pages 的展示。
+发生变化后，会等待 30 分钟，如果这段时间都没有新的变化，则自动提交一个 git commit，并 push 到 Github。
+
+在[[旧版|https://github.com/linonetwo/Meme-of-LinOnetwo/blob/e2a986471d2eeece07be35c939f77b91752a2b6f/startAndWatchNodeJSWiki.js#L44]]里还会每分钟自动打包一个 HTML 版的 index.html 用于 Github Pages 的展示。
 
 如此一来，本地就可以享受 NodeJS 版 Wiki 的快速自动保存，而网上也能看到部署在 https://onetwo.ren/Meme-of-LinOnetwo/ 的在线版本了。
 
