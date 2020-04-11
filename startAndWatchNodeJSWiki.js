@@ -40,7 +40,7 @@ function debounce(func, wait, immediate) {
 const commitEveryHalfHour = debounce(() => {
   execSync(`/bin/sh ${commitScriptPath}`, () => {});
   console.log(`Sync to Git: ${syncScriptPath} ${projectFolder}`);
-  execSync(`/bin/sh ${syncScriptPath} ${projectFolder}`, () => {});
+  execSync(`cd ${projectFolder} && /bin/sh ${syncScriptPath}`, () => {});
 }, (1000 * 3600) / 2);
 
 fs.watch(
