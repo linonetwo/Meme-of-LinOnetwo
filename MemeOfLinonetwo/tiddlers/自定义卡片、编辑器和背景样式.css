@@ -1,10 +1,10 @@
 /** 背景 */
 body.tc-body {
-	background-color: unset;
+	background-color: white;
 }
 /** 给卡片加上阴影 */
 .tc-tiddler-frame {
-	box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
+	box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 5px 1px, rgba(15, 15, 15, 0.1) 0px 2px 10px;
 }
 /** 顶部标题栏半透明 */
 .tc-tiddler-title {
