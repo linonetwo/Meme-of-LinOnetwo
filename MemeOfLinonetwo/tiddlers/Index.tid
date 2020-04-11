@@ -1,7 +1,7 @@
 created: 20190419034125236
 creator: Lin Onetwo - 林一二
-modified: 20200411074830880
-modifier: Lin Onetwo - 林一二
+modified: 20200411093102104
+modifier: 林一二
 tags: tiddlywiki
 title: Index
 tmap.id: 4380dc9b-67a8-4b2e-a191-40d6b2a249b3
@@ -10,7 +10,7 @@ type: text/vnd.tiddlywiki
 <<reuse-tiddler "快速创建新笔记按钮">>
 
 ---
-这个知识库主要用于存放林一二偶遇的文字模因，也作为探索过程中堆放待整理的在线内容的目录。
+这个知识库主要用于存放[[林一二]]偶遇的文字模因，也作为探索过程中堆放待整理的在线内容的目录。
 
 主要关于[[模因学]]、存储各种[[小说点子]]、挖[[工具设计]]的坑。
 
