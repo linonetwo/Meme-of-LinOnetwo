@@ -1,6 +1,6 @@
 created: 20200331114825755
 creator: Lin Onetwo - 林一二
-modified: 20200410054745617
+modified: 20200411072545866
 modifier: Lin Onetwo - 林一二
 tags: 模因学 产品设计 想法
 title: 自动从Wiki图论结构中生成Tag
@@ -31,6 +31,6 @@ type: text/vnd.tiddlywiki
 
 2020-04-09
 
-我仔细看了 tw5-locator 的 [[readme|$:/plugins/bimlas/locator/README/macros]]，发现我之前漏了它说的一些步骤。它并不会自动安装所有功能，比如[[在wiki中使用虚拟文件夹]]。
+我仔细看了 tw5-locator 的 [[readme|$:/plugins/bimlas/locator/README/macros]]，发现我之前漏了它说的一些步骤。它并不会自动安装所有功能，比如[[在 TiddlyWiki 中使用虚拟文件夹]]。
 
 这个功能好像就足够完成我之前设想的「多一种检索方法」了。

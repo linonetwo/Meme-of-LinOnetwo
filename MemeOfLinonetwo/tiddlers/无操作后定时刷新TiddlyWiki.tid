@@ -1,5 +1,5 @@
 created: 20200410074926942
-modified: 20200410080325559
+modified: 20200411071343064
 tags: 自改TW
 title: 无操作后定时刷新TiddlyWiki
 tmap.id: 29f34eaf-2899-4a3d-bc59-356337a4cd8b
@@ -11,28 +11,4 @@ type: text/vnd.tiddlywiki
 
 我还加入了刚启动系统时，如果服务器还没启动，就不断刷新，直到服务器启动提供了内容为止。
 
-```js
-const RELOAD_INTERVAL = 1000 * 60;
-const CHECK_ACTIVITY_INTERVAL = 1000 * 3;
-
-let time = new Date().getTime();
-
-const refreshTime = () => {
-  time = new Date().getTime();
-};
-document.addEventListener('keyup', refreshTime);
-document.addEventListener('mousemove', refreshTime);
-document.addEventListener('mouseup', refreshTime);
-
-function refresh() {
-	const serverNotStarted = !document || document.querySelector('.tc-site-title') === null;
-	const notActivatedForLong = new Date().getTime() - time >= RELOAD_INTERVAL;
-  if (serverNotStarted || notActivatedForLong) {
-    window.location.reload(true);
-  } else {
-    setTimeout(refresh, CHECK_ACTIVITY_INTERVAL);
-  }
-}
-
-setTimeout(refresh, CHECK_ACTIVITY_INTERVAL);
-```
+<<reuse-tiddler "无操作后定时刷新TiddlyWiki/js">>
