@@ -4,7 +4,6 @@ p > code, li > code {
   padding: .1rem .3rem .2rem;
   border-radius: .2rem;
 
-  background: linear-gradient(to right,#fce4ed,#ffe8cc);
-
-  color: #2e2f3e;
+  background: linear-gradient(19deg,#DDD,#EEE);
+  color: #333;
 }
