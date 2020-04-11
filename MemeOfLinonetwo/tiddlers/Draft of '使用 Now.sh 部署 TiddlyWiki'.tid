@@ -1,0 +1,36 @@
+created: 20200411110258895
+draft.of: 使用 Now.sh 部署 TiddlyWiki
+draft.title: 使用 Now.sh 部署 TiddlyWiki
+modified: 20200411132724894
+tags: TW运维
+title: Draft of '使用 Now.sh 部署 TiddlyWiki'
+tmap.id: 92225991-1c17-4927-b402-4bdb7a1f425f
+type: text/vnd.tiddlywiki
+
+!! 使用 NodeJS 版 TiddlyWiki 的好处
+
+为了获得更清晰的提交记录，并支持上传大量图片，我决定使用 NodeJS 版的 TiddlyWiki，这样所有 Tiddler 都会放在单独的文件里，可以在 git 历史记录里很清楚地看到修改了哪些内容。
+
+因为我之前是[[使用 Github Pages 来部署 TiddlyWiki]]，所以 git 的历史记录里有很多对 index.html 的改动，为了去掉它们，减小仓库体积，我[[先删掉了之前提交的所有 index.html|完全清除 GitHub 仓库里的某个文件]]。
+
+!! 配置 Now.sh 上运行的自动打包脚本
+
+然后我在 [[package.json|https://github.com/linonetwo/Meme-of-LinOnetwo/blob/e2a986471d2eeece07be35c939f77b91752a2b6f/package.json]] 里准备好 `build` 脚本，这个 JS 脚本会使用 [[tiddlywiki|https://www.npmjs.com/package/tiddlywiki]] 这个 npm 包来把 NodeJS 版的一堆 tiddler 打包成一个 `index.html`，放在 `./public` 文件夹里。
+
+我在 `.gitignore` 里设置了 `./public` 不上传到 Github，以减小仓库体积。然后在仓库里加上一个 [[now.json|https://github.com/linonetwo/Meme-of-LinOnetwo/blob/10a87f32ef48560da0bf36c0786e64a2d27ca952/now.json]]，最后到 [[Zeit（Now.sh）云服务|https://zeit.co/import/git#import-github]]上去设置它自动在我每次进行 Git 提交后，都拉取我的所有 Tiddler，然后执行构建脚本，把结果部署为一个在线的 Wiki。
+
+!! 在本地使用
+
+配置完后，我就可以在本地用[[桌面版 TiddlyWiki|制作桌面版 TiddlyWiki App]]编辑 Wiki，然后[[脚本会自动检测文件系统有变化，提交备份到 Github|开机启动TiddlyWiki服务器并自动同步到Github]]并触发自动部署公开的网页版本。
+
+当有多台电脑时，只要保证自己离开上一台电脑后，不要关闭电脑（这样自动提交脚本会每半小时把变更[[同步|https://github.com/simonthum/git-sync]]到 Git 去），或是在关闭电脑前手动点一下 Github Desktop 的 ''Sync'' 按钮把变更同步到云端即可。这样从公司回到家后，就可以拉取变更，再写新的东西了。
+
+---
+
+这套方案是完全免费的，因为 Github 作为云存储是免费的，[[Zeit|https://zeit.co/home]] 作为静态服务器也是免费的。
+
+这个方案的缺点是，`index.html` 是动态生成的，所以没法使用[[Github Saver|https://github.com/kookma/TW5-GitHub-Saver]]来在移动端把修改结果保存回 Github 云端。
+
+但我很少会在桌面端以外的地方编辑 Wiki，在移动端我只是查询内容，所以这个缺点暂时不会影响我。
+
+还有我还没配置好不把图片打包到 HTML 文件里。我希望以后 HTML 版的 wiki 里的所有图片都直接引用 Github 上的图片，从而能够大量上传图片，但保持 HTML 文件的体积较小。

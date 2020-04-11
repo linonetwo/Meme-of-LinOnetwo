@@ -47,7 +47,7 @@ const commitEveryHalfHour = debounce(() => {
     console.error(error);
     console.error(error.stderr);
   }
-}, (1000 * 3600) / 2);
+}, (1000 * 1) / 2);
 
 fs.watch(
   tiddlyWikiFolder,
