@@ -1,0 +1,29 @@
+/** 背景 */
+body.tc-body {
+	background-color: unset;
+}
+/** 给卡片加上阴影 */
+.tc-tiddler-frame {
+	box-shadow: rgba(15, 15, 15, 0.1) 0px 0px 0px 1px, rgba(15, 15, 15, 0.1) 0px 2px 4px;
+}
+/** 去掉预览除了左边框的边框 */
+.tc-tiddler-preview-preview {
+	border: none;
+	padding-left: 10px;
+	border-left: 1px solid #cccccc;
+}
+/** 去掉代码编辑器的边框 */
+.CodeMirror {
+	border: none;
+}
+/** 去掉所有其它文本编辑框的边框 */
+.tc-tiddler-frame input.tc-edit-texteditor {
+	border: none;
+	background: transparent;
+}
+/** 标题下面的 tag 栏 */
+.tc-edit-tags {
+	border: none;
+	border-bottom: 1px solid #cccccc;
+	padding: 4px 8px 4px 8px;
+}
