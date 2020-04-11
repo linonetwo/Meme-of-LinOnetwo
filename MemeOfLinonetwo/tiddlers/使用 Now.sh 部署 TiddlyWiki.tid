@@ -1,5 +1,5 @@
 created: 20200411110258895
-modified: 20200411125632526
+modified: 20200411132102369
 tags: TW运维
 title: 使用 Now.sh 部署 TiddlyWiki
 tmap.id: 92225991-1c17-4927-b402-4bdb7a1f425f
@@ -21,7 +21,7 @@ type: text/vnd.tiddlywiki
 
 配置完后，我就可以在本地用[[桌面版 TiddlyWiki|制作桌面版 TiddlyWiki App]]编辑 Wiki，然后[[脚本会自动检测文件系统有变化，提交备份到 Github|开机启动TiddlyWiki服务器并自动同步到Github]]并触发自动部署公开的网页版本。
 
-当有多台电脑时，只要保证自己离开上一台电脑后，不要关闭电脑（这样自动提交脚本会每半小时把变更同步到 Git 去），或是在关闭电脑前手动点一下 Github Desktop 的 ''Sync'' 按钮把变更同步到云端即可。这样从公司回到家后，就可以拉取变更，再写新的东西了。
+当有多台电脑时，只要保证自己离开上一台电脑后，不要关闭电脑（这样自动提交脚本会每半小时把变更[[同步|https://github.com/simonthum/git-sync]]到 Git 去），或是在关闭电脑前手动点一下 Github Desktop 的 ''Sync'' 按钮把变更同步到云端即可。这样从公司回到家后，就可以拉取变更，再写新的东西了。
 
 ---
 
