@@ -5,6 +5,7 @@ const execSync = require('child_process').execSync;
 
 const tiddlyWikiPort = require('./package.json').port;
 const wikiFolderName = require('./package.json').name;
+const COMMIT_INTERVAL = 1000 * 3600 / 4;
 
 const projectFolder = path.dirname(__filename);
 const tiddlyWikiFolder = path.join(projectFolder, wikiFolderName);
@@ -37,7 +38,7 @@ function debounce(func, wait, immediate) {
   };
 }
 
-const commitEveryHalfHour = debounce(() => {
+const commitAndSync = debounce(() => {
   try {
     execSync(`/bin/sh ${commitScriptPath}`);
     console.log(`Sync to Git: /bin/sh ${syncScriptPath} under ${projectFolder}`);
@@ -48,7 +49,7 @@ const commitEveryHalfHour = debounce(() => {
     console.error(error.stdout.toString('utf8'));
     console.error(error.stderr.toString('utf8'));
   }
-}, (1000 * 1) / 2);
+}, COMMIT_INTERVAL);
 
 fs.watch(
   tiddlyWikiFolder,
@@ -59,7 +60,7 @@ fs.watch(
     }
     console.log(`${fileName} change`);
 
-    commitEveryHalfHour();
+    commitAndSync();
   }, 100)
 );
 
