@@ -1,6 +1,6 @@
 created: 20190427025844669
 creator: Lin Onetwo - 林一二
-modified: 20200410055139930
+modified: 20200411072545870
 modifier: Lin Onetwo - 林一二
 tags: Index
 title: tiddlywiki
@@ -9,6 +9,6 @@ type: text/vnd.tiddlywiki
 
 之所以要用 TiddlyWiki，是因为它有强大的非线性文字编辑功能，在[[使用 TW 的高级功能]]中可以看到许多用于记录文本间关联的编辑和索引工具。
 
-侧边栏的「目录结构」标签页里展示了[[通过标签系统自动生成|在wiki中使用虚拟文件夹]]的文件夹。
+侧边栏的「目录结构」标签页里展示了[[通过标签系统自动生成|在 TiddlyWiki 中使用虚拟文件夹]]的文件夹。
 
 <<locator-view "tiddlywiki">>
