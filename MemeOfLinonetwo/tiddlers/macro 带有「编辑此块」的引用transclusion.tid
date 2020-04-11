@@ -1,6 +1,6 @@
 created: 20200408094804792
 creator: Lin Onetwo - 林一二
-modified: 20200410152104711
+modified: 20200411052929530
 modifier: Lin Onetwo - 林一二
 tags: $:/tags/Macro 自改TW
 title: macro 带有「编辑此块」的引用transclusion
@@ -26,9 +26,10 @@ type: text/vnd.tiddlywiki
 }
 .reuse-pane-content {
 	display: inline-block;
-	background-color: lavender;
-	border-left: 4px solid slateblue;
+	background-color: rgba(233, 233, 233, 0.9);
+	border-left: 4px solid rgba(0, 0, 0, 0.05);
 	padding: 0px 5px;
+	padding-bottom: 2px;
 }
 </style>
 <div class="reuse-pane">
