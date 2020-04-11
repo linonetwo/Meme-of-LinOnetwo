@@ -43,7 +43,9 @@ const commitEveryHalfHour = debounce(() => {
     console.log(`Sync to Git: ${syncScriptPath} ${projectFolder}`);
     execSync(`/usr/local/bin/zsh ${syncScriptPath}`, { cwd: projectFolder });
   } catch (error) {
+    console.error('Sync failed');
     console.error(error);
+    console.error(error.stderr);
   }
 }, (1000 * 3600) / 2);
 
