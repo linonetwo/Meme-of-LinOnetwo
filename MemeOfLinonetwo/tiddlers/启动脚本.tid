@@ -1,0 +1,10 @@
+created: 20200411155759987
+modified: 20200411162056469
+tags: 自改TW
+title: 启动脚本
+tmap.id: 0f0dda71-2120-4ac3-a5b0-c88aa5c88ec3
+type: text/vnd.tiddlywiki
+
+在 TiddlyWiki 启动的时候，会执行的脚本。
+
+通过把 JS 代码加上 `$:/tags/RawMarkup` Tag 、并用 `<script type="text/javascript"> </script>` 包裹来实现。
