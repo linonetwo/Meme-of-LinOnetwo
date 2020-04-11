@@ -9,6 +9,7 @@ const wikiFolderName = require('./package.json').name;
 const projectFolder = path.dirname(__filename);
 const tiddlyWikiFolder = path.join(projectFolder, wikiFolderName);
 const commitScriptPath = path.resolve(projectFolder, 'scripts', 'commit.sh');
+const syncScriptPath = path.resolve(projectFolder, 'scripts', 'sync.sh');
 const frequentlyChangedFileThatShouldBeIgnoredFromWatch = [
   'output',
   'tiddlers/$__StoryList.tid',
@@ -39,6 +40,7 @@ function debounce(func, wait, immediate) {
 const commitEveryHalfHour = debounce(() => {
   console.log('pushing to Git');
   execSync(`/bin/sh ${commitScriptPath}`, () => {});
+  execSync(`/bin/sh ${syncScriptPath}`, () => {});
 }, (1000 * 3600) / 2);
 
 fs.watch(
