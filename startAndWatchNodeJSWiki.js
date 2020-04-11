@@ -45,6 +45,7 @@ const commitEveryHalfHour = debounce(() => {
   } catch (error) {
     console.error('Sync failed');
     console.error(error);
+    console.error(error.stdout.toString('utf8'));
     console.error(error.stderr.toString('utf8'));
   }
 }, (1000 * 1) / 2);
