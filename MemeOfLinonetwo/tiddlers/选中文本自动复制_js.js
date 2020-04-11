@@ -7,10 +7,26 @@ function checkIfElementIsEditor(element) {
 
   return isEditableElement || isTextEditor;
 }
+// if we start selection on editor, we prevent the following execution of this script
+let copyOnSelectPreventNextCopy = false;
+document.addEventListener('mousedown', function onMouseUp() {
+  const elementsUnderMouse = document.querySelectorAll(':hover');
+
+  if (!elementsUnderMouse || Array.from(elementsUnderMouse).some(checkIfElementIsEditor)) {
+    copyOnSelectPreventNextCopy = true;
+  }
+});
 // Copy on select, copy document selection when mouse button is up
 document.addEventListener('mouseup', function onMouseUp() {
   const elementsUnderMouse = document.querySelectorAll(':hover');
 
-  if (!elementsUnderMouse || Array.from(elementsUnderMouse).some(checkIfElementIsEditor)) return;
+  if (
+    copyOnSelectPreventNextCopy ||
+    !elementsUnderMouse ||
+    Array.from(elementsUnderMouse).some(checkIfElementIsEditor)
+  ) {
+    copyOnSelectPreventNextCopy = false;
+    return;
+  }
   document.execCommand('copy');
 });

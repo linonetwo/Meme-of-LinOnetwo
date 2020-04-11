@@ -27,3 +27,13 @@ button:not(.tc-btn-invisible):hover {
 	border: none;
 	border-bottom: 2px solid silver;
 }
+
+/** 标签 */
+button.tc-tag-label, span.tc-tag-label {
+	border-radius: 3px;
+	background-color: rgba(0, 0, 0, 0.1);
+	transition: background-color 0.2s;
+}
+button.tc-tag-label, span.tc-tag-label:hover {
+	background-color: rgba(0, 0, 0, 0.2);
+}
