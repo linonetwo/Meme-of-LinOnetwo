@@ -1,0 +1,16 @@
+created: 20200412103751564
+modified: 20200412112015779
+tags: 自改TW
+title: 行级渲染的 TiddlyWiki Wikitext
+tmap.id: 82a51673-1dd4-4e61-a43d-a741e905695a
+type: text/vnd.tiddlywiki
+
+TiddlyWiki 和 Notion 最大的不同是，它必须打开编辑模式才能修改内容。
+
+因为宏的存在，实际的内容和源码的差别可能会很大，所以如果源码多行之间是有上下文关系的（比如 macro 定义、HTML）则没法在看不到源码的情况下知道要修改的是哪一行。所以得智能识别哪些内容是相关的，渲染的时候就把它们作为一个「块」来渲染，然后在「行级」编辑的时候，就要能同时编辑这些行。
+
+可以考虑一些所见即所得的 Markdown 编辑器还有 Nteract 这种 Jupyter Notebook，看看它们是怎么做的。
+
+然后我用 SlateJS 做一个 demo，把每行的 wikitext 片段发到 TiddlyWiki 上当语言服务器用，渲染出结果后，展示在编辑器上。
+
+然后双击某一行可以编辑其内容。也可以[[在某一行上使用右键菜单|https://groups.google.com/forum/#!topic/tiddlywiki/ltW533iNItk]]了。有的块（智能识别相关内容组成为块）只能用右键菜单打开编辑，例如按钮和链接。

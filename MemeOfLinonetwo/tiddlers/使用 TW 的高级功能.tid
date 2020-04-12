@@ -1,6 +1,6 @@
 created: 20190419152525835
 creator: Lin Onetwo - 林一二
-modified: 20200412081005101
+modified: 20200412112312906
 modifier: Lin Onetwo - 林一二
 tags: tiddlywiki
 title: 使用 TW 的高级功能
@@ -8,11 +8,13 @@ tmap.edges: {"795ea8fd-a6d4-4db3-be90-66b889f1dc1c":{"to":"33ab22b3-257d-40ae-85
 tmap.id: 5de5e414-bb14-46e0-af78-23674a9ea9a1
 type: text/vnd.tiddlywiki
 
-!! 最佳实践
+!! 实践
 
 [[TW-Scripts|https://kookma.github.io/TW-Scripts/]] 记录了各种来自社区的最佳实践
 
 [[TW运维]] 记录了我是怎么使用桌面版 TiddlyWiki 并自动部署网页版的
+
+[[自改TW]] 记录了我对这个 Wiki 做过哪些改动，以及还有哪些想改进的地方。
 
 !! 自带功能
 

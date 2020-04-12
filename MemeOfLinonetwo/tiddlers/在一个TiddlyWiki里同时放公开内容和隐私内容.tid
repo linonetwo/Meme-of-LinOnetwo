@@ -1,0 +1,24 @@
+created: 20200412101937214
+modified: 20200412112008001
+tags: TW运维
+title: 在一个TiddlyWiki里同时放公开内容和隐私内容
+tmap.id: 8114de22-d8c9-452f-87db-3564a576428b
+type: text/vnd.tiddlywiki
+
+我希望 TiddlyWiki 能像 Notion 一样，既可以当自己的 Todo 管理工具、人际关系和想法整理器，又可以把一些想法、文章直接公开发布。
+
+这应该要通过 Tiddler 级别的加密来实现，但是直接用密码加密 Tiddler 的简单方案不好用：
+
+<<reuse-tiddler "TW5-EncryptTiddlerPlugin的缺点">>
+
+---
+
+我希望的实现是：
+
+# 打了 [[AuthorCypher]] 标签的笔记，在输入过密码的浏览器上总是可见状态
+# 保存到文件系统上时是加密状态（所以可能只能在 NodeJS 版的 Wiki 上做到这一点）
+
+所以需要在连接到 NodeJS 服务器的浏览器上，接触到 SyncAdaptor，在几个钩子上做加解密（需要 SyncAdaptor 支持钩子或者中间件才行）：
+
+# 在输入过密码的浏览器上，创建的一个新的 Tiddler，在保存时加密
+# 当一个新的 Tiddler 同步到浏览器上时，解密
