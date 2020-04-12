@@ -5,7 +5,7 @@ const execSync = require('child_process').execSync;
 
 const tiddlyWikiPort = require('./package.json').port;
 const wikiFolderName = require('./package.json').name;
-const COMMIT_INTERVAL = 1000 * 3600 / 4;
+const COMMIT_INTERVAL = 1000 * 3600 / 2;
 
 const projectFolder = path.dirname(__filename);
 const tiddlyWikiFolder = path.join(projectFolder, wikiFolderName);
@@ -38,11 +38,15 @@ function debounce(func, wait, immediate) {
   };
 }
 
+function syncToGit() {
+  console.log(`Sync to Git: /bin/sh ${syncScriptPath} under ${projectFolder}`);
+  execSync(`/bin/sh ${syncScriptPath}`, { cwd: projectFolder });
+}
+
 const commitAndSync = debounce(() => {
   try {
     execSync(`/bin/sh ${commitScriptPath}`);
-    console.log(`Sync to Git: /bin/sh ${syncScriptPath} under ${projectFolder}`);
-    execSync(`/bin/sh ${syncScriptPath}`, { cwd: projectFolder });
+    syncToGit();
   } catch (error) {
     console.error('Sync failed');
     console.error(error);
@@ -65,3 +69,5 @@ fs.watch(
 );
 
 console.log(`wiki watch ${tiddlyWikiFolder} now`);
+
+setInterval(() => syncToGit(), COMMIT_INTERVAL / 2)
