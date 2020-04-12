@@ -3,8 +3,7 @@
   "version": 2,
   "public": true,
   "cleanUrls": true,
-  "rewrites": [{ "source": "/(.*)", "destination": "/public/index.html" }],
   "github": {
-    "silent": true
+    "silent": false
   }
 }

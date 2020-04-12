@@ -4,7 +4,7 @@
         "tiddlywiki/tiddlyweb",
         "tiddlywiki/filesystem",
         "tiddlywiki/highlight",
-        "tiddlywiki/external-attachments"
+        "sitemap"
     ],
     "themes": [
         "tiddlywiki/vanilla"
