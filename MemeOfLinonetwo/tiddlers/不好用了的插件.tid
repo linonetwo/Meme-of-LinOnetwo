@@ -1,6 +1,6 @@
 created: 20200408084454290
 creator: Lin Onetwo - 林一二
-modified: 20200409033736658
+modified: 20200412101900646
 modifier: Lin Onetwo - 林一二
 tags: tiddlywiki
 title: 不好用了的插件
@@ -10,3 +10,5 @@ type: text/vnd.tiddlywiki
 [[tiddlywiki-dropboard|https://reidgould.github.io/tiddlywiki-dropboard/]] 拖动添加列表时会报错，不更新了。
 
 [[tiddlytouch|http://tiddlytouch.tiddlyspot.com/]] 主打tiddler的拖放、触控，导致不方便选中复制，而且会导致 tiddler 边窄。它还在更新，以后可以回顾一下。
+
+[[TW5-EncryptTiddlerPlugin|https://danielorodriguez.com/TW5-EncryptTiddlerPlugin/]] 可以加密单个 tiddler，但是[[有很多缺陷|TW5-EncryptTiddlerPlugin的缺点]]

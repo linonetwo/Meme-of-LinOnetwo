@@ -1,7 +1,7 @@
 color: #5778d8
 created: 20190421065036809
 creator: Lin Onetwo - 林一二
-modified: 20200412052623107
+modified: 20200412112033073
 modifier: Lin Onetwo - 林一二
 tags: Index tiddlywiki
 title: 自改TW
@@ -11,6 +11,10 @@ type: text/vnd.tiddlywiki
 我对 TiddlyWiki 做的修改都加上这个 tag，方便追溯和修复。
 
 在[[TW运维]]里，我做了很多部署、桌面使用 TiddlyWiki 的优化。
+
+<$macrocall $name="todolist-ui" caption="还有很多想法没有实现" base=<<currentTiddler>> />
+
+---
 
 <$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
 
