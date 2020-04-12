@@ -9,8 +9,8 @@
   "scripts": {
     "install:nodeJSWatcher": "sh scripts/installNodeJSWatcher.sh",
     "uninstall": "sh scripts/uninstall.sh",
-    "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:clean",
     "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --listen port=11012",
+    "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:sitemap && npm run build:clean",
     "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --build externalimages && mv ./MemeOfLinonetwo/output/index.html ./public/index.html",
     "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --rendertiddler sitemap sitemap.xml text/plain && mv ./MemeOfLinonetwo/output/sitemap.xml ./public/sitemap.xml",
     "build:mkdir": "mkdir -p ./public",
