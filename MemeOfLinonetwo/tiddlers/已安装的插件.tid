@@ -1,6 +1,6 @@
 created: 20200408084953101
 creator: Lin Onetwo - 林一二
-modified: 20200411121401145
+modified: 20200412101405887
 modifier: Lin Onetwo - 林一二
 tags: tiddlywiki 自改TW
 title: 已安装的插件
@@ -16,8 +16,6 @@ type: text/vnd.tiddlywiki
 [[DynamicTables|https://ooktech.com/jed/ExampleWikis/DynamicTables/]] 自动整理表格，这个不是插件，是轻量的宏列表，导入为[[Table Macros]]
 
 [[tiddlymap|http://tiddlymap.org/]] 把笔记作为脑图的节点，是轻量级的 TheBrain 软件
-
-[[TW5-EncryptTiddlerPlugin|https://danielorodriguez.com/TW5-EncryptTiddlerPlugin/]] 可以加密单个 tiddler
 
 [[TW-Favorites|https://kookma.github.io/TW-Favorites/]] 可以快速把 tiddler 添加到收藏夹里
 
