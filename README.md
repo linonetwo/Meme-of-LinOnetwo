@@ -22,6 +22,8 @@ In `now.json` there is config for deployment, see (zeit.co)[https://zeit.co/home
 
 `npm build` and `npm run build:nodejs2html`: pack tiddlywiki data to a HTML file
 
+`npm run build:sitemap`: generate sitemap point to `wiki.onetwo.ren`
+
 `npm run install:nodeJSWatcher`: install script who can start a local wiki server on MacOS on start up. And it will start the localhost server immediately
 
 `npm run uninstall`: uninstall start up script
