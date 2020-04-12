@@ -1,5 +1,5 @@
 created: 20200412110540982
-modified: 20200412111207957
+modified: 20200412151857230
 tags: 自改TW
 title: 给页面底部加上来自TodoList的反向链接
 tmap.id: 5bcad2ad-72f2-4abb-8b14-3ec54d11018c
@@ -8,3 +8,7 @@ type: text/vnd.tiddlywiki
 目前加在 TodoList 里的链接没法被 filter 识别到。
 
 得写个 JS 宏，读取 `$__todolist_data_base_tasks.json` 和 `$__todolist_data_自改TW_tasks.json` 等文件了。
+
+---
+
+还有读取我的 `<<reuse-tiddler "title">>` 宏的链接，从而知道一个 tiddler 被哪些其他笔记引用了。

@@ -1,5 +1,5 @@
 created: 20200412101937214
-modified: 20200412112008001
+modified: 20200412152317982
 tags: TW运维
 title: 在一个TiddlyWiki里同时放公开内容和隐私内容
 tmap.id: 8114de22-d8c9-452f-87db-3564a576428b
@@ -17,6 +17,7 @@ type: text/vnd.tiddlywiki
 
 # 打了 [[AuthorCypher]] 标签的笔记，在输入过密码的浏览器上总是可见状态
 # 保存到文件系统上时是加密状态（所以可能只能在 NodeJS 版的 Wiki 上做到这一点）
+# 浏览器打开编译好的 HTML 时，一开始都是加密状态，然后如果浏览器有记住密码，则自动在启动时解密
 
 所以需要在连接到 NodeJS 服务器的浏览器上，接触到 SyncAdaptor，在几个钩子上做加解密（需要 SyncAdaptor 支持钩子或者中间件才行）：
 
