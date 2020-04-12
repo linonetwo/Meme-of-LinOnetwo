@@ -8,8 +8,8 @@
   "license": "MIT",
   "scripts": {
     "build": "npm run build:nodejs2html",
-    "start:nodejs": "tiddlywiki MemeOfLinonetwo --listen",
-    "build:nodejs2html": "tiddlywiki MemeOfLinonetwo --build index && mkdir -p ./public && mv ./MemeOfLinonetwo/output/index.html ./public/index.html && rm -r ./MemeOfLinonetwo/output",
+    "start:nodejs": "tiddlywiki MemeOfLinonetwo --listen port=11012",
+    "build:nodejs2html": "tiddlywiki MemeOfLinonetwo --build externalimages && mkdir -p ./public && mv ./MemeOfLinonetwo/output/index.html ./public/index.html && rm -r ./MemeOfLinonetwo/output",
     "install:nodeJSWatcher": "sh scripts/installNodeJSWatcher.sh",
     "uninstall": "sh scripts/uninstall.sh"
   },
