@@ -70,4 +70,5 @@ fs.watch(
 
 console.log(`wiki watch ${tiddlyWikiFolder} now`);
 
+syncToGit()
 setInterval(() => syncToGit(), COMMIT_INTERVAL / 2)
