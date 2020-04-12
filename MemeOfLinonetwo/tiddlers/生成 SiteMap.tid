@@ -1,0 +1,8 @@
+created: 20200412081806756
+modified: 20200412081851145
+tags: SEO搜索引擎优化
+title: 生成 SiteMap
+tmap.id: d68ec610-b39c-4c3e-b4d9-47ce967ac907
+type: text/vnd.tiddlywiki
+
+我准备用 [[dullroar/TW5-sitemap|https://github.com/dullroar/TW5-sitemap]] 来在 Now.sh 打包 HTML 文件时顺便生成 sitemap。

@@ -1,7 +1,7 @@
 created: 20200412022841157
-modified: 20200412023325138
+modified: 20200412081756399
 tags: TW运维
-title: 搜索引擎优化
+title: SEO搜索引擎优化
 tmap.id: 52808249-99f3-4750-81e3-e7b67764b34f
 type: text/vnd.tiddlywiki
 
@@ -10,3 +10,5 @@ type: text/vnd.tiddlywiki
 TiddlyWiki 的 SEO 比较难做，以下是可以参考的讨论：
 
 * [[Improve core support for static site generation|https://github.com/Jermolene/TiddlyWiki5/issues/1676]]
+
+<<reuse-tiddler "生成 SiteMap">>

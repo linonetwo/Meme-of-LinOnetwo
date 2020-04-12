@@ -7,13 +7,19 @@
   "author": "linonetwo <linonetwo012@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "build": "npm run build:nodejs2html",
-    "start:nodejs": "tiddlywiki MemeOfLinonetwo --listen port=11012",
-    "build:nodejs2html": "tiddlywiki MemeOfLinonetwo --build externalimages && mkdir -p ./public && mv ./MemeOfLinonetwo/output/index.html ./public/index.html && rm -r ./MemeOfLinonetwo/output",
     "install:nodeJSWatcher": "sh scripts/installNodeJSWatcher.sh",
-    "uninstall": "sh scripts/uninstall.sh"
+    "uninstall": "sh scripts/uninstall.sh",
+    "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:clean",
+    "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --listen port=11012",
+    "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --build externalimages && mv ./MemeOfLinonetwo/output/index.html ./public/index.html",
+    "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --rendertiddler sitemap sitemap.xml text/plain && mv ./MemeOfLinonetwo/output/sitemap.xml ./public/sitemap.xml",
+    "build:mkdir": "mkdir -p ./public",
+    "build:clean": "rm -r ./MemeOfLinonetwo/output"
   },
   "dependencies": {
     "tiddlywiki": "^5.1.21"
+  },
+  "devDependencies": {
+    "cross-env": "^7.0.2"
   }
 }
