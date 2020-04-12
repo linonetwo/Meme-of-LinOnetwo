@@ -1,0 +1,8 @@
+created: 20200412023024946
+modified: 20200412023102347
+tags: TW运维
+title: 绑定域名
+tmap.id: 145bd7a4-d5ee-4cf0-8898-1eec0373fb1e
+type: text/vnd.tiddlywiki
+
+我把域名绑定到 onetwo.ren 了，在[[万网控制台|https://dns.console.aliyun.com/?spm=5176.100251.111252.22.d68b4f15jzOApA#/dns/setting/onetwo.ren]]上可以控制

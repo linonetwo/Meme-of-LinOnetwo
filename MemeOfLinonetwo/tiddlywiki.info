@@ -3,11 +3,11 @@
     "plugins": [
         "tiddlywiki/tiddlyweb",
         "tiddlywiki/filesystem",
-        "tiddlywiki/highlight"
+        "tiddlywiki/highlight",
+        "tiddlywiki/external-attachments"
     ],
     "themes": [
-        "tiddlywiki/vanilla",
-        "tiddlywiki/snowwhite"
+        "tiddlywiki/vanilla"
     ],
     "build": {
         "index": [
@@ -32,7 +32,7 @@
             "text/plain",
             "--rendertiddler",
             "$:/plugins/tiddlywiki/tiddlyweb/save/offline",
-            "externalimages.html",
+            "index.html",
             "text/plain"
         ],
         "static": [

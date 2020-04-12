@@ -1,0 +1,12 @@
+created: 20200412023223781
+modified: 20200412030201057
+tags: TW运维
+title: 外置文件
+tmap.id: 86d37088-dab2-4a3a-ad09-9088a6a0f392
+type: text/vnd.tiddlywiki
+
+<<reuse-tiddler "外置文件/自制插件用钩子的方案">>
+
+<<reuse-tiddler "外置文件/修改打包模板的方案">>
+
+以后再考虑上传大于一定大小的大文件后，就上传到[[七牛云|https://portal.qiniu.com/kodo/overview]]去，把文件桶类型设置为「大文件分发」。它和又拍云一样，想绑定自己的域名都需要备案，但是七牛云会给一个它的域名用。
