@@ -1,0 +1,10 @@
+created: 20200412030022875
+modified: 20200412030125745
+tags: 外置文件
+title: 外置文件/自制插件用钩子的方案
+tmap.id: 4a4c8dd5-7eb2-444b-abda-8f66e7fb7692
+type: text/vnd.tiddlywiki
+
+对于图片和小文件，我打算修改一下官方用于引用本地文件的[[external-attachments|https://github.com/Jermolene/TiddlyWiki5/tree/master/plugins/tiddlywiki/external-attachments]]插件，设置 import hook，在导入文件后让 tiddler 直接引用复制到了本地 wiki 文件夹里的文件。
+
+然后写一个模板，在打包 HTML 文件时把 `_canonical_uri` 替换为 Github 上的文件的 URI。
