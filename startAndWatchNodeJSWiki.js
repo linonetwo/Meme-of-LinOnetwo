@@ -7,13 +7,15 @@ const tiddlyWikiPort = require('./package.json').port;
 const wikiFolderName = require('./package.json').name;
 const COMMIT_INTERVAL = (1000 * 10) / 2;
 
-const projectFolder = path.dirname(__filename);
+const repoFolder = path.dirname(__filename);
 
-const tiddlyWikiFolder = path.join(projectFolder, wikiFolderName);
-const privateTiddlyWikiFolder = path.join(projectFolder, '..', 'private-Meme-of-LinOnetwo');
+const tiddlyWikiFolder = path.join(repoFolder, wikiFolderName);
 
-const commitScriptPath = path.resolve(projectFolder, 'scripts', 'commit.sh');
-const syncScriptPath = path.resolve(projectFolder, 'scripts', 'sync.sh');
+const privateTiddlyWikiRepo = path.join(repoFolder, '..', 'private-Meme-of-LinOnetwo');
+const privateTiddlyWikiFolder = path.join(repoFolder, '..', 'private-Meme-of-LinOnetwo', 'tiddlers');
+
+const commitScriptPath = path.resolve(repoFolder, 'scripts', 'commit.sh');
+const syncScriptPath = path.resolve(repoFolder, 'scripts', 'sync.sh');
 const frequentlyChangedFileThatShouldBeIgnoredFromWatch = [
   'output',
   'tiddlers/$__StoryList.tid',
@@ -76,5 +78,5 @@ function watchFolder(wikiFolderPath, repoPath) {
   console.log(`wiki watch ${wikiFolderPath} now`);
 }
 
-watchFolder(tiddlyWikiFolder, projectFolder);
-watchFolder(privateTiddlyWikiFolder, privateTiddlyWikiFolder);
+watchFolder(tiddlyWikiFolder, repoFolder);
+watchFolder(privateTiddlyWikiFolder, privateTiddlyWikiRepo);
