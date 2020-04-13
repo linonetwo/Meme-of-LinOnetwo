@@ -1,5 +1,5 @@
 created: 20200411110258895
-modified: 20200411143130656
+modified: 20200413065913178
 tags: TW运维
 title: 使用 Now.sh 部署 TiddlyWiki
 tmap.id: 92225991-1c17-4927-b402-4bdb7a1f425f
@@ -7,9 +7,15 @@ type: text/vnd.tiddlywiki
 
 !! 使用 NodeJS 版 TiddlyWiki 的好处
 
-为了获得更清晰的提交记录，并支持上传大量图片，我决定使用 NodeJS 版的 TiddlyWiki，这样所有 Tiddler 都会放在单独的文件里，可以在 git 历史记录里很清楚地看到修改了哪些内容。
+以前在自己本地桌面上使用 HTML 版 wiki 的时候，它老是弹出「This page is asking you to confirm that you want to leave - data you have entered may not be saved.」这个提示框，这和 Notion 等能细粒度自动保存笔记系统就差别很大。
 
-因为我之前是[[使用 Github Pages 来部署 TiddlyWiki]]，所以 git 的历史记录里有很多对 index.html 的改动，为了去掉它们，减小仓库体积，我[[先删掉了之前提交的所有 index.html|完全清除 GitHub 仓库里的某个文件]]。
+一般笔记系统都是记完一笔就自动保存，然后可以 command+w 关闭窗口，但 tw 还得手动保存一下，让我觉得很不安心，有点渐渐不爱用它记碎片的东西，因为记个碎片还得有这么多步骤，让我觉得很麻烦。而 NodeJS 版的 TiddlyWiki 就有细粒度的自动保存，可以解决这个问题。
+
+!! 备份到 Github 的好处
+
+Github 是一个有很多自动化工具（例如 GithubActions、Now.sh 自动部署）、GUI 工具（Github Desktop）支持的 BaaS （省心存储服务），所以我打算把 tiddlywiki 备份到上面。
+
+而且使用 NodeJS 版的 TiddlyWiki 后，所有 Tiddler 都会放在单独的文件里，就可以在 git 历史记录里很清楚地看到修改了哪些内容，获得更清晰的提交记录。并支持上传大量图片，因为图片不再是内嵌在 HTML 里的了。
 
 !! 配置 Now.sh 上运行的自动打包脚本
 
@@ -23,11 +29,7 @@ type: text/vnd.tiddlywiki
 
 !! 自动备份
 
-当有多台电脑时，只要保证自己离开上一台电脑后，不要关闭电脑，这样自动提交脚本会每 15 分钟[[用git-sync自动同步脚本把变更同步|https://github.com/simonthum/git-sync]]到 Git 去。git-sync 是一个专门为同步笔记文件的需求设计的同步脚本。
-
-<<reuse-tiddler "允许用git-sync脚本自动同步代码">>
-
-或是在关闭电脑前手动点一下 Github Desktop 的 ''Sync'' 按钮把变更同步到云端即可。这样从公司回到家后，就可以拉取变更，再写新的东西了。
+<<reuse-tiddler "自动备份TiddlyWiki">>
 
 ---
 
@@ -37,4 +39,6 @@ type: text/vnd.tiddlywiki
 
 但我很少会在桌面端以外的地方编辑 Wiki，在移动端我只是查询内容，所以这个缺点暂时不会影响我。
 
-还有我还没配置好不把图片打包到 HTML 文件里。我希望以后 HTML 版的 wiki 里的所有图片都直接引用 Github 上的图片，从而能够大量上传图片，但保持 HTML 文件的体积较小。
+还有我还配置好了[[不把图片打包到 HTML 文件里|外置文件]]。这样自动打包的 HTML 版的 wiki 里的所有图片都直接引用 Github 上的图片，从而能够大量上传图片，但依然保持 HTML 文件的体积较小。
+
+因为我之前是[[使用 Github Pages 来部署 TiddlyWiki]]，所以 git 的历史记录里有很多对 index.html 的改动，为了去掉它们，减小仓库体积，我[[删掉了之前提交的所有 index.html|完全清除 GitHub 仓库里的某个文件]]。
