@@ -1,0 +1,10 @@
+created: 20200413135902208
+modified: 20200413135923173
+tags: Index
+title: 写了一半的文章
+tmap.id: ac65e43c-40c4-4680-8e01-de228b5c386d
+type: text/vnd.tiddlywiki
+
+有空再填坑，下次一定！
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
