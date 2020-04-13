@@ -6,6 +6,10 @@ Knowledge base of Lin Onetwo, with advanced filter search and faceted data aggre
 
 This repo contains the wiki backup data and script to start a local wiki server on MacOS on start up.
 
+## Setup
+
+In a new MacOS computer, please run all install npm script.
+
 ## Deployed to Now.sh
 
 Procedure to deploy: [使用 Now.sh 部署 TiddlyWiki](https://wiki.onetwo.ren/#%E4%BD%BF%E7%94%A8%20Now.sh%20%E9%83%A8%E7%BD%B2%20TiddlyWiki)
@@ -18,15 +22,17 @@ In `now.json` there is config for deployment, see (zeit.co)[https://zeit.co/home
 
 ## NPM Scripts
 
+`npm run install:nodeJSWatcher`: install script who can start a local wiki server on MacOS on start up. And it will start the localhost server immediately
+
+`npm run install:privateRepo`: create soft link to `../private-Meme-of-LinOnetwo`, so tiddlywiki will load tiddlers and images in that private repo
+
+`npm run uninstall`: uninstall start up script
+
 `npm run start:nodejs`: start local server.
 
 `npm build` and `npm run build:nodejs2html`: pack tiddlywiki data to a HTML file, [don't run in your local machine](https://github.com/Jermolene/TiddlyWiki5/issues/4556)
 
 `npm run build:sitemap`: generate sitemap point to `wiki.onetwo.ren`
-
-`npm run install:nodeJSWatcher`: install script who can start a local wiki server on MacOS on start up. And it will start the localhost server immediately
-
-`npm run uninstall`: uninstall start up script
 
 ## Shell Scripts
 
