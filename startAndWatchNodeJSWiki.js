@@ -5,10 +5,13 @@ const execSync = require('child_process').execSync;
 
 const tiddlyWikiPort = require('./package.json').port;
 const wikiFolderName = require('./package.json').name;
-const COMMIT_INTERVAL = 1000 * 3600 / 2;
+const COMMIT_INTERVAL = (1000 * 10) / 2;
 
 const projectFolder = path.dirname(__filename);
+
 const tiddlyWikiFolder = path.join(projectFolder, wikiFolderName);
+const privateTiddlyWikiFolder = path.join(projectFolder, '..', 'private-Meme-of-LinOnetwo');
+
 const commitScriptPath = path.resolve(projectFolder, 'scripts', 'commit.sh');
 const syncScriptPath = path.resolve(projectFolder, 'scripts', 'sync.sh');
 const frequentlyChangedFileThatShouldBeIgnoredFromWatch = [
@@ -17,6 +20,7 @@ const frequentlyChangedFileThatShouldBeIgnoredFromWatch = [
   'tiddlers/$__plugins_felixhayashi_tiddlymap_misc_defaultViewHolder.tid',
 ];
 
+process.env['TIDDLYWIKI_PLUGIN_PATH'] = `${tiddlyWikiFolder}/plugins`;
 $tw.boot.argv = [tiddlyWikiFolder, '--listen', `port=${tiddlyWikiPort}`, 'root-tiddler=$:/core/save/lazy-images'];
 
 $tw.boot.boot();
@@ -38,15 +42,15 @@ function debounce(func, wait, immediate) {
   };
 }
 
-function syncToGit() {
-  console.log(`Sync to Git: /bin/sh ${syncScriptPath} under ${projectFolder}`);
-  execSync(`/bin/sh ${syncScriptPath}`, { cwd: projectFolder });
+function syncToGit(folder) {
+  console.log(`Sync to Git: /bin/sh ${syncScriptPath} under ${folder}`);
+  execSync(`/bin/sh ${syncScriptPath}`, { cwd: folder });
 }
 
-const commitAndSync = debounce(() => {
+const commitAndSync = debounce((folderPath) => {
   try {
-    execSync(`/bin/sh ${commitScriptPath}`);
-    syncToGit();
+    execSync(`/bin/sh ${commitScriptPath}`, { cwd: folderPath });
+    syncToGit(folderPath);
   } catch (error) {
     console.error('Sync failed');
     console.error(error);
@@ -55,17 +59,21 @@ const commitAndSync = debounce(() => {
   }
 }, COMMIT_INTERVAL);
 
-fs.watch(
-  tiddlyWikiFolder,
-  { recursive: true },
-  debounce((_, fileName) => {
-    if (frequentlyChangedFileThatShouldBeIgnoredFromWatch.includes(fileName)) {
-      return;
-    }
-    console.log(`${fileName} change`);
+function watchFolder(folderPath) {
+  fs.watch(
+    folderPath,
+    { recursive: true },
+    debounce((_, fileName) => {
+      if (frequentlyChangedFileThatShouldBeIgnoredFromWatch.includes(fileName)) {
+        return;
+      }
+      console.log(`${fileName} change`);
 
-    commitAndSync();
-  }, 100)
-);
+      commitAndSync(folderPath);
+    }, 100)
+  );
+  console.log(`wiki watch ${folderPath} now`);
+}
 
-console.log(`wiki watch ${tiddlyWikiFolder} now`);
+watchFolder(tiddlyWikiFolder);
+watchFolder(privateTiddlyWikiFolder);
