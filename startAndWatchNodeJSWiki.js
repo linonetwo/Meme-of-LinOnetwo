@@ -44,6 +44,7 @@ function debounce(func, wait, immediate) {
 
 function syncToGit(folder) {
   console.log(`Sync to Git: /bin/sh ${syncScriptPath} under ${folder}`);
+  execSync(`git config --bool branch.master.sync true`, { cwd: folder })
   execSync(`/bin/sh ${syncScriptPath}`, { cwd: folder });
 }
 
