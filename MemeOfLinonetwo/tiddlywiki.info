@@ -17,9 +17,6 @@
             "text/plain"
         ],
         "externalimages": [
-            "--savetiddlers",
-            "[is[image]]",
-            "images",
             "--setfield",
             "[is[image]]",
             "_canonical_uri",
