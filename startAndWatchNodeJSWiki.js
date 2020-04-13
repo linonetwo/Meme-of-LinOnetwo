@@ -54,15 +54,15 @@ const commitAndSync = debounce((folderPath) => {
     syncToGit(folderPath);
   } catch (error) {
     console.error('Sync failed');
-    console.error(error);
+    // console.error(error);
     console.error(error.stdout.toString('utf8'));
     console.error(error.stderr.toString('utf8'));
   }
 }, COMMIT_INTERVAL);
 
-function watchFolder(folderPath) {
+function watchFolder(wikiFolderPath, repoPath) {
   fs.watch(
-    folderPath,
+    wikiFolderPath,
     { recursive: true },
     debounce((_, fileName) => {
       if (frequentlyChangedFileThatShouldBeIgnoredFromWatch.includes(fileName)) {
@@ -70,11 +70,11 @@ function watchFolder(folderPath) {
       }
       console.log(`${fileName} change`);
 
-      commitAndSync(folderPath);
+      commitAndSync(repoPath);
     }, 100)
   );
-  console.log(`wiki watch ${folderPath} now`);
+  console.log(`wiki watch ${wikiFolderPath} now`);
 }
 
-watchFolder(tiddlyWikiFolder);
-watchFolder(privateTiddlyWikiFolder);
+watchFolder(tiddlyWikiFolder, projectFolder);
+watchFolder(privateTiddlyWikiFolder, privateTiddlyWikiFolder);
