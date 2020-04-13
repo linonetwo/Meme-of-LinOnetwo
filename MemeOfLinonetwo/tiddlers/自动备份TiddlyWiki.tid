@@ -1,0 +1,12 @@
+created: 20200413065844459
+modified: 20200413065918828
+tags: TW运维
+title: 自动备份TiddlyWiki
+tmap.id: 5fe3184d-a2d3-4a03-81ac-b096e4da0254
+type: text/vnd.tiddlywiki
+
+当有多台电脑时，只要保证自己离开上一台电脑后，不要关闭电脑，这样自动提交脚本会每 15 分钟[[用git-sync自动同步脚本把变更同步|https://github.com/simonthum/git-sync]]到 Git 去。git-sync 是一个专门为同步笔记文件的需求设计的同步脚本。
+
+<<reuse-tiddler "允许用git-sync脚本自动同步代码">>
+
+或是在关闭电脑前手动点一下 Github Desktop 的 ''Sync'' 按钮把变更同步到云端即可。这样从公司回到家后，就可以拉取变更，再写新的东西了。

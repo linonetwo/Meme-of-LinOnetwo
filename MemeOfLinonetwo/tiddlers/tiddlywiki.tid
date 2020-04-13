@@ -1,7 +1,7 @@
 color: #5778d8
 created: 20190427025844669
 creator: Lin Onetwo - 林一二
-modified: 20200411145438606
+modified: 20200413072140594
 modifier: Lin Onetwo - 林一二
 tags: Index
 title: tiddlywiki
@@ -9,14 +9,5 @@ tmap.id: 8523d3e6-8f7c-4216-90c3-f84d2355e4ab
 type: text/vnd.tiddlywiki
 
 之所以要用 TiddlyWiki，是因为它有强大的非线性文字编辑功能，在[[使用 TW 的高级功能]]中可以看到许多用于记录文本间关联的编辑和索引工具。在 TiddlyWiki 里可以很方便地找到自己以前记下的碎片想法，因为这些想法都被网状的关系连接起来了，同时又放在树状的文件夹目录系统里。
-
-侧边栏的「目录结构」标签页里展示了[[通过标签系统自动生成|在 TiddlyWiki 中使用虚拟文件夹]]的文件夹。
-
-* 点击 `>` 按钮（使它变成 `v`）可以展开文件夹
-* 直接点击文件夹的名字可以查看这个文件夹的 Readme
-* 分割线上方是上级目录，点击分割线上方的上级目录名左侧的 `>` 按钮可以回到上级目录
-* 点击 Filter by fields 可以展开分面搜索工具，点击 `+` 可以增加筛选条件，点击 `x` 㐓减少筛选条件。
-
-下面也有一个文件夹目录结构的例子：
 
 <<locator-view "tiddlywiki">>
