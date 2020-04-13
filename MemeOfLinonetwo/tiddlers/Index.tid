@@ -1,7 +1,7 @@
 color: #cbcbcb
 created: 20190419034125236
 creator: Lin Onetwo - 林一二
-modified: 20200411172055601
+modified: 20200413041336269
 modifier: 林一二
 tags: tiddlywiki
 title: Index
@@ -15,7 +15,7 @@ type: text/vnd.tiddlywiki
 
 主要关于[[模因学]]、存储各种[[小说点子]]、挖[[工具设计]]的坑。
 
-以及一些[[加密了的内容|AuthorCypher]]，包括我的个人 Todo 列表、日记等。
+以及一些[[加密了的内容|APrivateContent]]，包括我的个人 Todo 列表、日记等。
 
 本知识库备份在[[Github|https://github.com/linonetwo/Meme-of-LinOnetwo]]上，有想评论的内容可以在这个仓库里发 issue 。[[通过 Now.sh 部署|使用 Now.sh 部署 TiddlyWiki]]的在线版本是 [[wiki.onetwo.ren|https://wiki.onetwo.ren/]]。
 

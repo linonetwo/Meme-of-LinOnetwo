@@ -8,6 +8,7 @@
   "license": "MIT",
   "scripts": {
     "install:nodeJSWatcher": "sh scripts/installNodeJSWatcher.sh",
+    "install:privateRepo": "cd ./MemeOfLinonetwo/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo",
     "uninstall": "sh scripts/uninstall.sh",
     "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --listen port=11012",
     "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:sitemap && npm run build:clean",
