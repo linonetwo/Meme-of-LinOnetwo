@@ -1,6 +1,6 @@
 created: 20200408084953101
 creator: Lin Onetwo - 林一二
-modified: 20200412101405887
+modified: 20200413015513431
 modifier: Lin Onetwo - 林一二
 tags: tiddlywiki 自改TW
 title: 已安装的插件
@@ -26,6 +26,8 @@ type: text/vnd.tiddlywiki
 [[TodoList|https://kookma.github.io/TW-Todolist/]] 智能化、强大筛选功能的待办清单，可能得打开隐私加密功能我才能用它，适合存储大量挖了不填的坑
 
 [[Timelines|https://kookma.github.io/TW-Timelines/]] 各种美观的时间轴，适合用来做展示。可惜是纯展示的，不能像 Google Calendar 一样用
+
+<<reuse-tiddler "鼠标悬浮预览内部链接">>
 
 <<reuse-tiddler "solution">>
 
