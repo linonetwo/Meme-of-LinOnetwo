@@ -1,7 +1,7 @@
 color: #cbcbcb
 created: 20190419034125236
 creator: Lin Onetwo - 林一二
-modified: 20200413041336269
+modified: 20200413072304734
 modifier: 林一二
 tags: tiddlywiki
 title: Index
@@ -18,6 +18,12 @@ type: text/vnd.tiddlywiki
 以及一些[[加密了的内容|APrivateContent]]，包括我的个人 Todo 列表、日记等。
 
 本知识库备份在[[Github|https://github.com/linonetwo/Meme-of-LinOnetwo]]上，有想评论的内容可以在这个仓库里发 issue 。[[通过 Now.sh 部署|使用 Now.sh 部署 TiddlyWiki]]的在线版本是 [[wiki.onetwo.ren|https://wiki.onetwo.ren/]]。
+
+---
+
+<<reuse-tiddler "TW-Locator基于标签生成的文件夹目录结构使用方法">>
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
 
 ---
 
