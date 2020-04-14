@@ -7,6 +7,8 @@
     "silent": true
   },
   "rewrites": [
-    { "source": "/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js", "destination": "/tiddlywiki5.js" }
+    { "source": "/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js", "destination": "/tiddlywiki5.js" },
+    { "source": "/status", "destination": "/status.json" },
+    { "source": "/recipes/*/tiddlers", "destination": "/status.json" }
   ]
 }
