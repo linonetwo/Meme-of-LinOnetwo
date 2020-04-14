@@ -11,7 +11,7 @@
     "install:privateRepo": "cd ./MemeOfLinonetwo/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo",
     "uninstall": "sh scripts/uninstall.sh",
     "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki +plugins/tiddlywiki/filesystem MemeOfLinonetwo --listen port=11012 \"root-tiddler=$:/core/save/lazy-images\"",
-    "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:sitemap && npm run build:clean",
+    "build": "npm run build:mkdir && npm run build:nodejs2html && npm run build:sitemap && npm run build:public && npm run build:clean",
     "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --build externalimages && mv ./MemeOfLinonetwo/output/index.html ./public/index.html && mv ./MemeOfLinonetwo/output/tiddlywiki5.js ./public/tiddlywiki5.js",
     "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --rendertiddler sitemap sitemap.xml text/plain && mv ./MemeOfLinonetwo/output/sitemap.xml ./public/sitemap.xml",
     "build:public": "cp ./MemeOfLinonetwo/public/status.json ./public/status.json && cp ./MemeOfLinonetwo/tiddlers/$__favicon.ico ./public/favicon.ico",
