@@ -11,9 +11,9 @@ const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 
-registerRoute('/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js', () => return fetch('tiddlywiki5.js'));
-registerRoute('/status', () => return fetch('/status.json'));
-registerRoute('/recipes/default/tiddlers.json', () => return fetch('/tiddlers.json'));
+registerRoute('/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js', () => fetch('tiddlywiki5.js'));
+registerRoute('/status', () => fetch('/status.json'));
+registerRoute('/recipes/default/tiddlers.json', () => fetch('/tiddlers.json'));
 
 precacheAndRoute(self.__WB_MANIFEST);
 
