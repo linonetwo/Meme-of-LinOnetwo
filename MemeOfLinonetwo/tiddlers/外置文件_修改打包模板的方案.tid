@@ -1,11 +1,11 @@
 created: 20200412030203394
-modified: 20200412042913226
+modified: 20200414051142878
 tags: 外置文件
 title: 外置文件/修改打包模板的方案
 tmap.id: 8cce1bb0-70d6-454e-926c-5e4162f0a115
 type: text/vnd.tiddlywiki
 
-不过我在修改 `./MemeOfLinonetwo/tiddlywiki.info` 配置插件时发现，这个文件里还定义了打包 HTML 文件时的步骤：
+我在修改 `./MemeOfLinonetwo/tiddlywiki.info` 配置插件时发现，这个文件里还定义了打包 HTML 文件时的步骤，我经过几次尝试和修改，最终改成了这样：
 
 ```json
 {
@@ -17,23 +17,24 @@ type: text/vnd.tiddlywiki
 			"text/plain"
 		],
 		"externalimages": [
-			"--savetiddlers",
-			"[is[image]]",
-			"images",
-			"--setfield",
-			"[is[image]]",
-			"_canonical_uri",
-			"$:/core/templates/canonical-uri-external-image",
-			"text/plain",
-			"--setfield",
-			"[is[image]]",
-			"text",
-			"",
-			"text/plain",
-			"--rendertiddler",
-			"$:/plugins/tiddlywiki/tiddlyweb/save/offline",
-			"index.html",
-			"text/plain"
+				"--setfield",
+				"[is[image]]",
+				"_canonical_uri",
+				"$:/core/templates/canonical-uri-external-image",
+				"text/plain",
+				"--setfield",
+				"[is[image]]",
+				"text",
+				"",
+				"text/plain",
+				"--rendertiddler",
+				"$:/core/save/all-external-js",
+				"index.html",
+				"text/plain",
+				"--rendertiddler",
+				"$:/core/templates/tiddlywiki5.js",
+				"tiddlywiki5.js",
+				"application/javascript"
 		]
 	}
 }
@@ -44,16 +45,38 @@ type: text/vnd.tiddlywiki
 第一部分的作用是找到所有是图片（`[is[image]]`）的 tiddler，用 [[$:/core/templates/canonical-uri-external-image]] 这个模板来设置它们的 `_canonical_uri` 字段：
 
 ```json
-"--savetiddlers",
-"[is[image]]",
-"images",
-"--setfield",
-"[is[image]]",
-"_canonical_uri",
-"$:/core/templates/canonical-uri-external-image",
+	"--savetiddlers",
+	"[is[image]]",
+	"images",
+	"--setfield",
+	"[is[image]]",
+	"_canonical_uri",
+	"$:/core/templates/canonical-uri-external-image",
 ```
 
 因为我只[[在云端编译打包 HTML 文件|使用 Now.sh 部署 TiddlyWiki]]，打包时静态资源肯定都已经上传到 Github 了，所以在 [[$:/core/templates/canonical-uri-external-image]] 里我就直接把 URI 设置为以 `https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/MemeOfLinonetwo/tiddlers/` 为前缀的 Github 静态资源地址了。
 
 用同样的原理，设置 [[canonical-uri-external-raw.tid|https://github.com/Jermolene/TiddlyWiki5/blob/master/core/templates/canonical-uri-external-raw.tid]] 和 [[canonical-uri-external-text.tid|https://github.com/Jermolene/TiddlyWiki5/blob/master/core/templates/canonical-uri-external-text.tid]] 也可以外置大的二进制文件和文本文件。不过还得改一下 filter，只外置大于一定大小的文件。
 
+最后一部分是生成 HTML 和 JS：
+
+```json
+	"--rendertiddler",
+	"$:/core/save/all-external-js",
+	"index.html",
+	"text/plain",
+	"--rendertiddler",
+	"$:/core/templates/tiddlywiki5.js",
+	"tiddlywiki5.js",
+	"application/javascript"
+```
+
+我使用了 `$:/core/save/all-external-js` 这个生成不含核心 JS 的 HTML 的模板，以及 `$:/core/templates/tiddlywiki5.js` 这个只含核心 JS 的模板，从而分离 HTML 和 JS。
+
+不过这个 `$:/core/templates/tiddlywiki5.js` 是服务端使用的 JS，会自动保存还有请求 Tiddlers 列表，所以我[[在 public 文件夹里预备好了这些请求的回复|https://github.com/linonetwo/Meme-of-LinOnetwo/commit/745f9fb0999939ade6abfa46bad572e8ff59e61f]]。
+
+---
+
+即便如此， HTML 还是有 4 M 大，可能可以通过 lazy load tiddler 来优化，但是那也是个生成 HTML 的模板，可能和 `$:/core/save/all-external-js` 会冲突，以后如果 tiddlers 真的很多了，导致 HTML 过大了，再折腾这个。
+
+减小 HTML 还可以通过 minify 来达成，所以我搞了一些简单的 minifier 来做这事。
