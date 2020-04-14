@@ -1,14 +1,13 @@
 importScripts('https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js');
 
 if (workbox) {
-  console.log(`Yay! Workbox is loaded 🎉`);
+  console.log(`Yay! Workbox is loaded 🎉Service Worker is working!`);
 } else {
-  console.log(`Boo! Workbox didn't load 😬`);
+  console.log(`Boo! Workbox didn't load 😬Service Worker won't work properly...`);
 }
 
 const { registerRoute } = workbox.routing;
 const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
-const { CacheableResponsePlugin } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 
@@ -24,7 +23,7 @@ registerRoute(
 );
 
 registerRoute(
-  /\.(?:png|jpg|jpeg|svg|gif)$/,
+  /\.(?:png|jpg|jpeg|svg|gif|woff2)$/,
   // Use the cache if it's available.
   new CacheFirst({
     cacheName: 'image-cache',
@@ -35,9 +34,9 @@ registerRoute(
         // Cache for a maximum of a week.
         maxAgeSeconds: 7 * 24 * 60 * 60,
       }),
-      new CacheableResponsePlugin({ statuses: [0, 200] }),
     ],
   })
 );
 
 registerRoute(/\.js$/, new StaleWhileRevalidate());
+registerRoute(/\.html$/, new StaleWhileRevalidate());
