@@ -1,7 +1,7 @@
 {
   "background_color": "white",
   "description": "TiddlyWiki",
-  "display": "fullscreen",
+  "display": "standalone",
   "icons": [
     {
       "src": "/TiddlyWikiIconWhite.png",
@@ -11,5 +11,6 @@
   ],
   "name": "TiddlyWiki",
   "short_name": "Tiddly",
-  "start_url": "/"
+  "start_url": "/",
+  "scope": "/"
 }
