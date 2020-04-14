@@ -1,0 +1,15 @@
+{
+  "background_color": "white",
+  "description": "TiddlyWiki",
+  "display": "fullscreen",
+  "icons": [
+    {
+      "src": "public/favicon.ico",
+      "sizes": "102x102",
+      "type": "image/x-icon"
+    }
+  ],
+  "name": "TiddlyWiki",
+  "short_name": "Tiddly",
+  "start_url": "/public/index.html"
+}
