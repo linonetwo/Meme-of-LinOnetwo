@@ -1,0 +1,4 @@
+<script type="text/javascript">
+// filter out code that resulted in "This page is asking you to confirm that you want to leave - data you have entered may not be saved"
+$tw.unloadTasks = $tw.unloadTasks.filter(task => !task.toString().includes('confirmationMessage'));
+</script>
