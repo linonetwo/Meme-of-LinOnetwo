@@ -10,6 +10,9 @@ const { registerRoute } = workbox.routing;
 const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { CacheableResponsePlugin } = workbox.cacheableResponse;
 const { ExpirationPlugin } = workbox.expiration;
+const { precacheAndRoute } = workbox.precaching;
+
+precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(
   /\.css$/,
