@@ -9,11 +9,19 @@ if (workbox) {
 const { registerRoute } = workbox.routing;
 const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { ExpirationPlugin } = workbox.expiration;
-const { precacheAndRoute } = workbox.precaching;
+const { precacheAndRoute, matchPrecache } = workbox.precaching;
 
-registerRoute('/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js', () => fetch('tiddlywiki5.js'));
-registerRoute('/status', () => fetch('/status.json'));
-registerRoute('/recipes/default/tiddlers.json', () => fetch('/tiddlers.json'));
+addEventListener('fetch', (event) => {
+  const request = event.request;
+  if (request.url === '/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js') {
+    event.respondWith(matchPrecache('tiddlywiki5.js'));
+  } else if (request.url === '/status') {
+    event.respondWith(matchPrecache('status.json'));
+  } else if (request.url === '/recipes/default/tiddlers.json') {
+    event.respondWith(matchPrecache('tiddlers.json'));
+  }
+  return;
+});
 
 precacheAndRoute(self.__WB_MANIFEST);
 
