@@ -13,6 +13,8 @@ const { precacheAndRoute, matchPrecache } = workbox.precaching;
 
 addEventListener('fetch', (event) => {
   const request = event.request;
+  console.log('request.url', request.url);
+  
   if (request.url === '/%24%3A%2Fcore%2Ftemplates%2Ftiddlywiki5.js') {
     event.respondWith(matchPrecache('tiddlywiki5.js'));
   } else if (request.url === '/status') {
