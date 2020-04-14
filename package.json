@@ -12,7 +12,7 @@
     "start:nodejs": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki +plugins/tiddlywiki/filesystem MemeOfLinonetwo --listen port=11012 \"root-tiddler=$:/core/save/lazy-images\"",
     "build": "npm run build:prepare && npm run build:public && npm run build:nodejs2html && npm run build:sitemap && npm run build:minify && npm run build:clean",
     "build:prepare": "rm -rf ./public",
-    "build:public": "cp -r ./MemeOfLinonetwo/public/ ./public && cp ./MemeOfLinonetwo/tiddlers/favicon.ico ./public/favicon.ico && cp ./MemeOfLinonetwo/tiddlers/TiddlyWikiIconWhite.png ./public/TiddlyWikiIconWhite.png",
+    "build:public": "cp -r ./MemeOfLinonetwo/public/ ./public && cp ./MemeOfLinonetwo/tiddlers/favicon.ico ./public/favicon.ico && cp ./MemeOfLinonetwo/tiddlers/TiddlyWikiIconWhite.png ./public/TiddlyWikiIconWhite.png && cp ./MemeOfLinonetwo/tiddlers/TiddlyWikiIconBlack.png ./public/TiddlyWikiIconBlack.png",
     "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --build externalimages",
     "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --rendertiddler sitemap sitemap.xml text/plain && mv ./MemeOfLinonetwo/output/sitemap.xml ./public/sitemap.xml",
     "build:minify": "npm run build:minifyJS && npm run build:minifyHTML",
