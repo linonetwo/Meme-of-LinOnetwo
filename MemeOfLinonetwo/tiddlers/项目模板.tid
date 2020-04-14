@@ -1,0 +1,12 @@
+created: 20200414161153336
+modified: 20200414161401646
+tags: TW运维
+title: 项目模板
+tmap.id: 16ba6479-0e02-4b1d-9ac4-188da8076d69
+type: text/vnd.tiddlywiki
+
+我做了一个 Github 模板项目放在 [[linonetwo/Tiddlywiki-NodeJS-Github-Template|https://github.com/linonetwo/Tiddlywiki-NodeJS-Github-Template]]，可以一键生成具有我的 wiki 相似功能的新 wiki。
+
+不过配置整个部署、同步工具链还是需要一些技术背景的，不然会在细节上遇到很多疑问。
+
+配置的方法我写成了一篇文章[[《用tiddlywiki替代notion和evernote管理知识》|https://onetwo.ren/%E7%94%A8tiddlywiki%E6%9B%BF%E4%BB%A3notion%E5%92%8Cevernote%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/]]。
