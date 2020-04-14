@@ -1,0 +1,24 @@
+created: 20200414135748497
+modified: 20200414140142295
+tags: 自改TW
+title: 不保存经常自己变的系统和插件Tiddler
+tmap.id: c3ed3bec-1da1-4c3a-a780-5164cf4188d6
+type: text/vnd.tiddlywiki
+
+来自 TiddlyMap 的 [[$:/plugins/felixhayashi/tiddlymap/misc/defaultViewHolder]] 和来自系统的 [[$:/StoryList]] 老是自动变：
+
+```diff
+created: 20200409022623558
+creator: Lin Onetwo - 林一二
+-modified: 20200414104033109
++modified: 20200414135126182
+modifier: Lin Onetwo - 林一二
+title: $:/plugins/felixhayashi/tiddlymap/misc/defaultViewHolder
+type: text/vnd.tiddlywiki
+```
+
+没有实质性的变化，而且又经常发生在 wiki 部署后，这样在线版 wiki 就会弹出「This page is asking you to confirm that you want to leave - data you have entered may not be saved」。
+
+但我只是想做浏览不想做编辑啊，[[这让我觉得很烦，于是我去问了一下解决办法|https://groups.google.com/forum/#!msg/tiddlywiki/i5hYDfaeghI/OsDKsH5vAgAJ]]。
+
+看来只要修改 [[$:/core/save/all]] 就好了。于是我给这里面的过滤器加上了 `-[[$:/plugins/felixhayashi/tiddlymap/misc/defaultViewHolder]] -[[$:/StoryList]]`。
