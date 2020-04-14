@@ -35,7 +35,7 @@ registerRoute(
 );
 
 registerRoute(
-  /\.(?:png|jpg|jpeg|svg|gif|woff2)$/,
+  /\.(?:png|jpg|jpeg|svg|gif|woff2?|ttf)$/,
   // Use the cache if it's available.
   new CacheFirst({
     cacheName: 'image-cache',
