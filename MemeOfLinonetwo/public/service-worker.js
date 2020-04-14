@@ -11,7 +11,7 @@ const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute } = workbox.precaching;
 
-// precacheAndRoute(self.__WB_MANIFEST);
+precacheAndRoute(self.__WB_MANIFEST);
 
 registerRoute(
   /\.css$/,
@@ -39,4 +39,4 @@ registerRoute(
 );
 
 registerRoute(/\.js$/, new StaleWhileRevalidate());
-registerRoute(/^\/$/, new StaleWhileRevalidate());
+registerRoute(/(^\/$|index.html)/, new StaleWhileRevalidate());
