@@ -1,5 +1,5 @@
 created: 20200414135748497
-modified: 20200414140142295
+modified: 20200414141904003
 tags: 自改TW
 title: 不保存经常自己变的系统和插件Tiddler
 tmap.id: c3ed3bec-1da1-4c3a-a780-5164cf4188d6
@@ -22,3 +22,7 @@ type: text/vnd.tiddlywiki
 但我只是想做浏览不想做编辑啊，[[这让我觉得很烦，于是我去问了一下解决办法|https://groups.google.com/forum/#!msg/tiddlywiki/i5hYDfaeghI/OsDKsH5vAgAJ]]。
 
 看来只要修改 [[$:/core/save/all]] 就好了。于是我给这里面的过滤器加上了 `-[[$:/plugins/felixhayashi/tiddlymap/misc/defaultViewHolder]] -[[$:/StoryList]]`。
+
+---
+
+不行，这也没用，这是在生成 HTML 时不要把它们加进去，而不加进去它们更爱变。应该要加到 SyncAdaptor 的 filter 里才行。
