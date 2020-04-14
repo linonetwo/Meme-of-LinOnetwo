@@ -39,4 +39,4 @@ registerRoute(
 );
 
 registerRoute(/\.js$/, new StaleWhileRevalidate());
-registerRoute(/\.html$/, new StaleWhileRevalidate());
+registerRoute(/^\/$/, new StaleWhileRevalidate());
