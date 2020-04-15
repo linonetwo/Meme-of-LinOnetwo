@@ -1,7 +1,6 @@
 {
     "description": "Basic client-server edition",
     "plugins": [
-        "tiddlywiki/tiddlyweb",
         "tiddlywiki/highlight",
         "sitemap",
         "prevent-edit"
@@ -28,7 +27,7 @@
             "",
             "text/plain",
             "--rendertiddler",
-            "$:/plugins/tiddlywiki/tiddlyweb/save/offline",
+            "$:/core/save/all",
             "index.html",
             "text/plain"
         ],
