@@ -20,7 +20,7 @@
     "build:minifyJS": "terser --config-file ./terser.config.json --output public/tiddlywiki5.js -- ./MemeOfLinonetwo/output/tiddlywiki5.js",
     "build:minifyHTML": "html-minifier-terser -c ./html-minifier-terser.config.json -o ./public/index.html ./MemeOfLinonetwo/output/index.html",
     "build:clean": "rm -r ./MemeOfLinonetwo/output",
-    "prepare:getTiddlersJSON": "node -e \"require('./getTiddlersJSON')()\" && sleep 0.1"
+    "prepare:getTiddlersJSON": "node -e \"require('./getTiddlersJSON')()\""
   },
   "husky": {
     "hooks": {
