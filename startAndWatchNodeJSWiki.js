@@ -28,6 +28,7 @@ process.env['TIDDLYWIKI_PLUGIN_PATH'] = `${tiddlyWikiFolder}/plugins`;
 // add tiddly filesystem back https://github.com/Jermolene/TiddlyWiki5/issues/4484#issuecomment-596779416
 $tw.boot.argv = [
   '+plugins/tiddlywiki/filesystem',
+  '+plugins/tiddlywiki/tiddlyweb',
   tiddlyWikiFolder,
   '--listen',
   `port=${tiddlyWikiPort}`,
