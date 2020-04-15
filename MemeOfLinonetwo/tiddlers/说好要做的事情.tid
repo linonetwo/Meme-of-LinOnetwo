@@ -1,0 +1,8 @@
+created: 20200415125428741
+modified: 20200415125440979
+tags: Index
+title: 说好要做的事情
+tmap.id: e700bb5c-fc81-400a-9aa9-1934090a6725
+type: text/vnd.tiddlywiki
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />

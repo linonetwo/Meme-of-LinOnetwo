@@ -1,0 +1,8 @@
+created: 20200415125326884
+modified: 20200415125418551
+tags: 维护WebCatalog
+title: 在webcatalog里加入运行脚本的功能
+tmap.id: 84912e66-d298-4434-9c78-6aa48e7c0c9c
+type: text/vnd.tiddlywiki
+
+在webcatalog里加入运行安装脚本的功能，以方便地运行 open refine 、tiddlywiki、jupyter notebook 等命令行启动的 web 应用。

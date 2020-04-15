@@ -1,5 +1,5 @@
 created: 20200412112054138
-modified: 20200412112157689
+modified: 20200415131640213
 tags: 自改TW
 title: 做一个集成功能的右键菜单
 tmap.id: 56066e65-8284-4f76-b024-c1f20afe777b
@@ -10,3 +10,10 @@ type: text/vnd.tiddlywiki
 菜单可以对每个功能有所介绍，并允许其他插件注册它们的功能和介绍。
 
 [[在论坛里的讨论|https://groups.google.com/forum/#!topic/tiddlywiki/ltW533iNItk]]
+
+可能在[[行级渲染的 TiddlyWiki Wikitext]]里作用更大。
+
+# 添加 xx 字段
+# 删除
+# 修改
+# 移动至其他文件夹
