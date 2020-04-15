@@ -1,0 +1,8 @@
+created: 20200415125028956
+modified: 20200415125039147
+tags: Index
+title: 很想做但是最近舍不得花时间做的事情
+tmap.id: d3f74f66-85fb-4c88-9325-924a6e459411
+type: text/vnd.tiddlywiki
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />

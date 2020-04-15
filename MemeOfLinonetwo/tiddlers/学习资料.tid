@@ -1,0 +1,10 @@
+created: 20200415131125800
+modified: 20200415131226510
+tags: Index
+title: 学习资料
+tmap.id: 936d6e93-bd30-4b9a-b308-8fec76a45820
+type: text/vnd.tiddlywiki
+
+学的时候都记一记笔记，以后导入到 Anki 里取复习。尽量多添加元信息和关联，以后说不定推理机和问答机器人会用得上。
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
