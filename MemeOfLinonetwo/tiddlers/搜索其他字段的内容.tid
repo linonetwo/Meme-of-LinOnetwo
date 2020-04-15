@@ -1,0 +1,11 @@
+created: 20200415072852736
+keywords: search field advancedSearch
+modified: 20200415073018882
+responder: Eric Shulman
+tags: solution
+title: 搜索其他字段的内容
+tmap.id: b64e2769-7be2-429f-9c6d-b756e911526e
+type: text/vnd.tiddlywiki
+url: https://groups.google.com/forum/#!topic/tiddlywiki/2m_m5QEZt1w
+
+用 [[filtergenerators Power Search|http://tiddlytools.com/filtergenerators.html]] 来生成 filter 表达式。
