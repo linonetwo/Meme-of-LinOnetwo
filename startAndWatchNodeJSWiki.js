@@ -3,8 +3,6 @@ const path = require('path');
 const $tw = require('tiddlywiki/boot/boot.js').TiddlyWiki();
 const execSync = require('child_process').execSync;
 
-const getTiddlersJSON = require('./getTiddlersJSON');
-
 const tiddlyWikiPort = require('./package.json').port;
 const wikiFolderName = require('./package.json').name;
 const COMMIT_INTERVAL = (1000 * 60 * 60) / 2;
@@ -60,9 +58,8 @@ function syncToGit(folder) {
   execSync(`/bin/sh ${syncScriptPath}`, { cwd: folder });
 }
 
-const commitAndSync = debounce(async (folderPath) => {
+const commitAndSync = debounce((folderPath) => {
   try {
-    await getTiddlersJSON();
     execSync(`/bin/sh ${commitScriptPath}`, { cwd: folderPath });
     syncToGit(folderPath);
   } catch (error) {
