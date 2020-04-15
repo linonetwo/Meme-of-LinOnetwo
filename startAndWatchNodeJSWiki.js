@@ -3,6 +3,8 @@ const path = require('path');
 const $tw = require('tiddlywiki/boot/boot.js').TiddlyWiki();
 const execSync = require('child_process').execSync;
 
+const getTiddlersJSON = require('./getTiddlersJSON');
+
 const tiddlyWikiPort = require('./package.json').port;
 const wikiFolderName = require('./package.json').name;
 const COMMIT_INTERVAL = (1000 * 60 * 60) / 2;
@@ -24,7 +26,13 @@ const frequentlyChangedFileThatShouldBeIgnoredFromWatch = [
 
 process.env['TIDDLYWIKI_PLUGIN_PATH'] = `${tiddlyWikiFolder}/plugins`;
 // add tiddly filesystem back https://github.com/Jermolene/TiddlyWiki5/issues/4484#issuecomment-596779416
-$tw.boot.argv = ['+plugins/tiddlywiki/filesystem', tiddlyWikiFolder, '--listen', `port=${tiddlyWikiPort}`, 'root-tiddler=$:/core/save/lazy-images'];
+$tw.boot.argv = [
+  '+plugins/tiddlywiki/filesystem',
+  tiddlyWikiFolder,
+  '--listen',
+  `port=${tiddlyWikiPort}`,
+  'root-tiddler=$:/core/save/lazy-images',
+];
 
 $tw.boot.boot();
 
@@ -47,12 +55,13 @@ function debounce(func, wait, immediate) {
 
 function syncToGit(folder) {
   console.log(`Sync to Git: /bin/sh ${syncScriptPath} under ${folder}`);
-  execSync(`git config --bool branch.master.sync true`, { cwd: folder })
+  execSync(`git config --bool branch.master.sync true`, { cwd: folder });
   execSync(`/bin/sh ${syncScriptPath}`, { cwd: folder });
 }
 
-const commitAndSync = debounce((folderPath) => {
+const commitAndSync = debounce(async (folderPath) => {
   try {
+    await getTiddlersJSON();
     execSync(`/bin/sh ${commitScriptPath}`, { cwd: folderPath });
     syncToGit(folderPath);
   } catch (error) {
