@@ -19,7 +19,13 @@
     "build:precache": "workbox injectManifest workbox-config.js",
     "build:minifyJS": "terser --config-file ./terser.config.json --output public/tiddlywiki5.js -- ./MemeOfLinonetwo/output/tiddlywiki5.js",
     "build:minifyHTML": "html-minifier-terser -c ./html-minifier-terser.config.json -o ./public/index.html ./MemeOfLinonetwo/output/index.html",
-    "build:clean": "rm -r ./MemeOfLinonetwo/output"
+    "build:clean": "rm -r ./MemeOfLinonetwo/output",
+    "prepare:getTiddlersJSON": "node -e \"require('./getTiddlersJSON')()\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run prepare:getTiddlersJSON"
+    }
   },
   "dependencies": {
     "tiddlywiki": "5.1.22"
@@ -27,6 +33,8 @@
   "devDependencies": {
     "cross-env": "7.0.2",
     "html-minifier-terser": "5.0.5",
+    "husky": "^4.2.5",
+    "node-fetch": "^2.6.0",
     "terser": "4.6.11",
     "workbox-cli": "5.1.2"
   }
