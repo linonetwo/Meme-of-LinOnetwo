@@ -1,0 +1,10 @@
+created: 20200415015430118
+modified: 20200415015520177
+tags: 自改TW
+title: 快速回到上一个查看的Tiddler
+tmap.id: e66261dc-4b54-4054-800d-8eae8ab7a7ca
+type: text/vnd.tiddlywiki
+
+在 Firefox 和 VSCode 里，按 `ctrl+tab` 可以回到上一个查看的项目，这在来回对比的情况下很方便。
+
+如果在桌面版 TiddlyWiki 里，我或许也可以实现这个功能。
