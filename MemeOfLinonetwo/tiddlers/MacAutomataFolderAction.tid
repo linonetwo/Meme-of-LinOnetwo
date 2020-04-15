@@ -1,0 +1,10 @@
+created: 20200415153233765
+modified: 20200415153257536
+tags: 技术细节
+title: MacAutomataFolderAction
+tmap.id: e08d1859-ae3a-4f77-b59b-9c1d87687486
+type: text/vnd.tiddlywiki
+
+Folder Action 只有在保存到 `/Users/xxx/Library/Workflows/Applications/Folder Actions` 的时候才有效。
+
+有时候创建了但是一直不触发，得删了重新从头创建才能修好。还有有时候触发就是很慢。
