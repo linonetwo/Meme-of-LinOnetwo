@@ -17,13 +17,7 @@
     "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --rendertiddler sitemap sitemap.xml text/plain && mv ./MemeOfLinonetwo/output/sitemap.xml ./public/sitemap.xml",
     "build:precache": "workbox injectManifest workbox-config.js",
     "build:minifyHTML": "html-minifier-terser -c ./html-minifier-terser.config.json -o ./public/index.html ./MemeOfLinonetwo/output/index.html",
-    "build:clean": "rm -r ./MemeOfLinonetwo/output",
-    "prepare:getTiddlersJSON": "node -e \"require('./getTiddlersJSON')()\""
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "npm run prepare:getTiddlersJSON"
-    }
+    "build:clean": "rm -r ./MemeOfLinonetwo/output"
   },
   "dependencies": {
     "tiddlywiki": "5.1.22"
