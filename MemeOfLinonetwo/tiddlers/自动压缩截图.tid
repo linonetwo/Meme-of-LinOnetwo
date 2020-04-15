@@ -1,0 +1,27 @@
+created: 20200415145348713
+keywords: mac screenshot compress ocr image
+modified: 20200415153356240
+responder: Gitlab Blog
+tags: 自改Mac solution
+title: 自动压缩截图
+tmap.id: 35ae5781-b428-462a-8093-ed11fc2dea33
+type: text/vnd.tiddlywiki
+url: https://www.lifewire.com/use-os-x-folder-actions-to-know-2260158
+
+先装[[压缩库|https://github.com/google/zopfli]]。
+
+```shell
+brew install pngquant zopfli
+```
+
+用 Automator 创建一个名为 `CompressScreenshot` 的 [[Folder Action|MacAutomataFolderAction]]，选择监听 Desktop，然后创建一个 `Run Shell Script`，注意 Pass Input `as argument`。
+
+```shell
+for f in "$@"
+do
+  if [[ $(file --mime-type -b "$f") == image/*g ]]; then
+    /usr/local/bin/pngquant 64 --skip-if-larger --ext=.png --force "$f"
+    /usr/local/bin/zopflipng -y "$f" "$f"
+  fi
+done
+```

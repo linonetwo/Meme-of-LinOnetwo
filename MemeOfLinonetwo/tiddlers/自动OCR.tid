@@ -1,0 +1,42 @@
+created: 20200415152706094
+keywords: ocr image
+modified: 20200415154310159
+responder: apple.stackexchange
+tags: 自改Mac solution
+title: 自动OCR
+tmap.id: fb3e77ed-259b-4c22-9098-b9d42fedc92b
+type: text/vnd.tiddlywiki
+url: https://apple.stackexchange.com/questions/244557/screenshot-to-ocr-on-os-x
+
+先装 [[OCR 库|https://github.com/tesseract-ocr/tesseract]]：
+
+```shell
+brew install tesseract
+```
+
+到 [[tesseract-ocr/tessdata|https://github.com/tesseract-ocr/tessdata/blob/master/chi_sim.traineddata]] 下载中文识别数据，放到 `/usr/local/share/tessdata/`
+
+然后可以拿一个截图试试，输出到 `stdout`，并去掉空格（因为[[中文识别出来空格一堆|https://github.com/tesseract-ocr/tesseract/issues/2814]]）：
+
+```shell
+tesseract ~/Desktop/aaa.png stdout -l chi_sim | tr -d "[:space:]"
+```
+
+但是如果要识别英文的话就不好去掉空格了：
+
+```shell
+tesseract ~/Desktop/aaa.png stdout -l chi_sim+eng
+```
+
+用 Automator 创建一个名为 `OCRScreenshot` 的 [[Folder Action|MacAutomataFolderAction]]，选择监听 Desktop，然后创建一个 `Run Shell Script`，注意 Pass Input `as argument`。脚本参考了[[自动压缩截图]]。
+
+```shell
+for f in "$@"
+do
+  if [[ $(file --mime-type -b "$f") == image/*g ]]; then
+	  /usr/local/bin/tesseract "$f" stdout -l chi_sim+eng | pbcopy
+  fi
+done
+```
+
+注意要用 `/usr/local/bin/tesseract` 而不是 `tesseract`，不然会说 `zsh:4: command not found: tesseract`。
