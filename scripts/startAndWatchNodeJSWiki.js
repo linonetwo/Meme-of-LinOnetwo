@@ -3,11 +3,11 @@ const path = require('path');
 const $tw = require('tiddlywiki/boot/boot.js').TiddlyWiki();
 const execSync = require('child_process').execSync;
 
-const tiddlyWikiPort = require('./package.json').port;
-const wikiFolderName = require('./package.json').name;
+const tiddlyWikiPort = require('../package.json').port;
+const wikiFolderName = require('../package.json').name;
 const COMMIT_INTERVAL = (1000 * 60 * 60) / 2;
 
-const repoFolder = path.dirname(__filename);
+const repoFolder = path.join(path.dirname(__filename), '..');
 
 const tiddlyWikiFolder = path.join(repoFolder, wikiFolderName);
 
