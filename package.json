@@ -28,8 +28,6 @@
   "devDependencies": {
     "cross-env": "7.0.2",
     "html-minifier-terser": "5.0.5",
-    "husky": "4.2.5",
-    "node-fetch": "2.6.0",
     "workbox-cli": "5.1.2"
   },
   "optionalDependencies": {
