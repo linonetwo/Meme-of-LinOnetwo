@@ -6,6 +6,9 @@ const scriptsFolder = path.join(path.dirname(__filename));
 const scriptPath = path.join(scriptsFolder, 'startAndWatchNodeJSWiki.js');
 
 const service = new Service({
+  /*
+    View status using `service tiddlywiki status` on Linux
+  */
   name: 'TiddlyWiki',
   description: 'Local TiddlyWiki server for my knowledge management.',
   script: scriptPath,
@@ -29,7 +32,7 @@ service.on('error', () => {
 });
 service.on('uninstall', () => {
   console.log('Uninstall complete.');
-  console.log('The service exists: ', service.exists);
+  console.log('The service exists: ', typeof service.exists === 'function' ? service.exists() : service.exists);
 });
 
 if (process.argv[2] === 'install') {
