@@ -38,10 +38,10 @@ $tw.boot.boot();
 /** https://davidwalsh.name/javascript-debounce-function */
 function debounce(func, wait, immediate) {
   let timeout;
-  return function () {
+  return function() {
     const context = this;
     const args = arguments;
-    const later = function () {
+    const later = function() {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
@@ -58,7 +58,7 @@ function syncToGit(folder) {
   execSync(`/bin/sh ${syncScriptPath}`, { cwd: folder });
 }
 
-const commitAndSync = debounce((folderPath) => {
+const commitAndSync = debounce(folderPath => {
   try {
     execSync(`/bin/sh ${commitScriptPath}`, { cwd: folderPath });
     syncToGit(folderPath);
@@ -87,4 +87,6 @@ function watchFolder(wikiFolderPath, repoPath) {
 }
 
 watchFolder(tiddlyWikiFolder, repoFolder);
-watchFolder(privateTiddlyWikiFolder, privateTiddlyWikiRepo);
+if (fs.existsSync(privateTiddlyWikiRepo)) {
+  watchFolder(privateTiddlyWikiFolder, privateTiddlyWikiRepo);
+}
