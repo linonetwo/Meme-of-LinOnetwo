@@ -30,6 +30,8 @@ In `now.json` there is config for deployment, see [zeit.co](https://zeit.co/home
 
 `npm run uninstall:wikiServer`: uninstall start up script, and shut down the server immediately
 
+`npm run install:windows:wikiServer` `npm run install:privateRepo` `npm run uninstall:windows:wikiServer` are Windows version of above commands
+
 `npm run start:wikiServer`: start local tiddlywiki server.
 
 `npm build` and `npm run build:nodejs2html`: pack tiddlywiki data to a HTML file
