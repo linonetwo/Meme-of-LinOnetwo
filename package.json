@@ -7,8 +7,10 @@
   "license": "MIT",
   "scripts": {
     "install:wikiServer": "sudo node scripts/installServer.js install",
+    "install:windows:wikiServer": "node scripts/installServer.js install",
     "install:privateRepo": "cd ./MemeOfLinonetwo/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo",
     "uninstall:wikiServer": "sudo node scripts/installServer.js uninstall",
+    "uninstall:windows:wikiServer": "node scripts/installServer.js uninstall",
     "start:wikiServer": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb MemeOfLinonetwo --listen port=11012 \"root-tiddler=$:/core/save/lazy-images\"",
     "build": "npm run build:prepare && npm run build:public && npm run build:nodejs2html && npm run build:sitemap && npm run build:minifyHTML && npm run build:precache && npm run build:clean",
     "build:prepare": "rm -rf ./public",
