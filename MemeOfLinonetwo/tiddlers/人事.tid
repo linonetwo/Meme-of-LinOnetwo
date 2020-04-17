@@ -1,10 +1,12 @@
 created: 20200409072213379
-modified: 20200412145520338
+modified: 20200417153253528
 tags: Index
 title: 人事
 tmap.id: c653b246-ef01-4f3d-a41d-4ff70db98a91
 type: text/vnd.tiddlywiki
 
 逐步记录我的可以公开的朋友关系。[[把想和朋友说的话题关联到朋友身上]]，防止没空的时候想说，有空的时候忘说。
+
+还有可以定期[[想起我好久没联系的朋友|我的朋友是怎么想起来找我的？]]，和他们聊聊。
 
 <$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
