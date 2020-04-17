@@ -1,0 +1,81 @@
+created: 20200417124542233
+modified: 20200417145318732
+tags: TW运维
+title: 在手机上部署TiddlyWiki
+tmap.id: 06cd8869-8716-4a9c-a1a3-51fa56fb43f3
+type: text/vnd.tiddlywiki
+
+!! 初次配置
+
+在 Google Play 下载 Termux，启动后安装依赖：
+
+```shell
+pkg install openssh node git
+```
+
+然后配置 Git：
+
+[[generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent|https://help.github.com/en/github/authenticating-to-github/generating-a-new-ssh-key-and-adding-it-to-the-ssh-agent]]：
+
+```shell
+ssh-keygen -t rsa -b 4096 -C "linonetwo012@gmail.com"
+cat /data/data/com.termux/files/home/.ssh/id_rsa.pub
+```
+
+把公钥黏贴到 Github 设置里：
+
+[[github.com/settings/keys|https://github.com/settings/keys]]
+
+然后下载公开仓库和私有仓库：
+
+```shell
+git clone git@github.com:linonetwo/Meme-of-LinOnetwo.git
+git clone git@github.com:linonetwo/private-Meme-of-LinOnetwo.git
+```
+
+安装依赖：
+
+```shell
+cd /Meme-of-LinOnetwo && npm i
+npm run install:privateRepo
+```
+
+!! 启动Wiki
+
+```shell
+cd ~ && cd /Meme-of-LinOnetwo && node scripts/startAndWatchNodeJSWiki.js
+```
+
+这一步之后就可以在本机的 `127.0.0.1:11012` 看到 wiki 了，糟糕的是，与 NodeJS 同步用的 JS 运行起来比较慢，Firefox 会问我们要不要结束这个使页面卡顿的脚本…
+
+!!! 让别的内网设备也能访问
+
+监听 `127.0.0.1` 的服务器是不会被内网其他设备发现的，需要监听内网 ip。
+
+以通过 `ifconfig` 看到电脑的内网 ip 为 `192.168.3.20` 为例：
+
+```shell
+--listen port=11012 host=0.0.0.0
+```
+
+这样才能在手机上通过 `192.168.3.20:11012` 打开电脑上的 wiki。手机上启动服务器的话也得这样。
+
+有空研究一下自动获取内网其他设备 ip 的方法，这样才方便在电脑上看手机的 wiki。
+
+!! 开机启动？
+
+按照[[Termux教程|https://p3terx.com/archives/termux-tutorial-1.html]]里的说法，通过类似：
+
+```shell
+mkdir -p ~/.termux/boot/ && echo 'termux-wake-lock; sshd' > ~/.termux/boot/start-sshd
+```
+
+的命令就可以让 sshd 开机自动启动了，但是我发现运行 TiddlyWiki 还是蛮耗电的，如果出门在外默认开启可能和女朋友一起旅行到一半想看地图却没电了，而这样的日子其实不怎么需要 wiki。所以我权衡之下还是决定手动启动，买一个 Termux 在桌面执行命令的小插件，想要用 wiki 的那一天就提前打开（可能就好几天不关了），想要出门旅行的时候就关上。
+
+!! 性能不够
+
+手机浏览器打开电脑上的 Wiki 有点卡（可能因为后台还跑着一个本地服务器，也可能是因为需要跑没有 minify 的 JS）。
+
+我发现在手机上部署 TiddlyWiki 不现实，我的小米 8 严重发热快速耗电，而且其他 App 变卡…
+
+手机打开任务视图都卡卡的…所以最终我还是暂时放弃了在手机上开 TiddlyWiki 服务器的想法。想要多端编辑的话，还是写一个 Github SyncAdaptor 或者继续打磨 SoLiD SyncAdaptor 吧。
