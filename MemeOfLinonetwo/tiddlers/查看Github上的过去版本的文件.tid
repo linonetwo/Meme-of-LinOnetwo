@@ -1,0 +1,8 @@
+created: 20200417044347209
+modified: 20200417044505469
+tags: 自改TW
+title: 查看Github上的过去版本的文件
+tmap.id: 34920d33-5517-406a-a29b-2f261f897912
+type: text/vnd.tiddlywiki
+
+今天在 Github 上看到 [[vsls-contrib/gitdoc|https://github.com/vsls-contrib/gitdoc]]，可以把 Git 当做有版本管理的 Google Doc 来用，我就想到我现在不是也在 Github 上存储了每个 Tiddler 的历史版本了吗，我是不是可以加一个 timeline view 来查看每个 tiddler 的历史版本和 diff？
