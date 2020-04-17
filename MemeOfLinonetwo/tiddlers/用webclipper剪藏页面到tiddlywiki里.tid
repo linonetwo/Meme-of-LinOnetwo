@@ -1,0 +1,10 @@
+created: 20200417055033013
+modified: 20200417055154793
+tags: 自改TW
+title: 用webclipper剪藏页面到tiddlywiki里
+tmap.id: 21057a27-81c6-4993-bc19-82a1bbad885e
+type: text/vnd.tiddlywiki
+
+[[webclipper/web-clipper|https://github.com/webclipper/web-clipper]] 有插件系统，可能可以支持剪藏放到 Github 里，然后被 tiddlywiki 读取。
+
+或者和知乎赞过内容一样，保存到本地 sqlite 数据库里？
