@@ -1,6 +1,6 @@
 created: 20200217065630004
 creator: Lin Onetwo - 林一二
-modified: 20200410073334665
+modified: 20200418030856474
 modifier: Lin Onetwo - 林一二
 tags: 模因学 想法
 title: 记忆的可提取性和稳定性
@@ -13,9 +13,9 @@ type: text/vnd.tiddlywiki
 
 [img[在记忆钟中，可提取性随时间降低|https://supermemo.guru/images/thumb/5/5a/Forgettingcurve.jpg/1200px-Forgettingcurve.jpg]]
 
-两个维度的关系在于：
+两个维度的关系在于，记忆曲线中，竖轴为可提取性，横轴为稳定性：
 
-[img[记忆曲线中，竖轴为可提取性，横轴为稳定性|https://pic3.zhimg.com/v2-af6fb96971918714ef1d4a6af01557bf_r.jpg]]
+{{记忆的可提取性和稳定性.jpg}}
 
 在 溪五七七C57 翻译的[[MIT诺奖大牛2万字雄文：记忆的本质|https://zhuanlan.zhihu.com/p/101491407]]中也提到：
 
@@ -25,3 +25,5 @@ type: text/vnd.tiddlywiki
 <<<
 
 这可能说明，可提取性低意味着印迹沉默了，但这个记忆依然是稳定的。
+
+很久以前发生的事，或很久以前学的知识，可能稳定性很高，但是因为和日常使用的其他知识缺乏关联，所以可提取性比较低，但是做梦时仍然可能被想起来变成梦的素材。
