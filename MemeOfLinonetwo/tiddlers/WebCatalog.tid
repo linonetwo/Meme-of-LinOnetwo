@@ -1,0 +1,36 @@
+created: 20200419084211965
+modified: 20200419085952894
+tags: 开源项目 技术细节
+title: WebCatalog
+tmap.id: d9bc9008-2812-4bc4-9cfd-da107bd51716
+type: text/vnd.tiddlywiki
+
+是一个把网页变成桌面应用的 app
+
+!! preload
+
+用了很多个 window，每个都有自己的 preload `template/public/preload`
+
+!! 处理生成的 app 里的右键菜单等附加功能
+
+https://github.com/atomery/webcatalog/blob/master/template/public/preload/view.js
+
+!!! 生成调用其他浏览器的简单应用（只包含 bash script）
+
+https://github.com/atomery/webcatalog/tree/master/public/libs/app-management/install-app-async
+
+forked-script-electron.js is to create Electron-based app. forked-script-lite.js is to create browser-based apps
+
+the bash script is in appName.app/Contents/MacOS/appName
+
+长得像这样：
+
+```shell
+shell
+#!/usr/bin/env bash
+/Applications/Firefox.app/Contents/MacOS/Firefox --class custom-1587220509973 --P custom-1587220509973 "https://google.com"
+```
+
+!! 嵌入网页
+
+用的是 BrowserView ，而不是直接放在 BrowserWindow 里，这样不仅性能好，还可以在旁边放侧边栏。

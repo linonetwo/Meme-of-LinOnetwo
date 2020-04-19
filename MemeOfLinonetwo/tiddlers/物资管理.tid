@@ -1,0 +1,25 @@
+created: 20200419093107420
+modified: 20200419095351558
+tags: Index
+title: 物资管理
+tmap.id: e09e466a-9ecd-4a44-aac9-c678cb1886a9
+type: text/vnd.tiddlywiki
+
+<fieldset>
+	<legend>快速添加</legend>
+
+	<$button>
+		<$action-sendmessage $message="tm-new-tiddler" title=<<now "物资管理/[UTC]YYYY0MM0DD0hh0mm0ssXXX">> text="" tags="APrivateContent 物资管理 食品" caption="" schema.location="" />
+	添加食品
+	</$button>
+
+	<$button>
+		<$action-sendmessage $message="tm-new-tiddler" title=<<now "物资管理/[UTC]YYYY0MM0DD0hh0mm0ssXXX">> text="" tags="APrivateContent 物资管理 现实世界工具" caption="" schema.location="" />
+	添加现实世界工具
+	</$button>
+
+</fieldset>
+
+!! 屯的吃的
+
+<<RowTable "[tag[物资管理]tag[食品]]" "caption schema.location">>

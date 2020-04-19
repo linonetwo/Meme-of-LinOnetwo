@@ -1,0 +1,9 @@
+created: 20200419090059728
+modified: 20200419090448758
+title: 加上OCR搜索图片内容功能
+tmap.id: 8815067f-196a-4f73-8b40-bf7ddb9cdb77
+type: text/vnd.tiddlywiki
+
+instead of remove text, can "external image" be the "alt" for `<img />` in tiddlywiki?
+
+And add an Ocr plugin to aoto generate text. 可以调用服务端的[[自动OCR]]（或本地的 OCR，如果 [[TiddlyWiki 能直接调用 node|让WebCatalog里的应用能调用node]] 的话）。
