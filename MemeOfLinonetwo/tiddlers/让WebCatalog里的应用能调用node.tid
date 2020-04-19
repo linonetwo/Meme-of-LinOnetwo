@@ -1,0 +1,8 @@
+created: 20200419090344478
+modified: 20200419090407319
+tags: 维护WebCatalog
+title: 让WebCatalog里的应用能调用node
+tmap.id: 220b4759-823e-4616-be8b-e242adf3abe3
+type: text/vnd.tiddlywiki
+
+[[Toggle nodeIntegration for power users|https://github.com/atomery/webcatalog/issues/754]]
