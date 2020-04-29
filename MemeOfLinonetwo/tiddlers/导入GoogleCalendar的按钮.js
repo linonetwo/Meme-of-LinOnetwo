@@ -122,6 +122,13 @@ Attributes: yesterday="yes"
 
       const calendarList = await this.getCalendarLists();
       const calendarEvents = await this.getCalendarEvents(calendarList);
+      const categories = calendarList.map(({ summary, description = '', backgroundColor, etag }) => ({
+        title: summary,
+        text: description,
+        tags,
+        color: backgroundColor,
+        created: new Date(Number(JSON.parse(etag)) / 1000).toTWUTCString(),
+      }));
       const tiddlers = calendarEvents.map(
         ({
           id,
@@ -136,7 +143,7 @@ Attributes: yesterday="yes"
           organizer: { displayName: category },
           color,
         }) => ({
-          title: `GoogleCalendar/${summary}-${created}-${id}`,
+          title: `GoogleCalendar/${summary}-${created}`,
           caption: summary,
           text: description,
           tags: `${tags} ${category}`,
@@ -151,6 +158,7 @@ Attributes: yesterday="yes"
         })
       );
 
+      $tw.wiki.addTiddlers(categories);
       $tw.wiki.addTiddlers(tiddlers);
     }
 
