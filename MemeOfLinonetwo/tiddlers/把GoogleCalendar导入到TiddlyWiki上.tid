@@ -1,0 +1,12 @@
+created: 20200429094048697
+modified: 20200429131907483
+tags: 说好要做的事情
+title: 把GoogleCalendar导入到TiddlyWiki上
+tmap.id: 2caca855-36e0-49e9-b774-9c533660c02c
+type: text/vnd.tiddlywiki
+
+根据[[官方教程|https://developers.google.com/calendar/quickstart/js]]来。
+
+创建了[[GoogleCalendarAPI_KEY]] 和 [[GoogleCalendarCLIENT_ID]]，以后我要是把这个功能做成插件的话，得把它们变成 Config 里的配置项。
+
+然后到[[console.developers.google.com里的凭据页面里|https://console.developers.google.com/apis/credentials?project=quickstart-1588153157493]]，修改「OAuth 2.0 客户端 ID 」去允许本地 localhost 访问它。

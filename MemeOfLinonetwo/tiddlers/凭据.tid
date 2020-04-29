@@ -1,0 +1,9 @@
+created: 20200429095648934
+modified: 20200429095717187
+title: 凭据
+tmap.id: e62c2190-e9fa-4328-926b-30dd47b28f86
+type: text/vnd.tiddlywiki
+
+Token、Secret、Credential。
+
+一般要带上[[APrivateContent]]这个Tag。
