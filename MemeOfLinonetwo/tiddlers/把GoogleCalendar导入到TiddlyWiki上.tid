@@ -1,5 +1,5 @@
 created: 20200429094048697
-modified: 20200429134519444
+modified: 20200429150358665
 tags: 说好要做的事情
 title: 把GoogleCalendar导入到TiddlyWiki上
 tmap.id: 2caca855-36e0-49e9-b774-9c533660c02c
@@ -9,8 +9,8 @@ type: text/vnd.tiddlywiki
 
 创建了[[GoogleCalendarAPI_KEY]] 和 [[GoogleCalendarCLIENT_ID]]，以后我要是把这个功能做成插件的话，得把它们变成 Config 里的配置项。
 
-然后到[[console.developers.google.com里的凭据页面里|https://console.developers.google.com/apis/credentials?project=quickstart-1588153157493]]，修改「OAuth 2.0 客户端 ID 」去允许本地 localhost 访问它。
+然后到[[console.developers.google.com里的凭据页面里|https://console.developers.google.com/apis/credentials?project=quickstart-1588153157493]]，修改「OAuth 2.0 客户端 ID 」去允许本地 localhost 访问它。它不能通过 127.0.0.1 来访问，至少得是 localhost。
 
 然后我创建了一个[[导入GoogleCalendar的按钮]]。
 
-<$addup val1="20" val2="80" />
+<$import-google-calendar-event tags="private GoogleCalendar" />
