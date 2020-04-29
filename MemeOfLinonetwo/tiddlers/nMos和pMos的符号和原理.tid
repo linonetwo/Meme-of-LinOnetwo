@@ -1,5 +1,5 @@
 created: 20200424143840348
-modified: 20200424155415935
+modified: 20200429062354687
 tags: 数字集成电路
 title: nMos和pMos的符号和原理
 tmap.id: 8b8e0ae4-5bbc-465e-a50b-b01f5b243bea
@@ -25,3 +25,5 @@ nMos 的衬底（substrate），即非源非漏的那一大块半导体接地，
 
 pMos 则是要保持 n 衬底有高压，才能保证只会有 n 到 p 的电压，从而不导通。
 
+
+!! MOSFET的工作区间、线性区饱和区的电阻和能量损耗、SD的可交换性（反过来用）
