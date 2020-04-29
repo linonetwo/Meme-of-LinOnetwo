@@ -34,7 +34,7 @@ Attributes: yesterday="yes"
       this.computeAttributes();
       const importButton = this.document.createElement('button');
       importButton.appendChild(
-        this.document.createTextNode(this.state.isSignedIn ? 'Import Calendar' : 'Login to Google')
+        this.document.createTextNode(this.state.isSignedIn ? this.getAttribute('label') || 'Import Calendar' : 'Login to Google')
       );
       importButton.onclick = this.onImportButtonClick.bind(this);
       parent.insertBefore(importButton, nextSibling);
@@ -67,7 +67,6 @@ Attributes: yesterday="yes"
      *  listeners.
      */
     async initClient() {
-      console.log('init');
       // on start up, it might not be loaded, we schedule it later
       if (!window.gapi) {
         setTimeout(this.initClient.bind(this), 100);
@@ -119,11 +118,14 @@ Attributes: yesterday="yes"
      */
     async importToWiki() {
       const tags = this.getAttribute('tags', '');
+      const buildCategoryTitle = categoryName => `谷歌日历/类型/${categoryName}`;
+      const buildEventTitle = (categoryName, created) => `谷歌日历/事件/${categoryName}-created`;
 
       const calendarList = await this.getCalendarLists();
       const calendarEvents = await this.getCalendarEvents(calendarList);
       const categories = calendarList.map(({ summary, description = '', backgroundColor, etag }) => ({
-        title: summary,
+        title: buildCategoryTitle(summary),
+        caption: summary,
         text: description,
         tags,
         color: backgroundColor,
@@ -143,10 +145,10 @@ Attributes: yesterday="yes"
           organizer: { displayName: category },
           color,
         }) => ({
-          title: `GoogleCalendar/${summary}-${created}`,
+          title: buildEventTitle(summary, created),
           caption: summary,
           text: description,
-          tags: `${tags} ${category}`,
+          tags: `${tags} ${buildCategoryTitle(category)}`,
           type: 'text/vnd.tiddlywiki',
           startDate,
           endDate,
