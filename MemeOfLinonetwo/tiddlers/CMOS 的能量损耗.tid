@@ -1,0 +1,8 @@
+created: 20200429052830125
+modified: 20200429052919156
+tags: 数字集成电路
+title: CMOS 的能量损耗
+tmap.id: 92e8f9ab-3c3b-48a7-8770-d0658fc77076
+type: text/vnd.tiddlywiki
+
+只有 Pull UP 部分消耗能量，有一半能量存在电容上 $$\frac{1}{2}C_L V_{DD}^2$$
