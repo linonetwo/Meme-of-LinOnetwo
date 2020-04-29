@@ -136,7 +136,7 @@ Attributes: yesterday="yes"
           organizer: { displayName: category },
           color,
         }) => ({
-          title: `GoogleCalendar/${id}`,
+          title: `GoogleCalendar/${summary}-${created}-${id}`,
           caption: summary,
           text: description,
           tags: `${tags} ${category}`,
