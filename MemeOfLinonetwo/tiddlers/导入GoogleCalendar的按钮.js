@@ -67,6 +67,7 @@ Attributes: yesterday="yes"
      *  listeners.
      */
     async initClient() {
+      console.log('init');
       // on start up, it might not be loaded, we schedule it later
       if (!window.gapi) {
         setTimeout(this.initClient.bind(this), 100);
@@ -118,11 +119,11 @@ Attributes: yesterday="yes"
      */
     async importToWiki() {
       const tags = this.getAttribute('tags', '');
+      const updateCategoriesOnly = this.getAttribute('categories', 'no') === 'yes';
       const buildCategoryTitle = categoryName => `谷歌日历/类型/${categoryName}`;
-      const buildEventTitle = (categoryName, created) => `谷歌日历/事件/${categoryName}-${created}`;
+      const buildEventTitle = (categoryName, created) => `谷歌日历/事件/${categoryName}-created`;
 
       const calendarList = await this.getCalendarLists();
-      const calendarEvents = await this.getCalendarEvents(calendarList);
       const categories = calendarList.map(({ summary, description = '', backgroundColor, etag }) => ({
         title: buildCategoryTitle(summary),
         caption: summary,
@@ -131,6 +132,14 @@ Attributes: yesterday="yes"
         color: backgroundColor,
         created: new Date(Number(JSON.parse(etag)) / 1000).toTWUTCString(),
       }));
+      // update Categories only
+      if (updateCategoriesOnly) {
+        $tw.wiki.addTiddlers(categories);
+        return;
+      }
+      // update events only
+      
+      const calendarEvents = await this.getCalendarEvents(calendarList);
       const tiddlers = calendarEvents.map(
         ({
           id,
@@ -159,8 +168,6 @@ Attributes: yesterday="yes"
           color, // mixed from calendar data
         })
       );
-
-      $tw.wiki.addTiddlers(categories);
       $tw.wiki.addTiddlers(tiddlers);
     }
 
