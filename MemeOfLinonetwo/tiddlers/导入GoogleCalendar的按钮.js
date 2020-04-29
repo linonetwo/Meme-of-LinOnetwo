@@ -119,7 +119,7 @@ Attributes: yesterday="yes"
     async importToWiki() {
       const tags = this.getAttribute('tags', '');
       const buildCategoryTitle = categoryName => `谷歌日历/类型/${categoryName}`;
-      const buildEventTitle = (categoryName, created) => `谷歌日历/事件/${categoryName}-created`;
+      const buildEventTitle = (categoryName, created) => `谷歌日历/事件/${categoryName}-${created}`;
 
       const calendarList = await this.getCalendarLists();
       const calendarEvents = await this.getCalendarEvents(calendarList);
