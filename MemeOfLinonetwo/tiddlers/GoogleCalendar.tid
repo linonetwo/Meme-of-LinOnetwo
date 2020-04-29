@@ -1,5 +1,5 @@
 created: 20200429064553844
-modified: 20200429173320919
+modified: 20200429173545787
 tags: 事件记录
 title: GoogleCalendar
 tmap.id: 6c49784c-d803-4113-8501-b4e7b6cbb1ac
@@ -14,5 +14,5 @@ type: text/vnd.tiddlywiki
 
 	<$import-google-calendar-event yesterday="yes" label="导入昨日" tags="APrivateContent GoogleCalendar" />
 	<$import-google-calendar-event label="导入今日" tags="APrivateContent GoogleCalendar" />
-	<$import-google-calendar-event label="导入类别标签" categories tags="APrivateContent GoogleCalendar" />
+	<$import-google-calendar-event label="导入类别标签" categories="yes" tags="APrivateContent GoogleCalendar" />
 </fieldset>
