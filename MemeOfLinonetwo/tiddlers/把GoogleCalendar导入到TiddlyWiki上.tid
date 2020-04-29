@@ -1,5 +1,5 @@
 created: 20200429094048697
-modified: 20200429164231998
+modified: 20200429171647704
 tags: 说好要做的事情
 title: 把GoogleCalendar导入到TiddlyWiki上
 tmap.id: 2caca855-36e0-49e9-b774-9c533660c02c
@@ -13,5 +13,3 @@ type: text/vnd.tiddlywiki
 
 
 然后我创建了一个[[导入GoogleCalendar的按钮]]。
-
-<$import-google-calendar-event yesterday="yes" tags="APrivateContent GoogleCalendar" />

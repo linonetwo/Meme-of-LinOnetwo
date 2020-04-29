@@ -1,8 +1,17 @@
 created: 20200429064553844
-modified: 20200429091838397
+modified: 20200429171802674
 tags: 事件记录
 title: GoogleCalendar
 tmap.id: 6c49784c-d803-4113-8501-b4e7b6cbb1ac
 type: text/vnd.tiddlywiki
 
 我通过 Google Calendar 来记简短的日历，这样碎片化地记录比每晚一次性记日记要清晰、精确。
+
+为方便分析，我[[把GoogleCalendar导入到TiddlyWiki上]]：
+
+<fieldset>
+	<legend>导入今天或昨天的日历</legend>
+
+	<$import-google-calendar-event yesterday="yes" label="导入昨日" tags="APrivateContent GoogleCalendar" />
+	<$import-google-calendar-event yesterday="yes" label="导入今日" tags="APrivateContent GoogleCalendar" />
+</fieldset>
