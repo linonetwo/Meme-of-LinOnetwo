@@ -1,6 +1,6 @@
 created: 20200408090817142
 creator: Lin Onetwo - 林一二
-modified: 20200410053903064
+modified: 20200505133236029
 modifier: Lin Onetwo - 林一二
 tags: 自改TW tiddlywiki
 title: 通过菜单快速添加各种功能块（snippet）
@@ -59,3 +59,5 @@ type: text/vnd.tiddlywiki
 像旧版的 Notion 一样，通过鼠标靠边来唤出，那么我就可以让它直接显示所有打了 snippet 标签的 tiddler 了。
 
 可能得写一个插件才能做到。
+
+而且最好各个插件能用一个 `usage` 字段来向我的插件注册用法，这样就会自动列出来了。

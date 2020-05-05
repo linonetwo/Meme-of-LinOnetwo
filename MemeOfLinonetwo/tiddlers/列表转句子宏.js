@@ -11,7 +11,7 @@ Macro to convert a list to Japanese comma saparated string
 
 exports.name = '列表转句子宏';
 
-exports.params = [{ name: 'text', defalue: '' }];
+exports.params = [{ name: 'text', default: '' }];
 
 exports.run = text => text
   .split(/\s?[*#]\s/)
