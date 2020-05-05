@@ -1,5 +1,5 @@
 created: 20190421082226557
-modified: 20200409070152665
+modified: 20200505132413291
 tags: 自改TW 反思 技术细节
 title: 在 TW 里自制 JS 宏
 tmap.id: 910ab342-192b-4628-a7e9-172297dae42a
@@ -45,7 +45,7 @@ Macro to convert a string of text to a data URI
 
 后来我发现这些全删了都没事。
 
-我又进入到 [[https://onetwo.ren/Meme-of-LinOnetwo/#$:/core/modules/macros/makedatauri.js|https://onetwo.ren/Meme-of-LinOnetwo/#%24%3A%2Fcore%2Fmodules%2Fmacros%2Fmakedatauri.js]] 去看是不是得把我的宏放到 `$:/core/modules/macros/xxx.js` 里面它才能运行，后来我发现并不是这样，因为[[另一个跟我一样困扰的人写的例子|https://groups.google.com/forum/#!topic/tiddlywiki/mU8r3778ky0]]就不用放进去。
+我又进入到 [[$:/core/modules/macros/makedatauri.js|https://wiki.onetwo.ren/#%24%3A%2Fcore%2Fmodules%2Fmacros%2Fmakedatauri.js]] 去看是不是得把我的宏放到 `$:/core/modules/macros/xxx.js` 里面它才能运行，后来我发现并不是这样，因为[[另一个跟我一样困扰的人写的例子|https://groups.google.com/forum/#!topic/tiddlywiki/mU8r3778ky0]]就不用放进去。
 
 我还通过观察其他系统自带宏，猜测是不是要加上 `$:/tags/Macro` 这个 tag 才能生效，但我发现这个 tag 与宏是否生效无关。
 
