@@ -1,0 +1,18 @@
+created: 20200507100720378
+modified: 20200507100836950
+tags: 很想做但是最近舍不得花时间做的事情
+title: 维护Zazu
+tmap.id: 1ffff2c1-7cee-41a7-ad3c-b8659745e86f
+type: text/vnd.tiddlywiki
+
+我之前维护过一段时间 Zazu，升级了它的 Electron 版本，但我后来有一年的时间在倒腾 SoLiD，结果 zazu 被 archive 了，没人想维护了。
+
+我以后可能重新搞一个，结合 tiddlywiki，优先搜索知识库，fallback 到 google。
+
+但我打算再维护一下 zazu，把它升级到最新的依赖，还有重构到 Typescript，完全学懂它的架构。
+
+然后写下面几个插件：
+
+# 自动爬虫，爬取知乎赞过的内容（太多了不适合保存到别的知识管理系统里，就放在一个 sqlite 里）
+# 搜索爬虫爬取的内容
+# 搜索 tiddlywiki 的内容

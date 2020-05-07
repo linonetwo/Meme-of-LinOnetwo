@@ -1,7 +1,7 @@
 color: #666666
 created: 20190421061157179
 creator: Lin Onetwo
-modified: 20200411140452559
+modified: 20200507102617038
 modifier: Lin Onetwo - 林一二
 tags: Index
 title: 想法
@@ -16,4 +16,4 @@ TiddlyWiki 经调研可以满足我的利用和检索需求。
 
 <$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
 
-这个自动生成的索引越来越长了，得想办法换一个方式展示想法列表。
+这个自动生成的索引越来越长了，得想办法换一个方式展示想法列表，比如按时间分页展示。
