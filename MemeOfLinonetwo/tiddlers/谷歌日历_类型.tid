@@ -1,8 +1,10 @@
 created: 20200505131609641
-modified: 20200505131637024
+modified: 20200507102447600
 tags: GoogleCalendar
 title: 谷歌日历/类型
 tmap.id: c060a9bf-d9c7-4edd-91ac-23d6b5488fbf
 type: text/vnd.tiddlywiki
 
 每种类型对应的分值放到了[[每日评价/GoogleCalendar类别分值]]里。
+
+我以前是在一个日历里[[用不同的颜色来代表不同的事件类型|以前用的日历颜色表]]，[[后来就不用了|谷歌日历/事件/配置 Google 联系人和 Google Calendar-2020-04-29T08:36:04.000Z]]。
