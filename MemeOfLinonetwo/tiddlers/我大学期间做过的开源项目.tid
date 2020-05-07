@@ -1,0 +1,37 @@
+created: 20200507102033656
+modified: 20200507102041909
+title: 我大学期间做过的开源项目
+tmap.id: 1e275a40-640a-41d0-8996-1021423cb18f
+type: text/vnd.tiddlywiki
+
+!! 参加开源社区的好处
+
+可以自由地实验新的技术、巩固不常用的技术。可以把自己的经验分享出来，可以认识厉害的人。比如我写的关于 SoLiD 的文章就吸引到了知乎大 V yansuji，还能带来工作机会，比如yansuji也邀请我去他公司干活过。还有能获得参与技术分享的机会，比如我写的关于 IPFS 的文章让我受邀参加 IPFS 技术沙龙，然后分享完后又认识了一些创业伙伴。
+
+!! 项目
+
+我在 solid-tiddlywiki-syncadaptor 里使用了 SoLiD 、RDF ，初步了解了一个笔记应用的同步机制
+
+我在尝试用 react-pixi-fiber 写一个游戏，了解了 fiber 的性能局限（即使 pixi 不渲染，但相应的 react 节点还是需要经常 mark dirty，占用大量时间），了解了 redux 和 ECS 的相似和不同，写了文章分享
+
+我在 solid-box 里，用 electron 做了一个桌面 app ，启动后会在本机启动一个 BaaS 作为分布式应用的数据库，我还给 solid server 提了几个 PR 来修遇到的 bug
+
+在 styled-tachyons 里我用了 do-expression 、 pipeline operator 、babel-macro param macro ，实现了一个 template literal tag
+
+我还写过 use-react-three-fiber-transient-updates 来用 useRef 等 hook 来从 ECS 里向 React 同步快速变化的数据
+
+hyper-visual 是一个终端的插件，可以快速列出常用的命令，就像 vscode 可以列出所有 npm script 一样
+
+还有 rescript-worker-loader 等给 cra 加新功能的，修改其 webpack 配置
+
+ipfs-browser-gateway 是在浏览器里加载点对点网络上的图片和网站，利用了 service worker
+
+我还写过 zazu-firefox-bookmarks 等类似 spotlight 这种快速搜索框的插件，并给 zazu 这个开源搜索框提交了很多 bug 修复
+
+COOL-to-JavaScript 则是尝试了 Antlr4，来把一门别的语言编译到 JS ，用到了 babel-template 来生成大块的 AST
+
+fs-transaction 则是把对 fs 的操作放到临时目录里，从而支持回滚等操作
+
+menkouchaomian 是学着用 rn 来写一个类似饿了吗的应用，后来我被 ruff 招去写 app 了，就没继续搞
+
+Shanghaitech-Loginer-APP 是我每天都在用的 rn app

@@ -1,5 +1,5 @@
 created: 20190422100230650
-modified: 20200409033738427
+modified: 20200507102725344
 tags: tiddlywiki
 title: 没加 Tag 的笔记
 tmap.id: f9fe1145-3844-4e12-82ea-56c66158a1ea
@@ -11,4 +11,4 @@ type: text/vnd.tiddlywiki
 {{||$:/core/ui/TagTemplate}}
 </$list>
 
-定期回顾这些笔记，思考可以为它们加上什么 Tag。
+定期回顾这些笔记，思考可以为它们加上什么 Tag。不过我现在用 Tag 作为文件夹结构的同时还有双向链接，[[得重新思考一下有时候是否可用不加Tag|有了双向链接还需要用标签作为文件夹吗]]
