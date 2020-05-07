@@ -1,0 +1,8 @@
+created: 20200507033340264
+modified: 20200507033356665
+tags: 很想做但是最近舍不得花时间做的事情
+title: 写一篇文章介绍用 React 取代 D3的渲染部分
+tmap.id: 240f0976-0abc-4f7d-b3ed-d0a8ebd485d8
+type: text/vnd.tiddlywiki
+
+可能还得做一个从 d3 仓库导出的库，把那些算法比如力导向图用的，包装成 React 适用的形式，比如 hooks。
