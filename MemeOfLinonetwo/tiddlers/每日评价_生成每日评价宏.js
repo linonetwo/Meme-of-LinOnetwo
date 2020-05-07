@@ -6,15 +6,14 @@
 
 \*/
 (function () {
-	function getScoreOfTag(tagName) {
-		const GoogleCalendar类别分值 = JSON.parse($tw.wiki.getTiddlerText('每日评价/GoogleCalendar类别分值'));
-		if (tagName in GoogleCalendar类别分值) {
-			return GoogleCalendar类别分值[tagName];
-		}
-		return null;
-	}
-	
-	
+  function getScoreOfTag(tagName) {
+    const GoogleCalendar类别分值 = JSON.parse($tw.wiki.getTiddlerText('每日评价/GoogleCalendar类别分值'));
+    if (tagName in GoogleCalendar类别分值) {
+      return GoogleCalendar类别分值[tagName];
+    }
+    return null;
+  }
+
   function pad(number) {
     if (number < 10) {
       return '0' + number;
@@ -24,6 +23,7 @@
   Date.prototype.toYearMonthDayString = function toYearMonthDayString() {
     return this.getUTCFullYear() + '-' + pad(this.getUTCMonth() + 1) + '-' + pad(this.getUTCDate());
   };
+  const dayLength = new Date(new Date().setHours(24)) - new Date(new Date().setHours(0));
 
   exports.name = '生成每日评价';
 
@@ -38,11 +38,20 @@
       // 筛选出开始时间大于 date 的事件，注意东八区
       .filter((tiddler) => new Date(tiddler.fields.startdate) > new Date(date).setHours(0))
       .sort((a, b) => new Date(a.fields.startdate) - new Date(b.fields.startdate));
-		
-		// 计算分数
-    const scores = todayTiddlers.flatMap((tiddler) => tiddler.fields.tags.map(tagName => getScoreOfTag(tagName.split('/').slice(-1)[0]))).filter(score => Number.isFinite(score));
 
-		const averageScore = scores.reduce((a, b) => a + b, 0) / scores.length;
-		return averageScore.toFixed(2);
-	};
+    // 计算分数
+    const scores = todayTiddlers.map((tiddler) => {
+      const scoreOfTags = tiddler.fields.tags
+        .map((tagName) => getScoreOfTag(tagName.split('/').slice(-1)[0]))
+        .filter((score) => Number.isFinite(score));
+
+      const ScoreSumOfTags = scoreOfTags.reduce((a, b) => a + b, 0);
+      // 用事件的长度来加权
+      const weightOfEvent = (new Date(tiddler.fields.enddate) - new Date(tiddler.fields.startdate)) / dayLength;
+      return ScoreSumOfTags * weightOfEvent;
+    });
+
+    const averageScore = scores.reduce((a, b) => a + b, 0) / scores.length;
+    return averageScore ? `${(averageScore * 100).toFixed(2)}%` : '0%';
+  };
 })();
