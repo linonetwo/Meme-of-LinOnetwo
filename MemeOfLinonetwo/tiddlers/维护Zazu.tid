@@ -1,5 +1,5 @@
 created: 20200507100720378
-modified: 20200507100836950
+modified: 20200508014142678
 tags: 很想做但是最近舍不得花时间做的事情
 title: 维护Zazu
 tmap.id: 1ffff2c1-7cee-41a7-ad3c-b8659745e86f
@@ -16,3 +16,4 @@ type: text/vnd.tiddlywiki
 # 自动爬虫，爬取知乎赞过的内容（太多了不适合保存到别的知识管理系统里，就放在一个 sqlite 里）
 # 搜索爬虫爬取的内容
 # 搜索 tiddlywiki 的内容
+# 做像 Quicker 一样的图形化界面
