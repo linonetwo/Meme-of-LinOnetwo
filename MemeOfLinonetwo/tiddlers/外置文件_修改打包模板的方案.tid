@@ -1,5 +1,5 @@
 created: 20200412030203394
-modified: 20200414051142878
+modified: 20200508042158099
 tags: 外置文件
 title: 外置文件/修改打包模板的方案
 tmap.id: 8cce1bb0-70d6-454e-926c-5e4162f0a115
@@ -17,24 +17,20 @@ type: text/vnd.tiddlywiki
 			"text/plain"
 		],
 		"externalimages": [
-				"--setfield",
-				"[is[image]]",
-				"_canonical_uri",
-				"$:/core/templates/canonical-uri-external-image",
-				"text/plain",
-				"--setfield",
-				"[is[image]]",
-				"text",
-				"",
-				"text/plain",
-				"--rendertiddler",
-				"$:/core/save/all-external-js",
-				"index.html",
-				"text/plain",
-				"--rendertiddler",
-				"$:/core/templates/tiddlywiki5.js",
-				"tiddlywiki5.js",
-				"application/javascript"
+			"--setfield",
+			"[is[binary]] [type[application/msword]]",
+			"_canonical_uri",
+			"$:/core/templates/canonical-uri-external-image",
+			"text/plain",
+			"--setfield",
+			"[is[binary]] [type[application/msword]]",
+			"text",
+			"",
+			"text/plain",
+			"--rendertiddler",
+			"$:/core/save/all",
+			"index.html",
+			"text/plain"
 		]
 	}
 }
@@ -58,7 +54,7 @@ type: text/vnd.tiddlywiki
 
 用同样的原理，设置 [[canonical-uri-external-raw.tid|https://github.com/Jermolene/TiddlyWiki5/blob/master/core/templates/canonical-uri-external-raw.tid]] 和 [[canonical-uri-external-text.tid|https://github.com/Jermolene/TiddlyWiki5/blob/master/core/templates/canonical-uri-external-text.tid]] 也可以外置大的二进制文件和文本文件。不过还得改一下 filter，只外置大于一定大小的文件。
 
-最后一部分是生成 HTML 和 JS：
+最后一部分原来是生成 HTML 和 JS：
 
 ```json
 	"--rendertiddler",
@@ -71,7 +67,7 @@ type: text/vnd.tiddlywiki
 	"application/javascript"
 ```
 
-我使用了 `$:/core/save/all-external-js` 这个生成不含核心 JS 的 HTML 的模板，以及 `$:/core/templates/tiddlywiki5.js` 这个只含核心 JS 的模板，从而分离 HTML 和 JS。
+我使用了 `$:/core/save/all-external-js` 这个生成不含核心 JS 的 HTML 的模板，以及 `$:/core/templates/tiddlywiki5.js` 这个只含核心 JS 的模板，从而分离 HTML 和 JS，不过这在 5.1.22 上不好用。
 
 不过这个 `$:/core/templates/tiddlywiki5.js` 是服务端使用的 JS，会自动保存还有请求 Tiddlers 列表，所以我[[在 public 文件夹里预备好了这些请求的回复|https://github.com/linonetwo/Meme-of-LinOnetwo/commit/745f9fb0999939ade6abfa46bad572e8ff59e61f]]。
 
