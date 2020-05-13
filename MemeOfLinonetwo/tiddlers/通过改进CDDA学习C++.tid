@@ -1,10 +1,10 @@
 created: 20200507032353665
-modified: 20200507032617683
+modified: 20200513150551662
 tags: 很想做但是最近舍不得花时间做的事情
 title: 通过改进CDDA学习C++
 tmap.id: 5780faf6-d8c1-401f-93d8-9b61bb97ecd8
 type: text/vnd.tiddlywiki
 
-我希望[[CDDA能有一个Headless模式，让外部程序能拿到它的所有数据|https://github.com/CleverRaven/Cataclysm-DDA/issues/39881]]，这样我就可以自己写一个类似 Rimworld 这样的前端来练习我的游戏开发技术了，就像 StoneSense 之于 DwarfFortress。
+我希望[[CDDA]][[能有一个Headless模式，让外部程序能拿到它的所有数据|https://github.com/CleverRaven/Cataclysm-DDA/issues/39881]]，这样我就可以自己写一个类似 Rimworld 这样的前端来练习我的游戏开发技术了，就像 StoneSense 之于 DwarfFortress。
 
 在此之前我得先看懂它的代码，做一些修改。学 C++ 的过程中可以去和[[王爽]]交流，上次我和他聊过这个话题了。
