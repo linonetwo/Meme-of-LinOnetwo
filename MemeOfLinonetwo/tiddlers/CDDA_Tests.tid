@@ -1,0 +1,11 @@
+created: 20200513150746098
+modified: 20200513151024587
+tags: CDDA
+title: CDDA/Tests
+tmap.id: 4fa5ac37-3634-4508-a057-b876b6b762ab
+type: text/vnd.tiddlywiki
+
+想要运行 Headless 模式的话，可以看看测试，但是 player activities 要用到的 do_turn() 函数里混进了一些直接画画的需要接触图形 API 的代码，可能会导致 headless 模式崩溃。
+
+the test does crash if you call do_turn() because we have draw code nested in that
+so running headless will actually require a good bit of invasive infrastructural work
