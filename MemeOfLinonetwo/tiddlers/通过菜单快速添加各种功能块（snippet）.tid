@@ -1,6 +1,6 @@
 created: 20200408090817142
 creator: Lin Onetwo - 林一二
-modified: 20200505133236029
+modified: 20200530050330119
 modifier: Lin Onetwo - 林一二
 tags: 自改TW tiddlywiki
 title: 通过菜单快速添加各种功能块（snippet）
@@ -50,6 +50,12 @@ type: text/vnd.tiddlywiki
 优点是：
 
 # 可以加 `<<now YYYY-0MM-0DD>>` 这样的 macro ，来创建动态的 snippet ，这印章功能无法提供的。
+
+---
+
+!! 解决办法4：
+
+在[[编辑器自动补全插件|启用编辑器自动补全]]的[[设置|$:/plugins/snowgoon88/edit-comptext/examples]]里配置 Snippet。
 
 ---
 
