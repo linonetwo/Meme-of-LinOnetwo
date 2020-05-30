@@ -17,11 +17,8 @@ body.tc-body {
 	/** fix menubar with sticky title https://github.com/Jermolene/TiddlyWiki5/issues/4471#issuecomment-594456486*/
 	top: var(--menubar-height);
 }
-/** 编辑器工具栏浮动 */
+/** 编辑器工具栏 */
 .tc-editor-toolbar {
-	position: sticky;
-	z-index: 499;
-	top: calc(39px + var(--menubar-height));
 	background: rgba(255, 255, 255, 0.5);
 	backdrop-filter: blur(10px);
 }
