@@ -1,0 +1,17 @@
+created: 20200530043609789
+keywords: editor
+modified: 20200530050518413
+responder: TW5-extendedit
+tags: solution
+title: 启用编辑器自动补全
+tmap.id: 93ff3482-9d77-490c-858d-42116c793696
+type: text/vnd.tiddlywiki
+url: http://snowgoon88.github.io/TW5-extendedit/#About%20the%20Edit-CompText%20plugin
+
+在 TiddlyWiki 中，我之前用的都是 codemirror 编辑器，但是 codemirror 并没有做什么自动补全。
+
+而有人做了一个 [[TW5-extendedit 插件|$:/plugins/snowgoon88/edit-comptext/examples]]，可以提供 wikitext 中链接和宏的自动补全。
+
+安装好该插件后，需要修改 [[$:/config/EditorTypeMappings/text/vnd.tiddlywiki]]，从 `codemirror` 改成 `comptext` 即可。
+
+它的[[设置|$:/plugins/snowgoon88/edit-comptext/config]]是一个 JSON 文件，可以像配置 VSCode 的 Snippet 一样配置各种快捷输入。
