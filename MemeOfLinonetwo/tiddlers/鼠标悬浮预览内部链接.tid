@@ -1,5 +1,5 @@
 created: 20200413015135813
-modified: 20200415084651875
+modified: 20200530032358118
 tags: 自改TW
 title: 鼠标悬浮预览内部链接
 tmap.id: cf289727-f02c-4d07-b519-4d4b2d1dc1c4
@@ -9,7 +9,7 @@ type: text/vnd.tiddlywiki
 
 我在展示时使用了自己的模板，不展示具体内容，只展示 tag 和相关笔记，不然内容实在是太多了。真要看具体内容直接点击链接看不就好了。
 
-我还修改了原版的 JS ，从而让预览窗口在鼠标移开链接后就自动关闭，以免影响操作。
+[[我还修改了|https://github.com/tobibeer/tw5-preview/issues/1]][[原版的 JS|$:/plugins/tobibeer/preview/link.js]] ，从而让预览窗口在鼠标移开链接后就自动关闭，以免影响操作。
 
 ```js
             // Mouseout
