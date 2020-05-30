@@ -1,5 +1,5 @@
 created: 20200415072812184
-modified: 20200415081025411
+modified: 20200530052318695
 tags: tiddlywiki
 title: 待研究的插件
 tmap.id: 8ac04b27-5d06-42ca-97be-5820e14768c1
@@ -12,5 +12,7 @@ type: text/vnd.tiddlywiki
 [[搜索其他字段的内容]] PowerSearch
 
 [[MyMenus|https://tiddlywiki.psat.com.au/mymenus/]] 在 View 模式下快速加 Tag、即使没有编辑按钮也能查看源码的方便 tag 等
+
+[[TwoStories|https://groups.google.com/forum/#!searchin/tiddlywiki/stories$20column|sort:date/tiddlywiki/d60QYKycUCY/Fcn9yB9-AwAJ]] 双栏布局，类似 RoamResearch 方便参考其他内容的布局。
 
 {{不好用了的插件}}
