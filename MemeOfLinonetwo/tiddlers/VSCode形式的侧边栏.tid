@@ -1,0 +1,10 @@
+created: 20200531142449389
+modified: 20200531142845831
+tags: 自改TW
+title: VSCode形式的侧边栏
+tmap.id: c0704d2b-19a3-4493-a38e-1c60c6b92820
+type: text/vnd.tiddlywiki
+
+目前 TiddlyWiki 的侧边栏每次只展示一个 tab 的内容，tab是横向排列的，这适合一次性展示较长的内容、放置较多的 tab。
+
+但 VSCode 给出了更好的解法，即通过一个纵向排列的 tab 列表，放置没那么多的 tab，但是允许同时展示多个 tab 的内容。这样我就可以同时展示 tiddlymap 、文件夹目录和快捷操作了。
