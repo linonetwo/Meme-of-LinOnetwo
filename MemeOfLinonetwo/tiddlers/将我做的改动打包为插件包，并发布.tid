@@ -1,10 +1,28 @@
 created: 20200531143750625
-modified: 20200531143841787
+modified: 20200601145253748
 tags: 自改TW
 title: 将我做的改动打包为插件包，并发布
 tmap.id: 14ccf96c-a552-4f94-ad53-3a96cbeb8928
 type: text/vnd.tiddlywiki
 
+!! 动机
+
 目前要维护我发布的 TiddlyWiki 模板不是很方便，因为我经常在自己的 wiki 上做出修改，把它们同步到模板项目去很麻烦。
 
 我打算把我做的修改发布为主题包和插件包，这样他人就可以在插件管理里面一键更新了。
+
+---
+
+!! 制作插件仓库
+
+我通过[[mklauber/tw5-plugins-template|https://github.com/mklauber/tw5-plugins-template]]这个模板，创建了我的[[插件Wiki的Github仓库|https://github.com/linonetwo/tiddlywiki-plugin-recommendation]]。
+
+用它可以创建类似[[kookma PluginLibrary|https://kookma.github.io/TW-PluginLibrary/]]的插件Wiki，里面会有一个能拖的Tiddler[[$:/config/KookmaPluginLibrary|https://kookma.github.io/TW-PluginLibrary/#%24%3A%2Fconfig%2FKookmaPluginLibrary]]。
+
+这个 Tiddler 之所以拖到我们自己的 Wiki 里就能添加一个新的插件库，是因为它带有[[$:/tags/PluginLibrary]]这个 Tag 和 [[url:https://xxx.html（指向一个插件库描述文件）|https://kookma.github.io/TW-PluginLibrary/library/index.html]]这个字段。
+
+!! 其他参考资料
+
+在[[inmysocks.tiddlyspot.com|http://inmysocks.tiddlyspot.com/#Making%20a%20Plugin%20Library]]也有制作 Plugin Library 的教程，但我觉得之前的那个仓库模板就够用了。
+
+还有[[sistan.tiddlyspot.com|http://sistan.tiddlyspot.com/]]是创建单个插件的教程，为了制作插件仓库里的插件，也需要参考它。
