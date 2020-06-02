@@ -3,6 +3,7 @@ const $tw = require('tiddlywiki/boot/boot.js').TiddlyWiki();
 
 const tiddlyWikiPort = require('../package.json').port;
 const wikiFolderName = require('../package.json').name;
+const userName = require('../package.json').userName;
 
 const repoFolder = path.join(path.dirname(__filename), '..');
 
@@ -16,6 +17,7 @@ $tw.boot.argv = [
   '+plugins/tiddlywiki/tiddlyweb',
   tiddlyWikiFolder,
   '--listen',
+  `anon-username=${userName}`,
   `port=${tiddlyWikiPort}`,
   'host=0.0.0.0',
   'root-tiddler=$:/core/save/lazy-images',
