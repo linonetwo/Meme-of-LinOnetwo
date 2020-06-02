@@ -1,0 +1,11 @@
+{
+  "title": "$:/plugins/ooktech/dynamic-tables",
+  "description": "A port of ooktech/jed's DynamicTables macro to a plugin, so other plugins can explicitly depend on it",
+  "author": "ooktech/jed",
+  "core-version": ">=5.0.0",
+  "plugin-type": "plugin",
+  "source": "https://github.com/OokTech/TW5-DynamicTables",
+  "documentation": "https://ooktech.com/jed/ExampleWikis/DynamicTables/",
+  "version": "1.0.0",
+  "list": "readme TableWizard examples"
+}
