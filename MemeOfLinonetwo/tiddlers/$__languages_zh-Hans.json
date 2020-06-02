@@ -766,7 +766,11 @@
         },
         "$:/language/ControlPanel/Basics/AnimDuration/Prompt": {
             "title": "$:/language/ControlPanel/Basics/AnimDuration/Prompt",
-            "text": "动画持续时间："
+            "text": "动画持续时间"
+        },
+        "$:/language/ControlPanel/Basics/AutoFocus/Prompt": {
+            "title": "$:/language/ControlPanel/Basics/AutoFocus/Prompt",
+            "text": "编辑条目时的默认自动停留栏位"
         },
         "$:/language/ControlPanel/Basics/Caption": {
             "title": "$:/language/ControlPanel/Basics/Caption",
@@ -778,11 +782,11 @@
         },
         "$:/language/ControlPanel/Basics/DefaultTiddlers/Prompt": {
             "title": "$:/language/ControlPanel/Basics/DefaultTiddlers/Prompt",
-            "text": "首页："
+            "text": "首页"
         },
         "$:/language/ControlPanel/Basics/DefaultTiddlers/TopHint": {
             "title": "$:/language/ControlPanel/Basics/DefaultTiddlers/TopHint",
-            "text": "默认开启的条目："
+            "text": "默认开启的条目"
         },
         "$:/language/ControlPanel/Basics/Language/Prompt": {
             "title": "$:/language/ControlPanel/Basics/Language/Prompt",
@@ -800,45 +804,49 @@
             "title": "$:/language/ControlPanel/Basics/NewJournal/Title/Prompt",
             "text": "新日志条目的名称"
         },
+        "$:/language/ControlPanel/Basics/NewTiddler/Tags/Prompt": {
+            "title": "$:/language/ControlPanel/Basics/NewTiddler/Tags/Prompt",
+            "text": "新条目的标签"
+        },
         "$:/language/ControlPanel/Basics/NewTiddler/Title/Prompt": {
             "title": "$:/language/ControlPanel/Basics/NewTiddler/Title/Prompt",
             "text": "新条目的名称"
         },
         "$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt": {
             "title": "$:/language/ControlPanel/Basics/OverriddenShadowTiddlers/Prompt",
-            "text": "被覆写的默认条目数量："
+            "text": "被覆盖的默认条目数量"
         },
         "$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt": {
             "title": "$:/language/ControlPanel/Basics/ShadowTiddlers/Prompt",
-            "text": "默认条目数量："
+            "text": "默认条目数量"
         },
         "$:/language/ControlPanel/Basics/Subtitle/Prompt": {
             "title": "$:/language/ControlPanel/Basics/Subtitle/Prompt",
-            "text": "副标题："
+            "text": "副标题"
         },
         "$:/language/ControlPanel/Basics/SystemTiddlers/Prompt": {
             "title": "$:/language/ControlPanel/Basics/SystemTiddlers/Prompt",
-            "text": "系统条目数量："
+            "text": "系统条目数量"
         },
         "$:/language/ControlPanel/Basics/Tags/Prompt": {
             "title": "$:/language/ControlPanel/Basics/Tags/Prompt",
-            "text": "标签数量："
+            "text": "标签数量"
         },
         "$:/language/ControlPanel/Basics/Tiddlers/Prompt": {
             "title": "$:/language/ControlPanel/Basics/Tiddlers/Prompt",
-            "text": "一般条目数量："
+            "text": "一般条目数量"
         },
         "$:/language/ControlPanel/Basics/Title/Prompt": {
             "title": "$:/language/ControlPanel/Basics/Title/Prompt",
-            "text": "标题："
+            "text": "标题"
         },
         "$:/language/ControlPanel/Basics/Username/Prompt": {
             "title": "$:/language/ControlPanel/Basics/Username/Prompt",
-            "text": "编辑者署名："
+            "text": "编辑者署名"
         },
         "$:/language/ControlPanel/Basics/Version/Prompt": {
             "title": "$:/language/ControlPanel/Basics/Version/Prompt",
-            "text": "~TiddlyWiki 版本："
+            "text": "~TiddlyWiki 版本"
         },
         "$:/language/ControlPanel/EditorTypes/Caption": {
             "title": "$:/language/ControlPanel/EditorTypes/Caption",
@@ -980,6 +988,10 @@
             "title": "$:/language/ControlPanel/Plugins/AlreadyInstalled/Hint",
             "text": "此插件已经安装版本 <$text text=<<installedVersion>>/>"
         },
+        "$:/language/ControlPanel/Plugins/AlsoRequires": {
+            "title": "$:/language/ControlPanel/Plugins/AlsoRequires",
+            "text": "还需要："
+        },
         "$:/language/ControlPanel/Plugins/Caption": {
             "title": "$:/language/ControlPanel/Plugins/Caption",
             "text": "插件"
@@ -995,6 +1007,10 @@
         "$:/language/ControlPanel/Plugins/Disabled/Status": {
             "title": "$:/language/ControlPanel/Plugins/Disabled/Status",
             "text": "(已禁用)"
+        },
+        "$:/language/ControlPanel/Plugins/Downgrade/Caption": {
+            "title": "$:/language/ControlPanel/Plugins/Downgrade/Caption",
+            "text": "降级"
         },
         "$:/language/ControlPanel/Plugins/Empty/Hint": {
             "title": "$:/language/ControlPanel/Plugins/Empty/Hint",
@@ -1044,6 +1060,10 @@
             "title": "$:/language/ControlPanel/Plugins/ClosePluginLibrary",
             "text": "关闭插件程式库"
         },
+        "$:/language/ControlPanel/Plugins/PluginWillRequireReload": {
+            "title": "$:/language/ControlPanel/Plugins/PluginWillRequireReload",
+            "text": "（需要重新加载）"
+        },
         "$:/language/ControlPanel/Plugins/Plugins/Caption": {
             "title": "$:/language/ControlPanel/Plugins/Plugins/Caption",
             "text": "插件"
@@ -1063,6 +1083,26 @@
         "$:/language/ControlPanel/Plugins/Themes/Hint": {
             "title": "$:/language/ControlPanel/Plugins/Themes/Hint",
             "text": "布景主题插件"
+        },
+        "$:/language/ControlPanel/Plugins/Update/Caption": {
+            "title": "$:/language/ControlPanel/Plugins/Update/Caption",
+            "text": "更新"
+        },
+        "$:/language/ControlPanel/Plugins/Updates/Caption": {
+            "title": "$:/language/ControlPanel/Plugins/Updates/Caption",
+            "text": "更新"
+        },
+        "$:/language/ControlPanel/Plugins/Updates/Hint": {
+            "title": "$:/language/ControlPanel/Plugins/Updates/Hint",
+            "text": "已安装插件的可用更新"
+        },
+        "$:/language/ControlPanel/Plugins/Updates/UpdateAll/Caption": {
+            "title": "$:/language/ControlPanel/Plugins/Updates/UpdateAll/Caption",
+            "text": "更新 <<update-count>> 个插件"
+        },
+        "$:/language/ControlPanel/Plugins/SubPluginPrompt": {
+            "title": "$:/language/ControlPanel/Plugins/SubPluginPrompt",
+            "text": "提供 <<count>> 个可用的附加插件"
         },
         "$:/language/ControlPanel/Parsing/Caption": {
             "title": "$:/language/ControlPanel/Parsing/Caption",
@@ -1163,6 +1203,14 @@
         "$:/language/ControlPanel/Saving/GitService/GitLab/Password": {
             "title": "$:/language/ControlPanel/Saving/GitService/GitLab/Password",
             "text": "个人存取令牌的 API (详见 [[GitLab 帮助页面|https://docs.gitlab.com/ee/user/profile/personal_access_tokens.html]])"
+        },
+        "$:/language/ControlPanel/Saving/GitService/Gitea/Caption": {
+            "title": "$:/language/ControlPanel/Saving/GitService/Gitea/Caption",
+            "text": "Gitea 保存模块"
+        },
+        "$:/language/ControlPanel/Saving/GitService/Gitea/Password": {
+            "title": "$:/language/ControlPanel/Saving/GitService/Gitea/Password",
+            "text": "个人存取令牌的 API (通过 Gitea 的 Web 界面：`设定 | 应用程序 | 产生新的令牌`)"
         },
         "$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading": {
             "title": "$:/language/ControlPanel/Saving/TiddlySpot/Advanced/Heading",
@@ -1976,6 +2024,14 @@
             "title": "$:/language/Docs/PaletteColours/foreground",
             "text": "一般前景"
         },
+        "$:/language/Docs/PaletteColours/menubar-background": {
+            "title": "$:/language/Docs/PaletteColours/menubar-background",
+            "text": "菜单列背景"
+        },
+        "$:/language/Docs/PaletteColours/menubar-foreground": {
+            "title": "$:/language/Docs/PaletteColours/menubar-foreground",
+            "text": "菜单列前景"
+        },
         "$:/language/Docs/PaletteColours/message-background": {
             "title": "$:/language/Docs/PaletteColours/message-background",
             "text": "信息框背景"
@@ -2312,6 +2368,10 @@
             "title": "$:/language/EditTemplate/Fields/Add/Button",
             "text": "添加"
         },
+        "$:/language/EditTemplate/Fields/Add/Button/Hint": {
+            "title": "$:/language/EditTemplate/Fields/Add/Button/Hint",
+            "text": "添加字段至条目"
+        },
         "$:/language/EditTemplate/Fields/Add/Dropdown/System": {
             "title": "$:/language/EditTemplate/Fields/Add/Dropdown/System",
             "text": "系统字段"
@@ -2343,6 +2403,10 @@
         "$:/language/EditTemplate/Tags/Add/Button": {
             "title": "$:/language/EditTemplate/Tags/Add/Button",
             "text": "添加"
+        },
+        "$:/language/EditTemplate/Tags/Add/Button/Hint": {
+            "title": "$:/language/EditTemplate/Tags/Add/Button/Hint",
+            "text": "添加标签"
         },
         "$:/language/EditTemplate/Tags/Add/Placeholder": {
             "title": "$:/language/EditTemplate/Tags/Add/Placeholder",
@@ -2464,10 +2528,6 @@
             "title": "$:/language/Docs/Fields/footer",
             "text": "wizard 的注脚"
         },
-        "$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against": {
-            "title": "$:/language/Docs/Fields/hack-to-give-us-something-to-compare-against",
-            "text": "于 [[$:/core/templates/static.content]] 使用的临时保存栏位"
-        },
         "$:/language/Docs/Fields/icon": {
             "title": "$:/language/Docs/Fields/icon",
             "text": "条目的标题含有与条目关联的图标"
@@ -2532,6 +2592,10 @@
             "title": "$:/language/Docs/Fields/text",
             "text": "条目的内文"
         },
+        "$:/language/Docs/Fields/throttle.refresh": {
+            "title": "$:/language/Docs/Fields/throttle.refresh",
+            "text": "如果存在，则限制此条目的刷新"
+        },
         "$:/language/Docs/Fields/title": {
             "title": "$:/language/Docs/Fields/title",
             "text": "条目的唯一名称"
@@ -2547,6 +2611,10 @@
         "$:/language/Docs/Fields/version": {
             "title": "$:/language/Docs/Fields/version",
             "text": "插件的版本信息"
+        },
+        "$:/language/Docs/Fields/_is_skinny": {
+            "title": "$:/language/Docs/Fields/_is_skinny",
+            "text": "如果存在，则表示必须从服务器加载条目的文本字段"
         },
         "$:/language/Filters/AllTiddlers": {
             "title": "$:/language/Filters/AllTiddlers",
@@ -2859,11 +2927,11 @@
         },
         "$:/language/ConfirmOverwriteTiddler": {
             "title": "$:/language/ConfirmOverwriteTiddler",
-            "text": "您确定要覆写条目 \"<$text text=<<title>>/>\"？"
+            "text": "您确定要复写条目 \"<$text text=<<title>>/>\"？"
         },
         "$:/language/ConfirmEditShadowTiddler": {
             "title": "$:/language/ConfirmEditShadowTiddler",
-            "text": "您即将要编辑默认条目，任何更改将会覆盖默认的系统，使未来的升级不寻常。您确定要编辑 \"<$text text=<<title>>/>\"?"
+            "text": "您即将要编辑默认条目，任何更改将会复盖默认的系统，使未来的升级不寻常。您确定要编辑 \"<$text text=<<title>>/>\"?"
         },
         "$:/language/Count": {
             "title": "$:/language/Count",
@@ -2936,6 +3004,10 @@
         "$:/language/Error/LoadingPluginLibrary": {
             "title": "$:/language/Error/LoadingPluginLibrary",
             "text": "加载插件程式库时，发生错误"
+        },
+        "$:/language/Error/NetworkErrorAlert": {
+            "title": "$:/language/Error/NetworkErrorAlert",
+            "text": "`<h2>''网络错误''</h2>与服务器的连缐似乎已中断。这可能表示您的网络连缐有问题。请尝试恢复网路连缐才能继续。<br><br>''恢复连缐时，所有未保存的更改，将自动同步''。`"
         },
         "$:/language/Error/RecursiveTransclusion": {
             "title": "$:/language/Error/RecursiveTransclusion",
@@ -3063,7 +3135,7 @@
         },
         "$:/language/PluginReloadWarning": {
             "title": "$:/language/PluginReloadWarning",
-            "text": "请保存 {{$:/core/ui/Buttons/save-wiki}} 并刷新页面 {{$:/core/ui/Buttons/refresh}} 允许更改插件才能生效"
+            "text": "请保存 {{$:/core/ui/Buttons/save-wiki}} 并刷新页面 {{$:/core/ui/Buttons/refresh}} ，使 ~JavaScript 插件的更改生效"
         },
         "$:/language/RecentChanges/DateFormat": {
             "title": "$:/language/RecentChanges/DateFormat",
@@ -3088,6 +3160,10 @@
         "$:/language/TagManager/Icon/Heading": {
             "title": "$:/language/TagManager/Icon/Heading",
             "text": "图标"
+        },
+        "$:/language/TagManager/Icons/None": {
+            "title": "$:/language/TagManager/Icons/None",
+            "text": "无"
         },
         "$:/language/TagManager/Info/Heading": {
             "title": "$:/language/TagManager/Info/Heading",
@@ -3135,7 +3211,7 @@
         },
         "$:/config/NewJournal/Tags": {
             "title": "$:/config/NewJournal/Tags",
-            "text": "日志"
+            "tags": "日志"
         },
         "$:/language/Notifications/Save/Done": {
             "title": "$:/language/Notifications/Save/Done",
