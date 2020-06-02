@@ -6,7 +6,8 @@
         "prevent-edit"
     ],
     "themes": [
-        "tiddlywiki/vanilla"
+        "tiddlywiki/vanilla",
+        "itonnote"
     ],
     "build": {
         "index": [
