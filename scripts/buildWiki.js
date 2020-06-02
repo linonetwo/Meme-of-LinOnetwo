@@ -30,8 +30,11 @@ execSync(
   { cwd: repoFolder }
 );
 // npm run build:precache
-execSync(`workbox injectManifest workbox-config.js`, { cwd: repoFolder,  });
+execSync(`workbox injectManifest workbox-config.js`, { cwd: repoFolder });
 // npm run build:clean
-execSync(`rm -r ./MemeOfLinonetwo/output`, { cwd: repoFolder })
+execSync(`rm -r ./MemeOfLinonetwo/output`, { cwd: repoFolder });
 // npm run build:pluginLibrary
-// execSync(`cp -r MemeOfLinonetwo/plugins node_modules/tiddlywiki/plugins/published && tiddlywiki MemeOfLinonetwo --output public/library --build library`)
+execSync(
+  `rm -rf node_modules/tiddlywiki/plugins/published && mkdir -p node_modules/tiddlywiki/plugins/published && cp -r MemeOfLinonetwo/plugins node_modules/tiddlywiki/plugins/published && cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' TIDDLYWIKI_THEME_PATH='MemeOfLinonetwo/themes' tiddlywiki MemeOfLinonetwo --output public/library --build library`,
+  { cwd: repoFolder }
+);
