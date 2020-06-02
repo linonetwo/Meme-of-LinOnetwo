@@ -1,8 +1,7 @@
 created: 20200412034056887
-modified: 20200412042114408
-tags: $:/tags/Macro 自改TW
-title: 点击在新标签页打开Github大图
-tmap.id: 7034b479-9761-4163-9ba1-04f0641956dc
+tags: $:/tags/Macro
+title: $:/plugins/linonetwo/itonnote/Macros/OpenImageInGithub
+caption: 点击在新标签页打开Github大图
 type: text/vnd.tiddlywiki
 
 \define view-big-image(source)
