@@ -238,7 +238,8 @@ a.tc-tiddlylink.tc-tiddlylink-resolves.tc-plugin-info.tc-popup-handle.tc-popup-a
 .tc-search > input[type=search] {
 	flex: 1;
 }
-.tc-search > span > button:nth-child(1), button:nth-child(2) {
+/** 隐藏没用的搜索栏按钮 */
+.tc-search > span > button:nth-child(1), .tc-search > span > button:nth-child(2) {
 	display: none;
 }
 
