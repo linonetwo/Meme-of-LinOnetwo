@@ -268,3 +268,27 @@ a.tc-tiddlylink.tc-tiddlylink-resolves.tc-plugin-info.tc-popup-handle.tc-popup-a
 	display: none !important;
 	}
 }
+
+/**
+  去除按钮、搜索框选中时的蓝框
+*/
+
+button:focus, button:active {
+   outline: none !important;
+   box-shadow: none;
+}
+
+[placeholder]{
+  text-overflow:ellipsis;
+}
+::placeholder{
+  text-overflow:ellipsis;
+}
+input[type=search] {
+  appearance: none;
+}
+
+* {
+  outline: none;
+  -webkit-font-smoothing: antialiased;
+}
