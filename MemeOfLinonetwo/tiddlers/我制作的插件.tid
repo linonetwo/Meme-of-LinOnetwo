@@ -1,5 +1,5 @@
 created: 20200602074405907
-modified: 20200602074653918
+modified: 20200602074838327
 tags: 自改TW
 title: 我制作的插件
 tmap.id: a83141c9-7fd5-43c3-9bc7-32446331ed5c
@@ -10,3 +10,5 @@ type: text/vnd.tiddlywiki
 [[反向链接列表|$:/plugins/linonetwo/inverse-link-and-folder]]
 
 [[发布后禁止编辑|$:/plugins/linonetwo/prevent-edit]]
+
+[[ItonNote 主题|$:/themes/linonetwo/itonnote]]
