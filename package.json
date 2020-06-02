@@ -14,14 +14,7 @@
     "install:windows:privateRepo": "cd ./MemeOfLinonetwo/tiddlers && mklink /D/J .\\private-Meme-of-LinOnetwo ..\\..\\..\\private-Meme-of-LinOnetwo",
     "uninstall:windows:wikiServer": "node scripts/installServer.js uninstall",
     "start:wikiServer": "node scripts/startNodeJSWiki.js",
-    "build": "npm run build:prepare && npm run build:public && npm run build:nodejs2html && npm run build:sitemap && npm run build:minifyHTML && npm run build:precache && npm run build:clean",
-    "build:prepare": "rm -rf ./public",
-    "build:public": "cp -r ./MemeOfLinonetwo/public/ ./public && cp ./MemeOfLinonetwo/tiddlers/favicon.ico ./public/favicon.ico && cp ./MemeOfLinonetwo/tiddlers/TiddlyWikiIconWhite.png ./public/TiddlyWikiIconWhite.png && cp ./MemeOfLinonetwo/tiddlers/TiddlyWikiIconBlack.png ./public/TiddlyWikiIconBlack.png",
-    "build:nodejs2html": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --build externalimages",
-    "build:sitemap": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki MemeOfLinonetwo --rendertiddler sitemap sitemap.xml text/plain && mv ./MemeOfLinonetwo/output/sitemap.xml ./public/sitemap.xml",
-    "build:precache": "workbox injectManifest workbox-config.js",
-    "build:minifyHTML": "html-minifier-terser -c ./html-minifier-terser.config.json -o ./public/index.html ./MemeOfLinonetwo/output/index.html",
-    "build:clean": "rm -r ./MemeOfLinonetwo/output"
+    "build": "node scripts/buildWiki.js"
   },
   "dependencies": {
     "tiddlywiki": "5.1.22"
