@@ -1,5 +1,7 @@
 created: 20200531143750625
-modified: 20200601145253748
+creator: 林一二
+modified: 20200602160608135
+modifier: 林一二
 tags: 自改TW
 title: 将我做的改动打包为插件包，并发布
 tmap.id: 14ccf96c-a552-4f94-ad53-3a96cbeb8928
@@ -13,6 +15,12 @@ type: text/vnd.tiddlywiki
 
 ---
 
+!! 将大部分我对Wiki的改动打包为插件
+
+我在 plugins 文件夹下仿照其他插件创建了几个我的插件，然后将我以前放在[[自改TW]]里的内容都迁移了过去，并配置加载这些插件。我还将我的样式修改做成了主题，载入后与之前直接将它们放在 Wiki 里没有任何区别。
+
+但是上传到 Vercel 之后好像有点问题，ItonNote 插件里的内容比本地少了很多。
+
 !! 制作插件仓库
 
 我通过[[mklauber/tw5-plugins-template|https://github.com/mklauber/tw5-plugins-template]]这个模板，创建了我的[[插件Wiki的Github仓库|https://github.com/linonetwo/tiddlywiki-plugin-recommendation]]。
@@ -20,6 +28,8 @@ type: text/vnd.tiddlywiki
 用它可以创建类似[[kookma PluginLibrary|https://kookma.github.io/TW-PluginLibrary/]]的插件Wiki，里面会有一个能拖的Tiddler[[$:/config/KookmaPluginLibrary|https://kookma.github.io/TW-PluginLibrary/#%24%3A%2Fconfig%2FKookmaPluginLibrary]]。
 
 这个 Tiddler 之所以拖到我们自己的 Wiki 里就能添加一个新的插件库，是因为它带有[[$:/tags/PluginLibrary]]这个 Tag 和 [[url:https://xxx.html（指向一个插件库描述文件）|https://kookma.github.io/TW-PluginLibrary/library/index.html]]这个字段。
+
+但是生成出的 index.html 是空的。
 
 !! 其他参考资料
 
