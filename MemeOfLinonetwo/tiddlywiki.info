@@ -1,60 +1,69 @@
 {
-    "description": "Basic client-server edition",
-    "plugins": [
-        "tiddlywiki/highlight",
-        "sitemap",
-        "inverse-link-and-folder",
-        "copy-on-select",
-        "preview-glass",
-        "dynamic-tables",
-        "prevent-edit",
-        "itonnote"
+  "description": "Basic client-server edition",
+  "plugins": [
+    "tiddlywiki/highlight",
+    "sitemap",
+    "inverse-link-and-folder",
+    "copy-on-select",
+    "preview-glass",
+    "dynamic-tables",
+    "prevent-edit",
+    "itonnote"
+  ],
+  "themes": ["tiddlywiki/vanilla", "itonnote"],
+  "build": {
+    "index": ["--rendertiddler", "$:/plugins/tiddlywiki/tiddlyweb/save/offline", "index.html", "text/plain"],
+    "externalimages": [
+      "--setfield",
+      "[is[binary]] [type[application/msword]]",
+      "_canonical_uri",
+      "$:/core/templates/canonical-uri-external-image",
+      "text/plain",
+      "--setfield",
+      "[is[binary]] [type[application/msword]]",
+      "text",
+      "",
+      "text/plain",
+      "--rendertiddler",
+      "$:/core/save/all",
+      "index.html",
+      "text/plain"
     ],
-    "themes": [
-        "tiddlywiki/vanilla",
-        "itonnote"
+    "static": [
+      "--rendertiddler",
+      "$:/core/templates/static.template.html",
+      "static.html",
+      "text/plain",
+      "--rendertiddler",
+      "$:/core/templates/alltiddlers.template.html",
+      "alltiddlers.html",
+      "text/plain",
+      "--rendertiddlers",
+      "[!is[system]]",
+      "$:/core/templates/static.tiddler.html",
+      "static",
+      "text/plain",
+      "--rendertiddler",
+      "$:/core/templates/static.template.css",
+      "static/static.css",
+      "text/plain"
     ],
-    "build": {
-        "index": [
-            "--rendertiddler",
-            "$:/plugins/tiddlywiki/tiddlyweb/save/offline",
-            "index.html",
-            "text/plain"
-        ],
-        "externalimages": [
-            "--setfield",
-            "[is[binary]] [type[application/msword]]",
-            "_canonical_uri",
-            "$:/core/templates/canonical-uri-external-image",
-            "text/plain",
-            "--setfield",
-            "[is[binary]] [type[application/msword]]",
-            "text",
-            "",
-            "text/plain",
-            "--rendertiddler",
-            "$:/core/save/all",
-            "index.html",
-            "text/plain"
-        ],
-        "static": [
-            "--rendertiddler",
-            "$:/core/templates/static.template.html",
-            "static.html",
-            "text/plain",
-            "--rendertiddler",
-            "$:/core/templates/alltiddlers.template.html",
-            "alltiddlers.html",
-            "text/plain",
-            "--rendertiddlers",
-            "[!is[system]]",
-            "$:/core/templates/static.tiddler.html",
-            "static",
-            "text/plain",
-            "--rendertiddler",
-            "$:/core/templates/static.template.css",
-            "static/static.css",
-            "text/plain"
-        ]
-    }
+    "library": [
+      "--makelibrary",
+      "$:/UpgradeLibrary",
+      "--savelibrarytiddlers",
+      "$:/UpgradeLibrary",
+      "[prefix[$:/]] -[prefix[$:/plugins/tiddlywiki/]] -[prefix[$:/themes/tiddlywiki/]] -[prefix[$:/languages/]] -[[$:/plugins/tiddlywiki/upgrade]] -[[$:/plugins/tiddlywiki/translators]] -[[$:/plugins/tiddlywiki/pluginlibrary]] -[[$:/plugins/tiddlywiki/jasmine]] -[prefix[$:/plugins/kookma]]",
+      "recipes/library/tiddlers/",
+      "$:/UpgradeLibrary/List",
+      "--savetiddler",
+      "$:/UpgradeLibrary/List",
+      "recipes/library/tiddlers.json",
+      "--rendertiddler",
+      "$:/plugins/tiddlywiki/pluginlibrary/library.template.html",
+      "index.html",
+      "text/plain"
+    ],
+    "libraryindex": ["--load", "makeLibrary/", "--rendertiddler", "$:/core/save/all", "index.html", "text/plain"]
+  }
 }
