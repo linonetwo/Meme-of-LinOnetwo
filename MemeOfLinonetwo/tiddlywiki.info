@@ -4,6 +4,7 @@
         "tiddlywiki/highlight",
         "sitemap",
         "inverse-link-and-folder",
+        "copy-on-select",
         "prevent-edit"
     ],
     "themes": [
