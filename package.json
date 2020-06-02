@@ -12,7 +12,7 @@
     "install:windows:wikiServer": "node scripts/installServer.js install",
     "install:windows:privateRepo": "cd ./MemeOfLinonetwo/tiddlers && mklink /D/J .\\private-Meme-of-LinOnetwo ..\\..\\..\\private-Meme-of-LinOnetwo",
     "uninstall:windows:wikiServer": "node scripts/installServer.js uninstall",
-    "start:wikiServer": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb MemeOfLinonetwo --listen port=5012 host=0.0.0.0 \"root-tiddler=$:/core/save/lazy-images\"",
+    "start:wikiServer": "cross-env TIDDLYWIKI_PLUGIN_PATH='MemeOfLinonetwo/plugins' TIDDLYWIKI_THEME_PATH='MemeOfLinonetwo/themes' tiddlywiki +plugins/tiddlywiki/filesystem +plugins/tiddlywiki/tiddlyweb MemeOfLinonetwo --listen port=5012 host=0.0.0.0 \"root-tiddler=$:/core/save/lazy-images\"",
     "build": "npm run build:prepare && npm run build:public && npm run build:nodejs2html && npm run build:sitemap && npm run build:minifyHTML && npm run build:precache && npm run build:clean",
     "build:prepare": "rm -rf ./public",
     "build:public": "cp -r ./MemeOfLinonetwo/public/ ./public && cp ./MemeOfLinonetwo/tiddlers/favicon.ico ./public/favicon.ico && cp ./MemeOfLinonetwo/tiddlers/TiddlyWikiIconWhite.png ./public/TiddlyWikiIconWhite.png && cp ./MemeOfLinonetwo/tiddlers/TiddlyWikiIconBlack.png ./public/TiddlyWikiIconBlack.png",
