@@ -6,5 +6,5 @@
   "core-version": ">=5.1.22",
   "plugin-type": "plugin",
   "version": "0.1.0",
-  "list": "readme"
+  "list": "readme description"
 }
