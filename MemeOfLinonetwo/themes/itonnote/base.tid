@@ -216,7 +216,7 @@ a.tc-tiddlylink.tc-tiddlylink-resolves.tc-plugin-info.tc-popup-handle.tc-popup-a
 
 @media (min-width: 960px) {
 	.tc-sidebar-scrollable {
-	padding: 30px 10px 0px 10px;
+	  padding: 30px 10px 0px 15px;
 	}
 }
 
@@ -237,6 +237,7 @@ a.tc-tiddlylink.tc-tiddlylink-resolves.tc-plugin-info.tc-popup-handle.tc-popup-a
 
 .tc-search > input[type=search] {
 	flex: 1;
+  border: 1px solid #999;
 }
 /** 隐藏没用的搜索栏按钮 */
 .tc-search > span > button:nth-child(1), .tc-search > span > button:nth-child(2) {
@@ -286,9 +287,13 @@ button:focus, button:active {
 }
 input[type=search] {
   appearance: none;
+  -webkit-appearance: none;
 }
 
 * {
   outline: none;
   -webkit-font-smoothing: antialiased;
+}
+*:focus {
+  outline: none;
 }
