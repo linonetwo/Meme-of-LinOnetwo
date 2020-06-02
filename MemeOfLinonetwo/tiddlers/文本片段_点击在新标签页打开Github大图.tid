@@ -1,9 +1,0 @@
-caption: 图片：点击在新标签页打开大图
-created: 20200412041713662
-modified: 20200412042133512
-tags: $:/tags/TextEditor/Snippet 点击在新标签页打开Github大图
-title: 文本片段/点击在新标签页打开Github大图
-tmap.id: 5ce29df8-1a63-44c4-a4c0-6f748e3e4d5b
-type: text/vnd.tiddlywiki
-
-<<view-big-image xxx.jpg>>
