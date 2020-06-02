@@ -3,6 +3,7 @@
     "plugins": [
         "tiddlywiki/highlight",
         "sitemap",
+        "inverse-link-and-folder",
         "prevent-edit"
     ],
     "themes": [

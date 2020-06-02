@@ -1,0 +1,7 @@
+{
+  "title": "$:/plugins/linonetwo/inverse-link-and-folder",
+  "description": "Add inverse link (bi-directional link) and folder information to the bottom of tiddlers",
+  "author": "LinOnetwo",
+  "core-version": ">=5.1.22",
+  "list": "readme"
+}
