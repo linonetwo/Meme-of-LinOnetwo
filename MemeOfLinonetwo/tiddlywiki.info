@@ -5,6 +5,8 @@
         "sitemap",
         "inverse-link-and-folder",
         "copy-on-select",
+        "preview-glass",
+        "dynamic-tables",
         "prevent-edit"
     ],
     "themes": [

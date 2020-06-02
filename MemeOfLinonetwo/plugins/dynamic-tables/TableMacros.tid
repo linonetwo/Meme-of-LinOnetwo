@@ -1,8 +1,5 @@
-created: 20150319034848355
-modified: 20200409141143876
-tags: 自改TW $:/tags/Macro
-title: Table Macros
-tmap.id: a43de2e3-774f-4c3d-9c8a-154a4a1311d0
+tags: $:/tags/Macro
+title: $:/plugins/ooktech/dynamic-tables/TableMacros
 type: text/vnd.tiddlywiki
 
 \define TableWizardDisplayTableDummyMacro()

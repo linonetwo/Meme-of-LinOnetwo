@@ -1,8 +1,11 @@
 /*\
-title: $:/plugins/tobibeer/preview/link.js
+title: $:/plugins/linonetwo/preview-glass/link.js
 type: application/javascript
 module-type: startup
 Enhances the link widget for on-hover previews
+
+Modified by LinOnetwo
+
 @preserve
 \*/
 /*jslint node: true, browser: true */
@@ -28,7 +31,7 @@ Enhances the link widget for on-hover previews
       // Target tiddler
       to = wiki.getTiddler(self.to),
       // Shortcut to defaults namespace
-      defaults = '$:/plugins/tobibeer/preview/defaults/',
+      defaults = '$:/plugins/linonetwo/preview-glass/defaults/',
       // Shortcut to preview namespace
       preview = '$:/temp/tobibeer/preview-',
       // Modifier keys to quick-show the popup w/o delay

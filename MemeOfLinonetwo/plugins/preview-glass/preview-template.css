@@ -5,6 +5,10 @@
 }
 
 /**
+  Try added a triangle to it, but it seems work not so good with the backdrop-filter glass effect
+*/
+
+/**
 .hover-popup-preview-container::before {
 	content: "";
 	width: 0px;
