@@ -194,7 +194,7 @@ a.tc-tiddlylink-external:hover {
 -webkit-text-fill-color: transparent;
 }
 
-a.tc-tiddlylink.tc-plugin-info:hover {
+a.tc-tiddlylink.tc-tiddlylink-resolves.tc-plugin-info.tc-popup-handle.tc-popup-absolute:hover {
 	background-color: #999;
 }
 
