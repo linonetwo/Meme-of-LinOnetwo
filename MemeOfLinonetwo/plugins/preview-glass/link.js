@@ -178,7 +178,7 @@ Modified by LinOnetwo
             clearTimeout(self.previewTimeout);
             // close popup
 						 // if next object to move mouse to is not a popup
-            if(!event.relatedTarget?.classList.contains('tc-preview-tiddler')) {
+            if(!event.relatedTarget || !event.relatedTarget.classList.contains('tc-preview-tiddler')) {
               // then close popup
             	$tw.popup.cancel(Math.max(0, getInfo(el).popupLevel));
 						}
