@@ -1,6 +1,6 @@
 created: 20200408084953101
 creator: Lin Onetwo - 林一二
-modified: 20200530050108568
+modified: 20200602074636255
 modifier: Lin Onetwo - 林一二
 tags: tiddlywiki 自改TW
 title: 已安装的插件
@@ -8,6 +8,8 @@ tmap.id: ca2d7381-4b75-434f-b5ea-626719240529
 type: text/vnd.tiddlywiki
 
 !! 已安装的插件
+
+<<reuse-tiddler "我制作的插件">>
 
 [[tw5-locator|https://bimlas.gitlab.io/tw5-locator/]] 根据 Tag 生成分面索引器
 
