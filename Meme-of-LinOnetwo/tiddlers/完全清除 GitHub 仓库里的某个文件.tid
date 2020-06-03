@@ -1,7 +1,7 @@
 created: 20200411114614144
 creator: 林一二
 keywords: git
-modified: 20200603114631142
+modified: 20200603123516620
 modifier: 林一二
 responder: help.github.com
 tags: TW运维 solution
@@ -10,7 +10,9 @@ tmap.id: 82737416-076f-43e3-9501-e69478f50d58
 type: text/vnd.tiddlywiki
 url: https://help.github.com/en/github/authenticating-to-github/removing-sensitive-data-from-a-repository#purging-a-file-from-your-repositorys-history
 
-下载 bfg，然后按着提示操作就好了：
+先直接在文件系统中删除该文件，并提交一个 commit，如果不先在文件系统中删除并 commit 的话，走完以下的流程也没有任何用处。
+
+接着下载 bfg，然后按着提示操作就好了：
 
 ```shell
 brew install bfg
@@ -24,4 +26,10 @@ git reflog expire --expire=now --all && git gc --prune=now --aggressive # sugges
 setopt +o nomatch
 bfg --delete-files *StoryList.tid
 git reflog expire --expire=now --all && git gc --prune=now --aggressive # suggestd by bfg
+```
+
+最后，要强制推送到 Github 上：
+
+```shell
+git push origin --force
 ```
