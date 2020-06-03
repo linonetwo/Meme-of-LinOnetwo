@@ -49,7 +49,24 @@ const commitAndSync = (folderPath) => {
     return errorString;
   }
   try {
-    execSync(`/bin/sh ${commitScriptPath}`, { cwd: folderPath });
+    try {
+      execSync(`/bin/sh ${commitScriptPath}`, { cwd: folderPath });
+    } catch (commitError) {
+      /* sometimes it is just false alarm:
+      stdout:
+        On branch master
+      Your branch is ahead of 'origin/master' by 1 commit.
+        (use "git push" to publish your local commits)
+
+      nothing to commit, working tree clean
+
+      stderr:
+      */
+      if (commitError.stderr) {
+        throw commitError;
+      }
+      console.warn(error.stdout.toString('utf8'));
+    }
     syncToGit(folderPath);
   } catch (error) {
     const errorString = `\nSync failed
