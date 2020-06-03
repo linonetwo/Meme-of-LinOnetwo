@@ -1,5 +1,5 @@
 title: $:/themes/linonetwo/itonnote/base
-tags: [[$:/tags/Stylesheet]]
+tags: $:/tags/Stylesheet
 type: text/vnd.tiddlywiki
 
 /*
@@ -292,6 +292,7 @@ input[type=search] {
 
 * {
   outline: none;
+  outline-color: none;
   -webkit-font-smoothing: antialiased;
 }
 *:focus {
