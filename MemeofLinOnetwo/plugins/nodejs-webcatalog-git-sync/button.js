@@ -46,7 +46,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         importButton.className += 'git-sync';
         importButton.disabled = true;
         // tooltip
-        const label = 'Need to setup WebCatalog';
+        const label = '需要配置WebCatalog';
         importButton.title = label;
         importButton['aria-label'] = label;
         // icon
@@ -58,7 +58,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         importButton.className += 'git-sync syncing';
         importButton.disabled = true;
         // tooltip
-        const label = 'Syncing to the Cloud';
+        const label = '正在同步到云端';
         importButton.title = label;
         importButton['aria-label'] = label;
         // icon
@@ -70,7 +70,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         importButton.className += 'git-sync';
         importButton.disabled = true;
         // tooltip
-        const label = 'All Sync With Cloud';
+        const label = '已完全同步到云端';
         importButton.title = label;
         importButton['aria-label'] = label;
         // icon
@@ -81,7 +81,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         // some commit need to sync to the cloud
         importButton.className += 'git-pull-request';
         // tooltip
-        const label = 'Need a Push to the Cloud';
+        const label = '待推送到云端';
         importButton.title = label;
         importButton['aria-label'] = label;
         // icon
@@ -92,7 +92,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         // some need to commit, and not sync to cloud yet
         importButton.className += 'git-pull-request';
         // tooltip
-        const label = `${this.state.count} files Need Commit and Push`;
+        const label = `${this.state.count} 个文件待提交和推送`;
         importButton.title = label;
         importButton['aria-label'] = label;
         // icon
@@ -128,7 +128,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
           this.state.syncing = false;
           this.refreshSelf();
         } catch (error) {
-          console.error('NodeJSWebCatalogGitSyncWidget: Error login using gapi client', error);
+          console.error('NodeJSWebCatalogGitSyncWidget: Error syncing', error);
         }
       }
     }
