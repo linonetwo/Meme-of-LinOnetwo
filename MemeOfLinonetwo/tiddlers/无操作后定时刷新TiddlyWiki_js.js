@@ -1,4 +1,4 @@
-const RELOAD_INTERVAL = 1000 * 60;
+const RELOAD_INTERVAL = 1000 * 60 * 60;
 const CHECK_ACTIVITY_INTERVAL = 1000 * 3;
 
 let time = new Date().getTime();
