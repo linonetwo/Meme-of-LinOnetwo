@@ -4,10 +4,10 @@ created: 20170715124812734
 dependents: 
 description: rpn – Basic Math in Reverse Polish Notation
 list: readme usage examples fields support
-modified: 20200409033735438
+modified: 20200603170159417
 name: rpn
 plugin-type: plugin
 source: https://tid.li/tw5/plugins.html
 title: $:/plugins/telmiger/rpn
 type: application/json
-version: 0.7.1
+version: 0.7.3
