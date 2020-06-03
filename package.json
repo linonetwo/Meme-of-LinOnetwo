@@ -9,9 +9,8 @@
   "license": "MIT",
   "scripts": {
     "install:wikiServer": "node -e \"require('./scripts/installServer').install()\"",
-    "install:privateRepo": "cd ./MemeOfLinonetwo/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo",
+    "install:privateRepo": "node -e \"require('./scripts/installPrivateRepo')()\"",
     "uninstall:wikiServer": "node -e \"require('./scripts/installServer').uninstall()\"",
-    "install:windows:privateRepo": "cd ./MemeOfLinonetwo/tiddlers && mklink /D/J .\\private-Meme-of-LinOnetwo ..\\..\\..\\private-Meme-of-LinOnetwo",
     "start:wikiServer": "node -e \"require('./scripts/startNodeJSWiki')()\"",
     "build": "node -e \"require('./scripts/buildWiki')()\""
   },
