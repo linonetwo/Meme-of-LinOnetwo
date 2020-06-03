@@ -5,7 +5,7 @@ caption: 点击在新标签页打开Github大图
 type: text/vnd.tiddlywiki
 
 \define view-big-image(source)
-<a href="https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/MemeOfLinonetwo/tiddlers/$source$" title="Click for a bigger version (opens in a separate tab)" target="_blank">
- <img src="https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/MemeOfLinonetwo/tiddlers/$source$"/>
+<a href="https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/Meme-of-LinOnetwo/tiddlers/$source$" title="Click for a bigger version (opens in a separate tab)" target="_blank">
+ <img src="https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/Meme-of-LinOnetwo/tiddlers/$source$"/>
 </a>
 \end

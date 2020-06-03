@@ -10,12 +10,12 @@ type: text/vnd.tiddlywiki
 我创建了一个私有仓库 https://github.com/linonetwo/private-Meme-of-LinOnetwo ，在 clone 到本地后，我把它软连接到开放仓库里：
 
 ```shell
-cd ./MemeOfLinonetwo/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo
+cd ./Meme-of-LinOnetwo/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo
 ```
 
 这样在启动 TiddlyWiki 时，私有仓库里的内容也会被一并读取，但是提交就是分开提交的了。
 
-参考 [[Customising Tiddler File Naming|https://tiddlywiki.com/#Customising%20Tiddler%20File%20Naming]] 修改 [[$:/config/FileSystemPaths]] ，使得加了 [[APrivateContent]] 这个 Tag 的所有 Tiddler 都自动被 NodeJS TiddlyWiki Server 保存到 `./MemeOfLinonetwo/tiddlers/private-Meme-of-LinOnetwo/tiddlers` 里面，也就是通过软连接保存到另一个私有的 git 仓库里。
+参考 [[Customising Tiddler File Naming|https://tiddlywiki.com/#Customising%20Tiddler%20File%20Naming]] 修改 [[$:/config/FileSystemPaths]] ，使得加了 [[APrivateContent]] 这个 Tag 的所有 Tiddler 都自动被 NodeJS TiddlyWiki Server 保存到 `./Meme-of-LinOnetwo/tiddlers/private-Meme-of-LinOnetwo/tiddlers` 里面，也就是通过软连接保存到另一个私有的 git 仓库里。
 
 我还修改了[[自动提交脚本|自动备份TiddlyWiki]]，让它能同时监控私有仓库，并自动备份它。
 

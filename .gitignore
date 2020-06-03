@@ -1,7 +1,7 @@
 .DS_Store
 node_modules
 /public
-MemeOfLinonetwo/output
-MemeOfLinonetwo/tiddlers/private-Meme-of-LinOnetwo
+Meme-of-LinOnetwo/output
+Meme-of-LinOnetwo/tiddlers/private-Meme-of-LinOnetwo
 /scripts/daemon
-MemeOfLinonetwo/tiddlers/$__StoryList.tid
+Meme-of-LinOnetwo/tiddlers/$__StoryList.tid
