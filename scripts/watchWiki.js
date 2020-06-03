@@ -62,10 +62,10 @@ const commitAndSync = (folderPath) => {
 
       stderr:
       */
-      if (error.stderr && error.stderr.toString('utf8').length > 0) {
+      if (commitError.stderr && commitError.stderr.toString('utf8').length > 0) {
         throw commitError;
       }
-      error.stdout && console.warn(error.stdout.toString('utf8'));
+      commitError.stdout && console.warn(commitError.stdout.toString('utf8'));
     }
     syncToGit(folderPath);
   } catch (error) {
