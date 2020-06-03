@@ -1,6 +1,8 @@
 created: 20200411114614144
+creator: 林一二
 keywords: git
-modified: 20200411120804476
+modified: 20200603114631142
+modifier: 林一二
 responder: help.github.com
 tags: TW运维 solution
 title: 完全清除 GitHub 仓库里的某个文件
@@ -13,5 +15,13 @@ url: https://help.github.com/en/github/authenticating-to-github/removing-sensiti
 ```shell
 brew install bfg
 bfg --delete-files index.html
+git reflog expire --expire=now --all && git gc --prune=now --aggressive # suggestd by bfg
+```
+
+如果要删除类似 glob 的文件，为防止与 zsh 的 globbing 冲突，以 `$__StoryList.tid` 为例：
+
+```shell
+setopt +o nomatch
+bfg --delete-files *StoryList.tid
 git reflog expire --expire=now --all && git gc --prune=now --aggressive # suggestd by bfg
 ```
