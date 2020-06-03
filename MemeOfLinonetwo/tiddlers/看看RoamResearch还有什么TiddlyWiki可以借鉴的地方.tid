@@ -1,5 +1,7 @@
 created: 20200417134711989
-modified: 20200417150009217
+creator: 林一二
+modified: 20200603101156964
+modifier: 林一二
 tags: 自改TW
 title: 看看RoamResearch还有什么TiddlyWiki可以借鉴的地方
 tmap.id: 5a87b362-dff4-43a0-a49b-58bf5367735d
@@ -26,3 +28,7 @@ ctrl+l 时进行全文搜索，而不仅仅是搜索标题，因为 Roam 里引�
 Roam 里的引用就类似于我用了 `<<reuse-tiddler "title">>` 这个宏之后的 Transclusion，可以看到不可编辑的转写内容，并附带一个到原文的链接。一般用于引用书中内容，不会以后再去直接修改原文。
 
 嵌入则是加上了双向绑定，可以直接修改原文。
+
+!! 一键添加链接
+
+把某个人名用 `[[]]` 标注为链接，并创建相应 Tiddler，然后在 Tiddler 里快速把所有与此人有关的文章全部找到，并连接到这个人的 Tiddler。
