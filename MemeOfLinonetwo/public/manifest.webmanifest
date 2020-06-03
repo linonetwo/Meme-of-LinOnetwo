@@ -1,7 +1,7 @@
 {
   "background_color": "white",
   "theme_color": "white",
-  "description": "TiddlyWiki",
+  "description": "Meme of LinOnetwo 林一二的模因和想法 - TiddlyWiki 非线性的知识库和博客",
   "display": "standalone",
   "icons": [
     {
@@ -16,7 +16,7 @@
     }
   ],
   "name": "TiddlyWiki",
-  "short_name": "Tiddly",
+  "short_name": "Wiki",
   "lang": "zh-CN",
   "start_url": "/",
   "scope": "/"
