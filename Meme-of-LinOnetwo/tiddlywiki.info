@@ -65,7 +65,6 @@
       "$:/plugins/tiddlywiki/pluginlibrary/library.template.html",
       "index.html",
       "text/plain"
-    ],
-    "libraryindex": ["--load", "makeLibrary/", "--rendertiddler", "$:/core/save/all", "index.html", "text/plain"]
+    ]
   }
 }
