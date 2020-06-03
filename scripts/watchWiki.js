@@ -40,18 +40,31 @@ function syncToGit(folder) {
   execSync(`/bin/sh ${syncScriptPath}`, { cwd: folder });
 }
 
-const commitAndSync = debounce((folderPath) => {
+const commitAndSync = (folderPath) => {
+  if (!folderPath) {
+    const errorString = 'no folderPath as parameter';
+    console.error(errorString);
+    return errorString;
+  }
   try {
     execSync(`/bin/sh ${commitScriptPath}`, { cwd: folderPath });
     syncToGit(folderPath);
   } catch (error) {
-    console.error('Sync failed');
-    // console.error(error);
-    console.error(error.stdout.toString('utf8'));
-    console.error(error.stderr.toString('utf8'));
+    const errorString = `\nSync failed
+    stdout:
+    ${error.stdout.toString('utf8')}
+    stderr:
+    ${error.stderr.toString('utf8')}`;
+    console.error(errorString);
+    return errorString;
   }
-}, COMMIT_INTERVAL);
+};
 module.exports.commitAndSync = commitAndSync;
+module.exports.commitAndSyncAll = function commitAndSyncAll() {
+  commitAndSync(repoFolder);
+  commitAndSync(privateTiddlyWikiRepo);
+};
+const debounceCommitAndSync = debounce(commitAndSync, COMMIT_INTERVAL);
 
 function watchFolder(wikiFolderPath, repoPath) {
   fs.watch(
@@ -63,7 +76,7 @@ function watchFolder(wikiFolderPath, repoPath) {
       }
       console.log(`${fileName} change`);
 
-      commitAndSync(repoPath);
+      debounceCommitAndSync(repoPath);
     }, 100)
   );
   console.log(`wiki watch ${wikiFolderPath} now`);
