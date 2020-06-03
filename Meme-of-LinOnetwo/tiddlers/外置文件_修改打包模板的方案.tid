@@ -5,7 +5,7 @@ title: 外置文件/修改打包模板的方案
 tmap.id: 8cce1bb0-70d6-454e-926c-5e4162f0a115
 type: text/vnd.tiddlywiki
 
-我在修改 `./MemeOfLinonetwo/tiddlywiki.info` 配置插件时发现，这个文件里还定义了打包 HTML 文件时的步骤，我经过几次尝试和修改，最终改成了这样：
+我在修改 `./Meme-of-LinOnetwo/tiddlywiki.info` 配置插件时发现，这个文件里还定义了打包 HTML 文件时的步骤，我经过几次尝试和修改，最终改成了这样：
 
 ```json
 {
@@ -50,7 +50,7 @@ type: text/vnd.tiddlywiki
 	"$:/core/templates/canonical-uri-external-image",
 ```
 
-因为我只[[在云端编译打包 HTML 文件|使用 Now.sh 部署 TiddlyWiki]]，打包时静态资源肯定都已经上传到 Github 了，所以在 [[$:/core/templates/canonical-uri-external-image]] 里我就直接把 URI 设置为以 `https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/MemeOfLinonetwo/tiddlers/` 为前缀的 Github 静态资源地址了。
+因为我只[[在云端编译打包 HTML 文件|使用 Now.sh 部署 TiddlyWiki]]，打包时静态资源肯定都已经上传到 Github 了，所以在 [[$:/core/templates/canonical-uri-external-image]] 里我就直接把 URI 设置为以 `https://raw.githubusercontent.com/linonetwo/Meme-of-LinOnetwo/master/Meme-of-LinOnetwo/tiddlers/` 为前缀的 Github 静态资源地址了。
 
 用同样的原理，设置 [[canonical-uri-external-raw.tid|https://github.com/Jermolene/TiddlyWiki5/blob/master/core/templates/canonical-uri-external-raw.tid]] 和 [[canonical-uri-external-text.tid|https://github.com/Jermolene/TiddlyWiki5/blob/master/core/templates/canonical-uri-external-text.tid]] 也可以外置大的二进制文件和文本文件。不过还得改一下 filter，只外置大于一定大小的文件。
 
