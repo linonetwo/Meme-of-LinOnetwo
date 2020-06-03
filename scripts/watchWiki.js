@@ -62,7 +62,7 @@ const commitAndSync = (folderPath) => {
 
       stderr:
       */
-      if (commitError.stderr) {
+      if (error.stdout.toString('utf8').length > 0) {
         throw commitError;
       }
       console.warn(error.stdout.toString('utf8'));
