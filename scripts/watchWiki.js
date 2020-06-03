@@ -71,10 +71,13 @@ const commitAndSync = (folderPath) => {
   } catch (error) {
     const errorString = `\nSync failed
     stdout:
-    ${error.stdout.toString('utf8')}
+    ${error.stdout ? error.stdout.toString('utf8') : '\n'}
     stderr:
-    ${error.stderr.toString('utf8')}`;
+    ${error.stderr ? error.stderr.toString('utf8') : '\n'}
+    raw:
+    `;
     console.error(errorString);
+    console.error(error);
     return errorString;
   }
 };
