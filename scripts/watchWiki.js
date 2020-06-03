@@ -15,18 +15,15 @@ const privateTiddlyWikiFolder = path.join(repoFolder, '..', privateWikiName, 'ti
 
 const commitScriptPath = path.resolve(repoFolder, 'scripts', 'commit.sh');
 const syncScriptPath = path.resolve(repoFolder, 'scripts', 'sync.sh');
-const frequentlyChangedFileThatShouldBeIgnoredFromWatch = [
-  'output',
-  'tiddlers/$__StoryList.tid',
-];
+const frequentlyChangedFileThatShouldBeIgnoredFromWatch = ['output', 'tiddlers/$__StoryList.tid'];
 
 /** https://davidwalsh.name/javascript-debounce-function */
 function debounce(func, wait, immediate) {
   let timeout;
-  return function() {
+  return function () {
     const context = this;
     const args = arguments;
-    const later = function() {
+    const later = function () {
       timeout = null;
       if (!immediate) func.apply(context, args);
     };
@@ -43,7 +40,7 @@ function syncToGit(folder) {
   execSync(`/bin/sh ${syncScriptPath}`, { cwd: folder });
 }
 
-const commitAndSync = debounce(folderPath => {
+const commitAndSync = debounce((folderPath) => {
   try {
     execSync(`/bin/sh ${commitScriptPath}`, { cwd: folderPath });
     syncToGit(folderPath);
@@ -71,7 +68,9 @@ function watchFolder(wikiFolderPath, repoPath) {
   console.log(`wiki watch ${wikiFolderPath} now`);
 }
 
-watchFolder(tiddlyWikiFolder, repoFolder);
-if (fs.existsSync(privateTiddlyWikiRepo)) {
-  watchFolder(privateTiddlyWikiFolder, privateTiddlyWikiRepo);
-}
+module.exports = function watchWiki() {
+  watchFolder(tiddlyWikiFolder, repoFolder);
+  if (fs.existsSync(privateTiddlyWikiRepo)) {
+    watchFolder(privateTiddlyWikiFolder, privateTiddlyWikiRepo);
+  }
+};

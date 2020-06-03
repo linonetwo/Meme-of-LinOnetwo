@@ -8,14 +8,12 @@
   "author": "linonetwo <linonetwo012@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "install:wikiServer": "node scripts/installServer.js install",
+    "install:wikiServer": "node -e \"require('./scripts/installServer').install()\"",
     "install:privateRepo": "cd ./MemeOfLinonetwo/tiddlers && ln -sfn ../../../private-Meme-of-LinOnetwo ./private-Meme-of-LinOnetwo",
-    "uninstall:wikiServer": "node scripts/installServer.js uninstall",
-    "install:windows:wikiServer": "node scripts/installServer.js install",
+    "uninstall:wikiServer": "node -e \"require('./scripts/installServer').uninstall()\"",
     "install:windows:privateRepo": "cd ./MemeOfLinonetwo/tiddlers && mklink /D/J .\\private-Meme-of-LinOnetwo ..\\..\\..\\private-Meme-of-LinOnetwo",
-    "uninstall:windows:wikiServer": "node scripts/installServer.js uninstall",
-    "start:wikiServer": "node scripts/startNodeJSWiki.js",
-    "build": "node scripts/buildWiki.js"
+    "start:wikiServer": "node -e \"require('./scripts/startNodeJSWiki')()\"",
+    "build": "node -e \"require('./scripts/buildWiki')()\""
   },
   "dependencies": {
     "tiddlywiki": "5.1.22"
