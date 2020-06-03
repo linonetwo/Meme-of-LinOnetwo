@@ -16,6 +16,7 @@
     "build": "node -e \"require('./scripts/buildWiki')()\""
   },
   "dependencies": {
+    "git-state": "^4.1.0",
     "tiddlywiki": "5.1.22"
   },
   "devDependencies": {

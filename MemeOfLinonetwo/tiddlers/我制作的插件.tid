@@ -1,5 +1,7 @@
 created: 20200602074405907
-modified: 20200602075901955
+creator: 林一二
+modified: 20200603080911176
+modifier: 林一二
 tags: 自改TW
 title: 我制作的插件
 tmap.id: a83141c9-7fd5-43c3-9bc7-32446331ed5c
@@ -12,5 +14,7 @@ type: text/vnd.tiddlywiki
 [[发布后禁止编辑|$:/plugins/linonetwo/prevent-edit]]
 
 [[Preview Customized|$:/plugins/linonetwo/preview-glass]]
+
+[[基于 WebCatalog 的 Github 同步插件|$:/plugins/linonetwo/nodejs-webcatalog-git-sync]]
 
 [[ItonNote 主题|$:/themes/linonetwo/itonnote]]

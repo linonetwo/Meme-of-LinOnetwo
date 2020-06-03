@@ -6,15 +6,17 @@ const wikiFolderName = require('../package.json').name;
 const privateWikiName = require('../package.json').privateWikiName;
 const COMMIT_INTERVAL = (1000 * 60 * 60) / 2;
 
-const repoFolder = path.join(path.dirname(__filename), '..');
+const tiddlyWikiRepo = path.join(path.dirname(__filename), '..');
+module.exports.tiddlyWikiRepo = tiddlyWikiRepo;
 
-const tiddlyWikiFolder = path.join(repoFolder, wikiFolderName);
+const tiddlyWikiFolder = path.join(tiddlyWikiRepo, wikiFolderName);
 
-const privateTiddlyWikiRepo = path.join(repoFolder, '..', privateWikiName);
-const privateTiddlyWikiFolder = path.join(repoFolder, '..', privateWikiName, 'tiddlers');
+const privateTiddlyWikiRepo = path.join(tiddlyWikiRepo, '..', privateWikiName);
+module.exports.privateTiddlyWikiRepo = privateTiddlyWikiRepo;
+const privateTiddlyWikiFolder = path.join(tiddlyWikiRepo, '..', privateWikiName, 'tiddlers');
 
-const commitScriptPath = path.resolve(repoFolder, 'scripts', 'commit.sh');
-const syncScriptPath = path.resolve(repoFolder, 'scripts', 'sync.sh');
+const commitScriptPath = path.resolve(tiddlyWikiRepo, 'scripts', 'commit.sh');
+const syncScriptPath = path.resolve(tiddlyWikiRepo, 'scripts', 'sync.sh');
 const frequentlyChangedFileThatShouldBeIgnoredFromWatch = ['output', 'tiddlers/$__StoryList.tid'];
 
 /** https://davidwalsh.name/javascript-debounce-function */
@@ -61,7 +63,7 @@ const commitAndSync = (folderPath) => {
 };
 module.exports.commitAndSync = commitAndSync;
 module.exports.commitAndSyncAll = function commitAndSyncAll() {
-  commitAndSync(repoFolder);
+  commitAndSync(tiddlyWikiRepo);
   commitAndSync(privateTiddlyWikiRepo);
 };
 const debounceCommitAndSync = debounce(commitAndSync, COMMIT_INTERVAL);
@@ -83,7 +85,7 @@ function watchFolder(wikiFolderPath, repoPath) {
 }
 
 module.exports.watchWiki = function watchWiki() {
-  watchFolder(tiddlyWikiFolder, repoFolder);
+  watchFolder(tiddlyWikiFolder, tiddlyWikiRepo);
   if (fs.existsSync(privateTiddlyWikiRepo)) {
     watchFolder(privateTiddlyWikiFolder, privateTiddlyWikiRepo);
   }
