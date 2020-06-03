@@ -23,4 +23,6 @@ $tw.boot.argv = [
   'root-tiddler=$:/core/save/lazy-images',
 ];
 
-$tw.boot.boot();
+module.exports = function startNodeJSWiki() {
+  $tw.boot.boot();
+};
