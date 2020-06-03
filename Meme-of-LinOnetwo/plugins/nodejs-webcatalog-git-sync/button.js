@@ -138,7 +138,8 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
      */
     async checkInLoop() {
       // check if API from WebCatalog is available, first time it is Server Side Rendening so window.xxx from the electron ContextBridge will be missing
-      if (typeof window?.wiki?.isUnsync !== 'function' || typeof window?.wiki?.sync !== 'function') {
+      // if (typeof window?.wiki?.isUnsync !== 'function' || typeof window?.wiki?.sync !== 'function') {
+      if (!window.wiki || typeof window.wiki.isUnsync !== 'function' || typeof window.wiki.sync !== 'function') {
         this.state.needSetUp = true;
       } else {
         this.state.needSetUp = false;
