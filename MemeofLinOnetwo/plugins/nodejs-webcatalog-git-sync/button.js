@@ -125,11 +125,11 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
           if (privateRepoState) {
             await window.wiki.sync(window.wiki.wikiPath.privateTiddlyWikiRepo);
           }
-          this.state.syncing = false;
-          this.refreshSelf();
         } catch (error) {
           console.error('NodeJSWebCatalogGitSyncWidget: Error syncing', error);
         }
+        this.state.syncing = false;
+        this.refreshSelf();
       }
     }
 
