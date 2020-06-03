@@ -3,14 +3,15 @@
   "plugins": [
     "tiddlywiki/highlight",
     "tiddlywiki/pluginlibrary",
-    "sitemap",
-    "inverse-link-and-folder",
-    "copy-on-select",
-    "preview-glass",
-    "dynamic-tables",
-    "prevent-edit",
-    "nodejs-webcatalog-git-sync",
-    "itonnote"
+    "tobibeer/appear",
+    "dullroar/sitemap",
+    "ooktech/dynamic-tables",
+    "linonetwo/inverse-link-and-folder",
+    "linonetwo/copy-on-select",
+    "linonetwo/preview-glass",
+    "linonetwo/prevent-edit",
+    "linonetwo/nodejs-webcatalog-git-sync",
+    "linonetwo/itonnote"
   ],
   "themes": ["tiddlywiki/vanilla", "itonnote"],
   "build": {
