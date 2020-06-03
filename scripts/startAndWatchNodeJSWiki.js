@@ -1,5 +1,5 @@
 const startNodeJSWiki = require('./startNodeJSWiki');
-const watchWiki = require('./watchWiki');
+const watchWiki = require('./watchWiki').watchWiki;
 
 startNodeJSWiki();
 watchWiki();

@@ -51,6 +51,7 @@ const commitAndSync = debounce((folderPath) => {
     console.error(error.stderr.toString('utf8'));
   }
 }, COMMIT_INTERVAL);
+module.exports.commitAndSync = commitAndSync;
 
 function watchFolder(wikiFolderPath, repoPath) {
   fs.watch(
@@ -68,7 +69,7 @@ function watchFolder(wikiFolderPath, repoPath) {
   console.log(`wiki watch ${wikiFolderPath} now`);
 }
 
-module.exports = function watchWiki() {
+module.exports.watchWiki = function watchWiki() {
   watchFolder(tiddlyWikiFolder, repoFolder);
   if (fs.existsSync(privateTiddlyWikiRepo)) {
     watchFolder(privateTiddlyWikiFolder, privateTiddlyWikiRepo);
