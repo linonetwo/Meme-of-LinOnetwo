@@ -1,0 +1,10 @@
+{
+  "title": "$:/plugins/linonetwo/nodejs-webcatalog-git-sync",
+  "name": "NodeJS Wiki WebCatalog Github Sync",
+  "description": "Use WebCatalog's NodeJS API to sync data to git on the cloud",
+  "author": "LinOnetwo",
+  "core-version": ">=5.1.22",
+  "plugin-type": "plugin",
+  "version": "0.0.1",
+  "list": "readme"
+}

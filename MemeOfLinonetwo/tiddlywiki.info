@@ -8,6 +8,7 @@
     "preview-glass",
     "dynamic-tables",
     "prevent-edit",
+    "nodejs-webcatalog-git-sync",
     "itonnote"
   ],
   "themes": ["tiddlywiki/vanilla", "itonnote"],

@@ -1,11 +1,17 @@
 // https://www.electronjs.org/docs/api/context-bridge
 const { contextBridge } = require('electron');
+const path = require('path');
 
 const wikiRepoPath = '/Users/linonetwo/Desktop/repo/Meme-of-LinOnetwo';
+const scriptsPath = path.join(wikiRepoPath, 'scripts');
+const { tiddlyWikiRepo, privateTiddlyWikiRepo, commitAndSync } = require(path.join(scriptsPath, 'watchWiki.js'));
+const { isUnsync } = require(path.join(scriptsPath, 'checkGitState.js'));
 
 contextBridge.exposeInMainWorld('wiki', {
-  sync: () => {
-    const syncWikiScriptPath = `${wikiRepoPath}/scripts/watchWiki.js`;
-    require(syncWikiScriptPath).commitAndSyncAll();
+  wikiPath: {
+    tiddlyWikiRepo,
+    privateTiddlyWikiRepo,
   },
+  sync: (repoPath) => commitAndSync(repoPath),
+  isUnsync: (repoPath) => isUnsync(repoPath),
 });
