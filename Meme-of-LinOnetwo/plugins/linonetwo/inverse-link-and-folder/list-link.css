@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   max-height: 250px;
   overflow-y: auto;
+  padding: 0;
 }
 .horizontal-list-links li {
   display: inline-flex;
