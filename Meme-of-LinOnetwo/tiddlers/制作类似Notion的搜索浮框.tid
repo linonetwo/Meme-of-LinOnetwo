@@ -1,0 +1,10 @@
+created: 20200604132700449
+creator: 林一二
+modified: 20200604132830290
+modifier: 林一二
+tags: 自改TW
+title: 制作类似Notion的搜索浮框
+tmap.id: dd9bac02-76cb-44e9-802b-f67b181fb001
+type: text/vnd.tiddlywiki
+
+- 加入默认搜索框内能有的插件功能，识别 [[$:/tags/SearchResults]]
