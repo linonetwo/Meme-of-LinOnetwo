@@ -5,5 +5,8 @@
   "cleanUrls": true,
   "github": {
     "silent": true
-  }
+  },
+  "rewrites": [
+    { "source": "/recipes/library/*", "destination": "/library/recipes/library/*" }
+  ]
 }
