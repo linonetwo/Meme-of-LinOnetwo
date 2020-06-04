@@ -1,14 +1,13 @@
 created: 20170208062643245
 creator: Thomas Elmiger
-title: $:/plugins/telmiger/simple-search/readme
+title: $:/plugins/linonetwo/omni-search-bar/readme
 tags: EditorCounter
-modifier: Thomas Elmiger
-modified: 20200528213415209
+modifier: LinOnetwo
+modified: 20200604150438123
 
 !! Simple Search 
 
-{{$:/plugins/telmiger/simple-search/about}}
-
+{{$:/plugins/linonetwo/omni-search-bar/about}}
 
 !!! Keyboard accessible
 
@@ -44,3 +43,7 @@ Make sure to visit the ''settings tab'' to adjust your preferences.
 !! Core overruling
 
 This plugin overwrites $:/core/ui/SideBarSegments/search and nothing else.
+
+!! Fork
+
+{{$:/plugins/linonetwo/omni-search-bar/fork}}

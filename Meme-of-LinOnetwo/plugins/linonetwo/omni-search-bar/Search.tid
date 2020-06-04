@@ -3,24 +3,24 @@ creator: Thomas Elmiger
 title: $:/Search
 modifier: Thomas Elmiger
 modified: 20190303205937724
-icon: $:/plugins/telmiger/simple-search/images/search-button
+icon: $:/plugins/linonetwo/omni-search-bar/images/search-button
 
 <div class="tc-layer-search">
 <div class="te-close-this">
-{{$:/plugins/telmiger/simple-search/ui/Buttons/close-search}}
+{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/close-search}}
 </div>
 <div class="tc-simple-search">
 <$set name="searchTiddler" value="$:/temp/advancedsearch">
 <div class="tc-search">
-<$edit-text tiddler=<<searchTiddler>> type="search" tag="input" focus={{$:/config/Search/AutoFocus}} focusPopup=<<qualify "$:/state/popup/search-dropdown">> class="tc-popup-handle"/>{{$:/plugins/telmiger/simple-search/ui/Buttons/advanced-search}}<$reveal tag="div" class="tc-block-dropdown-wrapper tc-simple-search-results" state=<<searchTiddler>> type="nomatch" text="">
+<$edit-text tiddler=<<searchTiddler>> type="search" tag="input" focus={{$:/config/Search/AutoFocus}} focusPopup=<<qualify "$:/state/popup/search-dropdown">> class="tc-popup-handle"/>{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/advanced-search}}<$reveal tag="div" class="tc-block-dropdown-wrapper tc-simple-search-results" state=<<searchTiddler>> type="nomatch" text="">
 <$reveal tag="div" class="tc-block-dropdown tc-search-drop-down tc-popup-handle" state=<<qualify "$:/state/popup/search-dropdown">> type="nomatch" text="" default="">
 <$list filter="[<searchTiddler>minlength{$:/config/Search/MinLength}limit[1]]" emptyMessage="""<div class="tc-search-results">{{$:/language/Search/Search/TooShort}}</div>""" variable="listItem">
-{{$:/plugins/telmiger/simple-search/results}}
+{{$:/plugins/linonetwo/omni-search-bar/results}}
 </$list>
 </$reveal>
-</$reveal><$reveal state=<<searchTiddler>> type="nomatch" text="">{{$:/plugins/telmiger/simple-search/ui/Buttons/clear-search}}
+</$reveal><$reveal state=<<searchTiddler>> type="nomatch" text="">{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/clear-search}}
 <div class="tc-simple-search-results">
-{{$:/plugins/telmiger/simple-search/ui/Buttons/new-tiddler}}
+{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/new-tiddler}}
 <$button tooltip="show/hide filtered list" aria-label="toggle results" popup=<<qualify "$:/state/popup/search-dropdown">> class="tc-btn-invisible">
 {{$:/core/images/down-arrow}}
 <$list filter="[<searchTiddler>minlength{$:/config/Search/MinLength}limit[1]]" variable="listItem">
@@ -31,14 +31,14 @@ icon: $:/plugins/telmiger/simple-search/images/search-button
 </$set>
 </$list>
 </$button>
-{{$:/plugins/telmiger/simple-search/ui/Buttons/options}}
+{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/options}}
 </div>
 </$reveal>
 </div>
 
 </$set>
 </div>
-<$reveal type="match" state="$:/plugins/telmiger/simple-search/settings/edit" text="yes">
+<$reveal type="match" state="$:/plugins/linonetwo/omni-search-bar/settings/edit" text="yes">
 <span class="te-edit-this">
 <$button message="tm-edit-tiddler" param={{!!title}} tooltip="edit tiddler" aria-label={{$:/language/Buttons/Edit/Caption}} class=<<tv-config-toolbar-class>>>
 {{$:/core/images/edit-button}}

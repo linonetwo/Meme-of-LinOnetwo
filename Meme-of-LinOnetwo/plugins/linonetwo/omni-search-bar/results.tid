@@ -1,6 +1,6 @@
 created: 20181101220620505
 creator: Thomas Elmiger
-title: $:/plugins/telmiger/simple-search/results
+title: $:/plugins/linonetwo/omni-search-bar/results
 tags: 
 modified: 20190303202919126
 modifier: Thomas Elmiger
@@ -16,7 +16,7 @@ modifier: Thomas Elmiger
 <$transclude mode="block"/>
 </$list>
 """>
-{{$:/plugins/telmiger/simple-search/SearchResultsList}}
+{{$:/plugins/linonetwo/omni-search-bar/SearchResultsList}}
 </$list>
 </$linkcatcher>
 </div>

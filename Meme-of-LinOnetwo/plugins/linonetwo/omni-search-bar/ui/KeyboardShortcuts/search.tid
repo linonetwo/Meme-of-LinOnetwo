@@ -1,4 +1,4 @@
-title: $:/plugins/telmiger/simple-search/ui/KeyboardShortcuts/search
+title: $:/plugins/linonetwo/omni-search-bar/ui/KeyboardShortcuts/search
 tags: $:/tags/KeyboardShortcut
 modifier: Thomas Elmiger
 modified: 20190303193712461
@@ -6,7 +6,7 @@ key: ((simple-search))
 creator: Thomas Elmiger
 created: 20190129170004355
 
-\import $:/plugins/telmiger/simple-search/macros
+\import $:/plugins/linonetwo/omni-search-bar/macros
 <$navigator story="$:/StoryList" history="$:/HistoryList" openLinkFromInsideRiver={{$:/config/Navigation/openLinkFromInsideRiver}} openLinkFromOutsideRiver={{$:/config/Navigation/openLinkFromOutsideRiver}} relinkOnRename={{$:/config/RelinkOnRename}}>
 <$list filter="[list[$:/StoryList]] +[field:title[$:/Search]]" emptyMessage=<<simple-search-openSearch>>>
 <<simple-search-closeSearch>>

@@ -1,12 +1,12 @@
 created: 20190101192116785
 creator: Thomas Elmiger
-title: $:/plugins/telmiger/simple-search/SearchResultsList
+title: $:/plugins/linonetwo/omni-search-bar/SearchResultsList
 tags: $:/tags/SearchResults
 modified: 20190101201812743
 modifier: Thomas Elmiger
 caption: Simple Search
 
 <div tabindex="0">
-{{$:/plugins/telmiger/simple-search/SearchResultsTop}}
-{{$:/plugins/telmiger/simple-search/SearchResultsOther}}
+{{$:/plugins/linonetwo/omni-search-bar/SearchResultsTop}}
+{{$:/plugins/linonetwo/omni-search-bar/SearchResultsOther}}
 </div>
