@@ -1,0 +1,284 @@
+created: 20181016202403907
+creator: Thomas Elmiger
+title: $:/plugins/telmiger/simple-search/search.css
+tags: $:/tags/Stylesheet
+modifier: Thomas Elmiger
+modified: 20190127221727503
+
+/*
+** Simple Search
+** (c) Thomas Elmiger
+** """ 
+*/
+
+/* Zoomin Storyview Hack */
+
+[data-tiddler-title="$:/Search"].tc-tiddler-view-frame.tc-storyview-zoomin-tiddler {
+   display: block !important;
+}
+
+
+/* Search layer */
+
+.tc-layer-search {
+   position: fixed;
+   top: 0;
+   left: 0;
+   width: 100vw;
+   height: 100vh;
+   z-index: 10001;
+   background-color: rgba(0,0,0,0.66);
+}
+
+
+/* Search box */
+
+.tc-simple-search {
+   position: fixed;
+   top: 20vh;
+   right: 3vw;
+   left: 3vw;
+   width: 94vw;
+   height: 5rem;
+   z-index: 102;
+   max-width: 100%;
+   background-color: rgba(0,0,0,0);
+   padding: 1rem .5rem 1rem 1rem;
+   border-radius: 0.5rem;
+   border: 1px solid {{$:/plugins/telmiger/simple-search/settings/border-colour}};
+}
+
+.tc-simple-search .tc-search input[type=search],
+.tc-simple-search .tc-search input[type=search]:focus {
+   -webkit-appearance: none; -moz-appearance: none;
+   padding: 0 .25rem .125rem .25rem;
+   width: calc(100% - 4rem);
+   margin-right: .25rem;
+   color: rgb(13, 13, 13);
+   border: solid 1px transparent;
+   border-radius: .25rem;
+   background-color: rgb(222, 222, 222);
+}
+
+.tc-simple-search .tc-search input[type=search]:focus {
+   background-color: rgb(242, 242, 242);
+}
+
+@media (min-width: 42rem) {
+
+   .tc-simple-search {
+      right: 4rem;
+      left: 4rem;
+      width: calc(100% - 8rem);
+      height: 6rem;
+      padding: 1rem 2rem 1rem 3rem;
+   }
+
+   .tc-simple-search .tc-search input[type=search],
+   .tc-simple-search .tc-search input[type=search]:focus {
+      padding: 0 .5rem .25rem .5rem;
+      width: calc(100% - 5rem);
+      margin-right: .75rem;
+      font-size: 1.5rem;
+   }
+
+   .tc-simple-search .tc-search button {
+      margin-right: .25rem;
+   }
+
+   .tc-simple-search .tc-search a svg,
+   .tc-simple-search .tc-search button svg {
+      width: 1.2rem;
+      height: 1.2rem;
+   }
+
+}
+
+@media (min-width: 77rem) {
+
+   .tc-simple-search {
+      right: 10vw;
+      left: 10vw;
+      width: 80vw;
+      height: 7.66rem;
+      padding: 2rem 3rem 2rem 4rem;
+   }
+
+   .tc-simple-search .tc-search input[type=search],
+   .tc-simple-search .tc-search input[type=search]:focus {
+      padding: 0 .5rem .25rem .5rem;
+      width: calc(100% - 6rem);
+      margin-right: 1rem;
+      font-size: 1.75rem;
+   }
+
+   .tc-simple-search .tc-search button {
+      margin-right: .5rem;
+   }
+
+   .tc-simple-search .tc-search a svg,
+   .tc-simple-search .tc-search button svg {
+      width: 1.33rem;
+      height: 1.33rem;
+   }
+
+}
+
+
+/* Search buttons */
+
+.tc-simple-search-results button {
+   margin: .25rem 0;
+   color: lightgray;
+}
+
+.tc-simple-search .tc-search button svg {
+   fill: lightgray;
+}
+
+.tc-simple-search .tc-search button:hover svg,
+.tc-simple-search .tc-search button:focus svg {
+   fill: rgb(150, 150, 150);
+}
+
+.tc-simple-search button.te-btn-mini svg {
+   width: 0.75rem;
+   height: 0.75rem;
+}
+
+
+/* Search results */
+
+
+.tc-simple-search .tc-block-dropdown-wrapper {
+   position: absolute;
+   width: 90vw;
+   margin-top: 2rem;
+   margin-left: -3vw;
+}
+
+@media (min-width: 42rem) {
+   .tc-simple-search .tc-block-dropdown-wrapper {
+      width: calc(100% - 6rem);
+      margin-left: 0;
+   }
+}
+
+@media (min-width: 77rem) {
+   .tc-simple-search .tc-block-dropdown-wrapper {
+      width: 72vw;
+   }
+}
+
+.tc-simple-search p {
+   line-height: 1;
+   margin: 1.25rem 0 0.75rem 0;
+}
+
+.tc-simple-search .tc-search-results ul {
+   list-style: none;
+   padding-left: 0.25rem;
+}
+
+.tc-simple-search .tc-search-drop-down .tc-search-results a.tc-tiddlylink {
+   white-space: initial;
+   padding: 0.25rem 0.5rem;
+   line-height: 1.1;
+   border: 1px solid transparent;
+}
+
+.tc-simple-search .tc-search-drop-down .tc-search-results a.tc-tiddlylink:focus {
+   border: 1px dotted lightgray;
+}
+
+.tc-simple-search .tc-search + .tc-block-dropdown-wrapper {
+   margin: 0 1rem 0 0;
+}
+
+.tc-simple-search .tc-block-dropdown.tc-search-drop-down {
+   margin: 0;
+   max-height: 50vh;
+   overflow: auto;
+}
+
+.tc-block-dropdown.tc-search-drop-down {
+   position: relative;
+   margin-right: 1rem;
+   padding-left: .5rem; padding-right: .5rem;
+   max-width: 100%;
+}
+
+@media (min-width: 42rem) {
+   .tc-simple-search .tc-block-dropdown.tc-search-drop-down {
+      max-height: 60vh;
+   }
+}
+
+@media (min-width: 77rem) {
+   .tc-simple-search .tc-block-dropdown.tc-search-drop-down {
+      max-height: 80vh;
+   }
+}
+
+
+/* Close and Edit buttons */
+
+.tc-layer-search .te-close-this {
+   width: 100%;
+   height: 100%;
+}
+
+.tc-layer-search .te-close-this button {
+   width: 100%;
+   height: 100%;
+   text-align: right;
+}
+
+.tc-layer-search .te-close-this svg {
+   display: none;
+}
+
+@media (min-width: 42rem) {
+   .tc-layer-search .te-close-this svg {
+      display: inherit;
+      fill: lightgray;
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+   }
+}
+
+.tc-layer-search .te-edit-this button {
+    z-index: 102;
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    width: 1rem;
+    height: 1rem;
+    font-size: 1.2rem;
+}
+
+
+/* Hide tiddler info and frame */
+
+[data-tiddler-title="$:/Search"] .tc-tiddler-title,
+[data-tiddler-title="$:/Search"] .tc-subtitle,
+[data-tiddler-title="$:/Search"] .tc-fold-banner,
+[data-tiddler-title="$:/Search"] .tc-tags-wrapper
+{
+   display: none;
+   padding: 0;
+   margin: 0;
+}
+
+[data-tiddler-title="$:/Search"].tc-tiddler-view-frame,
+[data-tiddler-title="$:/Search"] .tc-tiddler-body > p {
+   height: 0;
+   width: 0;
+   padding: 0;
+   margin: 0;
+   border: none;
+}
+
+
+/* End """ */

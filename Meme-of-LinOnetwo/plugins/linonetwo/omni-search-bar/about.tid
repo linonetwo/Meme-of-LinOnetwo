@@ -1,0 +1,7 @@
+created: 20200528213406686
+modified: 20200528213406686
+title: $:/plugins/telmiger/simple-search/about
+tags: 
+
+A nice and simple overlay interface for searching your wiki. Designed for mobile and desktop screens. 
+''Reduce to the max.'' The standard search input field in the sidebar is removed, instead there is a {{$:/plugins/telmiger/simple-search/ui/Buttons/search}} [[button|$:/plugins/telmiger/simple-search/ui/Buttons/search]].

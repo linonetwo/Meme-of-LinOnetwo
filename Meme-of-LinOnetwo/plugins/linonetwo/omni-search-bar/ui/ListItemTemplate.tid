@@ -1,0 +1,13 @@
+created: 20181230141935738
+creator: Thomas Elmiger
+title: $:/plugins/telmiger/simple-search/ui/ListItemTemplate
+tags: 
+caption: Template for search list items
+modified: 20181230142103379
+modifier: Thomas Elmiger
+
+<li class="tc-menu-list-item">
+<$link to={{!!title}} tooltip="title: {{!!title}}">
+<$view field="caption"><$view field="title"/></$view>
+</$link>
+</li>
