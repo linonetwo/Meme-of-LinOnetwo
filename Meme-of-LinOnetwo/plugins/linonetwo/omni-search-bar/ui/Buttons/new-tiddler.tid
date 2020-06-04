@@ -1,0 +1,17 @@
+created: 20190101203433764
+creator: Thomas Elmiger
+title: $:/plugins/telmiger/simple-search/ui/Buttons/new-tiddler
+modifier: Thomas Elmiger
+modified: 20190303203604937
+description: {{$:/language/Buttons/NewTiddler/Hint}}
+caption: Create tiddler named with search term
+
+<$wikify name="id" text="{{$:/plugins/telmiger/simple-search/settings/new-tpl}}">
+<$button tooltip={{$:/language/Buttons/NewTiddler/Hint}} aria-label={{$:/language/Buttons/NewTiddler/Caption}} class="tc-btn-invisible te-btn-mini">
+<<simple-search-closeSearch>>
+<$action-createtiddler $basetitle=<<id>> tags={{$:/plugins/telmiger/simple-search/settings/new-tags}} text="" caption=<<id>>/>
+<$action-navigate $to=<<id>>/>
+<$action-sendmessage $message="tm-edit-tiddler" $param=<<id>>/>
+{{$:/core/images/new-button}}
+</$button>
+</$wikify>

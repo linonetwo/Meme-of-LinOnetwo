@@ -1,0 +1,46 @@
+created: 20170208062643245
+creator: Thomas Elmiger
+title: $:/plugins/telmiger/simple-search/readme
+tags: EditorCounter
+modifier: Thomas Elmiger
+modified: 20200528213415209
+
+!! Simple Search 
+
+{{$:/plugins/telmiger/simple-search/about}}
+
+
+!!! Keyboard accessible
+
+* Press <kbd>Cmd</kbd> + <kbd>P</kbd> to ''launch'' or ''close'' Simple Search (same as Notion, or define your own shortcut [[in the control panel|$:/core/ui/ControlPanel/KeyboardShortcuts]]). 
+* Navigate with <kbd>Tab</kbd>
+** {{$:/core/ui/Buttons/advanced-search}} takes you to $:/AdvancedSearch
+** the next <kbd>Tab</kbd> jumps to the search results.
+
+Depending on your browser and settings, you can select a list item using <kbd>Tab</kbd> or <kbd>up</kbd> and <kbd>down</kbd> arrow keys, finally confirm your choice with <kbd>Enter</kbd>.
+
+
+!!! Search in fields
+Primary results are listed for tiddlers containing the search term in the ''title'' OR the ''caption'' fields. 
+
+The secondary list finds results based on all other fields (not title nor caption). This can be adapted via settings.
+
+
+!!! Create tiddlers
+
+Empty result list? No problem. Create missing tiddlers using the search term as title and caption. 
+
+* Hit <kbd>Tab</kbd> until you reach the plus button (+).
+* Create a tiddler with <kbd>Enter</kbd>.
+
+See template options on the ''settings tab''. – Hat tip to //Diego Mesa// for inspiring this feature.
+
+
+!!! Settings
+
+Make sure to visit the ''settings tab'' to adjust your preferences.
+
+
+!! Core overruling
+
+This plugin overwrites $:/core/ui/SideBarSegments/search and nothing else.

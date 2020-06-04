@@ -1,0 +1,13 @@
+created: 20190101204729675
+creator: Thomas Elmiger
+title: $:/plugins/telmiger/simple-search/ui/Buttons/options
+modified: 20190303201928917
+caption: Simple Search Options
+modifier: Thomas Elmiger
+tags: 
+
+<$button tooltip="Options" class="tc-btn-invisible te-btn-mini">
+<<simple-search-closeSearch>>
+<$action-navigate $to="$:/plugins/telmiger/simple-search/settings"/>
+{{$:/core/images/options-button}}
+</$button>

@@ -1,0 +1,13 @@
+created: 20190101210358315
+creator: Thomas Elmiger
+title: $:/plugins/telmiger/simple-search/ui/Buttons/advanced-search
+tags: 
+modifier: Thomas Elmiger
+modified: 20190303201445296
+caption: Simple to Advanced Search
+
+<$button tooltip={{$:/language/Buttons/AdvancedSearch/Hint}} aria-label={{$:/language/Buttons/AdvancedSearch/Caption}} class="tc-btn-invisible">
+<<simple-search-closeSearch>>
+<$action-navigate $to="$:/AdvancedSearch"/>
+{{$:/core/images/advanced-search-button}}
+</$button>
