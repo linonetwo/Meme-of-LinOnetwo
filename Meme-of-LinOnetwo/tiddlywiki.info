@@ -7,7 +7,7 @@
     "tiddlywiki/codemirror-autocomplete",
     "tiddlywiki/codemirror-closebrackets",
     "tiddlywiki/codemirror-closetag",
-    "tiddlywiki/codemirror-fullscreen",
+    "tiddlywiki/codemirror-fullscreen-editing",
     "tiddlywiki/codemirror-keymap-sublime-text",
     "tiddlywiki/codemirror-mode-css",
     "tiddlywiki/codemirror-mode-htmlmixed",
@@ -44,6 +44,7 @@
     "linonetwo/itonnote"
   ],
   "themes": ["tiddlywiki/vanilla", "itonnote"],
+  "languages": ["zh-Hans"],
   "build": {
     "index": ["--rendertiddler", "$:/plugins/tiddlywiki/tiddlyweb/save/offline", "index.html", "text/plain"],
     "externalimages": [
