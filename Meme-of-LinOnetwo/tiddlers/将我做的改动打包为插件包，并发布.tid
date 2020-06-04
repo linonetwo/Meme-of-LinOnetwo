@@ -1,6 +1,6 @@
 created: 20200531143750625
 creator: 林一二
-modified: 20200602160608135
+modified: 20200604033637673
 modifier: 林一二
 tags: 自改TW
 title: 将我做的改动打包为插件包，并发布
@@ -23,16 +23,55 @@ type: text/vnd.tiddlywiki
 
 !! 制作插件仓库
 
-我通过[[mklauber/tw5-plugins-template|https://github.com/mklauber/tw5-plugins-template]]这个模板，创建了我的[[插件Wiki的Github仓库|https://github.com/linonetwo/tiddlywiki-plugin-recommendation]]。
+我一开始通过[[mklauber/tw5-plugins-template|https://github.com/mklauber/tw5-plugins-template]]这个模板，创建了我的[[插件Wiki的Github仓库|https://github.com/linonetwo/tiddlywiki-plugin-recommendation]]。
+但是我很快注意到，它其实就只是提供了一个额外的 build target `library`，我将这个 build target 复制到我自己的 wiki 的 `tiddlywiki.info` 里之后，就可以直接在部署我的 wiki 时，顺便生成插件仓库所需的文件并同时部署它们了。
 
-用它可以创建类似[[kookma PluginLibrary|https://kookma.github.io/TW-PluginLibrary/]]的插件Wiki，里面会有一个能拖的Tiddler[[$:/config/KookmaPluginLibrary|https://kookma.github.io/TW-PluginLibrary/#%24%3A%2Fconfig%2FKookmaPluginLibrary]]。
+因此可以直接将我自己的 Wiki 变成类似[[kookma PluginLibrary|https://kookma.github.io/TW-PluginLibrary/]]的插件Wiki，里面会有一个能拖的Tiddler[[$:/config/KookmaPluginLibrary|https://kookma.github.io/TW-PluginLibrary/#%24%3A%2Fconfig%2FKookmaPluginLibrary]]。
+在我的 Wiki 里，它就是 [[$:/config/ItonNotePluginLibrary]] ，直接将这个链接拖到别的 wiki 里就能装好了。
 
-这个 Tiddler 之所以拖到我们自己的 Wiki 里就能添加一个新的插件库，是因为它带有[[$:/tags/PluginLibrary]]这个 Tag 和 [[url:https://xxx.html（指向一个插件库描述文件）|https://kookma.github.io/TW-PluginLibrary/library/index.html]]这个字段。
+这个 Tiddler 之所以拖到我们自己的 Wiki 里就能添加一个新的插件库，是因为它带有[[$:/tags/PluginLibrary]]这个 Tag 和 `url:https://xxx.html` 这个字段，它指向一个插件库描述文件。而 `library` 这个 build target 可以创建出这个 html 文件。这个置于 `public/library/index.html` 的 HTML 文件还会依赖 `public/library/recipes/library/tiddlers/xxx插件名.json` 这些具体的打包好的插件。
 
-但是生成出的 index.html 是空的。
+总之，最后我的能用的 build target 大概长这样：
+
+```json
+    "library": [
+      "--makelibrary",
+      "$:/UpgradeLibrary",
+      "--savelibrarytiddlers",
+      "$:/UpgradeLibrary",
+      "[prefix[$:/]] -[prefix[$:/plugins/tiddlywiki/]] -[prefix[$:/themes/tiddlywiki/]] -[prefix[$:/languages/]] -[[$:/plugins/tiddlywiki/upgrade]] -[[$:/plugins/tiddlywiki/translators]] -[tag[$:/tags/PluginLibrary]] -[prefix[$:/plugins/kookma]]",
+      "recipes/library/tiddlers/",
+      "$:/UpgradeLibrary/List",
+      "--savetiddler",
+      "$:/UpgradeLibrary/List",
+      "recipes/library/tiddlers.json",
+      "--rendertiddler",
+      "$:/plugins/tiddlywiki/pluginlibrary/library.template.html",
+      "index.html",
+      "text/plain"
+    ]
+```
+
+!!! 找不到插件
+
+虽然平时直接将插件文件夹放在 `plugins` 文件夹里，启动 NodeJS wiki 之后就能用这个插件了，但是在生成插件仓库时，这会导致第一步 `"--makelibrary", "$:/UpgradeLibrary"` 就找不到该插件。
+
+这是因为它默认 `plugins` 文件夹里放的还是文件夹，再往里面一层才是具体的插件，也就是说要符合 `Meme-of-LinOnetwo/plugins/linonetwo/itonnote` 这样的摆放方式才行，不然生成的 HTML 文件里，`assetList` 就有可能是空的，因为没找到你的插件。
+
+Themes 也类似，得用 `Meme-of-LinOnetwo/themes/linonetwo/itonnote` 这样的路径才能被找到。
+
+!!! 部署
+
+部署后有可能访问路径还会有问题，导致安装插件时在开发者工具里可以看到访问 404 了，总之我最终用了这样的重写规则解决问题：
+
+```json
+  "rewrites": [
+    { "source": "/recipes/(.*)", "destination": "/library/recipes/$1" }
+  ]
+```
 
 !! 其他参考资料
 
 在[[inmysocks.tiddlyspot.com|http://inmysocks.tiddlyspot.com/#Making%20a%20Plugin%20Library]]也有制作 Plugin Library 的教程，但我觉得之前的那个仓库模板就够用了。
 
-还有[[sistan.tiddlyspot.com|http://sistan.tiddlyspot.com/]]是创建单个插件的教程，为了制作插件仓库里的插件，也需要参考它。
+还有[[sistan.tiddlyspot.com|http://sistan.tiddlyspot.com/]]是创建单个插件的教程，不过我没有参考它。
