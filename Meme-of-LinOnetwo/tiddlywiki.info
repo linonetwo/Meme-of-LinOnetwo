@@ -43,7 +43,7 @@
     "linonetwo/nodejs-webcatalog-git-sync",
     "linonetwo/itonnote"
   ],
-  "themes": ["tiddlywiki/vanilla", "itonnote"],
+  "themes": ["tiddlywiki/vanilla", "linonetwo/itonnote"],
   "languages": ["zh-Hans"],
   "build": {
     "index": ["--rendertiddler", "$:/plugins/tiddlywiki/tiddlyweb/save/offline", "index.html", "text/plain"],
