@@ -7,6 +7,6 @@
     "silent": true
   },
   "rewrites": [
-    { "source": "/recipes/library/", "destination": "/library/recipes/library/" }
+    { "source": "/recipes/(.*)", "destination": "/library/recipes/$1" }
   ]
 }
