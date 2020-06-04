@@ -1,5 +1,7 @@
 created: 20200412103751564
-modified: 20200421105704634
+creator: 林一二
+modified: 20200604025352408
+modifier: 林一二
 tags: 自改TW
 title: 行级渲染的 TiddlyWiki Wikitext
 tmap.id: 82a51673-1dd4-4e61-a43d-a741e905695a
@@ -10,6 +12,7 @@ TiddlyWiki 和 Notion 最大的不同是，它必须打开编辑模式才能修�
 因为宏的存在，实际的内容和源码的差别可能会很大，所以如果源码多行之间是有上下文关系的（比如 macro 定义、HTML）则没法在看不到源码的情况下知道要修改的是哪一行。所以得智能识别哪些内容是相关的，渲染的时候就把它们作为一个「块」来渲染，然后在「行级」编辑的时候，就要能同时编辑这些行。
 
 可以考虑一些所见即所得的 Markdown 编辑器例如 Typora，还有 Nteract 这种 Jupyter Notebook，看看它们是怎么输入特殊语法后回车渲染出内容、再点击后再进入编辑模式。
+[[marktext|https://github.com/marktext/marktext]]用 codemirror 做到了 WYSIWYG，或许可以抄一抄用在 tiddlywiki 里，做成一个 codemirror 插件？
 
 然后我用 SlateJS 做一个 demo，把每行的 wikitext 片段发到 TiddlyWiki 上当语言服务器用，渲染出结果后，展示在编辑器上。
 
