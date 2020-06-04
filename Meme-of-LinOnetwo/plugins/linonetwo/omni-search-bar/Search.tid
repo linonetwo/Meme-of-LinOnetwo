@@ -6,46 +6,63 @@ modified: 20190303205937724
 icon: $:/plugins/linonetwo/omni-search-bar/images/search-button
 
 <div class="tc-layer-search">
-<div class="te-close-this">
-{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/close-search}}
-</div>
-<div class="tc-simple-search">
-<$set name="searchTiddler" value="$:/temp/advancedsearch">
-<div class="tc-search">
-<$edit-text tiddler=<<searchTiddler>> type="search" tag="input" focus={{$:/config/Search/AutoFocus}} focusPopup=<<qualify "$:/state/popup/search-dropdown">> class="tc-popup-handle"/>{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/advanced-search}}<$reveal tag="div" class="tc-block-dropdown-wrapper tc-simple-search-results" state=<<searchTiddler>> type="nomatch" text="">
-<$reveal tag="div" class="tc-block-dropdown tc-search-drop-down tc-popup-handle" state=<<qualify "$:/state/popup/search-dropdown">> type="nomatch" text="" default="">
-<$list filter="[<searchTiddler>minlength{$:/config/Search/MinLength}limit[1]]" emptyMessage="""<div class="tc-search-results">{{$:/language/Search/Search/TooShort}}</div>""" variable="listItem">
-{{$:/plugins/linonetwo/omni-search-bar/results}}
-</$list>
-</$reveal>
-</$reveal><$reveal state=<<searchTiddler>> type="nomatch" text="">{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/clear-search}}
-<div class="tc-simple-search-results">
-{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/new-tiddler}}
-<$button tooltip="show/hide filtered list" aria-label="toggle results" popup=<<qualify "$:/state/popup/search-dropdown">> class="tc-btn-invisible">
-{{$:/core/images/down-arrow}}
-<$list filter="[<searchTiddler>minlength{$:/config/Search/MinLength}limit[1]]" variable="listItem">
-<$set name="searchTerm" value={{{ [<searchTiddler>get[text]] }}}>
-<$set name="resultCount" value="""<$count filter="[!is[system]search:*<searchTerm>]"/>""">
-{{$:/language/Search/Matches}}
-</$set>
-</$set>
-</$list>
-</$button>
-{{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/options}}
-</div>
-</$reveal>
-</div>
+  <!-- Prevent scroll of body -->
+  <style>
+    body.tc-body {
+      overflow: hidden !important;
+    }
+  </style>
+  <!-- Close button on the upper-right -->
+  <div class="te-close-this">
+  {{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/close-search}}
+  </div>
 
-</$set>
-</div>
-<$reveal type="match" state="$:/plugins/linonetwo/omni-search-bar/settings/edit" text="yes">
-<span class="te-edit-this">
-<$button message="tm-edit-tiddler" param={{!!title}} tooltip="edit tiddler" aria-label={{$:/language/Buttons/Edit/Caption}} class=<<tv-config-toolbar-class>>>
-{{$:/core/images/edit-button}}
-<$list filter="[<tv-config-toolbar-text>prefix[yes]]">
-<span class="tc-btn-text">edit</span>
-</$list>
-</$button>
-</span>
-</$reveal>
+
+  <div class="tc-simple-search">
+    <$set name="searchTiddler" value="$:/temp/advancedsearch">
+      <div class="tc-search">
+        <$edit-text tiddler=<<searchTiddler>> type="search" tag="input" focus={{$:/config/Search/AutoFocus}} focusPopup=<<qualify "$:/state/popup/search-dropdown">> class="tc-popup-handle"/>
+
+        <div class="tc-simple-search-results">
+          <!-- Counter of results, and Dropdown button -->
+          <$button tooltip="show/hide filtered list" aria-label="toggle results" popup=<<qualify "$:/state/popup/search-dropdown">> class="tc-btn-invisible">
+            {{$:/core/images/down-arrow}}
+            <$list filter="[<searchTiddler>minlength{$:/config/Search/MinLength}limit[1]]" variable="listItem">
+              <$set name="searchTerm" value={{{ [<searchTiddler>get[text]] }}}>
+                <$set name="resultCount" value="""<$count filter="[!is[system]search:*<searchTerm>]"/>""">
+                  {{$:/language/Search/Matches}}
+                </$set>
+              </$set>
+            </$list>
+          </$button>
+
+          {{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/advanced-search}}
+          {{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/new-tiddler}}
+          {{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/options}}
+        </div>
+
+        <$reveal tag="div" class="tc-block-dropdown-wrapper tc-simple-search-results" state=<<searchTiddler>> type="nomatch" text="">
+          <$reveal tag="div" class="tc-block-dropdown tc-search-drop-down tc-popup-handle" state=<<qualify "$:/state/popup/search-dropdown">> type="nomatch" text="" default="">
+            <$list filter="[<searchTiddler>minlength{$:/config/Search/MinLength}limit[1]]" emptyMessage="""<div class="tc-search-results">{{$:/language/Search/Search/TooShort}}</div>""" variable="listItem">
+            {{$:/plugins/linonetwo/omni-search-bar/results}}
+            </$list>
+          </$reveal>
+        </$reveal>
+
+      </div>
+    </$set>
+  </div>
+
+  <!-- Edit button on the left-bottom -->
+  <$reveal type="match" state="$:/plugins/linonetwo/omni-search-bar/settings/edit" text="yes">
+    <span class="te-edit-this">
+      <$button message="tm-edit-tiddler" param={{!!title}} tooltip="edit tiddler" aria-label={{$:/language/Buttons/Edit/Caption}} class=<<tv-config-toolbar-class>>>
+        {{$:/core/images/edit-button}}
+        <$list filter="[<tv-config-toolbar-text>prefix[yes]]">
+          <span class="tc-btn-text">edit</span>
+        </$list>
+      </$button>
+    </span>
+  </$reveal>
+
 </div>

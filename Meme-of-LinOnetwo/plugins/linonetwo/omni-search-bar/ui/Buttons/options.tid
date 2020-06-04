@@ -7,7 +7,7 @@ modifier: Thomas Elmiger
 tags: 
 
 <$button tooltip="Options" class="tc-btn-invisible te-btn-mini">
-<<simple-search-closeSearch>>
-<$action-navigate $to="$:/plugins/linonetwo/omni-search-bar/settings"/>
-{{$:/core/images/options-button}}
+  <<simple-search-closeSearch>>
+  <$action-navigate $to="$:/plugins/linonetwo/omni-search-bar/settings"/>
+  {{$:/core/images/options-button}}
 </$button>
