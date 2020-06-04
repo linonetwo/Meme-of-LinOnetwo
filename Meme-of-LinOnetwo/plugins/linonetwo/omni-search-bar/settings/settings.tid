@@ -1,6 +1,6 @@
 created: 20181104092840050
 creator: Thomas Elmiger
-title: $:/plugins/telmiger/simple-search/settings
+title: $:/plugins/linonetwo/omni-search-bar/settings
 tags: 
 modified: 20200528221006833
 modifier: Thomas Elmiger
@@ -11,7 +11,7 @@ modifier: Thomas Elmiger
 
 An options button is available on the search layer so you can always return to these settings when necessary. 
 
-<$checkbox tiddler="$:/plugins/telmiger/simple-search/hide-options-button.css" invertTag="yes" tag="$:/tags/Stylesheet"> show </$checkbox> the {{$:/plugins/telmiger/simple-search/ui/Buttons/options}} button
+<$checkbox tiddler="$:/plugins/linonetwo/omni-search-bar/hide-options-button.css" invertTag="yes" tag="$:/tags/Stylesheet"> show </$checkbox> the {{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/options}} button
 
 !!! Design
 
@@ -19,14 +19,14 @@ An options button is available on the search layer so you can always return to t
 <$link to="$:/config/AnimationDuration"><<lingo AnimDuration/Prompt>></$link> <$edit-text tiddler="$:/config/AnimationDuration" default="" tag="input"/>
 
 ''Search box border:'' Adapt the colour to the design of your wiki. Use //transparent// if you don’t want a border. <br>
-[[Border colour:|$:/plugins/telmiger/simple-search/settings/border-colour]] <$edit-text tiddler="$:/plugins/telmiger/simple-search/settings/border-colour" tag="input"/> <$edit-text tiddler="$:/plugins/telmiger/simple-search/settings/border-colour" type="color" tag="input"/>
+[[Border colour:|$:/plugins/linonetwo/omni-search-bar/settings/border-colour]] <$edit-text tiddler="$:/plugins/linonetwo/omni-search-bar/settings/border-colour" tag="input"/> <$edit-text tiddler="$:/plugins/linonetwo/omni-search-bar/settings/border-colour" type="color" tag="input"/>
 
 
 !!! Search button
 
-<$checkbox tiddler="$:/config/PageControlButtons/Visibility/$:/plugins/telmiger/simple-search/ui/Buttons/search" field="text" checked="show" unchecked="hide" default="show"> show in Page Toolbar (in the sidebar)</$checkbox>
+<$checkbox tiddler="$:/config/PageControlButtons/Visibility/$:/plugins/linonetwo/omni-search-bar/ui/Buttons/search" field="text" checked="show" unchecked="hide" default="show"> show in Page Toolbar (in the sidebar)</$checkbox>
 
-<$checkbox tiddler="$:/plugins/telmiger/simple-search/ui/Buttons/search" tag="$:/tags/TopRightBar"> show in Top Right Bar (besides the sidebar toggle, permanently visible)</$checkbox>
+<$checkbox tiddler="$:/plugins/linonetwo/omni-search-bar/ui/Buttons/search" tag="$:/tags/TopRightBar"> show in Top Right Bar (besides the sidebar toggle, permanently visible)</$checkbox>
 
 
 !!! Minimal search term length
@@ -36,22 +36,22 @@ An options button is available on the search layer so you can always return to t
 
 !!! Fields to search
 
-<label>''Field list:'' <$edit-text tiddler="$:/plugins/telmiger/simple-search/filter-other" size="20" tag="input"/></label>
+<label>''Field list:'' <$edit-text tiddler="$:/plugins/linonetwo/omni-search-bar/filter-other" size="20" tag="input"/></label>
 
 This list defines, which fields are relevant for the secondary result list (“Other”). The default value `-caption,title` leads to searches in all fields except caption and title. See [[search operator documentation|https://tiddlywiki.com/#search%20Operator]] for more info.
 
 
 !!! Create new tiddlers
 
-<$checkbox tiddler="$:/plugins/telmiger/simple-search/hide-new-button.css" invertTag="yes" tag="$:/tags/Stylesheet"> show </$checkbox> the {{$:/plugins/telmiger/simple-search/ui/Buttons/new-tiddler}} button
+<$checkbox tiddler="$:/plugins/linonetwo/omni-search-bar/hide-new-button.css" invertTag="yes" tag="$:/tags/Stylesheet"> show </$checkbox> the {{$:/plugins/linonetwo/omni-search-bar/ui/Buttons/new-tiddler}} button
 
 Define the template for new tiddlers you can create based on search terms. The default value `{{$:/temp/advancedsearch}}` inserts your search term as title and caption.
 
-<label>''Title template:'' <$edit-text tiddler="$:/plugins/telmiger/simple-search/settings/new-tpl" size="20" tag="input"/></label>
+<label>''Title template:'' <$edit-text tiddler="$:/plugins/linonetwo/omni-search-bar/settings/new-tpl" size="20" tag="input"/></label>
 
 Use the following field to add tags to tiddlers created via Simple Search. Don’t forget to add brackets to tags containing spaces, e.g. `[[My Tag]] Foo Bar`.
 
-<label>''Tag template:'' <$edit-text tiddler="$:/plugins/telmiger/simple-search/settings/new-tags" size="20" tag="input"/></label>
+<label>''Tag template:'' <$edit-text tiddler="$:/plugins/linonetwo/omni-search-bar/settings/new-tags" size="20" tag="input"/></label>
 
 ---
 
@@ -59,4 +59,4 @@ Use the following field to add tags to tiddlers created via Simple Search. Don�
 
 Would you like to edit the tiddler $:/Search? Activate edit mode here:
 
-<$checkbox tiddler="$:/plugins/telmiger/simple-search/settings/edit" field="text" checked="yes" unchecked="no"> Show edit icon in lower left corner of the screen.</$checkbox>
+<$checkbox tiddler="$:/plugins/linonetwo/omni-search-bar/settings/edit" field="text" checked="yes" unchecked="no"> Show edit icon in lower left corner of the screen.</$checkbox>

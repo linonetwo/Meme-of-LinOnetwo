@@ -1,6 +1,6 @@
 created: 20190303205314106
 creator: Thomas Elmiger
-title: $:/plugins/telmiger/simple-search/ui/Buttons/close-search
+title: $:/plugins/linonetwo/omni-search-bar/ui/Buttons/close-search
 modifier: Thomas Elmiger
 modified: 20190303212719631
 caption: {{$:/core/images/close-button}} Close Search

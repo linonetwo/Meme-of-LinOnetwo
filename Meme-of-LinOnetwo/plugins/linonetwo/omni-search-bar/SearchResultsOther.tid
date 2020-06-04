@@ -1,6 +1,6 @@
 created: 20190101201254151
 creator: Thomas Elmiger
-title: $:/plugins/telmiger/simple-search/SearchResultsOther
+title: $:/plugins/linonetwo/omni-search-bar/SearchResultsOther
 modified: 20190101202507272
 modifier: Thomas Elmiger
 caption: Simple Search Other
@@ -8,8 +8,8 @@ caption: Simple Search Other
 \define other()
 <small>//Other//</small>
 <ul class="te-nav-list">
-<$wikify name="other-filter" text="[!is[system]search:{{$:/plugins/telmiger/simple-search/filter-other}}{$(searchTiddler)$}sort[title]limit[250]]">
-<$list filter=<<other-filter>> template="$:/plugins/telmiger/simple-search/ui/ListItemTemplate"/>
+<$wikify name="other-filter" text="[!is[system]search:{{$:/plugins/linonetwo/omni-search-bar/filter-other}}{$(searchTiddler)$}sort[title]limit[250]]">
+<$list filter=<<other-filter>> template="$:/plugins/linonetwo/omni-search-bar/ui/ListItemTemplate"/>
 </$wikify>
 </ul>
 \end

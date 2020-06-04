@@ -2,7 +2,7 @@
 	"title": "$:/plugins/linonetwo/omni-search-bar",
 	"author": "Thomas Elmiger",
 	"core-version": ">=5.1.18",
-	"description": "Omni Search Bar – based on telmiger/simple-search 1.0.23",
+	"description": "Omni Search Bar – based on telmiger/simple-search 1.0.24",
 	"list": "readme settings support license",
 	"name": "Omni Search Bar",
 	"plugin-type": "plugin",
