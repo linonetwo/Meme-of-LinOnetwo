@@ -1,6 +1,0 @@
-title: $:/config/codemirror/
-
-autoCloseTags: true
-keyMap: sublime
-lineNumbers: false
-styleActiveLine: false
