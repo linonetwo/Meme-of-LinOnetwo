@@ -21,7 +21,6 @@
     "tiddlywiki/highlight",
     "tiddlywiki/katex",
     "tiddlywiki/markdown",
-    "tiddlywiki/menubar",
     "tiddlywiki/sax",
     "tiddlywiki/text-slicer",
     "tobibeer/appear",
