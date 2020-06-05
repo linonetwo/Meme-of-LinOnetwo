@@ -1,0 +1,13 @@
+created: 20200605095328253
+creator: 林一二
+keywords: service-worker firefox
+modified: 20200605095501248
+modifier: 林一二
+responder: stackoverflow
+tags: solution
+title: 在 firefox 里清除 Service worker
+tmap.id: 64d75669-7413-43d9-9fc7-433155759d6d
+type: text/vnd.tiddlywiki
+url: https://stackoverflow.com/questions/48428725/how-to-show-the-active-service-workers-in-the-firefox-dev-toolsers-in-the-firefox-dev-tools&usg=AOvVaw0knU6yvinEtS43HuDQVDGI
+
+访问 about:debugging#/runtime/this-firefox
