@@ -7,17 +7,17 @@ type: text/vnd.tiddlywiki
 
 !! 在本地使用
 
-我是用[[serveAndWatchHTML.js|https://github.com/linonetwo/Meme-of-LinOnetwo/blob/455e6a21bb/serveAndWatchHTML.js]]这个脚本在本地启动一个服务器，把 HTML 版的 TiddlyWiki 推送到本地的某个端口上，只要访问这个端口就可以在本地打开 TiddlyWiki。
+我是用[[serveAndWatchHTML.js|https://github.com/linonetwo/wiki/blob/455e6a21bb/serveAndWatchHTML.js]]这个脚本在本地启动一个服务器，把 HTML 版的 TiddlyWiki 推送到本地的某个端口上，只要访问这个端口就可以在本地打开 TiddlyWiki。
 
 HTML 版的 TiddlyWiki 在手动保存和自动保存时，都会把一个 `tiddlywiki.html` 文件下载到 `~/Downloads` 文件夹里，而上述脚本就会自动把这个文件重命名成 `index.html` 并移动到 Git 仓库里，然后自动每半小时提交备份到 Github 去。
 
-我通过[[installHTMLWatcher.sh|https://github.com/linonetwo/Meme-of-LinOnetwo/blob/455e6a21bb/scripts/installHTMLWatcher.sh]]这个脚本让上述 JS 脚本开机自动执行，这样我就可以随时打开本地的 TiddlyWiki 了，不需要手动去启动服务器。
+我通过[[installHTMLWatcher.sh|https://github.com/linonetwo/wiki/blob/455e6a21bb/scripts/installHTMLWatcher.sh]]这个脚本让上述 JS 脚本开机自动执行，这样我就可以随时打开本地的 TiddlyWiki 了，不需要手动去启动服务器。
 
 !! 部署公网可用的静态页面
 
 如此一来，在 Github 仓库里就会有一个 `index.html`，我接下来把它设置为 Github Pages 服务要展示的页面。
 
-在 [[Readme.md|https://github.com/linonetwo/Meme-of-LinOnetwo/blob/1360cfbaf211f7a9701b47a34be8cbea62005c3c/README.md]] 顶部加上这样的元信息：
+在 [[Readme.md|https://github.com/linonetwo/wiki/blob/1360cfbaf211f7a9701b47a34be8cbea62005c3c/README.md]] 顶部加上这样的元信息：
 
 ```markdown
 ---
@@ -27,7 +27,7 @@ permalink: /index.html
 
 这会告诉 Github 展示仓库根目录的 `index.html`。
 
-接着打开 `https://github.com/linonetwo/Meme-of-LinOnetwo/settings`，向下找到 ''GitHub Pages'' 这一设置项，跟着[[教程|https://pages.github.com/]]配置一下就好了。
+接着打开 `https://github.com/linonetwo/wiki/settings`，向下找到 ''GitHub Pages'' 这一设置项，跟着[[教程|https://pages.github.com/]]配置一下就好了。
 
 ---
 

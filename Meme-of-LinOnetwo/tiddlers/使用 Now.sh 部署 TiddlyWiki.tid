@@ -19,9 +19,9 @@ Github 是一个有很多自动化工具（例如 GithubActions、Now.sh 自动�
 
 !! 配置 Now.sh 上运行的自动打包脚本
 
-然后我在 [[package.json|https://github.com/linonetwo/Meme-of-LinOnetwo/blob/e2a986471d2eeece07be35c939f77b91752a2b6f/package.json]] 里准备好 `build` 脚本，这个 JS 脚本会使用 [[tiddlywiki|https://www.npmjs.com/package/tiddlywiki]] 这个 npm 包来把 NodeJS 版的一堆 tiddler 打包成一个 `index.html`，放在 `./public` 文件夹里。
+然后我在 [[package.json|https://github.com/linonetwo/wiki/blob/e2a986471d2eeece07be35c939f77b91752a2b6f/package.json]] 里准备好 `build` 脚本，这个 JS 脚本会使用 [[tiddlywiki|https://www.npmjs.com/package/tiddlywiki]] 这个 npm 包来把 NodeJS 版的一堆 tiddler 打包成一个 `index.html`，放在 `./public` 文件夹里。
 
-我在 `.gitignore` 里设置了 `./public` 不上传到 Github，以减小仓库体积。然后在仓库里加上一个 [[now.json|https://github.com/linonetwo/Meme-of-LinOnetwo/blob/10a87f32ef48560da0bf36c0786e64a2d27ca952/now.json]]，最后到 [[Zeit（Now.sh）云服务|https://zeit.co/import/git#import-github]]上去设置它自动在我每次进行 Git 提交后，都拉取我的所有 Tiddler，然后执行构建脚本，把结果部署为一个在线的 Wiki。
+我在 `.gitignore` 里设置了 `./public` 不上传到 Github，以减小仓库体积。然后在仓库里加上一个 [[now.json|https://github.com/linonetwo/wiki/blob/10a87f32ef48560da0bf36c0786e64a2d27ca952/now.json]]，最后到 [[Zeit（Now.sh）云服务|https://zeit.co/import/git#import-github]]上去设置它自动在我每次进行 Git 提交后，都拉取我的所有 Tiddler，然后执行构建脚本，把结果部署为一个在线的 Wiki。
 
 !! 在本地使用
 

@@ -4,7 +4,7 @@
   "userName": "林一二",
   "privateWikiName": "private-Meme-of-LinOnetwo",
   "version": "1.0.0",
-  "repository": "git@github.com:linonetwo/Meme-of-LinOnetwo.git",
+  "repository": "git@github.com:linonetwo/wiki.git",
   "author": "linonetwo <linonetwo012@gmail.com>",
   "license": "MIT",
   "scripts": {
