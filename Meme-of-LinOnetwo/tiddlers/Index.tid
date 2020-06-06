@@ -17,7 +17,7 @@ type: text/vnd.tiddlywiki
 
 以及一些[[加密了的内容|APrivateContent]]，包括我的个人 Todo 列表、[[日记|日志]]等，还有从[[GoogleCalendar]]导入的[[每日评价]]。
 
-本知识库备份在[[Github|https://github.com/linonetwo/Meme-of-LinOnetwo]]上，有想评论的内容可以在这个仓库里发 issue 。[[通过 Now.sh 部署|使用 Now.sh 部署 TiddlyWiki]]的在线版本是 [[onetwo.ren/wiki|https://onetwo.ren/wiki/]]。
+本知识库备份在[[Github|https://github.com/linonetwo/wiki/]]上，有想评论的内容可以在这个仓库里发 issue 。[[通过 Now.sh 部署|使用 Now.sh 部署 TiddlyWiki]]的在线版本是 [[onetwo.ren/wiki|https://onetwo.ren/wiki/]]。
 
 如果你也想[[用TiddlyWiki替代Notion和EverNote作为个人知识管理系统|https://onetwo.ren/%E7%94%A8tiddlywiki%E6%9B%BF%E4%BB%A3notion%E5%92%8Cevernote%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/]]，可以试试这个[[项目模板]]！
 
