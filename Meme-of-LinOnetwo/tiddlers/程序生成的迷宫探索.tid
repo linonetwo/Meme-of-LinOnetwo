@@ -1,5 +1,7 @@
 created: 20190430131129926
-modified: 20200409033738330
+creator: 林一二
+modified: 20200606024353814
+modifier: 林一二
 tags: 想法 游戏设计
 title: 程序生成的迷宫探索
 tmap.id: e34e863c-15d4-40ff-aa67-ab19e73315e5
@@ -19,13 +21,13 @@ type: text/vnd.tiddlywiki
 
 紧接着我又想起了之前见过一个小游戏也是这样的，它看起来图像很像 [[Hakoniwa Explorer Plus|https://store.steampowered.com/app/705280/Hakoniwa_Explorer_Plus/]]
 
-[img [https://media.st.dl.bscstorage.net/steam/apps/705280/ss_7c23dee3224182c3e6b55e200f2d0cbf7e7844f3.600x338.jpg?t=1554779686]]
+{{Hakoniwa_Explorer_Plus_screenshot.jpg}}
 
 也是一堆像素方块地板拼成的「箱庭场景」，只记得是在日式的箱庭里探险，和一些奇怪的石像对话的时候聊天内容是神秘的文字。~~我猜测我是在知乎上看到的游戏介绍，而且没加入 Steam 愿望单里，所以现在怎么也找不到她了。~~
 
 我用「像素 迷宫 对话 神秘文字」和其他关键字增删半天终于 Google 到啦~
 
-[img [http://img.chuapp.com/wp-content/uploads/2014/05/1405027-101-101.gif?imageView2/2/w/700]]
+{{异想空间_screenshot.gif}}
 
 原来名字是叫[[异想空间|https://www.chuapp.com/?c=Article&a=index&id=37997]]，当时是在触乐看到的，~~因为是个 iPhone 上的手游所以就没加到 Steam 愿望单里，也没有去玩过。~~不过我搜索发现它[[在 itch 上面有卖各平台版本|https://hundredrabbits.itch.io/oquonie]]，于是我就买了一个，感觉 [[itch.io|https://itch.io]] 的界面比 Steam 要好看呢，而且有趣的独立游戏也比 Steam 多，因为上架门槛比较低，而且有 Game Jam 基因。
 
