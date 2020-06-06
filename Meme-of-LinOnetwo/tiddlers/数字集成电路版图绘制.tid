@@ -1,0 +1,28 @@
+created: 20200606073010131
+creator: 林一二
+modified: 20200606075517723
+modifier: 林一二
+tags: 数字集成电路
+title: 数字集成电路版图绘制
+tmap.id: a30d19ab-f71c-4efa-b22d-20d048425b3d
+type: text/vnd.tiddlywiki
+
+在编辑完 Schematic 后，通过工具栏左上角的 Launch - Layout GXL/Layout XL（两个差不多，区别未知），即可打开 Layout 绘制界面。
+刚创建完得先到 options - display options - grid controls - xx spacing ，把网格的各种间距都改成 0.05，以方便连线的时候能细致地对齐。如果先放了物品，才调整这个参数，可能导致调完参数放的东西和调之前放的东西无法对齐。
+
+Shift + F 和 Ctrl + F 可以切换细节和方框视图。
+
+使用 i 放置物品，物品的参数会自动从 schematic 中取，所以 PMOS 的大小就不用手动从 220 改成 440 了。
+
+初学时，对着棍棒图放置多个 MOS 管后，用导线连接即可，不要直接对着别人优化过的版图用 r 画。
+
+使用 p 可以连出 pass 导线，比用 r 画方便，因为它会直接给出合适的导线宽度。
+
+
+
+* 整个背景黑色的部分是 P 衬底
+* PMOS 周围紫色框 NW 框柱的是 n 阱
+* PMOS 周围黄色的 SP 是（n 阱上）的 p 注入，它虽然看起来直接连通了左右的通孔（via），但是它在实际制造时是往 n 阱上喷的，所以会被先放上去的多晶硅 GT 挡住，所以在制造后多晶硅下面实际上是没有 p 注入的，只是版图上有而已。
+* 红色的 AA 是激活区，类似于 Photoshop 里的遮罩。这解释了为什么黄色的 SP 在减去多晶硅部分后，虽然看起来还是把左右连在一起了，但是实际制造后却不会连在一起，因为只有被红色的 AA 覆盖到的部分，才会真正制造上去。
+
+{{VirtuosoLayoutLegend.png}}
