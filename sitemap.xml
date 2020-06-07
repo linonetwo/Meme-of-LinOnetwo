@@ -535,6 +535,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:公式</loc>
+		<lastmod>2020-06-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:关于好事多磨的比喻</loc>
 		<lastmod>2020-04-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -669,6 +675,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:反相器电路图.png</loc>
 		<lastmod>2020-04-24</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:变压器</loc>
+		<lastmod>2020-06-07</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -957,6 +969,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:平行世界设定</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:并联电感互感时的最大等价电感值</loc>
+		<lastmod>2020-06-07</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1471,6 +1489,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:用%2520Kin%2520Filter%2520收集子树中满足条件的%2520tiddler</loc>
+		<lastmod>2020-06-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:用%2520SoLiD%2520做一个漫画网站并带有自动翻译功能</loc>
 		<lastmod>2020-05-07</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1509,6 +1533,36 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:由上拉和下拉网络构成的逻辑门的一般形式.png</loc>
 		<lastmod>2020-04-24</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:电容电感</loc>
+		<lastmod>2020-06-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:电感中的能量</loc>
+		<lastmod>2020-06-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:电感伏安特性</loc>
+		<lastmod>2020-06-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:电感耦合系数</loc>
+		<lastmod>2020-06-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:电路</loc>
+		<lastmod>2020-06-07</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
