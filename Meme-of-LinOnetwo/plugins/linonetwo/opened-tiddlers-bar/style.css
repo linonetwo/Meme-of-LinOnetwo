@@ -61,3 +61,7 @@ div.tc-tiddler-title {
 div.tc-editor-toolbar {
   top: calc(35px + 24px);
 }
+/** 收起侧边栏的按钮 */
+.tc-topbar-right {
+  top: 18px;
+}
