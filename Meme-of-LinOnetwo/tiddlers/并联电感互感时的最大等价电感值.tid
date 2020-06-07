@@ -1,10 +1,10 @@
 created: 20200607080612229
 creator: 林一二
-modified: 20200607080803675
+modified: 20200607110602610
 modifier: 林一二
 tags: 电容电感 公式
 title: 并联电感互感时的最大等价电感值
 tmap.id: fa527100-96ca-434c-8b1d-f0c039886ad4
 type: text/vnd.tiddlywiki
 
-$$L_{eq} = \frac{L_1L_2 - M^2}{L_1 + L_2 - 2M}$$
+$$L_{eq} = \frac{L_1L_2 - M^2}{L_1 + L_2 \pm 2M} （同向时反而是负号）$$
