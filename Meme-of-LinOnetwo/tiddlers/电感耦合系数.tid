@@ -1,0 +1,12 @@
+created: 20200607072130342
+creator: 林一二
+modified: 20200607084624182
+modifier: 林一二
+tags: 电容电感 公式
+title: 电感耦合系数
+tmap.id: 4a76624c-2aed-4572-b44e-39dacf2ecf58
+type: text/vnd.tiddlywiki
+
+$$k = \frac{M}{\sqrt{L_1L_2}} \in [0, 1]$$
+
+$$X_M= k\sqrt{X_{L_1} \times X_{L_2}} (耦合造成的阻抗的实部= k\sqrt{L_1的阻抗的实部 \times L_2的阻抗的实部})$$

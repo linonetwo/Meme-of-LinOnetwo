@@ -1,0 +1,11 @@
+created: 20200607064858893
+creator: 林一二
+modified: 20200607065031821
+modifier: 林一二
+tags: 电容电感 公式
+title: 电感伏安特性
+tmap.id: 179167d4-2694-4944-a2cf-ba7c0425dafc
+type: text/vnd.tiddlywiki
+
+$$v = L\frac{di}{dt}$$
+$$v = M\frac{di}{dt} (M为互感)$$

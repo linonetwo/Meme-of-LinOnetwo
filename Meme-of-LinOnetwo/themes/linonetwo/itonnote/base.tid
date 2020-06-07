@@ -170,6 +170,7 @@ button.tc-tag-label, span.tc-tag-label:hover {
 
 a.tc-tiddlylink, a.tc-tiddlylink:hover, a.tc-tiddlylink:hover {
   padding: 2px;
+  padding-bottom: 0;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -264,6 +265,12 @@ a.tc-tiddlylink.tc-tiddlylink-resolves.tc-plugin-info.tc-popup-handle.tc-popup-a
 	width: 100%;
 	margin: 0;
 	margin-bottom: 20px;
+}
+
+/** 标题 */
+
+.tc-site-subtitle {
+  margin-top: 5px;
 }
 
 /**
