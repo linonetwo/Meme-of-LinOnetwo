@@ -1,0 +1,11 @@
+created: 20200607071740766
+creator: 林一二
+modified: 20200607072004014
+modifier: 林一二
+tags: 电容电感 公式
+title: 电感中的能量
+tmap.id: 43b5d1b1-f029-4d49-b038-73a6854e061f
+type: text/vnd.tiddlywiki
+
+$$W=\frac{1}{2}Li^2$$
+$$W=\frac{1}{2}L_1i_1^2+\frac{1}{2}L_2i_2^2 \pm Mi_1i_2 (互感时，电流同时流入点，得正号)$$

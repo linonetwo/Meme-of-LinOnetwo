@@ -1,0 +1,39 @@
+created: 20200607072230762
+creator: 林一二
+keywords: kin tree traverse rule
+modified: 20200607073332171
+modifier: 林一二
+responder: 
+tags: solution
+title: 用 Kin Filter 收集子树中满足条件的 tiddler
+tmap.id: 4af9d5dc-14fc-4f0e-8102-65c8db66e771
+type: text/vnd.tiddlywiki
+url: 
+
+[[Kin Filter|$:/plugins/bimlas/kin-filter]] 的功能是树遍历，以下面制作电路 Cheatsheet 的模板为例：
+
+```tid
+<$list filter="[tag[公式]]+[kin::to[电路]]">
+
+ <$link><<currentTiddler>></$link>
+
+ {{!!text}}
+
+</$list>
+```
+
+# `[tag[公式]]+` 表示筛选必须带有「公式」 tag
+# `[kin::to[电路]]` 表示搜索「电路」下面的子树
+
+效果是：虽然「电感伏安特性」并没有直接带上「电路」这个 tag，但是 kin filter 还是通过「电路-电容电感-电感伏安特性」的搜索路径找到了它，并通过 Transclusion 把它展示在「电路」的页面上。
+
+这可能就可以实现我一直想要的自动整理功能了，毕竟在图状或树状的结构中做中做整理、提炼、归纳，其实本质就是树的遍历。就是碎片化地记录，并自动归类好。
+
+---
+
+比如说我在各个主题下看书都记录了一些公式，就是碎片化地记录，它们有时候放在文件夹树的层级很深的地方，比如 书A-章节B-主题C-公式D；有时候又放在很浅的地方，反正想放哪里放哪里，只要在 tag 链条形成的树里就行。
+
+那我最后想要整理出这本书里所有带有「公式」tag 或者 「好词好句」tag 的内容，就不能简单地搜 「书A + 公式」，因为公式并没有带 「书A」这个 tag。
+
+所以要搜 「书A这棵树里的 + 公式」这样才能搜集到所有的公式，而这以前要不就是得手工来整理、要不就是得很系统地给每个公式都加上「书A」这个 tag。
+
