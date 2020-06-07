@@ -1,0 +1,10 @@
+created: 20200607094548967
+creator: 林一二
+modified: 20200607094738848
+modifier: 林一二
+tags: 变压器
+title: 变压器后的第二级的等价阻抗
+tmap.id: 67c03223-bc38-4902-b77f-468711fbc5c6
+type: text/vnd.tiddlywiki
+
+$$Z_{L_2+R_2+Z_L} = \frac{\omega^2M^2}{R_2+j\omega L_2+Z_L}$$
