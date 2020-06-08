@@ -62,6 +62,9 @@ body.tc-body {
 .tc-tiddler-preview {
   overflow: unset;
 }
+.tc-block-dropdown {
+  z-index: 1001;
+}
 
 /** 下拉列表当前鼠标悬浮状态的颜色 */
 .tc-block-dropdown a {

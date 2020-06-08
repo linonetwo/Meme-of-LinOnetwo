@@ -1,0 +1,25 @@
+created: 20200608083756580
+creator: 林一二
+modified: 20200608085249358
+modifier: 林一二
+tags: 自改TW
+title: 用Juli把NodeJS-Github版TiddlyWiki包装成跨平台APP
+tmap.id: c2359b37-3fad-4fa0-aba0-b211034b3768
+type: text/vnd.tiddlywiki
+
+[[Juli|https://github.com/atomery/juli]] 是 [[Quang Lam]] 写的，用于 [[WebCatalog|https://github.com/atomery/webcatalog]] 生成跨平台桌面 App 的 Electron 模板，它使用的 MPL License 允许重新修改分发商用。
+
+重用它，而不是自己从底层开始配 Electron，可以节省大量开发时间。
+
+我觉得我可以创建一个新的 Github Organization，然后 fork Juli，做如下修改让它变成一个 TiddlyWiki 桌面应用：
+
+# 初次启动时要求制定文件目录，一个公开一个私有
+# 还要求指定两个 Github 仓库，一个公开一个私有，对应到本地文件夹上
+# 启动应用时启动 NodeJS 版 TiddlyWiki 服务器，并自动把私有文件夹链接到公开的 TiddlyWiki 文件夹的 tiddlers 文件夹里面
+# 让它的 WebView 默认载入 localhost 的 wiki
+
+我在打包它时，就把所有 TiddlyWiki 的依赖项都放进去，而且带上 npm 和 git 相关依赖，方便使用 context bridge 暴露更多 API 给 wiki。
+
+因为定位是本地个人 Wiki 工具+在线发布工具，所以在本地使用时没有协作就不用太考虑安全性，可以暴露一个 API 让它能提交新的 InjectJS，从而能通过 TiddlyWiki 插件来分发 Context Bridge API。
+
+不过它具体的打包步骤是在 WebCatalog 里发生的，需要把相应的打包脚本加到 package json 里。
