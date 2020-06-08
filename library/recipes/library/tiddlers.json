@@ -129,6 +129,18 @@
         "requires-reload": "yes"
     },
     {
+        "title": "$:/plugins/linonetwo/backlink-plus",
+        "description": "Filter to Get backlink of image-link and transclusion",
+        "author": "LinOnetwo",
+        "core-version": ">=5.1.22",
+        "plugin-type": "plugin",
+        "version": "0.0.1",
+        "list": "readme",
+        "dependents": "",
+        "type": "application/json",
+        "requires-reload": "yes"
+    },
+    {
         "title": "$:/plugins/linonetwo/copy-on-select",
         "description": "Copy what you are selecting inside the wiki into the clipboard",
         "author": "LinOnetwo",
@@ -139,6 +151,18 @@
         "dependents": "",
         "type": "application/json",
         "readme": "!! 动机\n\n我已经习惯了用方便的[[Copy On Select|https://addons.mozilla.org/en-US/firefox/addon/copy-on-select]] Firefox 插件，现在到了 TiddlyWiki 里我经常还是以为选中了就复制了，然后黏贴到别的地方才发现其实并没有复制，很不习惯。\n\n所以我自己重新写了一个适配 TiddlyWiki 的选中即复制脚本。\n\n!! 用法\n\n选中编辑器、按钮等区域以外的任何文本都会直接复制。\n\n这个插件里的条件语句让它在编辑器等特殊区域内不会起作用，以免干扰「全选黏贴覆盖原有内容」等操作。\n",
+        "requires-reload": "no"
+    },
+    {
+        "title": "$:/plugins/linonetwo/github-external-image",
+        "description": "Use github as your image storage, add _canonical_uri to all image, pointing to raw.github",
+        "author": "LinOnetwo",
+        "core-version": ">=5.1.22",
+        "plugin-type": "plugin",
+        "version": "0.0.1",
+        "list": "readme",
+        "dependents": "",
+        "type": "application/json",
         "requires-reload": "no"
     },
     {

@@ -80,13 +80,19 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:CMOS%2520的能量损耗</loc>
-		<lastmod>2020-04-29</lastmod>
+		<lastmod>2020-06-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:CMOS</loc>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:CMOS中的上拉网络和下拉网络</loc>
-		<lastmod>2020-04-29</lastmod>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -211,6 +217,24 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:SRAM</loc>
+		<lastmod>2020-06-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:SRAM测试电路.png</loc>
+		<lastmod>2020-06-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:SRAM选择电路.png</loc>
+		<lastmod>2020-06-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:SnT%2520Condition</loc>
 		<lastmod>2020-04-15</lastmod>
 		<changefreq>monthly</changefreq>
@@ -302,13 +326,13 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:nMos和pMos的符号和原理</loc>
-		<lastmod>2020-04-29</lastmod>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:nMos晶体管pMos晶体管.png</loc>
-		<lastmod>2020-04-24</lastmod>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -331,14 +355,8 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://onetwo.ren/wiki/#:zazu-clipboard/screenshot</loc>
-		<lastmod>2020-04-11</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
 		<loc>https://onetwo.ren/wiki/#:三输入与非门电路图.png</loc>
-		<lastmod>2020-04-24</lastmod>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -446,7 +464,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:传输管的强输入和弱输出.png</loc>
-		<lastmod>2020-04-24</lastmod>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -674,7 +692,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:反相器电路图.png</loc>
-		<lastmod>2020-04-24</lastmod>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -806,7 +824,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:外置文件/修改打包模板的方案</loc>
-		<lastmod>2020-05-08</lastmod>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1538,7 +1556,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:由上拉和下拉网络构成的逻辑门的一般形式.png</loc>
-		<lastmod>2020-04-24</lastmod>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1761,6 +1779,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:要是有个右键菜单就好了</loc>
 		<lastmod>2020-04-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:解决ServiceWorker使Wiki内容经常不更新的问题</loc>
+		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
