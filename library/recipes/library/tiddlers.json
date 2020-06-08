@@ -240,6 +240,20 @@
         "requires-reload": "yes"
     },
     {
+        "title": "$:/plugins/linonetwo/private-tiddlers-in-private-repo",
+        "name": "Private Tiddlers In Private Repo",
+        "description": "Allow you make some tiddlers private, and store them in a private repo.",
+        "author": "LinOnetwo",
+        "core-version": ">=5.1.22",
+        "plugin-type": "plugin",
+        "version": "0.0.1",
+        "list": "readme",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "!! 功能\n\n这个插件主要是让在线部署后的 Wiki 不会弹出「有变动关闭网页前请保存」这样的对话框。\n\n!! 实现方式\n\n{{$:/plugins/linonetwo/private-tiddlers-in-private-repo/explaination-zh}}\n",
+        "requires-reload": "no"
+    },
+    {
         "title": "$:/plugins/ooktech/dynamic-tables",
         "description": "A port of ooktech/jed's DynamicTables macro to a plugin, so other plugins can explicitly depend on it",
         "author": "ooktech/jed",
