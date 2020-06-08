@@ -1,0 +1,12 @@
+title: $:/plugins/linonetwo/private-tiddlers-in-private-repo/readme
+created: 20200414135748497
+modified: 20200602062349232
+type: text/vnd.tiddlywiki
+
+!! 功能
+
+这个插件主要是让在线部署后的 Wiki 不会弹出「有变动关闭网页前请保存」这样的对话框。
+
+!! 实现方式
+
+{{$:/plugins/linonetwo/private-tiddlers-in-private-repo/explaination-zh}}
