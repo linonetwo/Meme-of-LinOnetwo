@@ -1501,6 +1501,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:用Juli把NodeJS-Github版TiddlyWiki包装成跨平台APP</loc>
+		<lastmod>2020-06-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:用webclipper剪藏页面到tiddlywiki里</loc>
 		<lastmod>2020-04-17</lastmod>
 		<changefreq>monthly</changefreq>
