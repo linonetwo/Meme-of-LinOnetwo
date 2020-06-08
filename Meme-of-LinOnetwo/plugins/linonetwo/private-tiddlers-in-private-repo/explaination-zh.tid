@@ -1,8 +1,8 @@
 created: 20200413064622509
 modified: 20200413074824703
 tags: 在一个TiddlyWiki里同时放公开内容和隐私内容
-title: 在一个TiddlyWiki里同时放公开内容和隐私内容/Github私有仓库方案
-tmap.id: 00b46d42-d7f7-4119-9253-d5f4e0e861b3
+caption: 在一个TiddlyWiki里同时放公开内容和隐私内容/Github私有仓库方案
+title: $:/plugins/linonetwo/private-tiddlers-in-private-repo/explaination-zh
 type: text/vnd.tiddlywiki
 
 !! Github私有仓库方案
