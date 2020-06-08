@@ -2,6 +2,5 @@
 node_modules
 /public
 Meme-of-LinOnetwo/output
-Meme-of-LinOnetwo/tiddlers/private-Meme-of-LinOnetwo
 /scripts/daemon
-Meme-of-LinOnetwo/tiddlers/$__StoryList.tid
+$__StoryList.tid
