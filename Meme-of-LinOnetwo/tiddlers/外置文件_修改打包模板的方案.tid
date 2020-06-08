@@ -1,9 +1,15 @@
 created: 20200412030203394
-modified: 20200508042158099
+creator: 林一二
+modified: 20200608152756525
+modifier: 林一二
 tags: 外置文件
 title: 外置文件/修改打包模板的方案
 tmap.id: 8cce1bb0-70d6-454e-926c-5e4162f0a115
 type: text/vnd.tiddlywiki
+
+我最终将其包装成了 [[$:/plugins/linonetwo/github-external-image]] 插件。
+
+---
 
 我在修改 `./Meme-of-LinOnetwo/tiddlywiki.info` 配置插件时发现，这个文件里还定义了打包 HTML 文件时的步骤，我经过几次尝试和修改，最终改成了这样：
 
