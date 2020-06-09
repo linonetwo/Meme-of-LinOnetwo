@@ -19,6 +19,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:ALU.png</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:APrivateContent</loc>
 		<lastmod>2020-04-13</lastmod>
 		<changefreq>monthly</changefreq>
@@ -115,6 +121,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:Expanding%2520Look%2520Ahead%2520Adder%2520Equations.png</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:GoogleCalendar</loc>
 		<lastmod>2020-05-05</lastmod>
 		<changefreq>monthly</changefreq>
@@ -123,6 +135,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:Google不到报错信息的两种情况</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:GuessJS如何预测要预加载哪些JS.png</loc>
+		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -157,6 +175,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:JS的编译器需要对每种类型组合都编译一个操作.png</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:JS里操作苹果应用API</loc>
 		<lastmod>2020-04-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -171,6 +195,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:LaTeX%2520Symbols</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:Look%2520Ahead%2520Adder</loc>
+		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -433,8 +463,20 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:仅加载渲染表单所需的JS.png</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:从JSON-LD解析过程理解其涵义</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:代码分割后，加载下一个模块很慢.png</loc>
+		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -495,6 +537,18 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:使用%2520TW%2520的高级功能</loc>
 		<lastmod>2020-04-15</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:使用优化编译器的结果需要假设类型.png</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:使用基线编译器的编译结果需要每次都检查类型.png</loc>
+		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -685,8 +739,26 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:加法器</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:加载同样大小的%2520JS%2520和图片，JS%2520消耗的时间更多.png</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:动效待实验的点子</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:双模态分支预测状态机.jpg</loc>
+		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -879,6 +951,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:如何高速生成%2520Anki%2520卡片</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:如果类型假设错了就会去优化.png</loc>
+		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1471,6 +1549,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:流水线的单发射与多发射.gif</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:测量某个知识被多少人类记住了</loc>
 		<lastmod>2020-04-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1531,6 +1615,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:用BaseLine编译器简单编译并缓存.jpg</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:用Juli把NodeJS-Github版TiddlyWiki包装成跨平台APP</loc>
 		<lastmod>2020-06-08</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1545,6 +1635,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用webclipper剪藏页面到tiddlywiki里</loc>
 		<lastmod>2020-04-17</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:用优化编译器做更优化的编译.jpg</loc>
+		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1711,6 +1807,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:编译执行代码.jpg</loc>
+		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:网上信息的可信等级，如何做到独立思考</loc>
 		<lastmod>2020-04-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1803,6 +1905,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:解决ServiceWorker使Wiki内容经常不更新的问题</loc>
 		<lastmod>2020-06-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:解释执行代码.jpg</loc>
+		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1929,6 +2037,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:项目模板</loc>
 		<lastmod>2020-04-14</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:预测维基页面上下一个访问的链接.png</loc>
+		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
