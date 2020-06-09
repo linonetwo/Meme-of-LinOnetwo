@@ -1,0 +1,17 @@
+created: 20200609150843421
+creator: 林一二
+modified: 20200609150856287
+modifier: 林一二
+tags: 加法器
+title: Look Ahead Adder
+tmap.id: 13c6464c-941b-438f-8039-e0184030c332
+type: text/vnd.tiddlywiki
+
+
+$$C_{out,k}=G_k+P_k\times C_{out,k-1}$$
+
+$$C_{out,k}=G_k+P_k\times (G_{k-1}+P_{k-1}\times C_{out,k-2})$$
+
+All the way:
+
+$$C_{out,k}=G_k+P_k\times (G_{k-1}+P_{k-1} (...+P_1 \times(G_0+C{i,0})))$$
