@@ -1,0 +1,12 @@
+created: 20200609033406286
+creator: 林一二
+modified: 20200609033523393
+modifier: 林一二
+tags: 很想做但是最近舍不得花时间做的事情
+title: 写小说
+tmap.id: 0e159b50-c4a0-4db5-9a04-098a2cf24261
+type: text/vnd.tiddlywiki
+
+之前存放在[[《无限模因》Github仓库里的|https://github.com/linonetwo/BrainHoleOfInfinityMeme]]碎片，现在都移动到这边了，暂时放到私有仓库里，成文后再公开。
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
