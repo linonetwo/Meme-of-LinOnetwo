@@ -1,0 +1,28 @@
+created: 20200609122825537
+creator: 林一二
+modified: 20200609123540182
+modifier: 林一二
+tags: 说好要做的事情
+title: 在数字集成电路课上谈谈不同层次上的预测
+tmap.id: 8eb1efa3-7946-4bba-9504-345e04e1a459
+type: text/vnd.tiddlywiki
+
+[[寇老师|寇熙丰]]本来让我简单讲一讲「不同指令实际运行的步骤」，不过我好久没看指令那部分了，怕讲得磕磕绊绊，于是我打算讲讲不同层次上的预测和浪费。
+
+!! 浏览器应用层
+
+Prefetching
+
+!! JS JIT 层
+
+Monitor
+
+由于动态类型，`+` 可能会产生多种编译结果
+
+!! Pipeline
+
+Branch Detection
+
+!! ALU
+
+同时计算多种运算的结果
