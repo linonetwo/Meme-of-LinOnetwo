@@ -103,6 +103,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:CadenceVirtuoso</loc>
+		<lastmod>2020-06-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:Custom%2520HTML%2520Header/Register%2520ServiceWorker</loc>
 		<lastmod>2020-04-14</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1604,7 +1610,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:爬知乎赞过的内容放到TW里</loc>
-		<lastmod>2020-04-23</lastmod>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1670,7 +1676,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用webclipper剪藏页面到tiddlywiki里</loc>
-		<lastmod>2020-04-17</lastmod>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1934,7 +1940,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:行级渲染的%2520TiddlyWiki%2520Wikitext</loc>
-		<lastmod>2020-06-04</lastmod>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1958,7 +1964,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:计算机体系结构</loc>
-		<lastmod>2020-06-09</lastmod>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
