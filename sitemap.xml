@@ -884,7 +884,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:在数字集成电路课上谈谈不同层次上的预测</loc>
-		<lastmod>2020-06-09</lastmod>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1555,6 +1555,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:测试SRAM的Schematic</loc>
+		<lastmod>2020-06-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:测量某个知识被多少人类记住了</loc>
 		<lastmod>2020-04-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1623,6 +1629,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用Juli把NodeJS-Github版TiddlyWiki包装成跨平台APP</loc>
 		<lastmod>2020-06-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:用Virtuoso写Schematic测试</loc>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
