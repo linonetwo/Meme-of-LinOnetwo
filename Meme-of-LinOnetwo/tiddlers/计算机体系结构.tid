@@ -1,6 +1,6 @@
 created: 20200609035439062
 creator: 林一二
-modified: 20200609035548319
+modified: 20200610151315625
 modifier: 林一二
 tags: 学习资料
 title: 计算机体系结构
@@ -8,3 +8,9 @@ tmap.id: 780a2f10-99a8-4f13-a1d1-f40e8af5f801
 type: text/vnd.tiddlywiki
 
 穿越到魔法世界造智能魔像需要的知识。
+
+!! 资源
+
+[[MIPS CPU Logism|https://github.com/yxwangcs/MIPS-CPU]]
+
+[[浙江大学课程攻略共享计划-计算机组成与系统结构|https://qsctech.github.io/zju-icicles/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E7%B3%BB%E7%BB%9F%E7%BB%93%E6%9E%84/]]
