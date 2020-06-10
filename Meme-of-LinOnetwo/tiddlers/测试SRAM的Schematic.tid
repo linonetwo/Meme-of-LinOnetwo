@@ -1,0 +1,12 @@
+created: 20200610045218975
+creator: 林一二
+modified: 20200610045457054
+modifier: 林一二
+tags: 用Virtuoso写Schematic测试 SRAM
+title: 测试SRAM的Schematic
+tmap.id: 37ee3b1d-3e19-4a33-b076-91cec17f1e64
+type: text/vnd.tiddlywiki
+
+测试 SRAM 的 Schematic 时，需要先写好预充电电路和读电路。
+
+这个动态电路比乘法器等静态电路难测试，因为需要把握好时机。

@@ -1,0 +1,12 @@
+created: 20200610045019587
+creator: 林一二
+modified: 20200610045217679
+modifier: 林一二
+tags: 用Virtuoso绘制电路图
+title: 用Virtuoso写Schematic测试
+tmap.id: 9f3b5530-0a81-412e-8e96-b42f8b3ecca5
+type: text/vnd.tiddlywiki
+
+!! 测试输入
+
+使用 vbit ，在 pattern 里可以输入 `111000110` 这样任意的输入模式。然后配置好周期、高低电平即可。
