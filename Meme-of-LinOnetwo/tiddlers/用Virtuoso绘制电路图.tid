@@ -1,8 +1,10 @@
 created: 20200609073552961
 creator: 林一二
-modified: 20200609122834460
+modified: 20200610122713343
 modifier: 林一二
 tags: 数字集成电路
 title: 用Virtuoso绘制电路图
 tmap.id: 8630f610-02a3-46f4-a86f-0899b3a1c910
 type: text/vnd.tiddlywiki
+
+选中器件后，用 q 可以打开参数配置面板，双击器件是不能打开参数面板的。

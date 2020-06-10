@@ -1,6 +1,6 @@
 created: 20200610045019587
 creator: 林一二
-modified: 20200610045217679
+modified: 20200610134514403
 modifier: 林一二
 tags: 用Virtuoso绘制电路图
 title: 用Virtuoso写Schematic测试
@@ -9,4 +9,37 @@ type: text/vnd.tiddlywiki
 
 !! 测试输入
 
-使用 vbit ，在 pattern 里可以输入 `111000110` 这样任意的输入模式。然后配置好周期、高低电平即可。
+* 使用 analog 库中的 vbit ，在 pattern 里可以输入 `111000110` 这样任意的输入模式。然后配置好周期、高低电平即可。
+* 使用 analog 库中的 vpulse，产生方波
+
+basic 库里的 GND 和 VDD 只是传送门，它们并不提供电压，只是方便把电压接到很多地方去；需要用 analog 库里的 vdc 接在它们上面。
+
+电源电压根据任务说明书来，例如任务书说最终电压在 0-2V 之间，则vdc可以设置为 1.8V。
+
+!! 测试输出
+
+器件要测的输出端口，连到一个电容上，电容另一端接地。
+
+放置电容：analog 库里的 cap ，大小设置为 10f F
+
+!! 运行测试
+
+在顶部菜单上选择 Launch - ADE L ，在弹出的窗口里：
+
+# 顶部菜单 Analyse - Choose
+# 在弹出的窗口里就用 tran， stop time 填几十 n，勾选最下面的 enable 框
+# 点 OK
+
+然后继续
+
+# 顶部菜单 Output - To Be Plotted - Select on Schematic
+# 然后在电路图中选中要测的元件或打好 label 的导线
+# 这样要 plot 出的监测点的列表就会列出来
+# 如果说 DC 模拟失败，试试在检测列表里去掉 VDD 和 GND
+
+然后点击右侧的绿色播放按钮
+
+!! 模拟问题
+
+<<reuse-tiddler "Virtuoso写Schematic测试时的模拟问题">>
+

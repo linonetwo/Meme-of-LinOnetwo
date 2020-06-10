@@ -1,0 +1,12 @@
+created: 20200610132724543
+creator: 林一二
+modified: 20200610132951789
+modifier: 林一二
+tags: 用Virtuoso绘制电路图 CMOS
+title: 绘制 CMOS 电路图
+tmap.id: 67221ba3-692a-4cdd-9203-5ab06220097d
+type: text/vnd.tiddlywiki
+
+使用 smic18mmrf 库中的 p18 和 n18。
+
+PMOS 的 Total Width 和 Finger Width 需要从 220n M 改成 440n M 。

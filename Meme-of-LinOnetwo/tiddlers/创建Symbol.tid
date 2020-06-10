@@ -1,0 +1,12 @@
+created: 20200610121418776
+creator: 林一二
+modified: 20200610121603431
+modifier: 林一二
+tags: 用Virtuoso绘制电路图
+title: 创建Symbol
+tmap.id: f6404aa8-12b4-43d8-a90a-1f1d01da81b3
+type: text/vnd.tiddlywiki
+
+画好Schematic后，在顶部工具栏里 Create - CellView - FromCellView 可以创建器件的图标。
+
+弹出的 Symbol Generation Option 里面，可以配置各引脚在图标上的位置。
