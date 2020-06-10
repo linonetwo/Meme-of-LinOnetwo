@@ -248,19 +248,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:SRAM</loc>
-		<lastmod>2020-06-08</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://onetwo.ren/wiki/#:SRAM测试电路.png</loc>
-		<lastmod>2020-06-08</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://onetwo.ren/wiki/#:SRAM选择电路.png</loc>
-		<lastmod>2020-06-08</lastmod>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -327,6 +315,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:VirtuosoLayoutLegend.png</loc>
 		<lastmod>2020-06-06</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:Virtuoso写Schematic测试时的模拟问题</loc>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -721,6 +715,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:创建Symbol</loc>
+		<lastmod>2020-06-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:制作桌面版%2520TiddlyWiki%2520App</loc>
 		<lastmod>2020-04-12</lastmod>
 		<changefreq>monthly</changefreq>
@@ -901,6 +901,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:基于TW-Todolist做一个基于Tag而不是JSON的TodoList插件</loc>
+		<lastmod>2020-06-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:外置文件</loc>
 		<lastmod>2020-04-12</lastmod>
 		<changefreq>monthly</changefreq>
@@ -993,6 +999,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:完全清除%2520GitHub%2520仓库里的某个文件</loc>
 		<lastmod>2020-06-03</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:寄存器</loc>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1286,7 +1298,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:数字集成电路</loc>
-		<lastmod>2020-04-24</lastmod>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1573,6 +1585,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:添加引脚</loc>
+		<lastmod>2020-06-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:游戏设计的理论书籍</loc>
 		<lastmod>2020-05-07</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1640,7 +1658,13 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用Virtuoso绘制电路图</loc>
-		<lastmod>2020-06-09</lastmod>
+		<lastmod>2020-06-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:用kin-filter搜索当前文件夹树里的todo</loc>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1791,6 +1815,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:绑定域名</loc>
 		<lastmod>2020-04-12</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:绘制%2520CMOS%2520电路图</loc>
+		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
