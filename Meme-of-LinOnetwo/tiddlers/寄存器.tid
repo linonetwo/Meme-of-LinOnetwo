@@ -1,0 +1,10 @@
+created: 20200610134049259
+creator: 林一二
+modified: 20200610134142238
+modifier: 林一二
+tags: 数字集成电路 疑问
+title: 寄存器
+tmap.id: 72f9f606-928d-4291-abca-60f94e632dc1
+type: text/vnd.tiddlywiki
+
+为什么 Register 要知道 Data_addr，这个应该是给 SRAM 的才对；它又能怎么写数据给 SRAM？

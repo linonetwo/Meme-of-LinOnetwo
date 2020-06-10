@@ -1,18 +1,8 @@
 created: 20200608121956823
 creator: 林一二
-modified: 20200608122715212
+modified: 20200610133926998
 modifier: 林一二
 tags: 数字集成电路 器件
 title: SRAM
 tmap.id: 60ad5db9-d913-4f18-a844-f0353f238fc0
 type: text/vnd.tiddlywiki
-
-SRAM测试电路如何读和写，如何同时测读和写
-
-{{SRAM测试电路.png}}
-
-SRAM选择电路，这只给出了第一个 word ，后面的呢？ http://www.doc88.com/p-7843551975109.html
-
-{{SRAM选择电路.png}}
-
-我看网上有人用一棵树一样的，这输出在哪？
