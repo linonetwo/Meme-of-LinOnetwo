@@ -1,6 +1,6 @@
 created: 20200610045019587
 creator: 林一二
-modified: 20200610134514403
+modified: 20200611071251216
 modifier: 林一二
 tags: 用Virtuoso绘制电路图
 title: 用Virtuoso写Schematic测试
@@ -20,7 +20,7 @@ basic 库里的 GND 和 VDD 只是传送门，它们并不提供电压，只是�
 
 器件要测的输出端口，连到一个电容上，电容另一端接地。
 
-放置电容：analog 库里的 cap ，大小设置为 10f F
+放置电容：analog 库里的 cap ，大小设置为 10f F 。
 
 !! 运行测试
 
