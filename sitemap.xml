@@ -254,7 +254,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:SRAM</loc>
-		<lastmod>2020-06-10</lastmod>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -377,6 +377,18 @@
 		<lastmod>2020-04-13</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:vbit%2520出现不该有的跳变.png</loc>
+		<lastmod>2020-06-11</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:vbit示例参数.png</loc>
+		<lastmod>2020-06-11</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:webcatalog-tiddlywiki-menu-app.jpg</loc>
@@ -950,7 +962,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:如何画棍棒图</loc>
-		<lastmod>2020-05-29</lastmod>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1316,7 +1328,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:数字集成电路版图绘制</loc>
-		<lastmod>2020-06-06</lastmod>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1617,6 +1629,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:爬知乎赞过的内容放到TW里</loc>
 		<lastmod>2020-06-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:版图检测时的疑难问题</loc>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -2024,7 +2042,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:运行版图检测</loc>
-		<lastmod>2020-06-06</lastmod>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
