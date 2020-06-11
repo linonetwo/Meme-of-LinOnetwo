@@ -1,5 +1,7 @@
 created: 20200529132558083
-modified: 20200529133745268
+creator: 林一二
+modified: 20200611134003981
+modifier: 林一二
 tags: 数字集成电路 画图
 title: 如何画棍棒图
 tmap.id: c6a97d3f-57a4-4594-932f-c286a8487a82
@@ -12,3 +14,5 @@ Stick Diagram 是 Schematic 的后置步骤，是 Layout 的前置步骤。
 # 在棍棒图中绘制平行的 VDD、 P doping、N doping、DNG 四根线，然后在 P doping、N doping 线上按上述 label 出现顺序画三条垂直的线，即多晶硅。
 # 垂直线将水平线分为多个区域，区域即对应欧拉图中的节点。现在在棍棒图中标记出前述各个点，作为棍棒图中的边的 label（欧拉图中的点变成棍棒图中的边，欧拉图中的边变成棍棒图中的点）。
 # 在棍棒图中用 Matel 连接所有相同名称的点
+
+各种基本逻辑器件的棍棒图的例子：[[http://ece-research.unm.edu/jimp/vlsi/slides/chap5_1.html]]

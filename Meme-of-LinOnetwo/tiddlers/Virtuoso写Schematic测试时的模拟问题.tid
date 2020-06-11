@@ -1,11 +1,15 @@
 created: 20200610134529328
 creator: 林一二
-modified: 20200611071217266
+modified: 20200611124408692
 modifier: 林一二
-tags: 用Virtuoso写Schematic测试
+tags: 用Virtuoso写Schematic测试 疑问
 title: Virtuoso写Schematic测试时的模拟问题
 tmap.id: f00b34a0-d55f-4f43-a456-0a7db068cdac
 type: text/vnd.tiddlywiki
+
+!!! vbit 出现不该有的跳变
+
+[img[vbit 出现不该有的跳变.png]]
 
 !!! No convergence achieved with the minimum time step specified
 
