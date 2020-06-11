@@ -326,7 +326,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:Virtuoso写Schematic测试时的模拟问题</loc>
-		<lastmod>2020-06-10</lastmod>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1010,7 +1010,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:寄存器</loc>
-		<lastmod>2020-06-10</lastmod>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1245,6 +1245,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:我的朋友是怎么想起来找我的？</loc>
 		<lastmod>2020-04-17</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:我的租房偏好</loc>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1658,13 +1664,13 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用Virtuoso写Schematic测试</loc>
-		<lastmod>2020-06-10</lastmod>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用Virtuoso绘制电路图</loc>
-		<lastmod>2020-06-10</lastmod>
+		<lastmod>2020-06-11</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
