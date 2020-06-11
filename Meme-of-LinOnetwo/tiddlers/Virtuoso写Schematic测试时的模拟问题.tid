@@ -1,12 +1,12 @@
 created: 20200610134529328
 creator: 林一二
-modified: 20200610134549906
+modified: 20200611071217266
 modifier: 林一二
-tags: 用Virtuoso写Schematic测试 疑问
+tags: 用Virtuoso写Schematic测试
 title: Virtuoso写Schematic测试时的模拟问题
 tmap.id: f00b34a0-d55f-4f43-a456-0a7db068cdac
 type: text/vnd.tiddlywiki
 
 !!! No convergence achieved with the minimum time step specified
 
-~~可能是有输出的导线悬空了。注意每个输出口都要通过电容接地。~~ 不对，这样也不行。
+有可能是使用了 basic 库中的 vdd 和 gnd，注意要换成 analog 库中的对应物，不然不兼容。
