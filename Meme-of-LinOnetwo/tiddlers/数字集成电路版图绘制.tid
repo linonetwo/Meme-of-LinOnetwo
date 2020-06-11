@@ -1,6 +1,6 @@
 created: 20200606073010131
 creator: 林一二
-modified: 20200606132822680
+modified: 20200611132717806
 modifier: 林一二
 tags: 数字集成电路
 title: 数字集成电路版图绘制
@@ -8,7 +8,7 @@ tmap.id: a30d19ab-f71c-4efa-b22d-20d048425b3d
 type: text/vnd.tiddlywiki
 
 在编辑完 Schematic 后，通过工具栏左上角的 Launch - Layout GXL/Layout XL（两个差不多，区别未知），即可打开 Layout 绘制界面。
-刚创建完得先到 options - display options - grid controls - xx spacing ，把网格的各种间距都改成 0.005，以方便连线和移动器件的时候能细致地对齐。如果先放了器件，才调整这个参数，可能导致调完参数放的东西和调之前放的东西无法对齐。
+刚创建完得先到 options - display options - grid controls - xx spacing ，把网格的各种间距都改成 0.005，以方便连线和移动器件的时候能细致地对齐。如果先放了器件，才调整这个参数，可能导致调完参数放的东西和调之前放的东西无法对齐。这个参数每次新建新的器件的版图都得重新设置一遍。
 
 Shift + F 和 Ctrl + F 可以切换细节和方框视图。
 
@@ -25,7 +25,7 @@ Shift + F 和 Ctrl + F 可以切换细节和方框视图。
 * PMOS 周围黄色的 SP 是（n 阱上）的 p 注入，它虽然看起来直接连通了左右的通孔（via），但是它在实际制造时是往 n 阱上喷的，所以会被先放上去的多晶硅 GT 挡住，所以在制造后多晶硅下面实际上是没有 p 注入的，只是版图上有而已。
 * 红色的 AA 是激活区，类似于 Photoshop 里的遮罩。这解释了为什么黄色的 SP 在减去多晶硅部分后，虽然看起来还是把左右连在一起了，但是实际制造后却不会连在一起，因为只有被红色的 AA 覆盖到的部分，才会真正制造上去。
 * 如果要接上方的 VDD，需要用 q 打开器件参数配置，在 parameter tab 里面拉下去，找到 Boodytie Type 下拉框，选择 Detatched，这时下面会出现 Top Tap 等选项，选择后确认，即可创建一个标准的电源接口。之后用 p 创建导线将同侧的两个绿色的 via 连起来。之后画 VDD 的线时，就直接经过上面的电源接口。通过 Gate connect 选项还可以选择多晶硅接口的位置，创建比较标准的多晶硅接口。
-* p 创建出的导线如果需要拉长，可以用 shift+R 来调整
+* p 创建出的导线如果需要拉长，可以用 shift+R 或 s 来调整
 * 如果需要旋转器件，也是通过 q 打开参数设置，然后在 Attribute 选项卡里找到 Rotation 下拉框，可以配置旋转 90 度的整数倍
 * 和画 Schematic 时一样，按 l 可以给导线加 Label，如果有的线忘加 label 了，则运行 LVS 时会报错 `supply error detected`
 * 用 o 可以创建通孔，用于连接不同层的线。涉及金属的通孔需要在外面再自己加宽，不然 DRC 检查也会跟你说金属宽度不够。

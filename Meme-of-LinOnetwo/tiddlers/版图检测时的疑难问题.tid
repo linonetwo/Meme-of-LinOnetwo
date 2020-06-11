@@ -1,0 +1,22 @@
+created: 20200611122258418
+creator: 林一二
+modified: 20200611133451009
+modifier: 林一二
+tags: 运行版图检测 疑问
+title: 版图检测时的疑难问题
+tmap.id: c6531ede-9b0e-4065-954f-37ef0d756ec1
+type: text/vnd.tiddlywiki
+
+!! DRC
+
+!!! Minimum dimension of an NW region not connected to the most positive power supply is 2.10um. Need to be changed depending on your power supply name。 In this case the most positive voltage
+
+!!! NW without N+ pick up
+
+!! LVS
+
+!!! Check SOFTCHK pwell CONTACT
+
+!!! Error:    Different numbers of ports (see below).
+!!! Error:    Different numbers of nets (see below).
+!!! Error:    Different numbers of instances (see below).
