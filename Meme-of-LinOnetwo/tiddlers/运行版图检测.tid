@@ -1,13 +1,15 @@
 created: 20200606132108221
 creator: 林一二
-modified: 20200611133312001
+modified: 20200612075241376
 modifier: 林一二
-tags: 数字集成电路 疑问
+tags: 数字集成电路
 title: 运行版图检测
 tmap.id: c49cd2ae-02a2-447f-9443-206ae5b50c74
 type: text/vnd.tiddlywiki
 
-! 还有一个是什么？
+!! PEX
+
+寄生参数
 
 !! DRC
 
