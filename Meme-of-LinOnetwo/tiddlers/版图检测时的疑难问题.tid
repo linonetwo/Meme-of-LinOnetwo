@@ -1,22 +1,25 @@
 created: 20200611122258418
 creator: 林一二
-modified: 20200611133451009
+modified: 20200612075233936
 modifier: 林一二
-tags: 运行版图检测 疑问
+tags: 运行版图检测
 title: 版图检测时的疑难问题
 tmap.id: c6531ede-9b0e-4065-954f-37ef0d756ec1
 type: text/vnd.tiddlywiki
 
 !! DRC
 
-!!! Minimum dimension of an NW region not connected to the most positive power supply is 2.10um. Need to be changed depending on your power supply name。 In this case the most positive voltage
+!!! Minimum dimension of an NW region not connected to the most positive power supply is 2.10um. Need to be changed depending on your power supply name。 In this case the most positive voltage、NW without N+ pick up
 
-!!! NW without N+ pick up
+PMOS 或 NMOS 忘了接到 VDD 上。注意直接将导线接到 PMOS 的 via （绿色的通孔）上，仅仅将 VDD 接到了源极，并没有将 VDD 接到其 body （即三极管的「第四根线」）上。用 detatched body 选项的话，把 VDD 接上去是源和body都接了，但是如果没有用 detatched body，就可能会出现这样的问题。
+
 
 !! LVS
 
 !!! Check SOFTCHK pwell CONTACT
 
-!!! Error:    Different numbers of ports (see below).
-!!! Error:    Different numbers of nets (see below).
-!!! Error:    Different numbers of instances (see below).
+未知，助教也不知道。参考资料 [[https://www.mentor.com/products/fv/multimedia/overview/how-to-debug-soft-check-warnings-with-calibre-rve-f0bb78f9-d328-4045-9a85-a904e248301a]] 我又不知道它是如何解决的，毕竟我在电路方面的知识太匮乏。
+
+!!! Error:    Different numbers of ports (see below). Error:    Different numbers of nets (see below). Error:    Different numbers of instances (see below).
+
+可能是 Schematic 只有一根 GND，但是在 Layout 中用了两根。即使用 `:GND` 来表示这根 GND 和另一根是相连的，但还是会报这个错，所以还是在 Layout 中就把两根 GND 用 M2 或 M3 连在一起。
