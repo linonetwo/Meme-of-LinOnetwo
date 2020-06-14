@@ -1,0 +1,17 @@
+created: 20200614061151815
+creator: 林一二
+modified: 20200614063252612
+modifier: 林一二
+tags: 物资管理
+title: 食品
+tmap.id: 61b1210a-2263-4d2a-b29d-c0d73c08d5c1
+type: text/vnd.tiddlywiki
+
+屯的食物。和[[仓储物资]]不同，吃了一口的食物、从箱子里拿了一瓶的饮料食物箱，也还算是一个。
+
+录入它们的元信息以方便搜索：
+
+* schema.location 表示存储的大致位置，一般填写「厨房1号柜」这样的字符串即可
+* caption 人类可读的物品名称
+* title 机器可读的唯一 ID
+
