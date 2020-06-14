@@ -481,6 +481,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:仓储物资</loc>
+		<lastmod>2020-06-14</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:代码分割后，加载下一个模块很慢.png</loc>
 		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1634,7 +1640,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:物资管理</loc>
-		<lastmod>2020-04-19</lastmod>
+		<lastmod>2020-06-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -2115,6 +2121,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:预测编码理论</loc>
 		<lastmod>2020-04-29</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:食品</loc>
+		<lastmod>2020-06-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
