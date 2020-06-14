@@ -1,5 +1,7 @@
 created: 20200419093107420
-modified: 20200419095351558
+creator: 林一二
+modified: 20200614071848825
+modifier: 林一二
 tags: Index
 title: 物资管理
 tmap.id: e09e466a-9ecd-4a44-aac9-c678cb1886a9
@@ -9,17 +11,23 @@ type: text/vnd.tiddlywiki
 	<legend>快速添加</legend>
 
 	<$button>
-		<$action-sendmessage $message="tm-new-tiddler" title=<<now "物资管理/[UTC]YYYY0MM0DD0hh0mm0ssXXX">> text="" tags="APrivateContent 物资管理 食品" caption="" schema.location="" />
+		<$action-sendmessage $message="tm-new-tiddler" title=<<now "物资管理/[UTC]YYYY0MM0DD0hh0mm0ssXXX">> text="{{!!caption}}" tags="APrivateContent 食品" caption="" schema.location="" schema.quantity="" />
 	添加食品
 	</$button>
 
 	<$button>
-		<$action-sendmessage $message="tm-new-tiddler" title=<<now "物资管理/[UTC]YYYY0MM0DD0hh0mm0ssXXX">> text="" tags="APrivateContent 物资管理 现实世界工具" caption="" schema.location="" />
-	添加现实世界工具
+		<$action-sendmessage $message="tm-new-tiddler" title=<<now "物资管理/[UTC]YYYY0MM0DD0hh0mm0ssXXX">> text="{{!!caption}}" tags="APrivateContent 仓储物资" caption="" schema.location="" schema.quantity="" />
+	添加仓储物资
 	</$button>
 
 </fieldset>
 
+默认描述[[住处]]中最新的那一个里的物资。
+
 !! 屯的吃的
 
-<<RowTable "[tag[物资管理]tag[食品]]" "caption schema.location">>
+<<RowTable "[tag[食品]]+[kin::to{currentTiddler}]" "caption schema.location schema.quantity">>
+
+!! 仓储物资
+
+<<RowTable "[tag[仓储物资]]+[kin::to{currentTiddler}]" "caption schema.location schema.quantity">>
