@@ -254,7 +254,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:SRAM</loc>
-		<lastmod>2020-06-11</lastmod>
+		<lastmod>2020-06-17</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -411,6 +411,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:不保存经常自己变的系统和插件Tiddler</loc>
 		<lastmod>2020-06-02</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:不同层次上的预测</loc>
+		<lastmod>2020-06-17</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -897,12 +903,6 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:在手机上部署TiddlyWiki</loc>
 		<lastmod>2020-04-17</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://onetwo.ren/wiki/#:在数字集成电路课上谈谈不同层次上的预测</loc>
-		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
