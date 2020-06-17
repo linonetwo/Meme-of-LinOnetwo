@@ -1,10 +1,12 @@
 created: 20200608121956823
 creator: 林一二
-modified: 20200611133807320
+modified: 20200617045819949
 modifier: 林一二
-tags: 数字集成电路 器件 疑问
+tags: 数字集成电路 器件
 title: SRAM
 tmap.id: 60ad5db9-d913-4f18-a844-f0353f238fc0
 type: text/vnd.tiddlywiki
 
 !!! 位线是 $$ 8 \times 2 $$ 根 bit 和 bit_bar (bit 的反相)吗？那怎么把它们合并回 8 根 bit 作为输出呢？
+
+如果不放增益器的话，直接取 bit 线即可，不管 bit_bar 了。
