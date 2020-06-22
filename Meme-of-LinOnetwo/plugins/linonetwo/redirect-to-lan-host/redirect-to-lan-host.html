@@ -1,0 +1,14 @@
+<script type="application/javascript">
+  function redirectToLANHost() {
+    const lanURL = window.server?.addresses?.[0]?.url;
+    if (!lanURL) {
+      // still not set up
+      return setTimeout(redirectToLANIP, 500);
+    }
+    if (lanURL && `${location.protocol}//${location.hostname}` !== lanURL) {
+      window.location.replace(`${lanURL}:${location.port}${location.hash}`);
+    }
+  }
+
+  setTimeout(redirectToLANHost, 500);
+</script>
