@@ -288,6 +288,19 @@ var assetList = [
         "requires-reload": "no"
     },
     {
+        "title": "$:/plugins/linonetwo/redirect-to-lan-host",
+        "description": "Redirect to lan host, so QR Code is useable",
+        "author": "LinOnetwo",
+        "core-version": ">=5.1.22",
+        "plugin-type": "plugin",
+        "version": "0.0.1",
+        "list": "readme",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "!! 动机\n\n我想用 `tiddlywiki/qrcode` 插件来让我的手机和平板能在家里扫码打开电脑上的 Wiki，从而能用平板做一些快速的数据录入，但是这个插件生成的二维码指向的是 `localhost`，这让它变得很鸡肋。\n\n所以我通过 WebCatalog 的 InjectJS 功能，注入以下代码\n\n{{$:/plugins/linonetwo/redirect-to-lan-host/get-lan-ip}}\n\n然后本插件就会自动刷新 URL 了。\n",
+        "requires-reload": "no"
+    },
+    {
         "title": "$:/plugins/ooktech/dynamic-tables",
         "description": "A port of ooktech/jed's DynamicTables macro to a plugin, so other plugins can explicitly depend on it",
         "author": "ooktech/jed",
