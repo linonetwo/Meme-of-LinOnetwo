@@ -41,21 +41,15 @@
               {
                 "type": "basic",
                 "from": {
-                  "key_code": "caps_lock",
+                  "key_code": "l",
                   "modifiers": {
-                    "optional": ["any"]
+                    "mandatory": ["option"]
                   }
                 },
                 "to": [
                   {
-                    "key_code": "left_shift",
-                    "modifiers": ["left_command", "left_control", "left_option"]
-                  }
-                ],
-                "to_if_alone": [
-                  {
-                    "key_code": "caps_lock",
-                    "hold_down_milliseconds": 500
+                    "key_code": "q",
+                    "modifiers": ["left_control", "left_command"]
                   }
                 ]
               }
@@ -82,6 +76,24 @@
                   {
                     "key_code": "spacebar",
                     "modifiers": ["left_command"]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "description": "Lock screen using left_command + L instead of Ctrl + Command + Q",
+            "manipulators": [
+              {
+                "type": "basic",
+                "from": {
+                  "key_code": "l",
+                  "modifiers": ["left_command"]
+                },
+                "to": [
+                  {
+                    "key_code": "q",
+                    "modifiers": ["left_command", "left_control"]
                   }
                 ]
               }
