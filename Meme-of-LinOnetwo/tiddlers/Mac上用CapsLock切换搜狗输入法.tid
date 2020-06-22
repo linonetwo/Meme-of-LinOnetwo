@@ -1,16 +1,21 @@
 created: 20200622040839921
 creator: 林一二
-modified: 20200622043342786
+keywords: ime config karabiner keyboard
+modified: 20200622043817335
 modifier: 林一二
-tags: 技术细节
+responder: LinOnetwo
+tags: solution
 title: Mac上用CapsLock切换搜狗输入法
 tmap.id: 9ce6daf0-32fb-4cbc-921f-7bf971f8c5a2
 type: text/vnd.tiddlywiki
+url: https://github.com/pqrs-org/Karabiner-Elements/issues/1225#issuecomment-495471512
 
 需要使用 [[karabiner-elements|https://github.com/pqrs-org/Karabiner-Elements]]
 
 通过 `open ~/.config/karabiner/karabiner.json` 打开配置文件，黏贴如下的配置。
 
 之后在 Preference - Complex modifications 里点击 Add rule 即可添加用CapsLock切换输入法的功能。
+
+想写更多配置可以到[[官方配置列表|https://ke-complex-modifications.pqrs.org/#modifier-keys]]抄。
 
 <<reuse-tiddler "karabiner.json">>
