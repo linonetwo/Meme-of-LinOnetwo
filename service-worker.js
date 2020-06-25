@@ -10,8 +10,9 @@ const { registerRoute } = workbox.routing;
 const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute, matchPrecache } = workbox.precaching;
+const { BroadcastUpdatePlugin } = workbox.broadcastUpdate;
 
-precacheAndRoute([{"revision":"a2e4a9ef993fe7b273ac0d3f179d6f01","url":"favicon.ico"},{"revision":"bbe628bb30e77476ad5564c61e8366b0","url":"index.html"},{"revision":"713f708b9b2662da54cd38bc98a6483f","url":"TiddlyWikiIconBlack.png"},{"revision":"2c94295d5e6cfa9e5f0b666c4ba1964c","url":"TiddlyWikiIconWhite.png"}]);
+precacheAndRoute([{"revision":"a2e4a9ef993fe7b273ac0d3f179d6f01","url":"favicon.ico"},{"revision":"92c671ca6a32967aad6664166c7216b6","url":"index.html"},{"revision":"713f708b9b2662da54cd38bc98a6483f","url":"TiddlyWikiIconBlack.png"},{"revision":"2c94295d5e6cfa9e5f0b666c4ba1964c","url":"TiddlyWikiIconWhite.png"}]);
 
 registerRoute(
   /\.css$/,
@@ -38,5 +39,15 @@ registerRoute(
   })
 );
 
-registerRoute(/\.js$/, new StaleWhileRevalidate());
-registerRoute(/(^\/$|index.html)/, new StaleWhileRevalidate());
+registerRoute(
+  /\.js$/,
+  new StaleWhileRevalidate({
+    plugins: [new BroadcastUpdatePlugin()],
+  })
+);
+registerRoute(
+  /(^\/$|index.html)/,
+  new StaleWhileRevalidate({
+    plugins: [new BroadcastUpdatePlugin()],
+  })
+);
