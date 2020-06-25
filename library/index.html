@@ -217,21 +217,6 @@ var assetList = [
         "requires-reload": "yes"
     },
     {
-        "title": "$:/plugins/linonetwo/omni-search-bar",
-        "author": "Thomas Elmiger",
-        "core-version": ">=5.1.18",
-        "description": "Omni Search Bar – based on telmiger/simple-search 1.0.24",
-        "list": "readme settings support license",
-        "name": "Omni Search Bar",
-        "plugin-type": "plugin",
-        "source": "https://tid.li/tw5/plugins.html",
-        "version": "1.0.25",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "!! Simple Search \n\n{{$:/plugins/linonetwo/omni-search-bar/about}}\n\n!!! Keyboard accessible\n\n* Press <kbd>Cmd</kbd> + <kbd>P</kbd> to ''launch'' or ''close'' Simple Search (same as Notion, or define your own shortcut [[in the control panel|$:/core/ui/ControlPanel/KeyboardShortcuts]]). \n* Navigate with <kbd>Tab</kbd>\n** {{$:/core/ui/Buttons/advanced-search}} takes you to $:/AdvancedSearch\n** the next <kbd>Tab</kbd> jumps to the search results.\n\nDepending on your browser and settings, you can select a list item using <kbd>Tab</kbd> or <kbd>up</kbd> and <kbd>down</kbd> arrow keys, finally confirm your choice with <kbd>Enter</kbd>.\n\n\n!!! Search in fields\nPrimary results are listed for tiddlers containing the search term in the ''title'' OR the ''caption'' fields. \n\nThe secondary list finds results based on all other fields (not title nor caption). This can be adapted via settings.\n\n\n!!! Create tiddlers\n\nEmpty result list? No problem. Create missing tiddlers using the search term as title and caption. \n\n* Hit <kbd>Tab</kbd> until you reach the plus button (+).\n* Create a tiddler with <kbd>Enter</kbd>.\n\nSee template options on the ''settings tab''. – Hat tip to //Diego Mesa// for inspiring this feature.\n\n\n!!! Settings\n\nMake sure to visit the ''settings tab'' to adjust your preferences.\n\n\n!! Core overruling\n\nThis plugin overwrites $:/core/ui/SideBarSegments/search and nothing else.\n\n!! Fork\n\n{{$:/plugins/linonetwo/omni-search-bar/fork}}\n",
-        "requires-reload": "no"
-    },
-    {
         "title": "$:/plugins/linonetwo/opened-tiddlers-bar",
         "name": "Opened Tiddlers Bar",
         "description": "VSCode style opened files top bar",
@@ -316,17 +301,15 @@ var assetList = [
         "requires-reload": "no"
     },
     {
-        "title": "$:/plugins/snowgoon88/edit-comptext",
-        "description": "Editor with some on-line completion capabilities",
-        "author": "AlainD",
-        "version": "0.9.0",
-        "core-version": ">=5.1.13",
-        "source": "https://github.com/snowgoon88/TW5-extendedit",
+        "title": "$:/plugins/souk21/commandpalette",
+        "description": "Command palette",
+        "author": "Souk21",
+        "version": "0.0.4",
+        "core-version": ">=5.0.8",
+        "source": "https://github.com/souk21/TW-commandpalette",
         "plugin-type": "plugin",
-        "list": "readme usage examples",
         "dependents": "",
         "type": "application/json",
-        "readme": "!! What ?\nThis plugin adds ''completion'' when editing the body of a tiddler.\n\n* Enter completion-mode by typing `[[` or `CTRL+SPACE`\n* A list of tiddlers with a title that matches the pattern between `[[` and cursor appears\n* `UP/DOWN` keys can select a tiddler, `ENTER` to validate\n* If there is only one match, `ENTER` selects it.\n* you can specify you own trigger pattern and the list of possible completions. See [[$:/plugins/snowgoon88/edit-comptext/usage]] for more details.\n* `NEW` : after completion, the cursor can be set inside the inserted text. This allows for easier creation of \"aliased links\" (try completion with `||` for example).\n\n!! To try it or get the latest news\nSee [[http://snowgoon88.github.io/TW5-extendedit]]\n\n!! Install \n\nTo add the plugin to your own TiddlyWiki5, just drag this link to the browser window:\n\n[[$:/plugins/snowgoon88/edit-comptext]]\n\nSometime, a small configuration step is then needed\n\nin `$:/ControlPanel -> Advanced -> Editor Type -> text/vnd.tiddlywiki` you must chose `comptext` instead of `text`.\n\nReload and « voilà »...\n\nThis plugin is quite mature now :o)\n\n!! Old version\n\n* A version compatible with 5.0.8 to 5.1.11 : [[http://snowgoon88.github.io/TW5-extendedit/index_5.1.11.html]]\n\n!! Source code\nOn github [[https://github.com/snowgoon88/TW5-extendedit]]\n\nGet in touch : snowgoon88(AT)gmail(DOT)com\n",
         "requires-reload": "yes"
     },
     {

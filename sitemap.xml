@@ -109,6 +109,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:Command%2520Palette%2520使用方法</loc>
+		<lastmod>2020-06-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:Custom%2520HTML%2520Header/Register%2520ServiceWorker</loc>
 		<lastmod>2020-04-14</lastmod>
 		<changefreq>monthly</changefreq>
@@ -158,7 +164,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:Index</loc>
-		<lastmod>2020-06-07</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
 	</url>
@@ -295,6 +301,12 @@
 		<priority>0.8</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:Task</loc>
+		<lastmod>2020-06-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.8</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:TiddlyWiki%25205.1.20%2520可以直接同步到%2520Github%2520了</loc>
 		<lastmod>2020-04-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -320,7 +332,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:VSCode形式的侧边栏</loc>
-		<lastmod>2020-05-31</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -434,7 +446,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:不好用了的插件</loc>
-		<lastmod>2020-04-12</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -529,6 +541,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:优先待办列表</loc>
+		<lastmod>2020-06-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:会对你失去新鲜感吗？</loc>
 		<lastmod>2020-05-07</lastmod>
 		<changefreq>monthly</changefreq>
@@ -596,7 +614,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:做一个集成功能的右键菜单</loc>
-		<lastmod>2020-05-07</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -746,7 +764,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:创建%2520Tiddler%2520时查找类似内容</loc>
-		<lastmod>2020-04-15</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -764,13 +782,13 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:制作类似Notion的搜索浮框</loc>
-		<lastmod>2020-06-04</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:加上OCR搜索图片内容功能</loc>
-		<lastmod>2020-04-19</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -884,7 +902,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:在一个TiddlyWiki里同时放公开内容和隐私内容</loc>
-		<lastmod>2020-06-08</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -927,12 +945,6 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:地理状况自动生成</loc>
 		<lastmod>2020-04-09</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://onetwo.ren/wiki/#:基于TW-Todolist做一个基于Tag而不是JSON的TodoList插件</loc>
-		<lastmod>2020-06-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1058,7 +1070,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:将我做的改动打包为插件包，并发布</loc>
-		<lastmod>2020-06-04</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1100,7 +1112,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:已安装的插件</loc>
-		<lastmod>2020-06-02</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1184,7 +1196,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:快速回到上一个查看的Tiddler</loc>
-		<lastmod>2020-04-15</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1328,7 +1340,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:探索TiddlyWiki的协作能力</loc>
-		<lastmod>2020-05-07</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1375,32 +1387,14 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://onetwo.ren/wiki/#:文本片段/Todolist</loc>
-		<lastmod>2020-04-12</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
 		<loc>https://onetwo.ren/wiki/#:文本片段/script标签</loc>
 		<lastmod>2020-04-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://onetwo.ren/wiki/#:文本片段/使用当前标题的TodoList</loc>
-		<lastmod>2020-04-12</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://onetwo.ren/wiki/#:文本片段/动态表格ColumnTable</loc>
-		<lastmod>2020-04-11</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
 		<loc>https://onetwo.ren/wiki/#:文本片段/动态表格RowTable</loc>
-		<lastmod>2020-04-11</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1538,7 +1532,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:查看Github上的过去版本的文件</loc>
-		<lastmod>2020-04-17</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1646,7 +1640,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:爬知乎赞过的内容放到TW里</loc>
-		<lastmod>2020-06-10</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1658,7 +1652,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:物资管理</loc>
-		<lastmod>2020-06-15</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1694,7 +1688,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用Juli把NodeJS-Github版TiddlyWiki包装成跨平台APP</loc>
-		<lastmod>2020-06-08</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1711,14 +1705,20 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://onetwo.ren/wiki/#:用kin-filter搜索当前文件夹树里的todo</loc>
-		<lastmod>2020-06-10</lastmod>
+		<loc>https://onetwo.ren/wiki/#:用kin-filter搜索当前文件夹树里的Task（仅Filter）</loc>
+		<lastmod>2020-06-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:用kin-filter搜索当前文件夹树里的Task（展示为列表）</loc>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用webclipper剪藏页面到tiddlywiki里</loc>
-		<lastmod>2020-06-10</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1730,7 +1730,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用同义词库、搜索更多字段增强搜索</loc>
-		<lastmod>2020-04-15</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1808,13 +1808,13 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:看看RoamResearch还有什么TiddlyWiki可以借鉴的地方</loc>
-		<lastmod>2020-06-03</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:看看mementodatabase有什么TiddlyWiki可以借鉴的地方</loc>
-		<lastmod>2020-04-16</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1869,12 +1869,6 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:绘制%2520CMOS%2520电路图</loc>
 		<lastmod>2020-06-10</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://onetwo.ren/wiki/#:给页面底部加上来自TodoList的反向链接</loc>
-		<lastmod>2020-04-20</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1958,7 +1952,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:自改TW</loc>
-		<lastmod>2020-06-02</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
 	</url>
@@ -1982,7 +1976,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:行级渲染的%2520TiddlyWiki%2520Wikitext</loc>
-		<lastmod>2020-06-10</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1994,7 +1988,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:解决ServiceWorker使Wiki内容经常不更新的问题</loc>
-		<lastmod>2020-06-08</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -2018,7 +2012,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:让自动补全和搜索支持中文</loc>
-		<lastmod>2020-06-03</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -2084,7 +2078,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:通过菜单快速添加各种功能块（snippet）</loc>
-		<lastmod>2020-06-02</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
