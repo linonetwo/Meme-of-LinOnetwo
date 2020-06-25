@@ -1,8 +1,0 @@
-created: 20200528214941993
-tags: 
-title: $:/plugins/linonetwo/omni-search-bar/hide-new-button.css
-modified: 20200528221159004
-
-.tc-simple-search-results .tc-image-new-button {
-   display: none;
-}

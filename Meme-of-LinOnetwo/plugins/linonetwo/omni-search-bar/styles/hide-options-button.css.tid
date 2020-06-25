@@ -1,8 +1,0 @@
-created: 20200528221013699
-tags: 
-title: $:/plugins/linonetwo/omni-search-bar/hide-options-button.css
-modified: 20200528221137581
-
-.tc-simple-search-results .tc-image-options-button {
-   display: none;
-}
