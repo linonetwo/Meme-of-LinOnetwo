@@ -1,8 +1,10 @@
 created: 20200531142854101
 creator: 林一二
-modified: 20200603120903741
+modified: 20200625083556547
 modifier: 林一二
-tags: 自改TW
+priority: high
+status: not started
+tags: 自改TW Task
 title: 让自动补全和搜索支持中文
 tmap.id: 32ea5328-e97d-4ec5-8680-4009361e40d4
 type: text/vnd.tiddlywiki

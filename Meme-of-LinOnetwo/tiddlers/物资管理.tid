@@ -1,6 +1,6 @@
 created: 20200419093107420
 creator: 林一二
-modified: 20200615164509431
+modified: 20200625075848884
 modifier: 林一二
 tags: Index
 title: 物资管理
@@ -31,12 +31,12 @@ type: text/vnd.tiddlywiki
 
 !! 屯的吃的
 
-<<RowTable "[tag[食品]]+[kin::to{currentTiddler}]" "caption schema.location schema.quantity">>
+<$macrocall $name=table-dynamic filter="[tag[食品]]+[kin::to{currentTiddler}]" fields="caption schema.location schema.quantity" class="w-100"/>
 
 !! 资产
 
-<<RowTable "[tag[资产]]+[kin::to{currentTiddler}]" "caption schema.location schema.price schema.quantity">>
+<$macrocall $name=table-dynamic filter="[tag[资产]]+[kin::to{currentTiddler}]" fields="caption schema.location schema.price schema.quantity" class="w-100"/>
 
 !! 仓储物资
 
-<<RowTable "[tag[仓储物资]]+[kin::to{currentTiddler}]" "caption schema.location schema.quantity">>
+<$macrocall $name=table-dynamic filter="[tag[仓储物资]]+[kin::to{currentTiddler}]" fields="caption schema.location schema.quantity tbl-expand" class="w-100"/>

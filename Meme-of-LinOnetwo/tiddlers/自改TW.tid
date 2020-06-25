@@ -1,7 +1,7 @@
 color: #5778d8
 created: 20190421065036809
 creator: 林一二
-modified: 20200602134944505
+modified: 20200625084133322
 modifier: 林一二
 tags: 很想做但是最近舍不得花时间做的事情 Index tiddlywiki
 title: 自改TW
@@ -12,7 +12,14 @@ type: text/vnd.tiddlywiki
 
 在[[TW运维]]里，我做了很多部署、桌面使用 TiddlyWiki 的优化。
 
-<$macrocall $name="todolist-ui" caption="还有很多想法没有实现" base=<<currentTiddler>> />
+---
+
+<$button>
+	<$action-sendmessage $message="tm-new-tiddler" title=<<now "YYYY-MM-DD">> tags="自改TW Task" priority="normal" status="not started" />
+	添加新待改
+</$button>
+
+<$macrocall $name=table-dynamic caption="待改的项目" filter="[tag[Task]]+[kin::to{currentTiddler}]" fields="tbl-checkbox tbl-expand title priority status tags" class="w-100"/>
 
 ---
 

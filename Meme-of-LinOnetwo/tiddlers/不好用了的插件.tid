@@ -1,6 +1,6 @@
 created: 20200408084454290
 creator: 林一二
-modified: 20200412101900646
+modified: 20200625082418748
 modifier: 林一二
 tags: tiddlywiki
 title: 不好用了的插件
@@ -12,3 +12,7 @@ type: text/vnd.tiddlywiki
 [[tiddlytouch|http://tiddlytouch.tiddlyspot.com/]] 主打tiddler的拖放、触控，导致不方便选中复制，而且会导致 tiddler 边窄。它还在更新，以后可以回顾一下。
 
 [[TW5-EncryptTiddlerPlugin|https://danielorodriguez.com/TW5-EncryptTiddlerPlugin/]] 可以加密单个 tiddler，但是[[有很多缺陷|TW5-EncryptTiddlerPlugin的缺点]]
+
+[[DynamicTables|https://ooktech.com/jed/ExampleWikis/DynamicTables/]] 自动整理表格，这个不是插件，是轻量的宏列表。我用了一段时间还不错，很轻量，但是可以被带有更多功能的 Shiraz 插件替代。
+
+[[TodoList|https://kookma.github.io/TW-Todolist/]] 智能化、强大筛选功能的待办清单，可能得打开隐私加密功能我才能用它，适合存储大量挖了不填的坑。但它[[不适合有详情的Todo|https://github.com/kookma/TW-Todolist/issues/3]]，所以我用 Sharz 的 DynamicTable 来做 TaskManager 了。

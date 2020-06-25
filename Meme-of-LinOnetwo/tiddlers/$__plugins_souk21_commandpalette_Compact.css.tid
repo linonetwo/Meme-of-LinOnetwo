@@ -1,9 +1,9 @@
 created: 20200603190000307
-modified: 20200625071507027
+modified: 20200625082039466
+modifier: 林一二
 tags: $:/tags/CommandPaletteTheme $:/tags/Stylesheet
 title: $:/plugins/souk21/commandpalette/Compact.css
 type: text/vnd.tiddlywiki
-
 
 \rules only filteredtranscludeinline transcludeinline macrodef macrocallinline html
 :root {
