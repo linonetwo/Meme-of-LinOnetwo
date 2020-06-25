@@ -1,10 +1,12 @@
 created: 20200604132700449
 creator: 林一二
-modified: 20200604132830290
+modified: 20200625083508793
 modifier: 林一二
-tags: 自改TW
+priority: normal
+status: on-hold
+tags: 自改TW Task
 title: 制作类似Notion的搜索浮框
 tmap.id: dd9bac02-76cb-44e9-802b-f67b181fb001
 type: text/vnd.tiddlywiki
 
-- 加入默认搜索框内能有的插件功能，识别 [[$:/tags/SearchResults]]
+去给 https://github.com/Souk21/TW-commandpalette 做贡献

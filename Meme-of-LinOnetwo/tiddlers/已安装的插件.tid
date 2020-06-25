@@ -1,6 +1,6 @@
 created: 20200408084953101
 creator: 林一二
-modified: 20200625072417741
+modified: 20200625082308891
 modifier: 林一二
 tags: tiddlywiki 自改TW
 title: 已安装的插件
@@ -17,7 +17,7 @@ type: text/vnd.tiddlywiki
 
 [[tw5-kin-filter|https://bimlas.gitlab.io/tw5-kin-filter/]] 在 Tag 网络上搜索。在 TW 上，Tag 是指向另一个 Tiddler 的有向边，所以通过加 Tag 可以构造出有向图来，进而在图上搜索
 
-[[DynamicTables|https://ooktech.com/jed/ExampleWikis/DynamicTables/]] 自动整理表格，这个不是插件，是轻量的宏列表，导入为[[Table Macros]]
+[[Shiraz|https://kookma.github.io/TW-Shiraz/]] 工具集，包含 DynamicTable 等，可以用于构建 Todo 系统等 Widget。和其他 kookma 写的插件一样，其很多扩展用法和 recipe 需要到其 demo 网站上去抄，例如[[用 DynamicTable 做的 Task Manager|https://kookma.github.io/TW-Shiraz/#demo%2Fdynamic-table%2Ftask-manager]]
 
 [[tiddlymap|http://tiddlymap.org/]] 把笔记作为脑图的节点，是轻量级的 TheBrain 软件
 
@@ -26,8 +26,6 @@ type: text/vnd.tiddlywiki
 [[Utility|https://kookma.github.io/TW-Utility/#Utility%20Tutorial]] 一些 Macro 的合集，我可能得把它们加到印章里，不然我可记不住它们
 
 [[Trashbin|https://kookma.github.io/TW-Trashbin/]] 防止误删，算是多一层保险吧，虽然已经有 Git 了，但是在 SoLiD 版里可能用得上
-
-[[TodoList|https://kookma.github.io/TW-Todolist/]] 智能化、强大筛选功能的待办清单，可能得打开隐私加密功能我才能用它，适合存储大量挖了不填的坑
 
 [[Timelines|https://kookma.github.io/TW-Timelines/]] 各种美观的时间轴，适合用来做展示。可惜是纯展示的，不能像 Google Calendar 一样用
 
