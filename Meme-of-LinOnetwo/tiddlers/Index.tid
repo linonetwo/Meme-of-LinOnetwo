@@ -1,7 +1,7 @@
 color: #cbcbcb
 created: 20190419034125236
 creator: 林一二
-modified: 20200607033633579
+modified: 20200625072601083
 modifier: 林一二
 tags: tiddlywiki
 title: Index
@@ -16,6 +16,8 @@ type: text/vnd.tiddlywiki
 主要关于[[模因学]]、存储各种[[小说点子]]、挖[[工具设计]]的坑。
 
 以及一些[[加密了的内容|APrivateContent]]，包括我的个人 Todo 列表、[[日记|日志]]等，还有从[[GoogleCalendar]]导入的[[每日评价]]。
+
+全局的[[多功能搜索框|Command Palette 使用方法]]按 CMD/CTRL+P 打开，右侧的网状目录系统使用方法见其[[使用帮助|$:/plugins/linonetwo/itonnote/Help/TW-Locator基于标签生成的文件夹目录结构使用方法]]。
 
 本知识库备份在[[Github|https://github.com/linonetwo/wiki/]]上，有想评论的内容可以在这个仓库里发 issue 。[[通过 Now.sh 部署|使用 Now.sh 部署 TiddlyWiki]]的在线版本是 [[onetwo.ren/wiki|https://onetwo.ren/wiki/]]。
 
