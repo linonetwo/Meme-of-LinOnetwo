@@ -1,0 +1,33 @@
+created: 20200625072230181
+creator: 林一二
+keywords: search tiddlywiki
+modified: 20200625072357999
+modifier: 林一二
+responder: Souk21/TW-commandpalette
+tags: solution
+title: Command Palette 使用方法
+tmap.id: 2ab9499a-f02c-481c-9143-80b93c374d30
+type: text/vnd.tiddlywiki
+url: https://souk21.github.io/TW-commandpalette/
+
+Try pressing `Command+P` to open the command palette
+
+From here, you can start searching, or type one of these prefixes:
+
+* `>` search/execute commands
+* `?` help
+* `#` search tags
+* `@` search tiddler with this tag
+* `[` filter operation
+* `+` new tiddler (optional //@tags//)
+* `|` command palette settings
+
+Please keep in mind this is still a ''prototype'', do ''NOT'' import it to your tiddlywiki without ''doing a backup first'' !
+
+By default, the search field is filled with your current selection when you open the palette
+
+`Command+shift+P` opens the palette in command mode
+
+`Command+shift+I` inserts the current result in the previously focused text field
+
+All keyboard shortcuts are modifiabled in the [[$:/ControlPanel]], from `Ctrl` to `Command`.
