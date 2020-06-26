@@ -1,6 +1,6 @@
 created: 20200608083756580
 creator: 林一二
-modified: 20200625083533885
+modified: 20200625153046503
 modifier: 林一二
 priority: very high
 status: in-work
@@ -9,11 +9,17 @@ title: 用Juli把NodeJS-Github版TiddlyWiki包装成跨平台APP
 tmap.id: c2359b37-3fad-4fa0-aba0-b211034b3768
 type: text/vnd.tiddlywiki
 
+我之前尝试过[[制作简易的桌面版 TiddlyWiki App]]，但这些方案没法开箱即用，不便于 TiddlyWiki 的广泛采用。所以我打算用 Electron 写一个开箱即用的，能同步数据到 Github 备份的桌面版 TiddlyWiki 应用。
+
+!! 技术选型
+
 [[Juli|https://github.com/atomery/juli]] 是 [[Quang Lam]] 写的，用于 [[WebCatalog|https://github.com/atomery/webcatalog]] 生成跨平台桌面 App 的 Electron 模板，它使用的 MPL License 允许重新修改分发商用。
 
 重用它，而不是自己从底层开始配 Electron，可以节省大量开发时间。
 
-我觉得我可以创建一个新的 Github Organization，然后 fork Juli，做如下修改让它变成一个 TiddlyWiki 桌面应用：
+我觉得我可以创建一个新的 Github Organization，然后 fork Juli，做一些修改让它变成一个 TiddlyWiki 桌面应用。
+
+!! 基本需求
 
 # 初次启动时要求制定文件目录，一个公开一个私有
 # 还要求指定两个 Github 仓库，一个公开一个私有，对应到本地文件夹上
