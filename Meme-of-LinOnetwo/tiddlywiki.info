@@ -36,6 +36,7 @@
     "felixhayashi/vis",
     "felixhayashi/hotzone",
     "felixhayashi/topstoryview",
+    "linonetwo/service-worker",
     "linonetwo/redirect-to-lan-host",
     "linonetwo/github-external-image",
     "linonetwo/private-tiddlers-in-private-repo",

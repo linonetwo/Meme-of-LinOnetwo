@@ -10,7 +10,6 @@ const { registerRoute } = workbox.routing;
 const { CacheFirst, StaleWhileRevalidate } = workbox.strategies;
 const { ExpirationPlugin } = workbox.expiration;
 const { precacheAndRoute, matchPrecache } = workbox.precaching;
-const { BroadcastUpdatePlugin } = workbox.broadcastUpdate;
 
 precacheAndRoute(self.__WB_MANIFEST);
 
@@ -39,15 +38,9 @@ registerRoute(
   })
 );
 
-registerRoute(
-  /\.js$/,
-  new StaleWhileRevalidate({
-    plugins: [new BroadcastUpdatePlugin()],
-  })
-);
-registerRoute(
-  /(^\/$|index.html)/,
-  new StaleWhileRevalidate({
-    plugins: [new BroadcastUpdatePlugin()],
-  })
-);
+registerRoute(/\.js$/, new StaleWhileRevalidate());
+registerRoute(/(^\/$|index.html)/, new StaleWhileRevalidate());
+
+self.addEventListener('install', (e) => {
+  self.skipWaiting();
+});
