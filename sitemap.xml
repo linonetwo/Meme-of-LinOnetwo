@@ -115,18 +115,6 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://onetwo.ren/wiki/#:Custom%2520HTML%2520Header/Register%2520ServiceWorker</loc>
-		<lastmod>2020-04-14</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
-		<loc>https://onetwo.ren/wiki/#:Custom%2520HTML%2520Header/Resources</loc>
-		<lastmod>2020-06-02</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
 		<loc>https://onetwo.ren/wiki/#:Datalog的用处</loc>
 		<lastmod>2020-04-15</lastmod>
 		<changefreq>monthly</changefreq>
@@ -578,7 +566,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:使用%2520Now.sh%2520部署%2520TiddlyWiki</loc>
-		<lastmod>2020-04-13</lastmod>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -775,8 +763,8 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://onetwo.ren/wiki/#:制作桌面版%2520TiddlyWiki%2520App</loc>
-		<lastmod>2020-04-12</lastmod>
+		<loc>https://onetwo.ren/wiki/#:制作简易的桌面版%2520TiddlyWiki%2520App</loc>
+		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
