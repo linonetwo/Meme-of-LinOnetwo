@@ -56,10 +56,6 @@ Command Palette Widget
 			this.invokeActionString(action, this, e);
 		}
 
-		themeIsEnabled(themeName) {
-			return this.wiki.getTiddler(themeName).fields.tags.includes('$:/tags/Stylesheet');
-		}
-
 		//filter = (tiddler, terms) => [tiddlers]
 		tagOperation(e, hintTiddler, hintTag, filter, allowNoSelection, message) {
 			this.blockProviderChange = true;
@@ -102,15 +98,23 @@ Command Palette Widget
 				let themeName = theme.fields.title;
 				if (themeName === this.settings.theme) {
 					found = true;
-					if (!this.themeIsEnabled(themeName)) {
-						this.invokeFieldMangler(themeName, 'tm-add-tag', '$:/tags/Stylesheet', e);
-					}
+					this.addTagIfNecessary(themeName, '$:/tags/Stylesheet', e);
 				} else {
 					this.invokeFieldMangler(themeName, 'tm-remove-tag', '$:/tags/Stylesheet', e);
 				}
 			}
 			if (found) return;
-			this.invokeFieldMangler(this.defaultSettings.theme, 'tm-add-tag', this.themesTag, e);
+			this.addTagIfNecessary(this.defaultSettings.theme, '$:/tags/Stylesheet', e);
+		}
+
+		//Re-adding an existing tag changes modification date
+		addTagIfNecessary(tiddler, tag, e) {
+			if (this.hasTag(tiddler, tag)) return;
+			this.invokeFieldMangler(tiddler, 'tm-add-tag', tag, e);
+		}
+
+		hasTag(tiddler, tag) {
+			return $tw.wiki.getTiddler(tiddler).fields.tags.includes(tag);
 		}
 
 		refreshCommands() {
