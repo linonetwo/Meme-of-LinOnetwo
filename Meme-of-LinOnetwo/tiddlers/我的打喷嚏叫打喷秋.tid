@@ -1,0 +1,12 @@
+created: 20200627130617873
+creator: 林一二
+modified: 20200627130944100
+modifier: 林一二
+tags: 想法
+title: 我的打喷嚏叫打喷秋
+tmap.id: 9fcfab96-6417-48e6-8dfd-bfb318607acc
+type: text/vnd.tiddlywiki
+
+我以后调用我的`打喷<T>()`的时候，我要叫它「打喷秋」了，因为我打的时候不是「阿嚏」而是「啊秋」。
+
+所以这个泛型应该传「秋」，就是`打喷<秋>()`。
