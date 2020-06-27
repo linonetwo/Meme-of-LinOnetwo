@@ -1,0 +1,10 @@
+created: 20200627103652691
+creator: 林一二
+modified: 20200627103900693
+modifier: 林一二
+tags: 电路 公式
+title: 最大功率传输定理
+tmap.id: 18f8e814-cade-4164-acfa-fe0e39653745
+type: text/vnd.tiddlywiki
+
+$$P_{max} = \frac{V_{TH}^2}{4\times R_{TH}}$$
