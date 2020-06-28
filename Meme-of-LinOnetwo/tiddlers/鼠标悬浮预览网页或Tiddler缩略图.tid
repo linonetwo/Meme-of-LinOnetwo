@@ -1,0 +1,12 @@
+created: 20200628090956822
+creator: 林一二
+modified: 20200628091112725
+modifier: 林一二
+priority: normal
+status: not started
+tags: 自改TW Task
+title: 鼠标悬浮预览网页或Tiddler缩略图
+tmap.id: be2da03c-f813-4682-8c1c-b9e95aa79614
+type: text/vnd.tiddlywiki
+
+类似飞书知识库里的体验，或许㐓用 https://github.com/niklasvh/html2canvas 来做。
