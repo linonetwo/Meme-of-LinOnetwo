@@ -1273,6 +1273,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:我的打喷嚏叫打喷秋</loc>
+		<lastmod>2020-06-27</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:我的朋友是怎么想起来找我的？</loc>
 		<lastmod>2020-04-17</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1749,6 +1755,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:由上拉和下拉网络构成的逻辑门的一般形式.png</loc>
 		<lastmod>2020-06-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:电容中的能量</loc>
+		<lastmod>2020-06-27</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
