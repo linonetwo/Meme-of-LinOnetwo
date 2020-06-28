@@ -1567,6 +1567,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:段落级%2520UUID/URI</loc>
+		<lastmod>2020-06-28</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:每日评价</loc>
 		<lastmod>2020-05-14</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1653,6 +1659,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:物资管理</loc>
 		<lastmod>2020-06-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:现代应用中很少有静态字符串</loc>
+		<lastmod>2020-06-28</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1994,7 +2006,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:行级渲染的%2520TiddlyWiki%2520Wikitext</loc>
-		<lastmod>2020-06-25</lastmod>
+		<lastmod>2020-06-28</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -2169,6 +2181,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:魔法见招拆招</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:鼠标悬浮预览网页或Tiddler缩略图</loc>
+		<lastmod>2020-06-28</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
