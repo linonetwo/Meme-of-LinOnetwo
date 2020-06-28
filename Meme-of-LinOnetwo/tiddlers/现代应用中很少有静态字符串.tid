@@ -1,0 +1,12 @@
+created: 20200628081616650
+creator: 林一二
+modified: 20200628081755880
+modifier: 林一二
+tags: 想法
+title: 现代应用中很少有静态字符串
+tmap.id: df807c3b-94a9-4c21-af05-a5236374df8e
+type: text/vnd.tiddlywiki
+
+就算有静态的部分，也是需要和一些 base 字符串拼接起来才真正投入使用。
+
+这样好处是在 base 字符串（例如域名）失效后，可以低成本低风险地快速替换一大批字符串为新版的字符串。

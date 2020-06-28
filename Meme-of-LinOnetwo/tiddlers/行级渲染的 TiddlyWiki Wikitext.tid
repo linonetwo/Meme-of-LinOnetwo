@@ -1,6 +1,6 @@
 created: 20200412103751564
 creator: 林一二
-modified: 20200625083547152
+modified: 20200628083349171
 modifier: 林一二
 priority: very low
 status: not started
@@ -20,6 +20,6 @@ TiddlyWiki 和 Notion 最大的不同是，它必须打开编辑模式才能修�
 
 然后双击某一行可以编辑其内容。也可以[[在某一行上使用右键菜单|https://groups.google.com/forum/#!topic/tiddlywiki/ltW533iNItk]]了。有的块（智能识别相关内容组成为块）只能用右键菜单打开编辑，例如按钮和链接。
 
-行级渲染也就有了 [[purple number|https://www.semanticscholar.org/paper/Purple-MediaWiki-%3A-Fine-Grained-Addressability-of-Baclawski-Gupta/53f400a644c209cf05cc410b771129b1038d0f7a]] （段落级 UUID/URI）、段落级元信息，以后就可以自动识别每个段落的内容填入元信息了。
+行级渲染也就有了[[段落级 UUID/URI]]、段落级元信息，以后就可以自动识别每个段落的内容填入元信息了。
 
 或许可以在浏览模式中自动生成段落link，特别是有标题的，可以直接用标题生成 hash link。然后在字段里用标题作为前缀来保存段落级元信息。也可以看看其他系统里是怎么生成段落link的。

@@ -1,0 +1,18 @@
+created: 20200628083137998
+creator: 林一二
+modified: 20200628083412334
+modifier: 林一二
+tags: 知识管理系统
+title: 段落级 UUID/URI
+tmap.id: 4aa84267-96cf-4a27-8a88-8bb05d3fe847
+type: text/vnd.tiddlywiki
+
+在 purple semantic mediawiki 中（见鲍捷的《降低知识图谱的构造成本》演讲稿及PPT）提到过段落级 URI 的好处：
+
+<<<
+高中语文告诉我们，怎么去写作，分段落，分句，每段第一个句子是最重要的。在这里面有丰富的结构，丰富的信息，这种语义信息其实是最容易挖掘出来的。其实有很多人已经发现了也在用了。比如说以前我跟另外一组人合作，做一个Purple Semantic Mediawiki，它的用途就是这个wiki上每一段话我都可以在另外的wiki页面里引用。它每一个段落有自动生成的purple number，这是一个自动生成的URI，然后可以在另一个页面，只要你引用了这个URI，它自动就过来了，也是动态的。因为这是metadata（元数据），所以你可以查询，你可以把几个段落自由的组合在一起，就是有所谓的语义在这里头。
+<<<
+
+参考文献：
+
+[[purple number in Purple-MediaWiki|https://www.semanticscholar.org/paper/Purple-MediaWiki-%3A-Fine-Grained-Addressability-of-Baclawski-Gupta/53f400a644c209cf05cc410b771129b1038d0f7a]] 
