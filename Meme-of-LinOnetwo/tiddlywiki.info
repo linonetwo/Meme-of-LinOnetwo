@@ -36,6 +36,7 @@
     "felixhayashi/vis",
     "felixhayashi/hotzone",
     "felixhayashi/topstoryview",
+    "mat/field-value-selector",
     "linonetwo/service-worker",
     "linonetwo/redirect-to-lan-host",
     "linonetwo/github-external-image",
