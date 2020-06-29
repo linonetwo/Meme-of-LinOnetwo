@@ -1,6 +1,6 @@
 created: 20200412103751564
 creator: 林一二
-modified: 20200628083349171
+modified: 20200629061943003
 modifier: 林一二
 priority: very low
 status: not started
@@ -14,12 +14,12 @@ TiddlyWiki 和 Notion 最大的不同是，它必须打开编辑模式才能修�
 因为宏的存在，实际的内容和源码的差别可能会很大，所以如果源码多行之间是有上下文关系的（比如 macro 定义、HTML）则没法在看不到源码的情况下知道要修改的是哪一行。所以得智能识别哪些内容是相关的，渲染的时候就把它们作为一个「块」来渲染，然后在「行级」编辑的时候，就要能同时编辑这些行。
 
 可以考虑一些所见即所得的 Markdown 编辑器例如 Typora，还有 Nteract 这种 Jupyter Notebook，看看它们是怎么输入特殊语法后回车渲染出内容、再点击后再进入编辑模式。
-[[marktext|https://github.com/marktext/marktext]]用 codemirror 做到了 WYSIWYG，或许可以抄一抄用在 tiddlywiki 里，做成一个 codemirror 插件？
+[[marktext|https://github.com/marktext/marktext]]用 codemirror 做到了 WYSIWYG，或许可以抄一抄用在 tiddlywiki 里，做成一个 codemirror 插件？但是 codemirror 可能不适合展示
 
 然后我用 SlateJS 做一个 demo，把每行的 wikitext 片段发到 TiddlyWiki 上当语言服务器用，渲染出结果后，展示在编辑器上。
 
-然后双击某一行可以编辑其内容。也可以[[在某一行上使用右键菜单|https://groups.google.com/forum/#!topic/tiddlywiki/ltW533iNItk]]了。有的块（智能识别相关内容组成为块）只能用右键菜单打开编辑，例如按钮和链接。
+然后双击某一行可以编辑复杂内容，也可以[[在某一行上使用右键菜单|https://groups.google.com/forum/#!topic/tiddlywiki/ltW533iNItk]]，我觉得可能右键菜单来编辑 macro 和 widget 更方便，因为有的块（通过查看 AST 智能识别相关内容组成为块）没法双击，只能用右键菜单打开编辑，例如按钮和链接。
 
-行级渲染也就有了[[段落级 UUID/URI]]、段落级元信息，以后就可以自动识别每个段落的内容填入元信息了。
+行级渲染也就有了[[段落级 UUID/URI]]、段落级元信息，以后就可以自动识别每个段落的内容填入元信息了。生成对某个块的引用，可以靠 tiddler title + AST selector。
 
 或许可以在浏览模式中自动生成段落link，特别是有标题的，可以直接用标题生成 hash link。然后在字段里用标题作为前缀来保存段落级元信息。也可以看看其他系统里是怎么生成段落link的。
