@@ -1,0 +1,29 @@
+created: 20200630154402121
+creator: 林一二
+keywords: electron debug
+modified: 20200630155359334
+modifier: 林一二
+responder: stackoverflow TimOsadchiy
+tags: solution
+title: 调试Electron.app
+tmap.id: a2bf9f8a-31ee-46f9-8d03-a8357145858c
+type: text/vnd.tiddlywiki
+url: https://stackoverflow.com/a/56634497/4617295
+
+在build打包成APP放在dist文件夹后，想要看到 Electron 应用在 main 线程里的 console log ，得通过如下方法：
+
+```shell
+lldb /Users/linonetwo/.../xxx.app
+(lldb) target create "/Users/linonetwo/.../xxx.app"
+Current executable set to '/Users/linonetwo/.../xxx.app' (x86_64).
+(lldb) run --remote-debugging-port=8315
+Process 14114 launched: '/Users/linonetwo/.../xxx.app/Contents/MacOS/Singlebox' (x86_64)
+
+DevTools listening on ws://127.0.0.1:8315/devtools/browser/4ff932ae-febb-471d-be09-720a843b6141
+```
+
+然后就会打出一堆 log，而且可以到 [[http://127.0.0.1:8315]] 查看更多。
+
+如果不打算在浏览器里看，就简单看看 console 的话，`(lldb) process launch` 也行。
+
+最后，`(lldb) exit`
