@@ -1,0 +1,15 @@
+created: 20200703053746493
+creator: 林一二
+modified: 20200703053840602
+modifier: 林一二
+title: easysync
+tmap.id: e5930c35-e822-4695-8bde-03b1c3616af4
+type: text/vnd.tiddlywiki
+
+!! 介绍文章
+
+[[在线文档中 Easysync2 算法介绍 |https://slix.rocks/%E5%9C%A8%E7%BA%BF%E6%96%87%E6%A1%A3%E4%B8%AD-easysync2-%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D/]]
+ 
+!! 应用本算法的开源代码
+
+[[https://github.com/ether/etherpad-lite]]
