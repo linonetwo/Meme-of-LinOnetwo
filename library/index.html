@@ -10,6 +10,20 @@
 <script>
 var assetList = [
     {
+        "title": "$:/plugins/OokTech/Bob",
+        "description": "A plugin that real-time syncing between wiki and server, among other things",
+        "author": "inmysocks",
+        "version": "1.6.0b1",
+        "core-version": ">=5.1.21",
+        "source": "",
+        "plugin-type": "plugin",
+        "list": "readme WebSocketMessages ActionWebSocketMessage OokTechInfo",
+        "dependents": "",
+        "type": "application/json",
+        "readme": "! Connecting other computers to the wiki\n\nThe wiki server ip address and port is:\n\n<pre>{{$:/ServerIP}}:{{$:/ServerIP!!port}}</pre>\n\nto connect to this wiki from another computer on the same network enter the\nabove into the address bar of a browser.\n\n! Configuration\n\nYou can configure the plugin (and possibly other things in the future) using\nthe `Bob Settings` tab in the [[$:/ControlPanel]].\n\nThese settings are available to the node process in the $tw.settings object.\n\nAfter changing any of the settings they are not saved in a way that will change\nanything until you click the `Update Settings` button. Note that some settings\nmay not take effect until you reset the server.\n\nConfiguring the host is done in the `ws-server` section. You can set the host,\nport username and password for the wiki there (see [[a note about ports|$:/plugins/OokTech/Bob/A note about ports]]).\nSome of these settings may not always be updated the way you expect when\nresetting the server using the node message. I am not exactly sure what is\ndifferent or why.\n\nThe scripts that you can run using the `runScript` websocket message are listed\nin the `scripts` section. You can also add or modify the scripts here. See [[running scripts using websocket messages|$:/plugins/OokTech/Bob/Running Scripts Using Websocket Messages]].\n\nThe other wikis you can start from this wiki are listed in the `wikis` section.\nYou can add new wikis here as well. See [[starting other wikis from within a wiki|$:/plugins/OokTech/Bob/Starting Other Wikis]].\n\n! Other Documentation\n\n<$list\n  filter='[all[tiddlers+shadows]tag[Bob Documentation]]'\n>\n  <$link\n    to=<<currentTiddler>>\n  >\n    <$view\n      field='caption'\n    >\n      <$view\n        field='title'\n      />\n    </$view>\n  </$link> - <$view field='description'/>\n  <br>\n</$list>\n",
+        "requires-reload": "yes"
+    },
+    {
         "title": "$:/plugins/bimlas/kin-filter",
         "description": "Kin filter: Recursively looking for kinship between tiddler titles",
         "author": "bimlas",
@@ -309,21 +323,6 @@ var assetList = [
         "dependents": "",
         "type": "application/json",
         "readme": "[[field-value-selector|$:/plugins/mat/field-value-selector]] is an EditView template that adds a small arrow button below the \"new fields\" area.\n\nWhen you fill in a custom field name and then click this button, you get a dropdown showing all existing field values for that field name.\n\nlist-before and list-after are special and instead showing lists of all viewtemplate titles and edittemplate titles for easy selection. This functionality was the main incentive for this 'plugin', because it is darn impossible to remember the template titles.\n\nInstalling this 'plugin' does not modify any shadow tiddlers (...which meant showing the button below the \"new fields\" area, instead of at a more prettily integrated position.) ",
-        "requires-reload": "no"
-    },
-    {
-        "title": "$:/plugins/ooktech/dynamic-tables",
-        "description": "A port of ooktech/jed's DynamicTables macro to a plugin, so other plugins can explicitly depend on it",
-        "author": "ooktech/jed",
-        "core-version": ">=5.0.0",
-        "plugin-type": "plugin",
-        "source": "https://github.com/OokTech/TW5-DynamicTables",
-        "documentation": "https://ooktech.com/jed/ExampleWikis/DynamicTables/",
-        "version": "1.0.0",
-        "list": "readme TableWizard examples",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "See https://ooktech.com/jed/ExampleWikis/DynamicTables/ for all the original documentations in a wiki, which is more dynamic.\n\n---\n\nAll of the macros are in [[Table Macros]], so you should only have to import that tiddler.\n\n!Simple Row/Column Tables\n\nRow table:\n\n```\n<<RowTable \"row tiddler filter\" \"field filter\">>\n```\n\nColumn table:\n\n```\n<<ColumnTable \"column tiddler filter\" \"field filter\">>\n```\n\nThe two macros `ColumnTable` and `RowTable` each take a filter listing tiddlers as input, with an optional second filter listing fields. \n\nThe tiddler filter defines which tiddlers are the columns for the `ColumnTable` macro and the rows for the `RowTable` macro. \n\nIf the second filter is left out, the rows of the `ColumnTable` macro are defined by the fields in each tiddler returned by the tiddler filter, the columns for the`RowTable` macro are defined by the fields in the returned tiddlers.\n\nFor row tables you can click on a column header and sort the table by that column, for column tables you can click on the row label and sort the columns by that row. Unfortunately sorting column tables by the columns or row tables by the rows is probably going to take some javascript that I don't feel like dealing with right now. It requires sorting the fields of a tiddler by their contents.\n\nExamples: [[Simpler Table Macros]]\n\n!Table Wizard\n\nThe macro `<<MakeTableWizard>>` will display the table creation tool. It doesn't take any arguments. You set the name of a configuration tiddler that holds the information for a table.\n\nThe macro `<<DisplayTable ConfigurationTiddler>>` will display a table made using the creation tool where `ConfiguartionTiddler` is the name of the tiddler given in the creation tool.\n\nEnter a configuration tiddler name, each configuration tiddler will be associated with one table. You can make as many as you want.\n\nPut in subcolumns, or not as you will.\n\nEnter a tag that will be on the tiddler named with your dataset, you can create a new data set using the button. Note that if you try to make one with the same name as an existing tiddler it will overwrite the tag field of that tiddler.\n\nSame for columns, subcolumns and rows. Subcolumns per column should be set to be equal to the number of columns you are using.\n\nRow, column and subcolumn names can be any valid tiddler name.\n\nIf you check 'Allow Inline Editing' you can click on a cell in the table to edit the contents of that cell. For the moment this is probably the best way to enter data.\n\nData is stored it tiddlers using the naming convention:\n\nFor tables without subcolumns:\n\n$:/Data/(Row Name)/(Column Name)/(Dataset Name)\n\nThe value is stored in the field `column_data`\n\nFor tables with subcolumns:\n\n$:/Data/(Row Name)/(Column Name)/(Subcolumn Name)/(Dataset Name)\n\nThe value is stored in the field `subcolumn_data`\n\nYes, this means that you have a tiddler for each cell in the table. To do this any other way I would have had to drop support for subcolumns and use data tiddlers.\n",
         "requires-reload": "no"
     },
     {
