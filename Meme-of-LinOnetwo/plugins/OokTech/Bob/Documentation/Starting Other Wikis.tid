@@ -1,0 +1,39 @@
+title: $:/plugins/OokTech/Bob/Documentation/Starting Other Wikis
+caption: Starting Other Wikis
+tags: [[Bob Documentation]]
+description: Serve multiple wikis at the same time.
+
+This works using the `wsserver` command included in this plugin.
+
+''Note:'' This describes how to make the Bob plugin serve existing wikis.
+If you want to create the wiki and start serving it you should look at
+[[creating new wikis|$:/plugins/OokTech/Bob/Creating New Wikis]] instead.
+
+You can start serving other wikis from within the wiki. First you need to give
+the wiki a name and list its path in the settings. Go to the `Bob Settings`
+tab in the [[$:/ControlPanel]] and give the wiki a name and list its path in
+the `wikis` section like this:
+
+`'otherwiki': ~/Documents/TiddlyWiki/Wikis/Bob`
+
+then click the `Update Settings` button under the list. Wait a moment for the
+save button to turn back to grey and then click on the `Update Routes` button
+and your changes should take effect. It may take a few seconds for the server
+to finish processing the requests.
+
+Afterward you will be able to go to `localhost:8080/otherwiki` to open the wiki
+(assuming that you are using default settings)
+
+''Note:'' This does not create the wiki. If the wiki doesn't exist this won't
+do anything. To create a new wiki from within the wiki use the interface in the
+$:/ControlPanel under the Bob tab. If for some reason you would rather do it
+some other way see the example for the
+[[runScript message|$:/plugins/OokTech/Bob/WebSocketMessage-runScript]].
+
+<!--
+!! Serving wikis using a script (Advanced)
+
+Using the [[runScript|$:/plugins/OokTech/Bob/WebSocketMessage-runScript]]
+websocket message you can run shell commands, so you can do this to start
+serving other wikis normally from within a wiki.
+-->

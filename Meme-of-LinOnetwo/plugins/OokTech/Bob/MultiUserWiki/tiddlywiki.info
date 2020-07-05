@@ -1,0 +1,14 @@
+{
+	"description": "This is the demo edition for the Bob plugin created by OokTech",
+	"plugins": [
+    "OokTech/Bob"
+	],
+	"themes": [
+		"tiddlywiki/vanilla",
+		"tiddlywiki/snowwhite"
+	],
+	"build": {
+		"index": [
+			"--rendertiddler","$:/core/save/all","index.html","text/plain"]
+	}
+}
