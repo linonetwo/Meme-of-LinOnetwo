@@ -17,12 +17,14 @@ process.env['TIDDLYWIKI_THEME_PATH'] = `${tiddlyWikiFolder}/themes`;
 $tw.boot.argv = [
   '+plugins/tiddlywiki/filesystem',
   '+plugins/tiddlywiki/tiddlyweb',
+  '+plugins/OokTech/Bob',
   tiddlyWikiFolder,
   '--listen',
   `anon-username=${userName}`,
-  `port=${tiddlyWikiPort}`,
+  `port=${tiddlyWikiPort + 1}`,
   'host=0.0.0.0',
   'root-tiddler=$:/core/save/lazy-images',
+  '--wsserver', // port config in Meme-of-LinOnetwo/settings/settings.json
 ];
 
 try {

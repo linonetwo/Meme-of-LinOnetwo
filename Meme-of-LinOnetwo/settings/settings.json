@@ -1,0 +1,19 @@
+{
+  "serverName": "Meme-of-LinOnetwo",
+  "ws-server": {
+    "port": 5012,
+    "host": "0.0.0.0",
+    "autoIncrementPort": false
+  },
+  "heartbeat": {
+    "interval": 1000
+  },
+  "enableBobSaver": "no",
+  "saver": {
+    "disable": "yes"
+  },
+  "wikiPathBase": "cwd",
+  "editionsPath": "./Meme-of-LinOnetwo/",
+  "pluginsPath": "./Meme-of-LinOnetwo/plugins",
+  "themesPath": "./Meme-of-LinOnetwo/themes"
+}

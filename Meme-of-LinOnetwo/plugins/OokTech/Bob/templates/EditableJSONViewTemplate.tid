@@ -1,0 +1,245 @@
+title: $:/plugins/OokTech/Bob/EditableJSONViewTemplate
+
+\define thisEditingState() $:/state/$(currentTiddler)$/$(item)$/editing
+
+\define thisNewItemState() $:/state/$(currentTiddler)$/$(item)$/newItem
+
+\define thisNewItemValues() $:/state/$(currentTiddler)$/$(item)$/values
+
+\define EditButton()
+<$reveal
+  type='nomatch'
+  state=<<thisEditingState>>
+  text='editing'
+>
+  <$button
+    class='tc-btn-invisible'
+  >
+    "<$view index=<<item>>/>"
+    <$reveal type='match'
+      state='$:/state/Bob/EditManualSettings'
+      text='true'
+      tag='span'
+    >
+      <$action-setfield
+        $tiddler=<<thisEditingState>>
+        text=editing
+      />
+      {{$:/core/images/edit-button}}
+    </$reveal>
+  </$button>
+</$reveal>
+<$reveal
+  type='match'
+  state=<<thisEditingState>>
+  text='editing'
+>
+  <$edit-text
+    class='tc-edit-texteditor'
+    tiddler=<<currentTiddler>>
+    index=<<item>>
+    tag=input
+  />
+  <$button
+    tooltip='Finish Editing'
+  >
+    Done
+    <$action-setfield
+      $tiddler=<<thisEditingState>>
+      text=''
+    />
+    <$action-deletetiddler
+      $tiddler=<<thisEditingState>>
+    />
+  </$button>
+  <$button
+    class='tc-btn-invisible'
+    tooltip='Delete Field'
+  >
+    {{$:/core/images/delete-button}}
+    <$action-setfield
+      $tiddler=<<currentTiddler>>
+      $index=<<item>>
+    />
+  </$button>
+</$reveal>
+\end
+
+{
+<$reveal type='match'
+  state='$:/state/Bob/EditManualSettings'
+  text='true'
+>
+  <$list
+    filter='[<currentTiddler>!title[$:/WikiSettings/split]]'
+  >
+    <$button
+      class='tc-btn-invisible'
+      tooltip='Delete Section'
+    >
+      <$action-deletetiddler
+        $tiddler=<<currentTiddler>>
+      />
+      {{$:/core/images/delete-button}}
+    </$button>
+  </$list>
+</$reveal>
+
+<ul>
+  <$list
+    filter='[<currentTiddler>indexes[]butlast[]]'
+    variable='item'
+  >
+    "<$view tiddler=<<item>> field=title/>":
+    <$list
+      filter='[<currentTiddler>getindex<item>type[application/json]]'
+      emptyMessage="""<<EditButton>>,"""
+    >
+      {{||$:/plugins/OokTech/Bob/EditableJSONViewTemplate}},
+    </$list>
+    <br>
+  </$list>
+  <$list
+    filter='[<currentTiddler>indexes[]last[]]'
+    variable='item'
+  >
+    "<$view tiddler=<<item>> field=title/>":
+    <$list
+      filter='[<currentTiddler>getindex<item>type[application/json]]'
+      emptyMessage="""<<EditButton>>"""
+    >
+      {{||$:/plugins/OokTech/Bob/EditableJSONViewTemplate}}
+    </$list>
+    <br>
+  </$list>
+  <$reveal
+    type='nomatch'
+    state=<<thisNewItemState>>
+    text=editing
+  >
+    <$reveal type='match'
+      state='$:/state/Bob/EditManualSettings'
+      text='true'
+      tag='span'
+    >
+      <$button
+        tooltip='Add Property'
+      >
+        {{$:/core/images/new-button}}
+        <$action-setfield
+          $tiddler=<<thisNewItemState>>
+          text=editing
+          item_type=Field
+        />
+      </$button>
+    </$reveal>
+  </$reveal>
+  <$reveal
+    type='match'
+    state=<<thisNewItemState>>
+    text=editing
+  >
+    <$edit-text
+      tiddler=<<thisNewItemValues>>
+      field='new_name'
+    />:
+    <$radio
+      tiddler=<<thisNewItemState>>
+      field=item_type
+      value='Object'
+    >
+      Object
+    </$radio>
+    <$radio
+      tiddler=<<thisNewItemState>>
+      field=item_type
+      value='Field'
+    >
+      Field
+    </$radio>
+    <$list
+      filter='[<thisNewItemState>item_type[Field]]'
+      variable=dummy
+      emptyMessage="<br>"
+    >
+      <$edit-text
+        tiddler=<<thisNewItemValues>>
+        field='new_value'
+        class='tc-edit-texteditor'
+      />
+    </$list>
+    <$button
+      class='tc-btn-invisible'
+      tooltip='Save'
+    >
+      {{$:/core/images/save-button}}
+      <$set
+        name=CurrentLevel
+        value=<<currentTiddler>>
+      >
+        <$list
+          filter='[<thisNewItemState>item_type[Object]]'
+          variable=unused
+          emptyMessage="""
+          <$tiddler
+            tiddler=<<thisNewItemValues>>
+          >
+          <$action-setfield
+            $tiddler=<<CurrentLevel>>
+            $index={{!!new_name}}
+            $value={{!!new_value}}
+          />
+          </$tiddler>"""
+        >
+          <$tiddler
+            tiddler=<<thisNewItemValues>>
+          >
+            <$list
+              filter='[<CurrentLevel>addsuffix[/]addsuffix{!!new_name}]'
+              variable='NewName'
+            >
+              <$action-setfield
+                $tiddler=<<NewName>>
+                type='application/json'
+                text='{}'
+              />
+              <$action-setfield
+                $tiddler=<<CurrentLevel>>
+                $index={{!!new_name}}
+                $value=<<NewName>>
+              />
+            </$list>
+          </$tiddler>
+        </$list>
+      </$set>
+      <$action-setfield
+        $tiddler=<<thisNewItemState>>
+        text=''
+      />
+      <$action-deletetiddler
+        $tiddler=<<thisNewItemState>>
+      />
+      <$action-setfield
+        $tiddler=<<thisNewItemValues>>
+        text=''
+      />
+      <$action-deletetiddler
+        $tiddler=<<thisNewItemValues>>
+      />
+    </$button>
+    <$button
+      class='tc-btn-invisible'
+      tooltip='Cancel'
+    >
+      {{$:/core/images/cancel-button}}
+      <$action-setfield
+        $tiddler=<<thisNewItemState>>
+        text=''
+      />
+      <$action-deletetiddler
+        $tiddler=<<thisNewItemState>>
+      />
+    </$button>
+  </$reveal>
+</ul>
+}
