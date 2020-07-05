@@ -17,6 +17,7 @@ process.env['TIDDLYWIKI_THEME_PATH'] = `${tiddlyWikiFolder}/themes`;
 $tw.boot.argv = [
   '+plugins/tiddlywiki/filesystem',
   '+plugins/tiddlywiki/tiddlyweb',
+  '+plugins/OokTech/Bob',
   tiddlyWikiFolder,
   '--listen',
   `anon-username=${userName}`,
