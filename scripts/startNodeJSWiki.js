@@ -20,10 +20,10 @@ $tw.boot.argv = [
   tiddlyWikiFolder,
   '--listen',
   `anon-username=${userName}`,
-  `port=${tiddlyWikiPort}`,
+  `port=${tiddlyWikiPort + 1}`,
   'host=0.0.0.0',
   'root-tiddler=$:/core/save/lazy-images',
-  '--wsserver',
+  '--wsserver', // port config in Meme-of-LinOnetwo/settings/settings.json
 ];
 
 try {
