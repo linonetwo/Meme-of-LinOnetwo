@@ -1,0 +1,209 @@
+title: $:/plugins/OokTech/Bob/CreateWikis
+caption: Create Wikis
+
+You can create new wikis here. Select the edition and then enter a name.
+
+Wiki names should be able to contain any unicode characters, although there may
+be errors in some browsers which do not support unicode urls.
+So 💩 is a valid wiki name.
+
+See
+[[creating new wikis|$:/plugins/OokTech/Bob/Documentation/Creating New Wikis]]
+for more information about making wikis.
+
+Create a wiki from
+
+<$radio
+  tiddler='$:/temp/NewWiki'
+  field='method'
+  value='edition'
+>
+  an edition
+</$radio> <<helpButton $:/plugins/OokTech/Bob/AboutCreateFromEdition>>
+<br>
+<$radio
+  tiddler='$:/temp/NewWiki'
+  field='method'
+  value='file'
+>
+  an html file
+</$radio> <<helpButton $:/plugins/OokTech/Bob/AboutCreateFromHTML>>
+<br>
+<$radio
+  tiddler='$:/temp/NewWiki'
+  field='method'
+  value='tiddlers'
+>
+  existing tiddlers
+</$radio> <<helpButton $:/plugins/OokTech/Bob/AboutCreateFromTiddlers>>
+<br>
+<$radio
+  tiddler='$:/temp/NewWiki'
+  field='method'
+  value='node'
+>
+  a node wiki
+</$radio> <<helpButton $:/plugins/OokTech/Bob/AboutCreateFromNode>>
+<br>
+<$radio
+  tiddler='$:/temp/NewWiki'
+  field='method'
+  value='duplicate'
+>
+  duplicate an existing wiki
+</$radio> <<helpButton $:/plugins/OokTech/Bob/AboutDuplicateWiki>>
+
+<$list
+  filter='[[$:/temp/NewWiki]!has[method]][[$:/temp/NewWiki]method[edition]]+[limit[1]]'
+  variable=null
+>
+  {{$:/plugins/OokTech/Bob/CreateWikiFromEdition}}
+</$list>
+
+
+<$list
+  filter='[[$:/temp/NewWiki]method[file]]'
+  variable=null
+>
+  {{$:/plugins/OokTech/Bob/CreateWikiFromFile}}
+</$list>
+
+<$list
+  filter='[[$:/temp/NewWiki]method[tiddlers]]'
+  variable=null
+>
+  {{$:/plugins/OokTech/Bob/CreateWikiFromTiddlers}}
+</$list>
+
+<$list
+  filter='[[$:/temp/NewWiki]method[node]]'
+  variable=null
+>
+  {{$:/plugins/OokTech/Bob/CreateWikiFromNode}}
+</$list>
+
+<$list
+  filter='[[$:/temp/NewWiki]method[duplicate]]'
+  variable=null
+>
+  {{$:/plugins/OokTech/Bob/DuplicateExisitingWiki}}
+</$list>
+
+<!--
+---
+
+Click this button to automatically list all wikis in your wikis folder.
+Checking the box will also remove any links to wikis that don't exist.
+
+<$button>
+  Auto-populate list from Wikis folder
+  <$action-websocketmessage
+    $type='findAvailableWikis'
+    remove={{$:/state/Bob/removemissingwikis!!text}}
+    update='true'
+    saveSettings='true'
+  />
+</$button>
+
+<$checkbox
+  tiddler='$:/state/Bob/removemissingwikis'
+  checked='true'
+  unchecked='false'
+  field='text'
+>
+  Remove links to missing wikis
+</$checkbox>
+</$reveal>
+
+<$reveal
+  type='match'
+  state='$:/settings/Bob/Verbose'
+  text='false'
+>
+
+  Create wiki from
+
+  <$radio
+    tiddler='$:/temp/NewWiki'
+    field='method'
+    value='edition'
+  >
+    an edition
+  </$radio>
+  <br>
+  <$radio
+    tiddler='$:/temp/NewWiki'
+    field='method'
+    value='file'
+  >
+    an html file
+  </$radio>
+  <br>
+  <$radio
+    tiddler='$:/temp/NewWiki'
+    field='method'
+    value='tiddlers'
+  >
+    existing tiddlers
+  </$radio>
+  <br>
+  <$radio
+    tiddler='$:/temp/NewWiki'
+    field='method'
+    value='node'
+  >
+    a node wiki
+  </$radio>
+
+  <$list
+    filter='[[$:/temp/NewWiki]!has[method]][[$:/temp/NewWiki]method[edition]]+[limit[1]]'
+    variable=null
+  >
+    {{$:/plugins/OokTech/Bob/CreateWikiFromEdition}}
+  </$list>
+
+
+  <$list
+    filter='[[$:/temp/NewWiki]method[file]]'
+    variable=null
+  >
+    {{$:/plugins/OokTech/Bob/CreateWikiFromFile}}
+  </$list>
+
+  <$list
+    filter='[[$:/temp/NewWiki]method[tiddlers]]'
+    variable=null
+  >
+    {{$:/plugins/OokTech/Bob/CreateWikiFromTiddlers}}
+  </$list>
+
+  <$list
+    filter='[[$:/temp/NewWiki]method[node]]'
+    variable=null
+  >
+    {{$:/plugins/OokTech/Bob/CreateWikiFromNode}}
+  </$list>
+
+---
+
+  <$button>
+    Auto-populate list
+    <$action-websocketmessage
+      $type='findAvailableWikis'
+      remove={{$:/state/Bob/removemissingwikis!!text}}
+      update='true'
+      saveSettings='true'
+    />
+  </$button>
+  <$checkbox
+    tiddler='$:/state/Bob/removemissingwikis'
+    checked='true'
+    unchecked='false'
+    field='text'
+  >
+    Remove missing wikis
+  </$checkbox>
+</$reveal>
+
+{{$:/plugins/OokTech/Bob/Wiki Listing}}
+-->

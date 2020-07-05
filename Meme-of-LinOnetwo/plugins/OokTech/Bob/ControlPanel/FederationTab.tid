@@ -1,0 +1,14 @@
+title: $:/plugins/OokTech/Bob/FederationTab
+caption: Federation
+
+These are things for inter-server federation
+
+<$checkbox>
+  Enable Federation
+</$checkbox> <<helpButton "$:/plugins/OokTech/Bob/AboutEnableFederation">>
+
+<$checkbox>
+  Announce on the local network
+</$checkbox> <<helpButton "$:/plugins/OokTech/Bob/AboutAnnounceOnLocalNetwork">>
+
+<<tabs "[all[tiddlers+shadows]tag[FederationTab]]">>

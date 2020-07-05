@@ -1,0 +1,206 @@
+title: $:/plugins/OokTech/Bob/ServerTab
+caption: Server
+
+\define checkActions()
+  <$action-updatesetting
+    suppressBrowser=true
+  />
+\end
+
+\define uncheckActions()
+<$action-updatesetting
+  suppressBrowser=false
+/>
+\end
+\define toggleLazyLoadingCheckActions()
+  <$action-updatesetting
+    ws-server='{"rootTiddler":"$:/core/save/lazy-all"}'
+  />
+\end
+
+\define toggleLazyLoadingUncheckActions()
+  <$action-updatesetting
+    ws-server='{"rootTiddler":"$:/core/save/all"}'
+  />
+\end
+
+\define checkFileMonitor()
+  <$action-updatesetting
+    disableFileWatchers='yes'
+  />
+\end
+
+\define uncheckFileMonitor()
+  <$action-updatesetting
+    disableFileWatchers='no'
+  />
+\end
+
+<$reveal
+  type='nomatch'
+  state='$:/settings/Bob/Verbose'
+  text='false'
+>
+
+  These are actions that affect the server and may affect all wikis served.
+
+</$reveal>
+
+<$reveal
+  type='nomatch'
+  state='$:/settings/Bob/Verbose'
+  text='false'
+>
+
+  Checking this box will keep BobEXE from opening the index wiki in the browser
+  automatically each time it is started.
+
+</$reveal>
+
+<$checkbox
+  checkactions=<<checkActions>>
+  uncheckactions=<<uncheckActions>>
+  tiddler='$:/WikiSettings/split'
+  index='suppressBrowser'
+  checked='yes'
+  unchecked='no'
+  default='yes'
+>
+  Automatically open browser when ~BobEXE starts
+</$checkbox>
+
+<$reveal
+  type='nomatch'
+  state='$:/settings/Bob/Verbose'
+  text='false'
+>
+  This button takes any embedded images or other media that are already in the
+  wiki and save them in the files folder and replace the embedded media with
+  tiddlers that use a `_canonical_uri` field to embed the external media. This
+  is a one-time process and only for the current wiki, other wikis are
+  unaffected.
+</$reveal>
+
+<$button>
+  Make Images External
+  <$action-websocketmessage
+    $type='makeImagesExternal'
+    storeIn={{$:/state/ExternaliseImages/storeIn}}
+  />
+</$button>
+<$checkbox
+  tiddler='$:/state/ExternaliseImages/storeIn'
+  checked='true'
+  unchecked='false'
+>
+  Store specific to wiki
+</$checkbox>
+
+See [[big note of DOOM|$:/plugins/OokTech/Bob/Documentation/BigNoteOfDoom]] before doing this.
+
+<$reveal type='nomatch' state='$:/ServerIP!!host' text='0.0.0.0'>
+
+To make Bob available on the local network:
+
+# Read the [[big note of DOOM|$:/plugins/OokTech/Bob/Documentation/BigNoteOfDoom]]
+# click the `Make wikis available on the local network` button
+# click the `Shutdown Wiki` button
+# Close this tab
+# Restart Bob (or BobEXE)
+
+<$button>
+  <$action-updatesetting
+    ws-server='{"host": "0.0.0.0"}'
+  />
+  Make wikis available on the local network
+</$button>
+
+</$reveal>
+
+<$reveal
+  type='match'
+  state='$:/ServerIP!!host'
+  text='0.0.0.0'
+>
+
+To make Bob available only on the computer running Bob or BobEXE:
+
+# first click the `Make wikis available only on this computer` button
+# click the `Shutdown Wiki` button
+# Close this tab
+# Restart Bob (or BobEXE)
+
+<$button>
+  <$action-updatesetting
+    ws-server='{"host": "127.0.0.1"}'
+  />
+  Make wikis available only on this computer
+</$button>
+
+</$reveal>
+
+<$reveal
+  type='nomatch'
+  state='$:/settings/Bob/Verbose'
+  text='false'
+>
+  Checking this will enable lazy loading.
+  Lazy loading only loads the tiddler metadata for tiddlers that haven't been
+  used yet.
+  This can make a wiki load faster if there are a lot of tiddlers that have a
+  lot of text.
+
+  See [ext[https://tiddlywiki.com/#LazyLoading]] for more information.
+
+  Changes to this setting will not take effect until you reload the wiki.
+  You do not have to restart Bob, just reload the browser tab.
+</$reveal>
+
+<$checkbox
+  checkactions=<<toggleLazyLoadingCheckActions>>
+  uncheckactions=<<toggleLazyLoadingUncheckActions>>
+  tiddler='$:/WikiSettings/split/ws-server'
+  index='rootTiddler'
+  checked='$:/core/save/lazy-all'
+  unchecked='$:/core/save/all'
+  default='$:/core/save/all'
+>
+  Enable Lazy Loading
+</$checkbox>
+
+<$reveal
+  type='nomatch'
+  state='$:/settings/Bob/Verbose'
+  text='false'
+>
+  Checking this will disable the file watchers. This means that changes made to
+  the .tid files on the file system will not be pushed to the browser. This
+  means that adding or removing tiddlers using something other than the browser
+  will not have any effect on the wiki in the browser until it is unloaded and
+  reloaded or Bob is restarted.
+</$reveal>
+
+<$checkbox
+  checkactions=<<checkFileMonitor>>
+  uncheckactions=<<uncheckFileMonitor>>
+  tiddler='$:/WikiSettings/split'
+  index='disableFileWatchers'
+  checked='yes'
+  unchecked='no'
+  default='no'
+>
+  Disable File System Monitor
+</$checkbox>
+
+
+WARNING: This button will shutdown the wiki server. None of the wikis will be
+available until it is restarted.
+
+<$button>
+  Shutdown Wiki
+  <$action-websocketmessage
+    $type=shutdownServer
+  />
+</$button>
+
+<<tabs "[[$:/plugins/OokTech/Bob/ManualSettingsTab]][[$:/plugins/OokTech/Bob/FetchPlugins]][[$:/plugins/OokTech/Bob/FileServerSetup]][[$:/plugins/OokTech/Bob/ServerMessageHistory]]" "$:/plugins/OokTech/Bob/ManualSettingsTab">>

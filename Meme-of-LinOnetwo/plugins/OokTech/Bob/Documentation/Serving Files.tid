@@ -1,0 +1,196 @@
+title: $:/plugins/OokTech/Bob/Documentation/Serving Files
+caption: Serving Files or Images
+tags: [[Bob Documentation]]
+description: Set up the server to serve static files from the local file system.
+
+''Big note of doom:'' If you are serving files and you have the host set to
+`0.0.0.0` than anyone on the local network can access the files that you are
+serving. So if you are sitting in Starbucks and you have the host set to
+`0.0.0.0` and you have pdf copies of your tax documents in a sub-folder of
+your `filePathRoot` than everyone on the wifi at starbucks has access to those
+documents. The simple solution is to not serve on `0.0.0.0` unless you are on
+your home network.
+
+---
+
+Bob, like any other node.js version of tiddlywiki, does not handle external
+files the same way that single file wikis do.
+This means that you can't just reference files by their location on your
+harddrive the way you can with the single file wikis.
+To access files on your harddrive while using Bob you have to enable the file
+server component of Bob.
+
+!! Using the interface
+
+Everything can be done using the graphical interface in the control panel.
+
+To get to the interface go to the $:/ControlPanel -> `Bob Settings` tab ->
+`Server` tab -> `File Server` tab
+
+!!! Enabling the server
+
+To enable the file server check the `Enable File Server` box.
+
+This should enable the server, but due to browser caching you may still have to
+reload the wiki page before images will appear.
+
+!!! Default Setup
+
+Once the file server is enabled than every wiki can have a folder called
+`files` next to the `tiddlers` folder that contains files that are accessible
+to that wiki. This requires no setup past enabling the file server.
+
+Files for each wiki have different uri prefixes. For the root wiki getting a
+file called `FileName.jpg` it is:
+
+`/files/FileName.jpg`
+
+For a wiki called `This/Wiki` the uri would be:
+
+`/This/Wiki/files/FileName.jpg`
+
+!!! Saving media files on the server
+
+If the file server in enabled than by default any media files that are imported
+into the wiki will be saved on the server and a `_canonical_uri` tiddler gets
+created in the wiki instead of saving the media it the wiki itself.
+
+This can help a lot with file size and loading times if you have a lot of media
+in your wikis.
+It also greatly reduces the memory used by the server.
+
+!!! Advanced Setup
+
+Below the check box there is a table that lists all of the other folders that
+have files that are accessible from within the wiki along with the prefix for
+those folders.
+
+To add a new folder enter a prefix and path in the interface and click
+`Add Folder`.
+
+If you give the prefix `media` and what to access the file `FileName.jpg` in
+the folder listed the files in the folder are available in a similar way to
+above, the url prefix is `/files/media`
+
+So the file would be available using at the url `/files/media/FileName.jpg`
+
+! Advanced configuration
+
+After enabling the file server it is easiest to just use the default settings.
+Unless you have some compelling reason to change than it is recommended that
+you stick with the defaults.
+
+If you have a reason to change the settings there are two relevant settings:
+
+* `fileURLPrefix` - this is the uri prefix to use for accessing files. This is used for files specific to individual wikis and files listed in the `servingFiles` section of the settings.
+* `servingFiles` - this is an object that holds the prefix and path for different places where files are served from
+** The content is in the form `prefix:path` as shown below
+
+Example:
+
+```
+servingFiles: {
+  docs: '/path/to/docs/folder',
+  otherprefix: '/path/to/other/folder'
+}
+```
+
+then the uri for files in the folder listed as `docs` would be in the form:
+
+`/wikiName/files/docs/fileName.ext`
+
+Files that are only available to one wiki are served by default from the folder
+called `files` inside the wiki folder, next to the `tiddlers` folder.
+
+These defaults give the same paths to files as a single file wiki in the same
+place.
+
+!! Globally vs locally available files
+
+This distinction is only relevant if you check the `per wiki files` box in the
+file server setup.
+If that isn't checked files in wiki-specific folders will be available to all
+wikis and to anything outside tiddlywiki that can access the server, see the
+big note of doom at the top.
+
+!!! Globally available
+
+These files are available to any wiki being served.
+
+You can serve files from the local filesystem to make them available in the
+wiki. This is particularly useful for things like images and pdf files that
+would make the wiki large if they were embedded as tiddlers.
+
+By default the urls for files in that folder are prefixed with `files`, so if
+you have a file `foo.jpg` in the folder you are using than you can access it in
+the wiki like this:
+
+`[img[/files/foo.jpg]]`
+
+sub-folders of the folder listed are also available, so if you have
+`filePathRoot` set to `/home/inmysocks/Pictures` and you have a folder called
+`Plants` in that folder with `aloe.jpg` in it than you could get that image
+like this:
+
+`[img[/files/Plants/aloe.jpg]]`
+
+Folders served using the `Serve files from a new folder` section of the file
+server setup are all globally available.
+
+''Note about paths:'' For security you can't use any paths that would go above
+the base file path. So, using the example above, if you tried to access an
+image in `/home/inmysocks` by using the uri `./files/../foo.jpg` it would not
+work.
+
+!!! Files for specific wikis
+
+These files are for specific wikis and, if you have set up access controls, are
+only available to that wiki.
+
+These are similar to the globally available files with the following
+differences:
+
+* The path root is the `files` folder located in the wiki folder, next to the tiddlers folder.
+* To access these files you use the prefix `/wikiName/files/`, so if you have a wiki called `foo` and a picture called `bar.jpg` you would use `/foo/files/bar.jpg` to access it.
+
+!! File paths
+
+You should not put a `.` at the start of the url to make it relative. It will
+work in some situations but it will not work in others. In general leaving out
+the `.` is a better idea in this situation.
+
+!!File Types
+
+Each file type that you want to serve has to be explicitly listed is the
+settings under the `mimeMap` property. If the mimeMap property is missing this
+is used as the default:
+
+```
+mimeMap: {
+  '.aac': 'audio/aac',
+  '.avi': 'video/x-msvideo',
+  '.csv': 'text/csv',
+  '.doc': 'application/msword',
+  '.epub': 'application/epub+zip',
+  '.gif': 'image/gif',
+  '.html': 'text/html',
+  '.htm': 'text/html',
+  '.ico': 'image/x-icon',
+  '.jpg': 'image/jpeg',
+  '.jpeg': 'image/jpeg',
+  '.mp3': 'audio/mpeg',
+  '.mpeg': 'video/mpeg',
+  '.oga': 'audio/ogg',
+  '.ogv': 'video/ogg',
+  '.ogx': 'application/ogg',
+  '.png': 'image/png',
+  '.svg': 'image/svg+xml',
+  '.weba': 'audio/weba',
+  '.webm': 'video/webm',
+  '.wav': 'audio/wav'
+}
+```
+
+Only files with the extensions listed will be served. You can add or remove
+file extensions as you wish, just make sure to give them the appropriate mime
+type or the browser may not know how to handle the file.
