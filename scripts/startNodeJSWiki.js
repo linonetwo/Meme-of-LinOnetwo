@@ -23,6 +23,7 @@ $tw.boot.argv = [
   `port=${tiddlyWikiPort}`,
   'host=0.0.0.0',
   'root-tiddler=$:/core/save/lazy-images',
+  '--wsserver',
 ];
 
 try {

@@ -1,0 +1,97 @@
+title: $:/plugins/OokTech/Bob/Wiki Listing
+caption: Wiki Listing
+
+\define thisWikiListingMakeURL() /$(WikiName)$
+
+\define thisWikiListingMakeWikiListingTab()
+<$action-setfield
+  $tiddler='$:/plugins/OokTech/Bob/SideBarTab'
+  tags='$:/tags/SideBar'
+  text="""{{$:/plugins/OokTech/Bob/Wiki Listing}}"""
+  caption='Wikis'
+/>
+\end
+
+\define thisWikiListingRemoveWikiListingTab()
+<$action-setfield
+  $tiddler='$:/plugins/OokTech/Bob/SideBarTab'
+  text=''
+/>
+<$action-deletetiddler
+  $tiddler='$:/plugins/OokTech/Bob/SideBarTab'
+/>
+\end
+
+\define makeWikiListing()
+<h2 style='margin:0px;padding:0px;'>Available Wikis</h2>
+<div
+  style='font-size:12px;display:inline-block;'
+>
+  <$checkbox
+    actions=<<thisWikiListingMakeWikiListingTab>>
+    uncheckactions=<<thisWikiListingRemoveWikiListingTab>>
+    tiddler='$:/settings/Bob/ListInSidebar'
+    field='text'
+    checked='yes'
+    unchecked='no'
+  >
+    List in sidebar
+  </$checkbox>
+
+  <$checkbox
+    tiddler='$:/settings/Bob/ListInSidebar'
+    field='folding'
+    checked='true'
+    unchecked='false'
+  >
+    Use folding list
+  </$checkbox>
+  <$button>
+    Update List
+    <$action-websocketmessage
+      $type='findAvailableWikis'
+      remove={{$:/settings/Bob/removemissingwikis!!text}}
+      update='true'
+      saveSettings='true'
+    />
+  </$button>
+</div>
+
+---
+
+<$list
+  filter='[[$:/settings/Bob/ListInSidebar]has[folding]get[folding]!prefix[true]limit[1]]'
+  prefix='true'
+  emptyMessage="""<<foldingTree>>"""
+>
+  <$list
+    filter='[list[$:/state/ViewableWikis]]'
+    variable=WikiName
+    emptyMessage='No child wikis listed.'
+  >
+    <li>
+      <a
+        href=<<thisWikiListingMakeURL>>
+        target='_blank'
+      >
+        <$text
+          text=<<WikiName>>
+        />
+      </a>
+      ^^<span style='font-size:8pt;'>
+      (<$button
+        class='tc-btn-invisible'
+      >
+        Unload
+        <$action-websocketmessage
+          $type='unloadWiki'
+          wikiName=<<WikiName>>
+        />
+      </$button>)
+      </span>^^
+    </li>
+  </$list>
+</$list>
+\end
+
+<<makeWikiListing>>

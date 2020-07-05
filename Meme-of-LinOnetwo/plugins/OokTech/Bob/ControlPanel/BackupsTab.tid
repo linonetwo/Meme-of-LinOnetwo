@@ -1,0 +1,95 @@
+title: $:/plugins/OokTech/Bob/BackupsTab
+caption: Backups
+
+\define settingAction(name, value) <$action-updatesetting backups="""{<<__name__>>: <<__value__>>}"""/>
+
+Bob can automatically save backups of wikis.
+The backups are saved as single file html wikis without Bob, they can be opened
+and used like a normal single file wiki.
+
+This is a global setting and applies to all the wikis that Bob serves.
+
+<$checkbox
+  tiddler="$:/WikiSettings/split/backups"
+  index=enable
+  checked=yes
+  unchecked=no
+  checkactions='<$action-updatesetting backups="""{"enable": "yes"}"""/>'
+  uncheckactions='<$action-updatesetting backups="""{"enable": "no"}"""/>'
+>
+  Enable backups
+</$checkbox> <<helpButton "$:/plugins/OokTech/Bob/AboutEnableBackups">>
+
+!! Advanced
+
+These are advanced settings for the automatic backups.
+Unless you have a specific need that isn't addressed by the way the backups
+work by default you shouldn't change any of this.
+
+Please read and understand
+[[the documentation|$:/plugins/OokTech/Bob/Documentation/AutomaticBackup]]
+before submitting a bug report about anything in this section.
+
+<$checkbox
+  tiddler="$:/WikiSettings/split/backups"
+  index="saveOnLoad"
+  checked="yes"
+  unchecked="no"
+  checkactions="""<$action-updatesetting backups='{"saveOnLoad": "yes"}'/>"""
+  uncheckactions="""<$action-updatesetting backups='{"saveOnLoad": "no"}'/>"""
+>
+  Save backup when wiki is loaded
+</$checkbox> <<helpButton "$:/plugins/OokTech/Bob/AboutSaveBackupOnLoad">>
+
+<$checkbox
+  tiddler="$:/WikiSettings/split/backups"
+  index=saveOnModified
+  checked=yes
+  unchecked=no
+  checkactions='<$action-updatesetting backups="""{"saveOnModified": "yes"}"""/>'
+  uncheckactions='<$action-updatesetting backups="""{"saveOnModified": "no"}"""/>'
+>
+  Trigger backup when wiki is modified
+</$checkbox>  <<helpButton "$:/plugins/OokTech/Bob/AboutSaveBackupOnEdit">>
+
+Save interval for backups: <$edit-text
+    tiddler='$:/state/Bob/BackupSettings'
+    field='backup_interval'
+    placeholder={{$:/WikiSettings/split/backups##backupInterval}}
+  />
+<$button>
+  Save setting
+  <$macrocall
+    $name=settingAction
+    name=backupInterval
+    value={{$:/state/Bob/BackupSetting!!backup_interval}}
+  />
+</$button> <<helpButton "$:/plugins/OokTech/Bob/AboutBackupSaveInterval">>
+
+Backups folder: <$edit-text
+    tiddler='$:/state/Bob/BackupSettings'
+    field='backups_folder'
+    placeholder={{$:/WikiSettings/split/backups##backupFolder}}
+  />
+<$button>
+  Save setting
+  <$macrocall
+    $name=settingAction
+    name=backupsFolder
+    value={{$:/state/Bob/BackupSetting!!backups_folder}}
+  />
+</$button> <<helpButton "$:/plugins/OokTech/Bob/AboutBackupsFolder">>
+
+Maximum Backups per wiki: <$edit-text
+    tiddler='$:/state/Bob/BackupSettings'
+    field='max_backups'
+    placeholder={{$:/WikiSettings/split/backups##maxBackups}}
+  />
+<$button>
+  Save setting
+  <$macrocall
+    $name=settingAction
+    name=maxBackups
+    value={{$:/state/Bob/BackupSetting!!max_backups}}
+  />
+</$button> <<helpButton "$:/plugins/OokTech/Bob/AboutMaximumBackupsPerWiki">>

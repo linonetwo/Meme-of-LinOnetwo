@@ -1,0 +1,137 @@
+title: $:/plugins/OokTech/Bob/ControlPanelTab
+tags: $:/tags/ControlPanel
+caption: Bob
+
+Wiki Server Address (<$reveal type='nomatch' state='$:/ServerIP!!host' text='0.0.0.0'>not </$reveal>available on local network):
+<pre>{{$:/ServerIP}}:{{$:/ServerIP!!port}}</pre>
+
+Click the ^^(?)^^ next to options for more information.
+
+<$linkcatcher
+  to='$:/state/Bob/ShowSettingTab'
+>
+
+* [[Setup This Wiki|$:/plugins/OokTech/Bob/ThisWikiTab]] - manage plugins and themes for this wiki
+* [[Backups|$:/plugins/OokTech/Bob/BackupsTab]] - enable and setup automatic backups
+* [[Wiki Management|$:/plugins/OokTech/Bob/ManageWikis]] - create, delete and rename wikis
+* [[Saver Server|$:/plugins/OokTech/Bob/SaverServer]] - enable and configure the saver for single file wikis
+* [[File Server|$:/plugins/OokTech/Bob/FileServerSetup]] - setup file server so that you can access local media files
+* [[Server Settings|$:/plugins/OokTech/Bob/ServerTab]] - logging and manual settings
+<!--* [[Federation|$:/plugins/OokTech/Bob/FederationTab]] - federated chat and set up wiki syncing between this server and other Bob servers-->
+* [[Written Documentation|$:/plugins/OokTech/Bob/Documentation/Bob Documentation]] - more details
+* [[About OokTech/Support Development|$:/plugins/OokTech/Bob/OokTechInfo]] - About the people who make Bob
+
+</$linkcatcher>
+
+<$button>
+  Download HTML version of this wiki
+  <$action-downloadwiki/>
+</$button> <<helpButton $:/plugins/OokTech/Bob/AboutDownloadHTMLVersion>>
+
+---
+
+<$list
+  filter='[{$:/state/Bob/ShowSettingTab}]'
+>
+
+  <h2>
+    <$view
+      field='caption'
+    >
+      <$view
+        field='title'
+      >
+      </$view>
+    </$view>
+  </h2>
+
+  <$transclude/>
+
+</$list>
+
+<!--
+<$reveal type='nomatch' state='$:/settings/Bob/Verbose' text='false'>
+
+  If you are comfortable with Bob and don't need long labels you can set this to `Compact Help` and remove many of the help labels to make the interface more compact.
+
+</$reveal>
+
+<$radio
+  tiddler='$:/settings/Bob/Verbose'
+  field='text'
+  value='false'
+>
+  Compact Help
+</$radio>
+<$radio
+  tiddler='$:/settings/Bob/Verbose'
+  field='text'
+  value='true'
+>
+  Verbose Help
+</$radio>
+
+<$reveal
+  type='nomatch'
+  state='$:/WikiName!!text'
+  text='RootWiki'
+>
+  <$checkbox
+    tiddler='$:/settings/Bob/DisplayOnChildWikis'
+    field='text'
+    checked='yes'
+    unchecked='no'
+  >
+    Show Full Settings
+  </$checkbox>
+</$reveal>
+
+<$reveal
+  type='nomatch'
+  state='$:/settings/Bob/Verbose'
+  text='false'
+>
+
+  See [[exporting wikis|$:/plugins/OokTech/Bob/Documentation/Exporting Wikis]] for information
+  about different ways to save or export your wikis.
+
+  This saves the wiki to the server, it doesn't download it.
+  <$button>
+    Save Single File Wiki
+    <$action-websocketmessage
+      $type='buildHTMLWiki'
+    />
+  </$button>
+
+  This downloads the current wiki as a single file wiki.
+  <$button>
+    Download Single File Version
+    <$action-downloadwiki
+    />
+  </$button>
+
+</$reveal>
+
+<$reveal type='match' state='$:/settings/Bob/Verbose' text='false'>
+
+  <$button>
+    Save HTML Wiki to Server
+    <$action-websocketmessage
+      $type='buildHTMLWiki'
+    />
+  </$button>
+  <$button>
+    Download HTML Version
+    <$action-downloadwiki
+    />
+  </$button>
+
+</$reveal>
+
+<$list
+  filter='[[$:/WikiName]text[RootWiki]][[$:/settings/Bob/DisplayOnChildWikis]text[yes]] +[limit[1]]'
+  emptyMessage="""<<tabs "[[$:/plugins/OokTech/Bob/ManageWikis]][[$:/plugins/OokTech/Bob/ThisWikiTab]][[$:/plugins/OokTech/Bob/ServerMessageHistory]][[$:/plugins/OokTech/Bob/SaverServer]][[$:/plugins/OokTech/Bob/OokTechInfo]]" "$:/plugins/OokTech/Bob/Wiki Listing">>"""
+>
+  <<tabs "[[$:/plugins/OokTech/Bob/ManageWikis]][[$:/plugins/OokTech/Bob/ThisWikiTab]][[$:/plugins/OokTech/Bob/ServerTab]][[$:/plugins/OokTech/Bob/FederationTab]][[$:/plugins/OokTech/Bob/SaverServer]][[$:/plugins/OokTech/Bob/BackupsTab]][[$:/plugins/OokTech/Bob/Documentation/Bob Documentation]][[$:/plugins/OokTech/Bob/OokTechInfo]]" "$:/plugins/OokTech/Bob/ManageWikis">>
+</$list>
+-->
