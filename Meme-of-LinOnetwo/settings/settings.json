@@ -1,10 +1,12 @@
 {
   "serverName": "Meme-of-LinOnetwo",
   "ws-server": {
-    "port": 5012,
     "host": "0.0.0.0",
-    "autoIncrementPort": false
+    "autoIncrementPort": false,
+    "rootTiddler": "$:/core/save/lazy-images",
+    "port": 5012
   },
+  "persistentUsernames": "yes",
   "heartbeat": {
     "interval": 1000
   },
@@ -12,8 +14,8 @@
   "saver": {
     "disable": "yes"
   },
-  "wikiPathBase": "cwd",
-  "editionsPath": "./Meme-of-LinOnetwo/",
   "pluginsPath": "./Meme-of-LinOnetwo/plugins",
-  "themesPath": "./Meme-of-LinOnetwo/themes"
+  "themesPath": "./Meme-of-LinOnetwo/themes",
+  "editionsPath": "./Meme-of-LinOnetwo/",
+  "wikiPathBase": "/Users/linonetwo/Desktop/repo/wiki"
 }
