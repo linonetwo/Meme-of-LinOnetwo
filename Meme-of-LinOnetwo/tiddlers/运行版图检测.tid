@@ -1,6 +1,6 @@
 created: 20200606132108221
 creator: 林一二
-modified: 20200706080531032
+modified: 20200706112044675
 modifier: 林一二
 tags: 数字集成电路
 title: 运行版图检测
@@ -21,6 +21,6 @@ type: text/vnd.tiddlywiki
 
 在菜单的 Calibre 中选择 Run LVS ，然后关掉弹出来的选择规则文件的窗口，到 Calibre Interactive 窗口中的 Rules 选项卡里，用「…」按钮选择 LVS Rule File ，地址为 `/home/student/Desktop/Workspace/rule_file_smic180/calibre/lvs/SmicSP6.1P_cal018_log_p1mtx_sali.lvs`。
 
-然后在 Input 选项卡里，看 NetList 子选项卡，勾选 Format 那一行的 Export from schematic viewer 勾选框。
+然后在 Input 选项卡里，看 NetList 子选项卡，勾选 Format 那一行的 Export from schematic viewer 勾选框。这个勾选框会自动去掉勾选，如果它去掉勾选的时候，更改了 schematic ，则更新的 schematic （netlist） 不会被用上，需要重新打钩才能解决。
 
 run lvs前修改 `/home/student/Desktop/Workspace/rule_file_smic180/calibre/lvs/SmicSP6.1P_cal018_log_p1mtx_sali.lvs` 文件，在文件的最后添加 `LVS MAP DEVICE MP(PM) MP(P18)LVS MAP DEVICE MN(NM) MN(N18)`
