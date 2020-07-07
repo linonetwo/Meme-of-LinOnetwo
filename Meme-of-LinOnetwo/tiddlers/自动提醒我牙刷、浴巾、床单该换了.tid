@@ -1,0 +1,9 @@
+created: 20200707102143110
+modified: 20200707102245857
+priority: high
+status: not started
+tags: Task 把GoogleCalendar导入到TiddlyWiki上 自改TW
+title: 自动提醒我牙刷、浴巾、床单该换了
+tmap.id: 56abe536-6571-431f-a780-29cef12ad8d8
+
+我总是对于日用品的更换不上心，如果 TW 能根据我导入的 GoogleCalendar 的日记信息，提醒我隔一段时间换日用品就好了。
