@@ -1981,6 +1981,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:自动提醒我牙刷、浴巾、床单该换了</loc>
+		<lastmod>2020-07-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:自我介绍</loc>
 		<lastmod>2020-04-09</lastmod>
 		<changefreq>monthly</changefreq>
