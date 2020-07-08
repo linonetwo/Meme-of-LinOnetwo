@@ -223,6 +223,11 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:Octopath%2520Traveler%2520Walkthrough%2520Part%252015%2520Bolderfall%2520A%2520Thief&apos;s%2520Tale.png</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:PCG%2520Rules</loc>
 		<lastmod>2020-04-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -555,6 +560,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:低社交压力的社交应用</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:体素的山看起来粗糙怎么办</loc>
+		<lastmod>2020-07-08</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
