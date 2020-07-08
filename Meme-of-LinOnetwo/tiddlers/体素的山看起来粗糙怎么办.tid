@@ -1,0 +1,18 @@
+created: 20200708134726980
+modified: 20200708135344531
+tags: 想法 游戏设计
+title: 体素的山看起来粗糙怎么办
+tmap.id: 16b8d3c2-0dd6-4f9d-86be-c083a4c0d911
+
+[img[https://media.discordapp.net/attachments/634860358623821835/710841892363042866/unknown.png]]
+
+[[Veloren: An Owner's Manual|https://book.veloren.net/]] 里给出了体素的山的截图，看着总觉得像是上个世纪的显示器在显示图像，渐变的时候出现很多曲线的感觉。
+
+我去看了[[八方旅人在Bolderfall这一关的视频|https://www.youtube.com/watch?v=ouK3fAKjoco]]，里面的山就做得很好看。
+
+[img[Octopath Traveler Walkthrough Part 15 Bolderfall A Thief's Tale.png]]
+
+# 它贴图比较细腻
+# 没有远景，远景都移轴模糊了
+# 斜坡就用斜块，不要用方块来模拟斜坡
+# 不要太多 45度的斜坡，而是多一些平台，展示平面朝上的细腻贴图
