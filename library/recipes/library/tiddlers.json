@@ -1,19 +1,5 @@
 [
     {
-        "title": "$:/plugins/OokTech/Bob",
-        "description": "A plugin that real-time syncing between wiki and server, among other things",
-        "author": "inmysocks",
-        "version": "1.6.0b1",
-        "core-version": ">=5.1.21",
-        "source": "",
-        "plugin-type": "plugin",
-        "list": "readme WebSocketMessages ActionWebSocketMessage OokTechInfo",
-        "dependents": "",
-        "type": "application/json",
-        "readme": "! Connecting other computers to the wiki\n\nThe wiki server ip address and port is:\n\n<pre>{{$:/ServerIP}}:{{$:/ServerIP!!port}}</pre>\n\nto connect to this wiki from another computer on the same network enter the\nabove into the address bar of a browser.\n\n! Configuration\n\nYou can configure the plugin (and possibly other things in the future) using\nthe `Bob Settings` tab in the [[$:/ControlPanel]].\n\nThese settings are available to the node process in the $tw.settings object.\n\nAfter changing any of the settings they are not saved in a way that will change\nanything until you click the `Update Settings` button. Note that some settings\nmay not take effect until you reset the server.\n\nConfiguring the host is done in the `ws-server` section. You can set the host,\nport username and password for the wiki there (see [[a note about ports|$:/plugins/OokTech/Bob/A note about ports]]).\nSome of these settings may not always be updated the way you expect when\nresetting the server using the node message. I am not exactly sure what is\ndifferent or why.\n\nThe scripts that you can run using the `runScript` websocket message are listed\nin the `scripts` section. You can also add or modify the scripts here. See [[running scripts using websocket messages|$:/plugins/OokTech/Bob/Running Scripts Using Websocket Messages]].\n\nThe other wikis you can start from this wiki are listed in the `wikis` section.\nYou can add new wikis here as well. See [[starting other wikis from within a wiki|$:/plugins/OokTech/Bob/Starting Other Wikis]].\n\n! Other Documentation\n\n<$list\n  filter='[all[tiddlers+shadows]tag[Bob Documentation]]'\n>\n  <$link\n    to=<<currentTiddler>>\n  >\n    <$view\n      field='caption'\n    >\n      <$view\n        field='title'\n      />\n    </$view>\n  </$link> - <$view field='description'/>\n  <br>\n</$list>\n",
-        "requires-reload": "yes"
-    },
-    {
         "title": "$:/plugins/bimlas/kin-filter",
         "description": "Kin filter: Recursively looking for kinship between tiddler titles",
         "author": "bimlas",
