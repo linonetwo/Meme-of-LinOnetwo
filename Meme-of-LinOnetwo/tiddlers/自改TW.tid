@@ -1,7 +1,7 @@
 color: #5778d8
 created: 20190421065036809
 creator: 林一二
-modified: 20200625084133322
+modified: 20200805064154759
 modifier: 林一二
 tags: 很想做但是最近舍不得花时间做的事情 Index tiddlywiki
 title: 自改TW
@@ -19,7 +19,7 @@ type: text/vnd.tiddlywiki
 	添加新待改
 </$button>
 
-<$macrocall $name=table-dynamic caption="待改的项目" filter="[tag[Task]]+[kin::to{currentTiddler}]" fields="tbl-checkbox tbl-expand title priority status tags" class="w-100"/>
+<$macrocall $name=table-dynamic caption="待改的项目" filter="[tag[Task]]+[kin::to[自改TW]]" fields="tbl-checkbox tbl-expand title priority status tags" class="w-100"/>
 
 ---
 

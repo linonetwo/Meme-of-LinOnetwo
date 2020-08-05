@@ -119,11 +119,15 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         try {
           const publicRepoState = await window.wiki.isUnsync(window.wiki.wikiPath.tiddlyWikiRepo);
           const privateRepoState = await window.wiki.isUnsync(window.wiki.wikiPath.privateTiddlyWikiRepo);
+          const privateRepo2State = await window.wiki.isUnsync(window.wiki.wikiPath.privateTiddlyWikiRepo2);
           if (publicRepoState) {
             await window.wiki.sync(window.wiki.wikiPath.tiddlyWikiRepo);
           }
           if (privateRepoState) {
             await window.wiki.sync(window.wiki.wikiPath.privateTiddlyWikiRepo);
+          }
+          if (privateRepo2State) {
+            await window.wiki.sync(window.wiki.wikiPath.privateTiddlyWikiRepo2);
           }
         } catch (error) {
           console.error('NodeJSWebCatalogGitSyncWidget: Error syncing', error);
@@ -157,6 +161,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
       // { unsync: boolean, uncommit: number } | boolean
       const publicRepoState = await window.wiki.isUnsync(window.wiki.wikiPath.tiddlyWikiRepo);
       const privateRepoState = await window.wiki.isUnsync(window.wiki.wikiPath.privateTiddlyWikiRepo);
+      const privateRepo2State = await window.wiki.isUnsync(window.wiki.wikiPath.privateTiddlyWikiRepo2);
 
       this.state.count = 0;
       this.state.unsync = false;
@@ -167,6 +172,10 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
       if (privateRepoState) {
         this.state.count += privateRepoState.uncommit;
         this.state.unsync |= privateRepoState.unsync;
+      }
+      if (privateRepo2State) {
+        this.state.count += privateRepo2State.uncommit;
+        this.state.unsync |= privateRepo2State.unsync;
       }
 
       return this.refreshSelf(); // method from super class, this is like React forceUpdate, we use it because it is not fully reactive on this.state change

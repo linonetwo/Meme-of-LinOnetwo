@@ -1,12 +1,14 @@
 color: #fbc700
 created: 20200411071718881
-modified: 20200411140031939
+creator: 林一二
+modified: 20200805071002757
+modifier: 林一二
 tags: 自改TW
 title: InjectJS
 tmap.id: a800c8ba-024b-4599-b396-ae15349db392
 type: text/vnd.tiddlywiki
 
-我通过 WebCatalog 注入的 UserScript。
+我通过 WebCatalog Preload Script 注入的 UserScript。
 
 ---
 
