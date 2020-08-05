@@ -1,0 +1,9 @@
+title: $:/plugins/linonetwo/watch-fs/readme
+creator: LinOnetwo
+type: text/vnd.tiddlywiki
+
+!! About
+
+This plugin enables TiddlyWiki to watch the change in your disk, and if you edit one of your tiddler using editor likes VSCode and save it on the disk, the change will immediately reflected in the browser.
+
+See https://github.com/Jermolene/TiddlyWiki5/issues/3060 for related discussions.

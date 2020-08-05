@@ -46,7 +46,8 @@
     "linonetwo/preview-glass",
     "linonetwo/prevent-edit",
     "linonetwo/nodejs-webcatalog-git-sync",
-    "linonetwo/itonnote"
+    "linonetwo/itonnote",
+    "linonetwo/watch-fs"
   ],
   "themes": ["tiddlywiki/vanilla", "linonetwo/itonnote"],
   "languages": ["zh-Hans"],
