@@ -29,21 +29,66 @@ function FileSystemMonitor() {
   var $tw = this.$tw || { node: true };
 
   if ($tw.node && !($tw?.settings?.disableFileWatchers === 'yes')) {
+    const deepEqual = require('./deep-equal');
+    // use node-watch
     const watch = require('./watch');
+    const watcher = watch('./Meme-of-LinOnetwo/tiddlers', { recursive: true, delay: 500 }, listener);
 
-    watch('./Meme-of-LinOnetwo/tiddlers', { recursive: true, delay: 500 }, listener);
+    /**
+     * $tw.boot.files: {
+     *   [tiddlerTitle: string]: {
+     *     filepath: '/Users/linonetwo/xxxx/wiki/Meme-of-LinOnetwo/tiddlers/tiddlerTitle.tid',
+     *     type: 'application/x-tiddler',
+     *     hasMetaFile: false
+     *   }
+     * }
+     */
+    const initialLoadedFiles = $tw.boot.files;
+
+    /**
+     * we can use this for getTitleByPath
+     * {
+     *   [filepath: string]: {
+     *     filepath: '/Users/linonetwo/xxxx/wiki/Meme-of-LinOnetwo/tiddlers/tiddlerTitle.tid',
+     *     tiddlerTitle: string,
+     *     type: 'application/x-tiddler',
+     *     hasMetaFile: false
+     *   }
+     * }
+     */
+    const inverseFilesIndex = {};
+    // initialize the inverse index
+    for (const tiddlerTitle in initialLoadedFiles) {
+      const fileDescriptor = initialLoadedFiles[tiddlerTitle];
+      inverseFilesIndex[fileDescriptor.filepath] = { ...fileDescriptor, tiddlerTitle };
+    }
+
+    const updateInverseIndex = (filePath, fileDescriptor) => {
+      inverseFilesIndex[filePath] = fileDescriptor;
+    };
+
+    const filePathExistsInWiki = (filePath) => !!inverseFilesIndex[filePath];
+    const getTitleByPath = (filePath) => {
+      try {
+        return inverseFilesIndex[filePath].tiddlerTitle;
+      } catch (error) {
+        // fatal error, shutting down.
+        watcher.close();
+        throw new Error(`${filePath}\n↑ not existed in watch-fs plugin's FileSystemMonitor's inverseFilesIndex`);
+      }
+    };
+
     /**
      * This watches for changes to a folder and updates the wiki when anything changes in the folder.
-     * 
+     *
      * The filePath reported by listener is not the actual tiddler name, and all tiddlywiki operations requires that we have the name of tiddler,
-     * So we have get tiddler name by path somehow.
-     * And even worser, if tiddler is deleted, we can't get this mapping form the $tw, so we have to store this information by ourself.
-     * 
+     * So we have get tiddler name by path from `$tw.boot.files`.
+     *
      * Then we can perform following logic:
      * File update -> update or create tiddler using `$tw.syncadaptor.wiki.addTiddler`
      * File remove & tiddler exist in wiki -> then remove tiddler using `$tw.syncadaptor.wiki.deleteTiddler`
      * File remove & tiddler not exist in wiki -> This change is caused by tiddlywiki itself, do noting here
-     * 
+     *
      * @param {"update" | "remove"} event
      * @param {*} filePath changed file's relative path to the folder executing this watcher
      */
@@ -51,10 +96,59 @@ function FileSystemMonitor() {
       console.log('%s changed.', filePath, event);
       // on create or modify
       if (event == 'update') {
+        // get tiddler from the disk
+        /**
+         * tiddlersDescriptor:
+         * {
+         *    "filepath": "Meme-of-LinOnetwo/tiddlers/$__StoryList.tid",
+         *    "type": "application/x-tiddler",
+         *    "tiddlers": [
+         *      {
+         *        "title": "$:/StoryList",
+         *        "list": "Index"
+         *      }
+         *    ],
+         *    "hasMetaFile": false
+         *  }
+         */
+        const [tiddlersDescriptor] = $tw.loadTiddlersFromPath(filePath);
+        const { tiddlers, ...fileDescriptor } = tiddlersDescriptor;
+        // if user is using git or VSCode to create new file in the disk, that is not yet exist in the wiki
+        if (!filePathExistsInWiki(filePath)) {
+          tiddlers.forEach((tiddler) => {
+            updateInverseIndex(filePath, { ...fileDescriptor, tiddlerTitle: tiddler.title });
+            $tw.syncadaptor.wiki.addTiddler(tiddler);
+          });
+        } else {
+          // if it already existed in the wiki, this change might due to our last call to `$tw.syncadaptor.wiki.addTiddler`,
+          // so we have to check whether tiddler in the disk is identical to the one in the wiki, if so, we ignore it.
+          tiddlers
+            .filter((tiddler) => {
+              const { fields: tiddlerInWiki } = $tw.syncadaptor.wiki.getTiddler(tiddler.title);
+              /* tiddler {
+                "title": "$:/StoryList",
+                "list": "Index"
+              }
+              tiddlerInWiki {
+                "title": "$:/StoryList",
+                "list": [
+                  "Index"
+                ]
+              } */
+              console.warn(`tiddler`, JSON.stringify(tiddler, null, '  '));
+              console.warn(`tiddlerInWiki`, JSON.stringify(tiddlerInWiki, null, '  '));
+              return !deepEqual(tiddler, tiddlerInWiki);
+            })
+            // then we update wiki with each newly created tiddler
+            .forEach((tiddler) => $tw.syncadaptor.wiki.addTiddler(tiddler));
+        }
+        const tiddlerTitle = getTitleByPath(filePath);
       }
 
       // on delete
       if (event == 'remove') {
+        const tiddlerTitle = getTitleByPath(filePath);
+        console.log(tiddlerTitle);
       }
     }
   }

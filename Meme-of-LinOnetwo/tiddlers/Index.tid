@@ -1,7 +1,7 @@
 color: #cbcbcb
 created: 20190419034125236
 creator: 林一二
-modified: 20200625084819975
+modified: 20200805163555503
 modifier: 林一二
 tags: tiddlywiki
 title: Index
@@ -9,6 +9,8 @@ tmap.id: 4380dc9b-67a8-4b2e-a191-40d6b2a249b3
 type: text/vnd.tiddlywiki
 
 <<reuse-tiddler "快速创建新笔记按钮">>
+
+<$count filter="[all[tiddlers]!is[system]!is[shadow]]"/>
 
 ---
 这个知识库主要用于存放[[林一二]]偶遇的文字模因，还有替代微博朋友圈发他的各种[[想法]]，也作为探索过程中堆放待整理的在线内容的目录。
