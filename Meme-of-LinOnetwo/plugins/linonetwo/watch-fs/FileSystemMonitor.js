@@ -125,22 +125,15 @@ function FileSystemMonitor() {
           tiddlers
             .filter((tiddler) => {
               const { fields: tiddlerInWiki } = $tw.syncadaptor.wiki.getTiddler(tiddler.title);
-              /* tiddler {
-                "title": "$:/StoryList",
-                "list": "Index"
-              }
-              tiddlerInWiki {
-                "title": "$:/StoryList",
-                "list": [
-                  "Index"
-                ]
-              } */
-              console.warn(`tiddler`, JSON.stringify(tiddler, null, '  '));
-              console.warn(`tiddlerInWiki`, JSON.stringify(tiddlerInWiki, null, '  '));
+              // console.warn(`tiddler`, tiddler);
+              // console.warn(`tiddlerInWiki`, tiddlerInWiki);
+              // console.log('deepEqual(tiddler, tiddlerInWiki)', deepEqual(tiddler, tiddlerInWiki))
               return !deepEqual(tiddler, tiddlerInWiki);
             })
             // then we update wiki with each newly created tiddler
-            .forEach((tiddler) => $tw.syncadaptor.wiki.addTiddler(tiddler));
+            .forEach((tiddler) => {
+              $tw.syncadaptor.wiki.addTiddler(tiddler);
+            });
         }
         const tiddlerTitle = getTitleByPath(filePath);
       }
