@@ -63,10 +63,14 @@ function FileSystemMonitor() {
       inverseFilesIndex[fileDescriptor.filepath] = { ...fileDescriptor, tiddlerTitle };
     }
 
+    // Helpers to maintain our cached index for file path and tiddler title
     const updateInverseIndex = (filePath, fileDescriptor) => {
-      inverseFilesIndex[filePath] = fileDescriptor;
+      if (fileDescriptor) {
+        inverseFilesIndex[filePath] = fileDescriptor;
+      } else {
+        delete inverseFilesIndex[filePath];
+      }
     };
-
     const filePathExistsInWiki = (filePath) => !!inverseFilesIndex[filePath];
     const getTitleByPath = (filePath) => {
       try {
@@ -135,13 +139,17 @@ function FileSystemMonitor() {
               $tw.syncadaptor.wiki.addTiddler(tiddler);
             });
         }
-        const tiddlerTitle = getTitleByPath(filePath);
       }
 
       // on delete
       if (event == 'remove') {
         const tiddlerTitle = getTitleByPath(filePath);
-        console.log(tiddlerTitle);
+        updateInverseIndex(filePath);
+        // can't use $tw.wiki.syncadaptor.deleteTiddler(tiddlerTitle);  because it will try to modify fs, and will failed:
+        /* Sync error while processing delete of 'blabla': Error: ENOENT: no such file or directory, unlink '/Users//Desktop/repo/wiki/Meme-of-LinOnetwo/tiddlers/blabla.tid'
+        syncer-server-filesystem: Dispatching 'delete' task: blabla 
+        Sync error while processing delete of 'blabla': Error: ENOENT: no such file or directory, unlink '/Users//Desktop/repo/wiki/Meme-of-LinOnetwo/tiddlers/blabla.tid' */
+        $tw.syncadaptor.wiki.deleteTiddler(tiddlerTitle);
       }
     }
   }
