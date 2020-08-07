@@ -2,5 +2,5 @@ tags: $:/plugins/linonetwo/private-tiddlers-in-private-repo/readme
 title: $:/config/FileSystemPaths
 type: text/vnd.tiddlywiki
 
-[tag[APrivateContent]addprefix[/]addprefix[private-wiki]]
-[tag[ByteDance]addprefix[/]addprefix[private-wiki-bytedance]]
+[kin::to[APrivateContent]addprefix[/]addprefix[private-wiki]]
+[kin::to[ByteDance]addprefix[/]addprefix[private-wiki-bytedance]]
