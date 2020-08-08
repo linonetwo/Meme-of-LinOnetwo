@@ -41,6 +41,8 @@ function FileSystemMonitor() {
     const watch = require('./watch');
     const watcher = watch(watchPathBase, { recursive: true, delay: 500 }, listener);
 
+    const isDebug = false;
+    const debugLog = isDebug ? console.log : () => {};
     /**
      * $tw.boot.files: {
      *   [tiddlerTitle: string]: {
@@ -70,7 +72,6 @@ function FileSystemMonitor() {
       const fileRelativePath = path.relative(watchPathBase, fileDescriptor.filepath);
       inverseFilesIndex[fileRelativePath] = { ...fileDescriptor, filepath: fileRelativePath, tiddlerTitle };
     }
-    fs.writeFileSync('/Users/linonetwo/Desktop/repo/wiki/aaa.json', JSON.stringify(inverseFilesIndex, undefined, '  '));
 
     // Helpers to maintain our cached index for file path and tiddler title
     const updateInverseIndex = (filePath, fileDescriptor) => {
@@ -134,7 +135,7 @@ function FileSystemMonitor() {
     function listener(changeType, filePath) {
       const fileRelativePath = path.relative(watchPathBase, filePath);
       const fileAbsolutePath = path.join(watchPathBase, fileRelativePath);
-      console.log(`${fileRelativePath} ${changeType}`);
+      debugLog(`${fileRelativePath} ${changeType}`);
       // ignore some cases
       if (isNonTiddlerFiles(fileRelativePath)) return;
       if (lockedFiles.has(fileRelativePath)) {
@@ -159,14 +160,14 @@ function FileSystemMonitor() {
          *  }
          */
         const [tiddlersDescriptor] = $tw.loadTiddlersFromPath(fileAbsolutePath);
-        console.warn(`tiddlersDescriptor`, JSON.stringify(tiddlersDescriptor, null, '  '));
+        debugLog(`tiddlersDescriptor`, JSON.stringify(tiddlersDescriptor, null, '  '));
         const { tiddlers, ...fileDescriptor } = tiddlersDescriptor;
         // if user is using git or VSCode to create new file in the disk, that is not yet exist in the wiki
         // but maybe our index is not updated
         if (!filePathExistsInIndex(fileRelativePath)) {
           tiddlers.forEach((tiddler) => {
             // check whether we are rename an existed tiddler
-            console.log('getting tiddler.title', tiddler.title);
+            debugLog('getting tiddler.title', tiddler.title);
             const existedWikiRecord = $tw.syncadaptor.wiki.getTiddler(tiddler.title);
             if (existedWikiRecord && deepEqual(tiddler, existedWikiRecord.fields)) {
               // because disk file and wiki tiddler is identical, so this file creation is triggered by wiki.
@@ -194,11 +195,8 @@ function FileSystemMonitor() {
           // so we have to check whether tiddler in the disk is identical to the one in the wiki, if so, we ignore it in the case 1.
           tiddlers
             .filter((tiddler) => {
-              console.log('updating existed tiddler', tiddler.title)
+              debugLog('updating existed tiddler', tiddler.title);
               const { fields: tiddlerInWiki } = $tw.wiki.getTiddler(tiddler.title);
-              // console.warn(`tiddler`, tiddler);
-              // console.warn(`tiddlerInWiki`, tiddlerInWiki);
-              // console.log('deepEqual(tiddler, tiddlerInWiki)', deepEqual(tiddler, tiddlerInWiki))
               return !deepEqual(tiddler, tiddlerInWiki);
             })
             // then we update wiki with each newly created tiddler
@@ -210,7 +208,7 @@ function FileSystemMonitor() {
 
       // on delete
       if (changeType === 'remove') {
-        console.log('handle remove', fileRelativePath);
+        debugLog('handle remove', fileRelativePath);
         const tiddlerTitle = getTitleByPath(fileRelativePath);
 
         // if this tiddler is not existed in the wiki, this means this deletion is triggered by wiki
@@ -218,7 +216,6 @@ function FileSystemMonitor() {
         const existedTiddlerResult = $tw.syncadaptor.wiki.getTiddler(tiddlerTitle);
         if (!existedTiddlerResult) {
           updateInverseIndex(fileRelativePath);
-          return;
         } else {
           // now event is triggered by the git or VSCode
           // ask tiddlywiki to delete the file, we first need to create a fake file for it to delete
@@ -228,12 +225,15 @@ function FileSystemMonitor() {
           Sync error while processing delete of 'blabla': Error: ENOENT: no such file or directory, unlink '/Users//Desktop/repo/wiki/Meme-of-LinOnetwo/tiddlers/blabla.tid' */
           lockedFiles.add(fileRelativePath);
           fs.writeFile(fileAbsolutePath, '', {}, () => {
-            $tw.syncadaptor.wiki.deleteTiddler(tiddlerTitle, (error) => console.error(error));
+            $tw.syncadaptor.wiki.deleteTiddler(tiddlerTitle);
             updateInverseIndex(fileRelativePath);
           });
         }
       }
     }
   }
+
+  // finally, trigger sync from the server to the browser
+  // $tw.syncer.syncFromServer();
 }
 FileSystemMonitor();
