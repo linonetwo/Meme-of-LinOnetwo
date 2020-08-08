@@ -49,10 +49,23 @@
     "linonetwo/watch-fs",
     "linonetwo/itonnote"
   ],
-  "themes": ["tiddlywiki/vanilla", "linonetwo/itonnote"],
-  "languages": ["zh-Hans"],
+  "themes": [
+    "tiddlywiki/vanilla",
+    "linonetwo/itonnote"
+  ],
+  "languages": [
+    "zh-Hans"
+  ],
+  "config": {
+    "watchFolder": "./Meme-of-LinOnetwo/tiddlers"
+  },
   "build": {
-    "index": ["--rendertiddler", "$:/plugins/tiddlywiki/tiddlyweb/save/offline", "index.html", "text/plain"],
+    "index": [
+      "--rendertiddler",
+      "$:/plugins/tiddlywiki/tiddlyweb/save/offline",
+      "index.html",
+      "text/plain"
+    ],
     "externalimages": [
       "--setfield",
       "[is[binary]] [type[application/msword]]",
