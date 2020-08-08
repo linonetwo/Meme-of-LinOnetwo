@@ -11,27 +11,27 @@
 const isNonTiddlerFiles = (filePath) => filePath.endsWith('.DS_Store');
 
 function FileSystemMonitor() {
-  exports.name = 'FileSystemMonitor';
-  exports.after = ['load-modules'];
+  const isDebug = false;
+  const debugLog = isDebug ? console.log : () => {};
+
+  exports.name = 'watch-fs_FileSystemMonitor';
+  exports.after = ['load-modules', 'watch-fs_watch'];
   exports.platforms = ['node'];
   exports.synchronous = true;
 
   // this allow us to test this module in nodejs directly without "ReferenceError: $tw is not defined"
   const $tw = this.$tw || { node: true };
   // folder to watch
-  let watchPathBase;
   // non-tiddler files that needs to be ignored
 
-  if (!$tw.node) return;
+  if (typeof $tw === 'undefined' || !$tw?.node) return;
   const deepEqual = require('./deep-equal');
   const fs = require('fs');
   const path = require('path');
 
-  watchPathBase = path.resolve($tw.boot.wikiInfo?.config?.watchFolder || './tiddlers');
-  console.warn(`watchPathBase`, JSON.stringify(watchPathBase, null, '  '));
+  const watchPathBase = path.resolve($tw.boot.wikiInfo?.config?.watchFolder || $tw.boot.wikiTiddlersPath || './tiddlers');
+  debugLog(`watchPathBase`, JSON.stringify(watchPathBase, undefined, '  '));
 
-  const isDebug = false;
-  const debugLog = isDebug ? console.log : () => {};
   /**
    * $tw.boot.files: {
    *   [tiddlerTitle: string]: {
