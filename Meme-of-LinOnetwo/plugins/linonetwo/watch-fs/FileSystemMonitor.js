@@ -222,9 +222,15 @@ function FileSystemMonitor() {
           debugLog('trying to delete', fileAbsolutePath);
           fs.writeFile(fileAbsolutePath, '', {}, () => {
             $tw.syncadaptor.wiki.deleteTiddler(tiddlerTitle);
+            // sometime deleting system tiddler will result in an empty file, we need to try delete that empty file
             try {
-              // sometime system tiddler will result in an empty file, we need to try delete that empty file
-              fs.unlinkSync(fileAbsolutePath);
+              if (
+                fileAbsolutePath.startsWith('$') &&
+                fs.existsSync(fileAbsolutePath) &&
+                fs.readFileSync(fileAbsolutePath, 'utf-8').length === 0
+              ) {
+                fs.unlinkSync(fileAbsolutePath);
+              }
             } catch (error) {
               console.error(error);
             }
