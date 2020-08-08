@@ -169,20 +169,33 @@ function FileSystemMonitor() {
             console.log('getting tiddler.title', tiddler.title);
             const existedWikiRecord = $tw.syncadaptor.wiki.getTiddler(tiddler.title);
             if (existedWikiRecord && deepEqual(tiddler, existedWikiRecord.fields)) {
-              // because disk file and wiki tiddler is identical, so this file creation is triggered by wiki
-              // we just update the index
-              updateInverseIndex(fileRelativePath, { ...fileDescriptor, tiddlerTitle: tiddler.title });
+              // because disk file and wiki tiddler is identical, so this file creation is triggered by wiki.
+              // We just update the index.
+              // But it might also be user changing the name of the file, so filename to be different with the actual tiddler title, while tiddler content is still same as old one
+              // We allow filename to be different with the tiddler title, but we need to handle this in the inverse index to prevent the error that we can't get tiddler from index by its path
+              if (
+                fileDescriptor.tiddlerTitle !== `${tiddler.title}.tid` &&
+                fileDescriptor.tiddlerTitle !== tiddler.title
+              ) {
+                // We have no API in tw to inform $tw about we have a file changed its name, but remain its tiddler title
+                // because to do that now we have to use `$tw.syncadaptor.wiki.addTiddler(tiddler);`, which will create a new file with the title we pass to it, it can't assign a disk file name while create a new tiddler
+                throw new Error('Rename filename is not supported, please submit your idea to improve this logic');
+                // updateInverseIndex(fileRelativePath, { ...fileDescriptor, tiddlerTitle: tiddler.title });
+              } else {
+                updateInverseIndex(fileRelativePath, { ...fileDescriptor, tiddlerTitle: tiddler.title });
+              }
             } else {
               updateInverseIndex(fileRelativePath, { ...fileDescriptor, tiddlerTitle: tiddler.title });
               $tw.syncadaptor.wiki.addTiddler(tiddler);
             }
           });
         } else {
-          // if it already existed in the wiki, this change might due to our last call to `$tw.syncadaptor.wiki.addTiddler`,
-          // so we have to check whether tiddler in the disk is identical to the one in the wiki, if so, we ignore it.
+          // if it already existed in the wiki, this change might 1. due to our last call to `$tw.syncadaptor.wiki.addTiddler`; 2. due to user change in git or VSCode
+          // so we have to check whether tiddler in the disk is identical to the one in the wiki, if so, we ignore it in the case 1.
           tiddlers
             .filter((tiddler) => {
-              const { fields: tiddlerInWiki } = $tw.syncadaptor.wiki.getTiddler(tiddler.title);
+              console.log('updating existed tiddler', tiddler.title)
+              const { fields: tiddlerInWiki } = $tw.wiki.getTiddler(tiddler.title);
               // console.warn(`tiddler`, tiddler);
               // console.warn(`tiddlerInWiki`, tiddlerInWiki);
               // console.log('deepEqual(tiddler, tiddlerInWiki)', deepEqual(tiddler, tiddlerInWiki))
