@@ -8,7 +8,7 @@
   This file is modified based on $:/plugins/OokTech/Bob/FileSystemMonitor.js
 \ */
 
-const isNonTiddlerFiles = (filePath) => filePath.endsWith('.DS_Store');
+const isNonTiddlerFiles = (filePath) => filePath.endsWith('.DS_Store') || filePath.includes('.git');
 
 function FileSystemMonitor() {
   const isDebug = false;
