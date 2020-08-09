@@ -1,0 +1,12 @@
+created: 20200809065151363
+creator: 林一二
+modified: 20200809065223089
+modifier: 林一二
+tags: Index
+title: 牢记
+tmap.id: 41c52227-4249-4bc8-824f-04c543aa46e6
+type: text/vnd.tiddlywiki
+
+用[[间隔重复插件|做一个间隔重复插件]]来牢记。
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
