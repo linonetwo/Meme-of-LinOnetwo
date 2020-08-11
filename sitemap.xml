@@ -630,6 +630,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:做一个间隔重复插件</loc>
+		<lastmod>2020-08-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:做一个集成功能的右键菜单</loc>
 		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1692,6 +1698,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:牢记</loc>
+		<lastmod>2020-08-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:物资管理</loc>
 		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1736,6 +1748,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用Juli把NodeJS-Github版TiddlyWiki包装成跨平台APP</loc>
 		<lastmod>2020-06-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:用KinFilter做一个搜索，仅搜索当前Tiddlerwe中的文件</loc>
+		<lastmod>2020-08-10</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
