@@ -166,7 +166,7 @@ function FileSystemMonitor() {
       const { tiddlers, ...fileDescriptor } = tiddlersDescriptor;
       // if user is using git or VSCode to create new file in the disk, that is not yet exist in the wiki
       // but maybe our index is not updated, or maybe user is modify a system tiddler, we need to check each case
-      if (!filePathExistsInIndex(fileRelativePath) || !fileDescriptor.tiddlerTitle) {
+      if (!filePathExistsInIndex(fileRelativePath)) {
         tiddlers.forEach((tiddler) => {
           // check whether we are rename an existed tiddler
           debugLog('getting new tiddler.title', tiddler.title);
