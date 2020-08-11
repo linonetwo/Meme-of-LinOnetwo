@@ -29,7 +29,9 @@ function FileSystemMonitor() {
   const fs = require('fs');
   const path = require('path');
 
-  const watchPathBase = path.resolve($tw.boot.wikiInfo?.config?.watchFolder || $tw.boot.wikiTiddlersPath || './tiddlers');
+  const watchPathBase = path.resolve(
+    $tw.boot.wikiInfo?.config?.watchFolder || $tw.boot.wikiTiddlersPath || './tiddlers'
+  );
   debugLog(`watchPathBase`, JSON.stringify(watchPathBase, undefined, '  '));
 
   /**
@@ -109,6 +111,15 @@ function FileSystemMonitor() {
    */
   const lockedFiles = new Set();
 
+
+  // only 
+  const debounceInterval = 4 * 1000;
+  const debounceTimer = {};
+  const debouncedListener = (changeType, filePath) => {
+    clearTimeout(debounceTimer[filePath]);
+    debounceTimer[filePath] = setTimeout(() => listener(changeType, filePath), debounceInterval)
+  }
+
   /**
    * This watches for changes to a folder and updates the wiki when anything changes in the folder.
    *
@@ -150,7 +161,7 @@ function FileSystemMonitor() {
        *    "hasMetaFile": false
        *  }
        */
-      const [tiddlersDescriptor] = $tw.loadTiddlersFromPath(fileAbsolutePath);
+      const tiddlersDescriptor = $tw.loadTiddlersFromFile(fileAbsolutePath, { title: fileAbsolutePath });
       debugLog(`tiddlersDescriptor`, JSON.stringify(tiddlersDescriptor, undefined, '  '));
       const { tiddlers, ...fileDescriptor } = tiddlersDescriptor;
       // if user is using git or VSCode to create new file in the disk, that is not yet exist in the wiki
@@ -158,7 +169,7 @@ function FileSystemMonitor() {
       if (!filePathExistsInIndex(fileRelativePath) || !fileDescriptor.tiddlerTitle) {
         tiddlers.forEach((tiddler) => {
           // check whether we are rename an existed tiddler
-          debugLog('getting tiddler.title', tiddler.title);
+          debugLog('getting new tiddler.title', tiddler.title);
           const existedWikiRecord = $tw.wiki.getTiddler(tiddler.title);
           if (existedWikiRecord && deepEqual(tiddler, existedWikiRecord.fields)) {
             // because disk file and wiki tiddler is identical, so this file creation is triggered by wiki.
@@ -190,7 +201,12 @@ function FileSystemMonitor() {
           .filter((tiddler) => {
             debugLog('updating existed tiddler', tiddler.title);
             const { fields: tiddlerInWiki } = $tw.wiki.getTiddler(tiddler.title);
-            return !deepEqual(tiddler, tiddlerInWiki);
+            if (deepEqual(tiddler, tiddlerInWiki)) {
+              debugLog('Ignore update due to change from the Browser', tiddler.title);
+              return false
+            }
+            debugLog('Saving updated', tiddler.title);
+            return true
           })
           // then we update wiki with each newly created tiddler
           .forEach((tiddler) => {
@@ -242,6 +258,6 @@ function FileSystemMonitor() {
 
   // use node-watch
   const watch = require('./watch');
-  const watcher = watch(watchPathBase, { recursive: true, delay: 200, filter: isNotNonTiddlerFiles }, listener);
+  const watcher = watch(watchPathBase, { recursive: true, delay: 200, filter: isNotNonTiddlerFiles }, debouncedListener);
 }
 FileSystemMonitor();
