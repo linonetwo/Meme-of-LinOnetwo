@@ -8,10 +8,10 @@
   This file is modified based on $:/plugins/OokTech/Bob/FileSystemMonitor.js
 \ */
 
-const isNonTiddlerFiles = (filePath) => filePath.endsWith('.DS_Store') || filePath.includes('.git');
+const isNotNonTiddlerFiles = (filePath) => !filePath.endsWith('.DS_Store') && !filePath.includes('.git');
 
 function FileSystemMonitor() {
-  const isDebug = false;
+  const isDebug = true;
   const debugLog = isDebug ? console.log : () => {};
 
   exports.name = 'watch-fs_FileSystemMonitor';
@@ -127,11 +127,6 @@ function FileSystemMonitor() {
     const fileRelativePath = path.relative(watchPathBase, filePath);
     const fileAbsolutePath = path.join(watchPathBase, fileRelativePath);
     debugLog(`${fileRelativePath} ${changeType}`);
-    // ignore some cases
-    if (isNonTiddlerFiles(fileRelativePath)) {
-      debugLog(`${fileRelativePath} ignored due to isNonTiddlerFiles`);
-      return;
-    }
     if (lockedFiles.has(fileRelativePath)) {
       debugLog(`${fileRelativePath} ignored due to mutex lock`);
       // release lock as we have already finished our job
@@ -247,6 +242,6 @@ function FileSystemMonitor() {
 
   // use node-watch
   const watch = require('./watch');
-  const watcher = watch(watchPathBase, { recursive: true, delay: 200 }, listener);
+  const watcher = watch(watchPathBase, { recursive: true, delay: 200, filter: isNotNonTiddlerFiles }, listener);
 }
 FileSystemMonitor();
