@@ -11,7 +11,7 @@
 const isNotNonTiddlerFiles = (filePath) => !filePath.endsWith('.DS_Store') && !filePath.includes('.git');
 
 function FileSystemMonitor() {
-  const isDebug = true;
+  const isDebug = false;
   const debugLog = isDebug ? console.log : () => {};
 
   exports.name = 'watch-fs_FileSystemMonitor';
@@ -21,6 +21,8 @@ function FileSystemMonitor() {
 
   // this allow us to test this module in nodejs directly without "ReferenceError: $tw is not defined"
   const $tw = this.$tw || { node: true };
+  // init our namespace for communication
+  $tw.wiki.watchFs = {};
   // folder to watch
   // non-tiddler files that needs to be ignored
 
@@ -57,6 +59,7 @@ function FileSystemMonitor() {
    * }
    */
   const inverseFilesIndex = {};
+  $tw.wiki.watchFs.inverseFilesIndex = inverseFilesIndex;
   // initialize the inverse index
   for (const tiddlerTitle in initialLoadedFiles) {
     if ({}.hasOwnProperty.call(initialLoadedFiles, tiddlerTitle)) {
@@ -111,14 +114,19 @@ function FileSystemMonitor() {
    */
   const lockedFiles = new Set();
 
-
-  // only 
+  // every time a file changed, refresh the count down timer, so only when disk get stable after a while, will we sync to the browser
+  $tw.wiki.watchFs.canSync = false;
   const debounceInterval = 4 * 1000;
-  const debounceTimer = {};
-  const debouncedListener = (changeType, filePath) => {
-    clearTimeout(debounceTimer[filePath]);
-    debounceTimer[filePath] = setTimeout(() => listener(changeType, filePath), debounceInterval)
-  }
+  let syncTimeoutHandler = undefined;
+  const refreshCanSyncState = () => {
+    $tw.wiki.watchFs.canSync = false;
+    debugLog(`canSync is now ${$tw.wiki.watchFs.canSync}`);
+    clearTimeout(syncTimeoutHandler);
+    syncTimeoutHandler = setTimeout(() => {
+      $tw.wiki.watchFs.canSync = true;
+      debugLog(`canSync is now ${$tw.wiki.watchFs.canSync}`);
+    }, debounceInterval);
+  };
 
   /**
    * This watches for changes to a folder and updates the wiki when anything changes in the folder.
@@ -203,10 +211,10 @@ function FileSystemMonitor() {
             const { fields: tiddlerInWiki } = $tw.wiki.getTiddler(tiddler.title);
             if (deepEqual(tiddler, tiddlerInWiki)) {
               debugLog('Ignore update due to change from the Browser', tiddler.title);
-              return false
+              return false;
             }
             debugLog('Saving updated', tiddler.title);
-            return true
+            return true;
           })
           // then we update wiki with each newly created tiddler
           .forEach((tiddler) => {
@@ -254,10 +262,12 @@ function FileSystemMonitor() {
         });
       }
     }
+
+    refreshCanSyncState();
   };
 
   // use node-watch
   const watch = require('./watch');
-  const watcher = watch(watchPathBase, { recursive: true, delay: 200, filter: isNotNonTiddlerFiles }, debouncedListener);
+  const watcher = watch(watchPathBase, { recursive: true, delay: 200, filter: isNotNonTiddlerFiles }, listener);
 }
 FileSystemMonitor();
