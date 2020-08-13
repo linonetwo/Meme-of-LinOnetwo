@@ -46,7 +46,6 @@
     "linonetwo/preview-glass",
     "linonetwo/prevent-edit",
     "linonetwo/nodejs-webcatalog-git-sync",
-    "linonetwo/watch-fs",
     "linonetwo/itonnote"
   ],
   "themes": [
