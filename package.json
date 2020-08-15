@@ -1,23 +1,14 @@
 {
-  "port": 5012,
   "name": "Meme-of-LinOnetwo",
   "userName": "林一二",
-  "privateWikiName": "private-wiki",
   "version": "1.0.0",
   "repository": "git@github.com:linonetwo/wiki.git",
   "author": "linonetwo <linonetwo012@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "install:wikiServer": "node -e \"require('./scripts/installServer').install()\"",
-    "install:privateRepo": "node -e \"require('./scripts/installPrivateRepo')()\"",
-    "uninstall:wikiServer": "node -e \"require('./scripts/installServer').uninstall()\"",
-    "start:wikiServer": "node -e \"require('./scripts/startNodeJSWiki')()\"",
-    "build": "node -e \"require('./scripts/buildWiki')()\""
+    "build": "node -e \"require('./scripts/build-wiki')()\""
   },
-  "dependencies": {
-    "git-state": "4.1.0",
-    "tiddlywiki": "5.1.22"
-  },
+  "dependencies": {},
   "devDependencies": {
     "html-minifier-terser": "5.1.1",
     "workbox-cli": "5.1.3"
