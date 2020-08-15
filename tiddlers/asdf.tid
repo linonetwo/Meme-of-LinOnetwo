@@ -1,8 +1,0 @@
-created: 20200815162739044
-modified: 20200815162741809
-tags: Index
-title: asdf
-tmap.id: 31c59e2b-842c-4059-9702-04baf9af514c
-type: text/vnd.tiddlywiki
-
-<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
