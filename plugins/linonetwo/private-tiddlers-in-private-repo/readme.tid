@@ -3,10 +3,11 @@ created: 20200414135748497
 modified: 20200602062349232
 type: text/vnd.tiddlywiki
 
-!! 功能
+!! Usage
 
-这个插件主要是让在线部署后的 Wiki 不会弹出「有变动关闭网页前请保存」这样的对话框。
+Edit `plugins/linonetwo/private-tiddlers-in-private-repo` using VSCode to be something like:
 
-!! 实现方式
-
-{{$:/plugins/linonetwo/private-tiddlers-in-private-repo/explaination-zh}}
+```tid
+[!is[system]kin::to[APrivateContent]addprefix[/]addprefix[private-wiki]]
+[!is[system]kin::to[Photos]addprefix[/]addprefix[private-wiki-photos]]
+```
