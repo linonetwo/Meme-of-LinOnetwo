@@ -3,4 +3,4 @@ title: $:/config/FileSystemPaths
 type: text/vnd.tiddlywiki
 
 [!is[system]kin::to[APrivateContent]addprefix[/]addprefix[private-wiki]]
-[!is[system]kin::to[Photos]addprefix[/]addprefix[private-wiki-photos]]
+[!is[system]kin::to[ByteDance]addprefix[/]addprefix[private-wiki-bytedance]]
