@@ -44,7 +44,6 @@
     "linonetwo/copy-on-select",
     "linonetwo/preview-glass",
     "linonetwo/prevent-edit",
-    "linonetwo/watch-fs",
     "linonetwo/itonnote"
   ],
   "themes": [
