@@ -1,0 +1,51 @@
+created: 20200820051653898
+modified: 20200820052715141
+tags: CDDA
+title: 配置CDDA游戏
+tmap.id: 95f7ce64-8d35-4f9f-930a-1110515295ca
+type: text/vnd.tiddlywiki
+
+!! 下载
+
+[[UndeadPeopleTileset|https://github.com/SomeDeadGuy/UndeadPeopleTileset]] 放入 `files/gfx`
+
+[[arcana-mod|https://github.com/chaosvolt/cdda-arcana-mod]] 放入 `files/data/mods`
+
+[[字体包和字体颜色|https://tieba.baidu.com/p/4932216848?pn=1]] （在我的网盘里有备份） 放入 `files/data/font`
+
+
+
+为了应用字体包，最新实验版本需要改
+
+!!! files/data/fontdata.json
+
+```json
+{ "//1": "If more than one font is specified for a typeface the list is treated as a fallback order.", "//2": "unifont will always be used as a 'last resort' fallback even if not listed here.", "typeface": [ "03", "Terminus", "unifont" ], "map_typeface": [ "02", "Terminus", "unifont" ], "overmap_typeface": [ "02-1", "Terminus", "unifont" ]}
+```
+
+
+!!! files/config/fontlist.txt
+
+```
+Terminus
+/storage/emulated/0/Android/data/com.cleverraven.cataclysmdda.experimental/files/data/font//terminus.fon
+0
+Unifont Medium
+/storage/emulated/0/Android/data/com.cleverraven.cataclysmdda.experimental/files/data/font//unifont.ttf
+0
+02
+/storage/emulated/0/Android/data/com.cleverraven.cataclysmdda.experimental/files/data/font//02.ttf
+0
+03
+/storage/emulated/0/Android/data/com.cleverraven.cataclysmdda.experimental/files/data/font//03.ttf
+0
+02-1
+/storage/emulated/0/Android/data/com.cleverraven.cataclysmdda.experimental/files/data/font//02-1.ttf
+0
+```
+
+!!! files/config/fonts.json
+
+```json
+{ "typeface": [ "03", "Terminus", "unifont" ], "map_typeface": [ "02", "Terminus", "unifont" ], "overmap_typeface": [ "02-1", "Terminus", "unifont" ]}
+```
