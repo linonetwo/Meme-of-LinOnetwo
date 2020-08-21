@@ -38,7 +38,7 @@
     "mat/field-value-selector",
     "linonetwo/service-worker",
     "linonetwo/github-external-image",
-    "linonetwo/private-tiddlers-in-private-repo",
+    "linonetwo/sub-wiki",
     "linonetwo/opened-tiddlers-bar",
     "linonetwo/inverse-link-and-folder",
     "linonetwo/copy-on-select",
