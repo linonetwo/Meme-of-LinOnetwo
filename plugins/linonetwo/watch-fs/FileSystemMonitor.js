@@ -15,7 +15,7 @@ const isNotNonTiddlerFiles = (filePath) =>
   !filePath.includes('.git');
 
 function FileSystemMonitor() {
-  const isDebug = false;
+  const isDebug = true;
   const debugLog = isDebug ? console.log : () => {};
 
   exports.name = 'watch-fs_FileSystemMonitor';
