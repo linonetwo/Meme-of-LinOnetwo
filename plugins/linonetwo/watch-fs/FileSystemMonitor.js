@@ -274,6 +274,5 @@ function FileSystemMonitor() {
   // use node-watch
   const watch = require('./watch');
   const watcher = watch(watchPathBase, { recursive: true, delay: 200, filter: isNotNonTiddlerFiles }, listener);
-  console.log('watched');
 }
 FileSystemMonitor();
