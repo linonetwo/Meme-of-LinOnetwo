@@ -51,7 +51,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         importButton['aria-label'] = label;
         // icon
         importButton.innerHTML = $tw.wiki.getTiddlerText(
-          '$:/plugins/linonetwo/nodejs-webcatalog-git-sync/icons/git-sync.svg'
+          '$:/plugins/linonetwo/source-control-management/icons/git-sync.svg'
         );
       } else if (this.state.syncing) {
         // all commit and sync to cloud
@@ -63,7 +63,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         importButton['aria-label'] = label;
         // icon
         importButton.innerHTML = $tw.wiki.getTiddlerText(
-          '$:/plugins/linonetwo/nodejs-webcatalog-git-sync/icons/git-sync.svg'
+          '$:/plugins/linonetwo/source-control-management/icons/git-sync.svg'
         );
       } else if (this.state.count === 0 && !this.state.unsync) {
         // all commit and sync to cloud
@@ -75,7 +75,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         importButton['aria-label'] = label;
         // icon
         importButton.innerHTML = $tw.wiki.getTiddlerText(
-          '$:/plugins/linonetwo/nodejs-webcatalog-git-sync/icons/git-sync.svg'
+          '$:/plugins/linonetwo/source-control-management/icons/git-sync.svg'
         );
       } else if (this.state.count === 0 && this.state.unsync) {
         // some commit need to sync to the cloud
@@ -86,7 +86,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         importButton['aria-label'] = label;
         // icon
         importButton.innerHTML = $tw.wiki.getTiddlerText(
-          '$:/plugins/linonetwo/nodejs-webcatalog-git-sync/icons/git-pull-request.svg'
+          '$:/plugins/linonetwo/source-control-management/icons/git-pull-request.svg'
         );
       } else {
         // some need to commit, and not sync to cloud yet
@@ -97,7 +97,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         importButton['aria-label'] = label;
         // icon
         const iconSVG = $tw.wiki.getTiddlerText(
-          '$:/plugins/linonetwo/nodejs-webcatalog-git-sync/icons/git-pull-request.svg'
+          '$:/plugins/linonetwo/source-control-management/icons/git-pull-request.svg'
         );
         // add count indicator badge
         const countIndicator = `<span>${this.state.count}</span>`;

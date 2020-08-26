@@ -1,5 +1,5 @@
 {
-  "title": "$:/plugins/linonetwo/nodejs-webcatalog-git-sync",
+  "title": "$:/plugins/linonetwo/source-control-management",
   "name": "NodeJS Wiki WebCatalog Github Sync",
   "description": "Use WebCatalog's NodeJS API to sync data to git on the cloud",
   "author": "LinOnetwo",

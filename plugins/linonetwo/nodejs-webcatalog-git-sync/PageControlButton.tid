@@ -1,7 +1,0 @@
-tags: $:/tags/PageControls
-title: $:/plugins/linonetwo/nodejs-webcatalog-git-sync/PageControlButton
-type: text/vnd.tiddlywiki
-caption: {{$:/plugins/linonetwo/nodejs-webcatalog-git-sync/icons/git-sync.svg}} 备份本地Git
-description: 显示本地笔记是否同步备份到Github，点击可同步
-
-<$nodejs-webcatalog-git-sync />

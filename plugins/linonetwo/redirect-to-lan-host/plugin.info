@@ -1,9 +1,0 @@
-{
-  "title": "$:/plugins/linonetwo/redirect-to-lan-host",
-  "description": "Redirect to lan host, so QR Code is useable",
-  "author": "LinOnetwo",
-  "core-version": ">=5.1.22",
-  "plugin-type": "plugin",
-  "version": "0.0.1",
-  "list": "readme"
-}
