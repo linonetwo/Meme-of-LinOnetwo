@@ -1,6 +1,6 @@
 created: 20200828120217929
 creator: 林一二
-modified: 20200828120706499
+modified: 20200828130531888
 modifier: 林一二
 tags: 想法
 title: 时间旅行
@@ -13,3 +13,10 @@ type: text/vnd.tiddlywiki
 
 !! 平行世界模型
 
+<$list filter="[tag[模型]]+[tag[时间旅行]]">
+
+ <$link><<currentTiddler>></$link>
+
+ {{!!text}}
+
+</$list>
