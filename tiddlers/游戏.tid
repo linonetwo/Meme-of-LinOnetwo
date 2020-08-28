@@ -1,0 +1,12 @@
+created: 20200828111954537
+creator: 林一二
+modified: 20200828112008498
+modifier: 林一二
+tags: Index
+title: 游戏
+tmap.id: cd8fa05d-e65d-4dcb-bc63-4e8c781dcd3e
+type: text/vnd.tiddlywiki
+
+记录对玩过的游戏的感想。
+
+<$macrocall $name="locator-view" baseTitle=<<currentTiddler>> />
