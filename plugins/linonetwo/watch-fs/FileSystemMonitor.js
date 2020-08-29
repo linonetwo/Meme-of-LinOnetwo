@@ -16,7 +16,8 @@ const isNotNonTiddlerFiles = (filePath) =>
 
 function FileSystemMonitor() {
   const isDebug = true;
-  const debugLog = isDebug ? console.log : () => {};
+  const logger = new $tw.utils.Logger("linonetwo/watch-fs");
+  const debugLog = isDebug ? logger.log : () => {};
 
   exports.name = 'watch-fs_FileSystemMonitor';
   exports.after = ['load-modules', 'watch-fs_watch'];
