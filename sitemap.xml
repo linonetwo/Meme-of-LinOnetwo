@@ -499,7 +499,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:五维象棋</loc>
-		<lastmod>2020-08-28</lastmod>
+		<lastmod>2020-08-29</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -836,6 +836,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:动效待实验的点子</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:包含时间旅行概念的游戏系统</loc>
+		<lastmod>2020-08-29</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1507,7 +1513,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:时间旅行</loc>
-		<lastmod>2020-08-28</lastmod>
+		<lastmod>2020-08-29</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1675,7 +1681,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:永恒时空基金会</loc>
-		<lastmod>2020-08-28</lastmod>
+		<lastmod>2020-08-29</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
