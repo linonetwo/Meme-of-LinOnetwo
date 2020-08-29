@@ -10,7 +10,6 @@
 
 const isNotNonTiddlerFiles = (filePath) =>
   !filePath.includes('$__StoryList') &&
-  !filePath.includes('$:/StoryList') &&
   !filePath.includes('/subwiki/') &&
   !filePath.endsWith('.DS_Store') &&
   !filePath.includes('.git');
