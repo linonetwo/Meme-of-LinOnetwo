@@ -15,19 +15,16 @@ const isNotNonTiddlerFiles = (filePath) =>
   !filePath.includes('.git');
 
 function FileSystemMonitor() {
-  // this allow us to test this module in nodejs directly without "ReferenceError: $tw is not defined"
-  const $tw = this.$tw || { node: true };
   const isDebug = true;
-  const Logger = require('$:/core/modules/utils/logger.js');
-  console.log(Logger);
-  const logger = new Logger("linonetwo/watch-fs");
-  const debugLog = isDebug ? logger.log : () => {};
+  const debugLog = isDebug ? console.log : () => {};
 
   exports.name = 'watch-fs_FileSystemMonitor';
   exports.after = ['load-modules', 'watch-fs_watch'];
   exports.platforms = ['node'];
   exports.synchronous = true;
 
+  // this allow us to test this module in nodejs directly without "ReferenceError: $tw is not defined"
+  const $tw = this.$tw || { node: true };
   // init our namespace for communication
   $tw.wiki.watchFs = {};
   // folder to watch
