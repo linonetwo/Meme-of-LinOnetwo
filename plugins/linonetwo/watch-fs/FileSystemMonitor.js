@@ -15,6 +15,8 @@ const isNotNonTiddlerFiles = (filePath) =>
   !filePath.includes('.git');
 
 function FileSystemMonitor() {
+  // this allow us to test this module in nodejs directly without "ReferenceError: $tw is not defined"
+  const $tw = this.$tw || { node: true };
   const isDebug = true;
   const logger = new $tw.utils.Logger("linonetwo/watch-fs");
   const debugLog = isDebug ? logger.log : () => {};
@@ -24,8 +26,6 @@ function FileSystemMonitor() {
   exports.platforms = ['node'];
   exports.synchronous = true;
 
-  // this allow us to test this module in nodejs directly without "ReferenceError: $tw is not defined"
-  const $tw = this.$tw || { node: true };
   // init our namespace for communication
   $tw.wiki.watchFs = {};
   // folder to watch
