@@ -173,7 +173,14 @@ function FileSystemMonitor() {
        *    "hasMetaFile": false
        *  }
        */
-      const tiddlersDescriptor = $tw.loadTiddlersFromFile(fileAbsolutePath, { title: fileAbsolutePath });
+      let tiddlersDescriptor;
+      // sometimes this file get removed by wiki before we can get it, for example, Draft tiddler done editing, it get removed, and we got ENOENT here
+      try {
+        tiddlersDescriptor = $tw.loadTiddlersFromFile(fileAbsolutePath, { title: fileAbsolutePath });
+      } catch (error) {
+        debugLog(error);
+        return;
+      }
       debugLog(`tiddlersDescriptor`, JSON.stringify(tiddlersDescriptor, undefined, '  '));
       const { tiddlers, ...fileDescriptor } = tiddlersDescriptor;
       // if user is using git or VSCode to create new file in the disk, that is not yet exist in the wiki
