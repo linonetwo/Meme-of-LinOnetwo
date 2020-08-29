@@ -217,6 +217,11 @@ function FileSystemMonitor() {
               debugLog('Ignore update due to change from the Browser', tiddler.title);
               return false;
             }
+            // if user is continuously editing, after last trigger of listener, we have waste too many time in fs, and now $tw.wiki.getTiddler get a new tiddler that is just updated by user from the wiki
+            // then our $tw.loadTiddlersFromFile's tiddler will have an old timestamp than it, ignore this case, since it means we are editing from the wiki
+            // if both are created before, and just modified now
+            if (tiddler.modified && tiddlerInWiki.modified && tiddlerInWiki.modified > tiddler.modified) return false;
+
             debugLog('Saving updated', tiddler.title);
             return true;
           })
