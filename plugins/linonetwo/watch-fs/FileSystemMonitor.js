@@ -19,6 +19,7 @@ function FileSystemMonitor() {
   const $tw = this.$tw || { node: true };
   const isDebug = true;
   const Logger = require('$:/core/modules/utils/logger.js');
+  console.log(Logger);
   const logger = new Logger("linonetwo/watch-fs");
   const debugLog = isDebug ? logger.log : () => {};
 
