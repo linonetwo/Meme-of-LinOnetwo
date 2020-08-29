@@ -1,0 +1,12 @@
+created: 20200829164213376
+creator: 林一二
+modified: 20200829164447609
+modifier: 林一二
+tags: 技术细节 游戏开发
+title: ECS是优化列表查询的结构
+tmap.id: 603540af-5bd6-439c-8698-672ffa05be10
+type: text/vnd.tiddlywiki
+
+前端常用的 Immutable 结构优化了树状结构的比较，但并不能优化列表的查询。
+
+游戏中的数据相当于用于渲染非树状排列的一大堆绝对定位的 div，所以数据不是树状而是列表状的。
