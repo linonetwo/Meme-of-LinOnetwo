@@ -1,6 +1,6 @@
 created: 20200829142454078
 creator: 林一二
-modified: 20200901060056223
+modified: 20200901062407680
 modifier: 林一二
 tags: 时间旅行 游戏设计
 title: 包含时间旅行概念的游戏系统
@@ -15,8 +15,8 @@ type: text/vnd.tiddlywiki
 
 !!! 相关作品
 
-|! 游戏系统       | !保留所有旧数据 | !删除旧世界保留已离开角色 | !删除旧世界删除已离开角色 | !删除旧世界b立即删除已离开角色 |
-|! [[单时间线模型]]| [[ClockBlockers|https://www.youtube.com/watch?v=CBawCe6du3w]] [[QuantumLeague]] | 《土拨鼠日》 [[盗贼遗产]] | 《回到未来》 | [[《时空罪恶》|http://www.dushedianying.com/review/324841.html]] 《哈利波特（与阿兹卡班的囚徒/与理性之道）》 [[《环形使者》|https://www.zhihu.com/question/20508663]] 《宿命论（你们这些回魂尸）》 |
+|! 游戏系统       | !保留所有旧数据 | !删除旧世界保留已离开角色 | !删除旧世界删除已离开角色 | !删除旧世界并立即删除已离开角色 |
+|! [[单时间线模型]]| [[ClockBlockers|https://www.youtube.com/watch?v=CBawCe6du3w]] [[QuantumLeague]] | 《土拨鼠日》 [[盗贼遗产]] 《明日边缘》《源代码》 | 《回到未来》《蝴蝶效应》 | [[《时空罪恶》|http://www.dushedianying.com/review/324841.html]] 《哈利波特（与阿兹卡班的囚徒/与理性之道）》 [[《环形使者》|https://www.zhihu.com/question/20508663]] 《宿命论（你们这些回魂尸）》 |
 |! [[平行世界模型]]| [[五维象棋]] 《[[穿越效应]]》 | 《[[永恒的终结]]》 |  |  |
 
 以及[[只读过去模型]]，不修改过去所以相当于必定保留所有数据。
