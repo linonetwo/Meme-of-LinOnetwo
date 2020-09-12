@@ -9,6 +9,8 @@
 \ */
 
 const isNotNonTiddlerFiles = (filePath) =>
+  // sometimes sync logic bug will resulted in file ends with _1, which will cause lots of trouble
+  !filePath.includes('_1.') &&
   !filePath.includes('$__StoryList') &&
   !filePath.includes('/subwiki/') &&
   !filePath.endsWith('.DS_Store') &&
