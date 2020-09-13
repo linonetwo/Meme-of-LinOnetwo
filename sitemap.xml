@@ -2004,6 +2004,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:睡前把手机放在远处充电</loc>
+		<lastmod>2020-09-13</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:知识的诅咒</loc>
 		<lastmod>2020-08-23</lastmod>
 		<changefreq>monthly</changefreq>
@@ -2162,6 +2168,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:虽然有魔法，但依然要在资源受限的情况下抗争</loc>
 		<lastmod>2020-04-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:行动规则</loc>
+		<lastmod>2020-09-13</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
