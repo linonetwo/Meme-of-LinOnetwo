@@ -40,3 +40,6 @@
   border: none;
   padding: 0;
 }
+.horizontal-list-links::-webkit-scrollbar {
+  display: none;
+}
