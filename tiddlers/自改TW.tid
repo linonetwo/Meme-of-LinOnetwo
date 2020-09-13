@@ -1,7 +1,7 @@
 color: #5778d8
 created: 20190421065036809
 creator: 林一二
-modified: 20200805064154759
+modified: 20200913135033860
 modifier: 林一二
 tags: 很想做但是最近舍不得花时间做的事情 Index tiddlywiki
 title: 自改TW
@@ -10,7 +10,9 @@ type: text/vnd.tiddlywiki
 
 我对 TiddlyWiki 做的修改都加上这个 tag，方便追溯和修复。
 
-在[[TW运维]]里，我做了很多部署、桌面使用 TiddlyWiki 的优化。
+在[[TW运维]]里，我做了很多部署、桌面使用 TiddlyWiki 的优化。大部分是在刚开始尝试[[Nodejs版WIKI|开机启动TiddlyWiki服务器并自动同步到Github]]的时候做的。
+
+但最近我新的需求大都会放在[[TG Note 的 Projects|https://github.com/tiddly-gittly/TiddlyGit-Desktop/projects]]里。
 
 ---
 
@@ -19,7 +21,7 @@ type: text/vnd.tiddlywiki
 	添加新待改
 </$button>
 
-<$macrocall $name=table-dynamic caption="待改的项目" filter="[tag[Task]]+[kin::to[自改TW]]" fields="tbl-checkbox tbl-expand title priority status tags" class="w-100"/>
+<$macrocall $name=table-dynamic caption="待改的项目" filter="[tag[Task]]+[kin::to[自改TW]]-[tag[done]]" fields="tbl-checkbox tbl-expand title priority status tags" class="w-100"/>
 
 ---
 

@@ -1,7 +1,7 @@
 color: #cbcbcb
 created: 20190419034125236
 creator: 林一二
-modified: 20200807070631337
+modified: 20200913135432015
 modifier: 林一二
 tags: tiddlywiki
 title: Index
@@ -11,15 +11,16 @@ type: text/vnd.tiddlywiki
 <<reuse-tiddler "快速创建新笔记按钮">>
 
 ---
-这个知识库主要用于存放[[林一二]]偶遇的文字模因，还有替代微博朋友圈发他的各种[[想法]]，也作为探索过程中堆放待整理的在线内容的目录。目前已有 <$count filter="[all[tiddlers]!is[system]!is[shadow]]"/> 条笔记。
 
-主要关于[[模因学]]、存储各种[[小说点子]]、挖[[工具设计]]的坑。
+这个知识库主要用于存放[[林一二]]偶遇的文字模因，还有替代微博朋友圈发他的各种[[想法]]，也作为探索过程中堆放待整理的在线内容的目录。目前已有 <$count filter="[all[tiddlers]!is[system]!is[shadow]]"/> 条笔记（仅统计你有权限查看的）。
 
-以及一些[[加密了的内容|APrivateContent]]，包括我的个人 Todo 列表、[[日记|日志]]等，还有从[[GoogleCalendar]]导入的[[每日评价]]。
+主要关于[[模因学]]、存储各种[[小说点子]]、挖[[工具设计]]的坑、思考[[游戏设计]]。以及统合一切人生意义的[[意义之塔]]。
+
+以及一些[[加密了的内容|APrivateContent]]，包括我的[[个人 Todo 列表|Task]]、[[日记|日志]]等，还有从[[GoogleCalendar]]导入的[[每日评价]]。
 
 全局的[[多功能搜索框|Command Palette 使用方法]]按 CMD/CTRL+P 打开，右侧的网状目录系统使用方法见其[[使用帮助|$:/plugins/linonetwo/itonnote/Help/TW-Locator基于标签生成的文件夹目录结构使用方法]]。
 
-本知识库备份在[[Github|https://github.com/linonetwo/wiki/]]上，有想评论的内容可以在这个仓库里发 issue 。[[通过 Now.sh 部署|使用 Now.sh 部署 TiddlyWiki]]的在线版本是 [[onetwo.ren/wiki|https://onetwo.ren/wiki/]]。
+本知识库备份在[[Github仓库|https://github.com/linonetwo/wiki/]]上，有想评论的内容可以在这个仓库里发[[issue|https://github.com/linonetwo/wiki/issues]] 。在线版本是 [[onetwo.ren/wiki|https://onetwo.ren/wiki/]]。
 
 如果你也想[[用TiddlyWiki替代Notion和EverNote作为个人知识管理系统|https://onetwo.ren/%E7%94%A8tiddlywiki%E6%9B%BF%E4%BB%A3notion%E5%92%8Cevernote%E7%AE%A1%E7%90%86%E7%9F%A5%E8%AF%86/]]，可以试试这个[[项目模板]]！
 

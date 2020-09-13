@@ -1,0 +1,27 @@
+created: 20200913153602319
+modified: 20200913153602319
+title: $:/plugins/felixhayashi/tiddlymap/graph/views/我的意义之塔意义网络/map
+type: text/vnd.tiddlywiki
+
+{
+ "3befe6c8-9081-417e-95d7-802763569125": {
+  "x": 41,
+  "y": -71
+ },
+ "f5a2250a-4dc9-41f9-b77b-2c1d5ae58263": {
+  "x": 30,
+  "y": 18
+ },
+ "243f1757-94c5-4e75-8d01-654eccb90282": {
+  "x": -109,
+  "y": -27
+ },
+ "7bf35906-006a-4d1e-aa4d-a9358e3b5a85": {
+  "x": -71,
+  "y": 86
+ },
+ "f36913c7-dc0b-440b-97b4-757d19ddfe46": {
+  "x": -173,
+  "y": 85
+ }
+}

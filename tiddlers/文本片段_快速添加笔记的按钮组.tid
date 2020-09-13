@@ -1,0 +1,19 @@
+caption: 快速添加笔记的按钮组
+created: 20200913151152213
+creator: 林一二
+modified: 20200913151602758
+modifier: 林一二
+tags: $:/tags/TextEditor/Snippet
+title: 文本片段/快速添加笔记的按钮组
+tmap.id: 91652458-bad5-48dc-a756-074d48f83812
+type: text/vnd.tiddlywiki
+
+<fieldset>
+	<legend>快速添加</legend>
+
+	<$button>
+		<$action-sendmessage title="" text="{{!!caption}}" tags="" fieldKey="fieldDefaultValue" $message="tm-new-tiddler" />
+	添加食品
+	</$button>
+
+</fieldset>

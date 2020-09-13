@@ -1,0 +1,11 @@
+caption: 带时间戳的文本
+created: 20200913151359336
+creator: 林一二
+modified: 20200913151500859
+modifier: 林一二
+tags: $:/tags/TextEditor/Snippet
+title: 文本片段/带时间戳的文本
+tmap.id: bb6f604c-5599-4413-a1de-3ad84b47885d
+type: text/vnd.tiddlywiki
+
+<<now "物资管理/[UTC]YYYY0MM0DD0hh0mm0ssXXX">>
