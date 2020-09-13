@@ -1,11 +1,11 @@
 caption: 动态表格 每行一个tiddler 列是字段
 created: 20200409142456648
 creator: 林一二
-modified: 20200625083847131
+modified: 20200913094439551
 modifier: 林一二
 tags: $:/tags/TextEditor/Snippet
 title: 文本片段/动态表格RowTable
 tmap.id: 79390a7d-b1b9-404c-bb06-6ab7a99bc10c
 type: text/vnd.tiddlywiki
 
-<$macrocall $name=table-dynamic caption="" filter="xxx" fields="caption" class="w-100"/>
+<$macrocall $name=table-dynamic caption="待办事项" filter="[tag[Task]]+[kin::to[xxx]]-[tag[done]]" stateTiddler="xxx" fields="tbl-checkbox tbl-expand title priority status tags" class="w-100" />
