@@ -7,5 +7,5 @@ settings/settings.json
 tiddlers/subwiki/
 
 # ignore some change from plugin that will only change "modified" field
-$__keepstate_utility_toggle-view-fields.tid
+$__keepstate_*
 tiddlers/$__plugins_felixhayashi_tiddlymap_misc_defaultViewHolder.tid
