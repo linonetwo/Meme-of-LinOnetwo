@@ -1,5 +1,5 @@
 created: 20200913153602319
-modified: 20200913153602319
+modified: 20200914152220150
 title: $:/plugins/felixhayashi/tiddlymap/graph/views/我的意义之塔意义网络/map
 type: text/vnd.tiddlywiki
 
@@ -23,5 +23,9 @@ type: text/vnd.tiddlywiki
  "f36913c7-dc0b-440b-97b4-757d19ddfe46": {
   "x": -173,
   "y": 85
+ },
+ "8d4bd594-d7c1-4f02-83a8-8fe69257ed6c": {
+  "x": 69,
+  "y": -14
  }
 }

@@ -1,10 +1,12 @@
 created: 20200625084743202
 creator: 林一二
-modified: 20200818022643886
+modified: 20200914153030509
 modifier: 林一二
 tags: Index
 title: 优先待办列表
 tmap.id: 1ad99e63-e682-4039-8aca-03eca7fda7d6
 type: text/vnd.tiddlywiki
 
-<$macrocall $name=table-dynamic caption="优先待办列表" filter="[tag[Task]]+[field:priority[very high]]+[!field:status[done]]" fields="title tags" class="w-100"/>
+<$macrocall $name=table-dynamic caption="优先待办列表" filter="[tag[Task]]+[field:priority[very high]]-[tag[done]]" fields="title tags" class="w-100"/>
+
+<$macrocall $name=table-dynamic caption="想做的事" filter="[tag[Task]]+[kin::to[我的意义之塔]]-[tag[done]]" fields="title tags" class="w-100"/>
