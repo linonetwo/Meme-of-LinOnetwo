@@ -164,7 +164,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:Index</loc>
-		<lastmod>2020-09-13</lastmod>
+		<lastmod>2020-09-14</lastmod>
 		<changefreq>weekly</changefreq>
 		<priority>1.0</priority>
 	</url>
@@ -236,6 +236,12 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:Octopath%2520Traveler%2520Walkthrough%2520Part%252015%2520Bolderfall%2520A%2520Thief&apos;s%2520Tale.png</loc>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:PARA</loc>
+		<lastmod>2020-09-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -571,7 +577,7 @@
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:优先待办列表</loc>
-		<lastmod>2020-08-18</lastmod>
+		<lastmod>2020-09-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1530,6 +1536,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:无限游戏的例子</loc>
+		<lastmod>2020-09-14</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:日志</loc>
 		<lastmod>2020-04-15</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1604,6 +1616,18 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:有迷宫的动漫</loc>
 		<lastmod>2020-06-06</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:有限与无限的游戏</loc>
+		<lastmod>2020-09-14</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:有限游戏需要商定界限并自愿参与</loc>
+		<lastmod>2020-09-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -2264,6 +2288,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:说好要做的事情</loc>
 		<lastmod>2020-04-15</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:读《有限与无限的游戏》</loc>
+		<lastmod>2020-09-14</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
