@@ -1,0 +1,32 @@
+created: 20200918170616992
+creator: 林一二
+modified: 20200918173331974
+modifier: 林一二
+tags: 配置CDDA游戏
+title: 配置CDDA多端同步
+tmap.id: 1f6f8d12-c699-4115-88a1-e5869d07fd96
+type: text/vnd.tiddlywiki
+
+[[用syncthing.net同步|https://www.reddit.com/r/cataclysmdda/comments/c0yyt6/automatically_and_privately_syncing_save_files/]]
+
+打开 CDDA Mac 存档 `open "Library/Application Support/Cataclysm"`
+
+打开 CDDA Mod 配置等：右键 Cataclysm App 选 Show Content ，然后把 Mod 放到 `Resources/Data/mods` 里
+
+注意在打开游戏前先保证两端的 Mod 装的都一样。
+
+!! 配置 Android 端
+
+下载 SyncThing 后，允许它获取各种权限，然后新建一个文件夹，点开左上角的面包菜单，选择手机根目录，然后一步步选到 `/storage/emulated/0/Android/data/com.cleverraven.cataclysm.dda/files/save`
+
+将文件下载顺序改为「最新优先」
+
+!! 配置 Mac 端
+
+启动 SyncThing 后，会有一个图标出现在顶部，可以点击打开网页版控制台，在里面可以添加一个新文件夹，不过我们不直接添加新文件夹，而是选择接收 Android 端发来的文件夹。
+
+打开右上角 Actions，点 Show ID 打开二维码，手机扫描添加电脑作为关联设备，然后分享文件夹给电脑。
+
+过一会儿电脑就会收到文件夹分享，点击添加，在窗口里将 `Folder Path` 设为 `/Users/linonetwo/Library/Application Support/Cataclysm/save`
+
+在 Advanced 里，将 File Pull Order 改为 Newest First
