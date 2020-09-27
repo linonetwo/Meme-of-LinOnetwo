@@ -4,6 +4,6 @@ config.refresh-triggers: $:/temp/tmap/currentTiddler
 config.vis: {"physics":{"forceAtlas2Based":{"springLength":0,"springConstant":0.09}}}
 created: 20200409033735888
 isview: true
-modified: 20200409033735888
+modified: 20200927083937141
 title: $:/plugins/felixhayashi/tiddlymap/graph/views/Live View
 type: text/vnd.tiddlywiki
