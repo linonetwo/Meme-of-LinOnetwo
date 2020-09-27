@@ -1,12 +1,15 @@
 created: 20200723051335097
 creator: 林一二
-modified: 20200723055905249
+modified: 20200927142518725
 modifier: 林一二
 tags: 学习资料
 title: 计算机图形学
 tmap.id: 8b28d579-bd0d-46cc-94db-8769aabb3d33
+type: text/vnd.tiddlywiki
 
 先用 ThreeJS 做一些实验。
+
+[[shadertoy|https://www.shadertoy.com]]
 
 <div id="threejs-demo-clothes-gui"></div>
 <div id="threejs-demo-clothes-stats"></div>
