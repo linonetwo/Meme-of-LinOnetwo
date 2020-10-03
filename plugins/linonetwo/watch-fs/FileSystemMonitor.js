@@ -11,9 +11,32 @@
 function FileSystemMonitor() {
   const isDebug = true;
   const debugLog = isDebug ? console.log : () => {};
+  const safeStringifyHugeTiddler = (tiddlerToStringify, fileExtensionOfTiddler) => {
+    if (fileExtensionOfTiddler === 'tid') {
+      return JSON.stringify(tiddlerToStringify, undefined, '  ');
+    }
+    // shorten text in the list of tiddlers, in case of text is a png image
+    if ('tiddlers' in tiddlerToStringify && Array.isArray(tiddlerToStringify.tiddlers)) {
+      return JSON.stringify(
+        {
+          ...tiddlerToStringify,
+          tiddlers: tiddlerToStringify.tiddlers.map((tiddler) => ({
+            ...tiddler,
+            text:
+              tiddler.text?.length < 1000
+                ? tiddler.text
+                : `${tiddler?.text?.substring(0, 1000)}\n\n--more-log-ignored-by-watch-fs-plugin--`,
+          })),
+        },
+        undefined,
+        '  '
+      );
+    }
+    return JSON.stringify(tiddlerToStringify, undefined, '  ');
+  };
 
   exports.name = 'watch-fs_FileSystemMonitor';
-  exports.after = ['load-modules', 'watch-fs_watch'];
+  exports.after = ['load-modules'];
   exports.platforms = ['node'];
   exports.synchronous = true;
 
@@ -25,14 +48,32 @@ function FileSystemMonitor() {
   // non-tiddler files that needs to be ignored
 
   if (typeof $tw === 'undefined' || !$tw?.node) return;
+  const { chokidar, mime } = require('./3rds');
+
   const deepEqual = require('./deep-equal');
+  const { getTwCustomMimeType } = require('./utils');
   const fs = require('fs');
   const path = require('path');
 
   const watchPathBase = path.resolve(
-    $tw.boot.wikiInfo?.config?.watchFolder || $tw.boot.wikiTiddlersPath || './tiddlers',
+    $tw.boot.wikiInfo?.config?.watchFolder || $tw.boot.wikiTiddlersPath || './tiddlers'
   );
   debugLog(`watchPathBase`, JSON.stringify(watchPathBase, undefined, '  '));
+
+  // Some helpers
+  function pad(number) {
+    if (number < 10) {
+      return '0' + number;
+    }
+    return number;
+  }
+  function toTWUTCString(date) {
+    return `${date.getUTCFullYear()}${pad(date.getUTCMonth() + 1)}${pad(date.getUTCDate())}${pad(
+      date.getUTCHours()
+    )}${pad(date.getUTCMinutes())}${pad(date.getUTCSeconds())}${(date.getUTCMilliseconds() / 1000)
+      .toFixed(3)
+      .slice(2, 5)}`;
+  }
 
   /**
    * $tw.boot.files: {
@@ -68,15 +109,15 @@ function FileSystemMonitor() {
   }
 
   // Helpers to maintain our cached index for file path and tiddler title
-  const updateInverseIndex = (filePath, fileDescriptor) => { 
+  const updateInverseIndex = (filePath, fileDescriptor) => {
     if (fileDescriptor) {
       inverseFilesIndex[filePath] = fileDescriptor;
     } else {
       delete inverseFilesIndex[filePath];
     }
   };
-  const filePathExistsInIndex = filePath => !!inverseFilesIndex[filePath];
-  const getTitleByPath = filePath => {
+  const filePathExistsInIndex = (filePath) => !!inverseFilesIndex[filePath];
+  const getTitleByPath = (filePath) => {
     try {
       return inverseFilesIndex[filePath].tiddlerTitle;
     } catch {
@@ -90,7 +131,7 @@ function FileSystemMonitor() {
    * we need to get old tiddler path by its name
    * @param {string} title
    */
-  const getPathByTitle = title => {
+  const getPathByTitle = (title) => {
     try {
       for (const filePath in inverseFilesIndex) {
         if (inverseFilesIndex[filePath].title === title || inverseFilesIndex[filePath].title === `${title}.tid`) {
@@ -143,6 +184,11 @@ function FileSystemMonitor() {
   const listener = (changeType, filePath) => {
     const fileRelativePath = path.relative(watchPathBase, filePath);
     const fileAbsolutePath = path.join(watchPathBase, fileRelativePath);
+    const metaFileAbsolutePath = `${fileAbsolutePath}.meta`;
+    const fileName = path.basename(fileAbsolutePath);
+    const fileNameBase = path.parse(fileAbsolutePath).name;
+    const fileExtension = path.extname(fileRelativePath);
+    const fileMimeType = getTwCustomMimeType(fileExtension, mime.getType);
     debugLog(`${fileRelativePath} ${changeType}`);
     if (lockedFiles.has(fileRelativePath)) {
       debugLog(`${fileRelativePath} ignored due to mutex lock`);
@@ -168,19 +214,40 @@ function FileSystemMonitor() {
        *  }
        */
       let tiddlersDescriptor;
+
+      // on creation of non-tiddler file, for example, .md and .png file, we create a .meta file for it
+      const isCreatingNewNonTiddlerFile =
+        changeType === 'add' && fileExtension !== 'tid' && !fs.existsSync(metaFileAbsolutePath);
+      if (isCreatingNewNonTiddlerFile) {
+        const createdTime = toTWUTCString(new Date());
+        debugLog(`Adding meta file ${metaFileAbsolutePath} using mime type ${fileMimeType}`);
+        fs.writeFileSync(
+          metaFileAbsolutePath,
+          `caption: ${fileNameBase}\ncreated: ${createdTime}\nmodified: ${createdTime}\ntitle: ${fileName}\ntmap.id: ef532dde-88be-45fc-b38a-d66f2951${Math.floor(
+            Math.random() * 1000
+          )}a\ntype: ${fileMimeType}\n`
+        );
+      }
       // sometimes this file get removed by wiki before we can get it, for example, Draft tiddler done editing, it get removed, and we got ENOENT here
       try {
-        tiddlersDescriptor = $tw.loadTiddlersFromFile(fileAbsolutePath, { title: fileAbsolutePath });
+        tiddlersDescriptor = $tw.loadTiddlersFromFile(fileAbsolutePath);
       } catch (error) {
         debugLog(error);
         return;
       }
-      debugLog(`tiddlersDescriptor`, JSON.stringify(tiddlersDescriptor, undefined, '  '));
+
+      // need to delete original created file, because tiddlywiki will try to recreate a _1 file
+      if (isCreatingNewNonTiddlerFile) {
+        fs.unlinkSync(fileAbsolutePath);
+        fs.unlinkSync(metaFileAbsolutePath);
+      }
+
+      debugLog(`tiddlersDescriptor`, safeStringifyHugeTiddler(tiddlersDescriptor, fileExtension));
       const { tiddlers, ...fileDescriptor } = tiddlersDescriptor;
       // if user is using git or VSCode to create new file in the disk, that is not yet exist in the wiki
       // but maybe our index is not updated, or maybe user is modify a system tiddler, we need to check each case
       if (!filePathExistsInIndex(fileRelativePath)) {
-        tiddlers.forEach(tiddler => {
+        tiddlers.forEach((tiddler) => {
           // check whether we are rename an existed tiddler
           debugLog('getting new tiddler.title', tiddler.title);
           const existedWikiRecord = $tw.wiki.getTiddler(tiddler.title);
@@ -189,7 +256,7 @@ function FileSystemMonitor() {
             // We just update the index.
             // But it might also be user changing the name of the file, so filename to be different with the actual tiddler title, while tiddler content is still same as old one
             // We allow filename to be different with the tiddler title, but we need to handle this in the inverse index to prevent the error that we can't get tiddler from index by its path
-            debugLog('fileDescriptor.tiddlerTitle', fileDescriptor.tiddlerTitle);
+            debugLog('deepEqual with existed tiddler fileDescriptor.tiddlerTitle', fileDescriptor.tiddlerTitle);
             if (
               fileDescriptor.tiddlerTitle &&
               fileDescriptor.tiddlerTitle !== `${tiddler.title}.tid` &&
@@ -203,6 +270,12 @@ function FileSystemMonitor() {
               updateInverseIndex(fileRelativePath, { ...fileDescriptor, tiddlerTitle: tiddler.title });
             }
           } else {
+            debugLog(
+              'get new addTiddler fileDescriptor.tiddlerTitle',
+              fileDescriptor.tiddlerTitle,
+              'tiddler.title',
+              tiddler.title
+            );
             updateInverseIndex(fileRelativePath, { ...fileDescriptor, tiddlerTitle: tiddler.title });
             $tw.syncadaptor.wiki.addTiddler(tiddler);
           }
@@ -211,7 +284,7 @@ function FileSystemMonitor() {
         // if it already existed in the wiki, this change might 1. due to our last call to `$tw.syncadaptor.wiki.addTiddler`; 2. due to user change in git or VSCode
         // so we have to check whether tiddler in the disk is identical to the one in the wiki, if so, we ignore it in the case 1.
         tiddlers
-          .filter(tiddler => {
+          .filter((tiddler) => {
             debugLog('updating existed tiddler', tiddler.title);
             const { fields: tiddlerInWiki } = $tw.wiki.getTiddler(tiddler.title);
             if (deepEqual(tiddler, tiddlerInWiki)) {
@@ -230,7 +303,7 @@ function FileSystemMonitor() {
             return true;
           })
           // then we update wiki with each newly created tiddler
-          .forEach(tiddler => {
+          .forEach((tiddler) => {
             $tw.syncadaptor.wiki.addTiddler(tiddler);
           });
       }
@@ -243,7 +316,7 @@ function FileSystemMonitor() {
       // if this tiddler is not existed in the wiki, this means this deletion is triggered by wiki
       // we only react on event that triggered by the git or VSCode
       const existedTiddlerResult = $tw.wiki.getTiddler(tiddlerTitle);
-      debugLog('existedTiddlerResult', existedTiddlerResult);
+      debugLog('existedTiddlerResult', existedTiddlerResult && safeStringifyHugeTiddler(existedTiddlerResult, fileExtension));
       if (!existedTiddlerResult) {
         debugLog('file already deleted by wiki', fileAbsolutePath);
         updateInverseIndex(fileRelativePath);
@@ -258,7 +331,6 @@ function FileSystemMonitor() {
         debugLog('trying to delete', fileAbsolutePath);
         fs.writeFile(fileAbsolutePath, '', {}, () => {
           // we may also need to provide a .meta file for wiki to delete
-          const metaFileAbsolutePath = `${fileAbsolutePath}.meta`;
           if (!fileAbsolutePath.endsWith('.tid')) {
             fs.writeFileSync(metaFileAbsolutePath, '');
           }
@@ -283,22 +355,21 @@ function FileSystemMonitor() {
     refreshCanSyncState();
   };
 
-  const ext = require('./3rds');
-  const watcher = ext.chokidar.watch(watchPathBase, {
+  const watcher = chokidar.watch(watchPathBase, {
     ignoreInitial: true,
     ignored: [
       '**/*.meta', // TODO: deal with field change in meta file
       '**/$__StoryList*',
-      '**/*_1.*',  // sometimes sync logic bug will resulted in file ends with _1, which will cause lots of trouble
+      '**/*_1.*', // sometimes sync logic bug will resulted in file ends with _1, which will cause lots of trouble
       '**/subwiki/**',
       '**/.DS_Store',
-      '**/.git'
+      '**/.git',
     ],
     atomic: true,
-    useFsEvents: false   // fsevents is not bundled with 3rds.js
+    useFsEvents: false, // fsevents is not bundled with 3rds.js
     //usePolling: true,  // CHOKIDAR_USEPOLLING=1
   });
-  
+
   watcher.on('all', listener);
 }
 
