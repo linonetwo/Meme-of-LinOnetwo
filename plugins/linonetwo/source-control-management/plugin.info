@@ -1,7 +1,7 @@
 {
   "title": "$:/plugins/linonetwo/source-control-management",
-  "name": "NodeJS Wiki WebCatalog Github Sync",
-  "description": "Use WebCatalog's NodeJS API to sync data to git on the cloud",
+  "name": "NodeJS Wiki TiddlyGit Github Sync",
+  "description": "Use TiddlyGit's NodeJS API to sync data to git on the cloud",
   "author": "LinOnetwo",
   "core-version": ">=5.1.22",
   "plugin-type": "plugin",

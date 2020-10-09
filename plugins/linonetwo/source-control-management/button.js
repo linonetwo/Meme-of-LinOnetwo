@@ -10,7 +10,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
 
   const Widget = require('$:/core/modules/widgets/widget.js').widget;
 
-  class NodeJSWebCatalogGitSyncWidget extends Widget {
+  class NodeJSGitSyncWidget extends Widget {
     /**
      * Lifecycle method: call this.initialise and super
      */
@@ -18,7 +18,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
       super(parseTreeNode, options);
       this.initialise(parseTreeNode, options);
       this.state = {
-        needSetUp: false, // need to setup WebCatalog, or just API missing
+        needSetUp: false, // need to setup api, or just API missing
         interval: 3000, // check interval
         count: 0, // things need to commit
         unsync: false, // need to push to github
@@ -109,28 +109,32 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
       this.domNodes.push(importButton);
     }
 
+    getFolderInfo() {
+      return window.git.getWorkspacesAsList().map(({ name: wikiPath, gitUrl }) => ({ wikiPath, gitUrl }));
+    }
+
     /**
      * Event listener of button
      */
     async onSyncButtonClick() {
-      if (!this.state.syncing) {
+      if (!this.state.syncing && this.state.unsync) {
         this.state.syncing = true;
         this.refreshSelf();
         try {
-          const publicRepoState = await window.wiki.isUnsync(window.wiki.wikiPath.tiddlyWikiRepo);
-          const privateRepoState = await window.wiki.isUnsync(window.wiki.wikiPath.privateTiddlyWikiRepo);
-          const privateRepo2State = await window.wiki.isUnsync(window.wiki.wikiPath.privateTiddlyWikiRepo2);
-          if (publicRepoState) {
-            await window.wiki.sync(window.wiki.wikiPath.tiddlyWikiRepo);
-          }
-          if (privateRepoState) {
-            await window.wiki.sync(window.wiki.wikiPath.privateTiddlyWikiRepo);
-          }
-          if (privateRepo2State) {
-            await window.wiki.sync(window.wiki.wikiPath.privateTiddlyWikiRepo2);
-          }
+          const folderInfo = await this.getFolderInfo();
+          const repoStatuses = await Promise.all(
+            folderInfo.map(({ wikiPath }) => window.git.getModifiedFileList(wikiPath))
+          );
+
+          const tasks = repoStatuses
+            .filter((repoStatus) => repoStatus.length > 0)
+            .map((repoStatus, index) => {
+              const { wikiPath, gitUrl } = folderInfo[index];
+              window.git.commitAndSync(wikiPath, gitUrl);
+            });
+          await Promise.all(tasks);
         } catch (error) {
-          console.error('NodeJSWebCatalogGitSyncWidget: Error syncing', error);
+          console.error('NodeJSGitSyncWidget: Error syncing', error);
         }
         this.state.syncing = false;
         this.refreshSelf();
@@ -141,9 +145,13 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
      * Check state every a few time
      */
     async checkInLoop() {
-      // check if API from WebCatalog is available, first time it is Server Side Rendening so window.xxx from the electron ContextBridge will be missing
-      // if (typeof window?.wiki?.isUnsync !== 'function' || typeof window?.wiki?.sync !== 'function') {
-      if (!window.wiki || typeof window.wiki.isUnsync !== 'function' || typeof window.wiki.sync !== 'function') {
+      // check if API from TiddlyGit is available, first time it is Server Side Rendening so window.xxx from the electron ContextBridge will be missing
+      if (
+        !window.git ||
+        typeof window.git.commitAndSync !== 'function' ||
+        typeof window.git.getModifiedFileList !== 'function' ||
+        typeof window.git.getWorkspacesAsList !== 'function'
+      ) {
         this.state.needSetUp = true;
       } else {
         this.state.needSetUp = false;
@@ -158,29 +166,23 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
      *  Check repo git sync state and count of uncommit things
      */
     async checkGitState() {
-      // { unsync: boolean, uncommit: number } | boolean
-      const publicRepoState = await window.wiki.isUnsync(window.wiki.wikiPath.tiddlyWikiRepo);
-      const privateRepoState = await window.wiki.isUnsync(window.wiki.wikiPath.privateTiddlyWikiRepo);
-      const privateRepo2State = await window.wiki.isUnsync(window.wiki.wikiPath.privateTiddlyWikiRepo2);
+      const folderInfo = await this.getFolderInfo();
+      const repoStatuses = await Promise.all(
+        folderInfo.map(({ wikiPath }) => window.git.getModifiedFileList(wikiPath))
+      );
 
       this.state.count = 0;
       this.state.unsync = false;
-      if (publicRepoState) {
-        this.state.count += publicRepoState.uncommit;
-        this.state.unsync |= publicRepoState.unsync;
-      }
-      if (privateRepoState) {
-        this.state.count += privateRepoState.uncommit;
-        this.state.unsync |= privateRepoState.unsync;
-      }
-      if (privateRepo2State) {
-        this.state.count += privateRepo2State.uncommit;
-        this.state.unsync |= privateRepo2State.unsync;
+      for (const repoStatus of repoStatuses) {
+        if (repoStatus.length) {
+          this.state.count += repoStatus.length;
+          this.state.unsync = true;
+        }
       }
 
       return this.refreshSelf(); // method from super class, this is like React forceUpdate, we use it because it is not fully reactive on this.state change
     }
   }
 
-  exports['nodejs-webcatalog-git-sync'] = NodeJSWebCatalogGitSyncWidget;
+  exports['nodejs-webcatalog-git-sync'] = NodeJSGitSyncWidget;
 })();

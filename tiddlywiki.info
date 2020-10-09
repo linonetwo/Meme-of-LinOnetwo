@@ -44,6 +44,7 @@
     "linonetwo/copy-on-select",
     "linonetwo/preview-glass",
     "linonetwo/prevent-edit",
+    "linonetwo/source-control-management",
     "linonetwo/itonnote"
   ],
   "themes": [
