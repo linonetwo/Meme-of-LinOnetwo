@@ -2304,6 +2304,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:设计模式</loc>
+		<lastmod>2020-10-11</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:语义网</loc>
 		<lastmod>2020-05-07</lastmod>
 		<changefreq>monthly</changefreq>
