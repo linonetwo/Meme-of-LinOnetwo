@@ -1,6 +1,6 @@
 /*\
 Show local git state and sync to git on click.
-Requires you are using WebCatalog, and have install the "Inject JS" API with access to NodeJS and Electron API).
+Requires you are using TiddlyGit, and have install the "Inject JS" API with access to NodeJS and Electron API).
 
 \*/
 (function () {
@@ -37,7 +37,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
 
       // DOM
       const importButton = this.document.createElement('button');
-      importButton.className = 'tc-btn-invisible tc-btn-plugins-linonetwo-nodejs-webcatalog-git-sync ';
+      importButton.className = 'tc-btn-invisible tc-btn-plugins-linonetwo-nodejs-tiddlygit-git-sync ';
       importButton.onclick = this.onSyncButtonClick.bind(this);
 
       // set icon
@@ -46,7 +46,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
         importButton.className += 'git-sync';
         importButton.disabled = true;
         // tooltip
-        const label = '需要配置WebCatalog';
+        const label = '需要配置TiddlyGit';
         importButton.title = label;
         importButton['aria-label'] = label;
         // icon
@@ -100,7 +100,7 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
           '$:/plugins/linonetwo/source-control-management/icons/git-pull-request.svg'
         );
         // add count indicator badge
-        const countIndicator = `<span>${this.state.count}</span>`;
+        const countIndicator = `<span class="tiddlygit-scm-count tiddlygit-scm-count-small">${this.state.count}</span>`;
         importButton.innerHTML = `<span>${iconSVG}${countIndicator}</span>`;
       }
 
@@ -184,5 +184,5 @@ Requires you are using WebCatalog, and have install the "Inject JS" API with acc
     }
   }
 
-  exports['nodejs-webcatalog-git-sync'] = NodeJSGitSyncWidget;
+  exports['nodejs-tiddlygit-git-sync'] = NodeJSGitSyncWidget;
 })();
