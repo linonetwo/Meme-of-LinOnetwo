@@ -235,6 +235,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:NewTiddler</loc>
+		<lastmod>2020-10-11</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:Octopath%2520Traveler%2520Walkthrough%2520Part%252015%2520Bolderfall%2520A%2520Thief&apos;s%2520Tale.png</loc>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
