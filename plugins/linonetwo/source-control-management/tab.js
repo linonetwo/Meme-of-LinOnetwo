@@ -19,7 +19,7 @@ Requires you are using TiddlyGit, and have install the "Inject JS" API with acce
       this.initialise(parseTreeNode, options);
       this.state = {
         needSetUp: false, // need to setup api, or just API missing
-        interval: 30000, // check interval
+        interval: 3000, // check interval
 
         /**
          * {
