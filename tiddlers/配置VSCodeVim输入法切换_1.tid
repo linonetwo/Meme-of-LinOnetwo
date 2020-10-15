@@ -1,0 +1,12 @@
+created: 20201014161450372
+creator: 林一二
+modified: 20201014162911389
+modifier: 林一二
+tags: 学习用Vim
+title: 配置VSCodeVim输入法切换
+tmap.id: 8c24667e-c42a-4301-8804-c067cb7d4d7e
+type: text/vnd.tiddlywiki
+
+这个插件可以在按下 esc 的时候自动关闭输入法。
+
+[[安装|https://github.com/daipeihust/im-select#installation]]
