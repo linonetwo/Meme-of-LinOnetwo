@@ -1,8 +1,10 @@
 created: 20201014161437978
 creator: 林一二
-modified: 20201014161447743
+modified: 20201015055849472
 modifier: 林一二
 tags: 技术细节
 title: 学习用Vim
 tmap.id: fc99e746-537b-4544-b551-8b841c5be402
 type: text/vnd.tiddlywiki
+
+我使用[[VSCodeVim|https://github.com/VSCodeVim/Vim]]

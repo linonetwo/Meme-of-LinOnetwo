@@ -1,6 +1,6 @@
 created: 20201014161450372
 creator: 林一二
-modified: 20201014162911389
+modified: 20201015061856861
 modifier: 林一二
 tags: 学习用Vim
 title: 配置VSCodeVim输入法切换
@@ -9,4 +9,11 @@ type: text/vnd.tiddlywiki
 
 这个插件可以在按下 esc 的时候自动关闭输入法。
 
-[[安装|https://github.com/daipeihust/im-select#installation]]
+[[安装|https://github.com/daipeihust/im-select#installation]] 然后配置 `autoSwitchInputMethod` 并这样配置：
+
+```json
+  "vim.autoSwitchInputMethod.defaultIM": "com.apple.keylayout.ABC",
+  "vim.autoSwitchInputMethod.obtainIMCmd": "/usr/local/bin/im-select",
+  "vim.autoSwitchInputMethod.switchIMCmd": "/usr/local/bin/im-select {im}",
+  "vim.autoSwitchInputMethod.enable": true,
+```
