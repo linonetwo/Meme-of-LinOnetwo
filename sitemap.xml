@@ -109,12 +109,6 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://onetwo.ren/wiki/#:Clothes%2520Demo</loc>
-		<lastmod>2020-07-27</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
 		<loc>https://onetwo.ren/wiki/#:Command%2520Palette%2520使用方法</loc>
 		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
@@ -322,12 +316,6 @@
 		<lastmod>2020-06-25</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
-	</url>
-	<url>
-		<loc>https://onetwo.ren/wiki/#:ThreeJSCDN</loc>
-		<lastmod>2020-07-23</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:TiddlyWiki%25205.1.20%2520可以直接同步到%2520Github%2520了</loc>
