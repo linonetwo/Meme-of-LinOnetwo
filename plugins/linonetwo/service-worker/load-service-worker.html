@@ -41,6 +41,7 @@
       .then((registration) => {
         console.log('Service worker is speeding up this wiki.')
         registration.onupdatefound = () => {
+          console.log('New content is found, prepare to fetch', registration);
           const installingWorker = registration.installing;
           if (installingWorker == null) {
             return;
