@@ -378,6 +378,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:WikiQA的个人应用场景</loc>
+		<lastmod>2020-10-22</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:easysync</loc>
 		<lastmod>2020-07-03</lastmod>
 		<changefreq>monthly</changefreq>
