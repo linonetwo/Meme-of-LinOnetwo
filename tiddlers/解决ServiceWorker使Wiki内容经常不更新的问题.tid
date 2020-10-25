@@ -1,12 +1,14 @@
 created: 20200608085614812
 creator: 林一二
-modified: 20200625083554037
+modified: 20201025181952289
 modifier: 林一二
 priority: very high
-status: open
-tags: 自改TW Task
+status: done
+tags: 自改TW Task done
 title: 解决ServiceWorker使Wiki内容经常不更新的问题
 tmap.id: a00094b2-01e9-47ee-a24c-1746fcc7e5c6
 type: text/vnd.tiddlywiki
 
 现在老是取到旧的内容。
+
+加了后台下载新内容，刷新后可以点击弹框再次刷新页面加载新功能的功能。
