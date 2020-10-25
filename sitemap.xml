@@ -396,6 +396,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:hypernote-meme-map.mp4</loc>
+		<lastmod>2020-10-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:karabiner.json</loc>
 		<lastmod>2020-06-22</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1720,6 +1726,12 @@
 		<lastmod>2020-04-15</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.8</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:模因的可视化</loc>
+		<lastmod>2020-10-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
 	</url>
 	<url>
 		<loc>https://onetwo.ren/wiki/#:模因管理系统构想</loc>
