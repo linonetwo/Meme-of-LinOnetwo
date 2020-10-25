@@ -1,5 +1,5 @@
 {
-  "caseSensitive": false,
+  "caseSensitive": true,
   "collapseBooleanAttributes": true,
   "collapseInlineTagWhitespace": false,
   "collapseWhitespace": true,
@@ -18,7 +18,7 @@
   "preventAttributesEscaping": false,
   "processConditionalComments": true,
   "processScripts": ["text/html"],
-  "removeAttributeQuotes": true,
+  "removeAttributeQuotes": false,
   "removeComments": true,
   "removeEmptyAttributes": true,
   "removeEmptyElements": true,
