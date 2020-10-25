@@ -11,3 +11,5 @@ Knowledge-base of Lin Onetwo, with advanced filter search and faceted data aggre
 ## 从这个项目中抽象出的 Github 模板仓库，试试用它创建你自己的知识库 / Github Template repo derived from this repo, try create your own
 
 [linonetwo/Tiddlywiki-NodeJS-Github-Template](https://github.com/linonetwo/Tiddlywiki-NodeJS-Github-Template)
+
+[TiddlyGit-Desktop](https://github.com/tiddly-gittly/TiddlyGit-Desktop)
