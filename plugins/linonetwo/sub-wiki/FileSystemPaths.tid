@@ -4,3 +4,4 @@ type: text/vnd.tiddlywiki
 
 
 [!is[system]kin::to[APrivateContent]addprefix[private-wiki]addprefix[/]addprefix[subwiki]]
+[!is[system]kin::to[ByteDance]addprefix[private-wiki-bytedance]addprefix[/]addprefix[subwiki]]
