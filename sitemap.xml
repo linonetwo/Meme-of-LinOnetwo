@@ -121,6 +121,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:Draft%2520of%2520&apos;2020-11-5&apos;%2520by%2520林一二</loc>
+		<lastmod>2020-11-05</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:ECS是优化列表查询的结构</loc>
 		<lastmod>2020-08-29</lastmod>
 		<changefreq>monthly</changefreq>
