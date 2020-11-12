@@ -1,0 +1,10 @@
+created: 20201112024125861
+creator: 林一二
+modified: 20201112024228931
+modifier: 林一二
+tags: 想法 游戏开发
+title: 向神发送事件
+tmap.id: 41485faf-e187-4231-a387-3cee5c0713b8
+type: text/vnd.tiddlywiki
+
+类似区块链上调用预言机，向神发送事件并保证扣除自己的一定魔力值，来调用[[神提供的魔法]]。
