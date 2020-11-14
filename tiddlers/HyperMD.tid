@@ -1,0 +1,47 @@
+created: 20201114140435915
+creator: 林一二
+modified: 20201114142542172
+modifier: 林一二
+tags: 富文本编辑器
+title: HyperMD
+tmap.id: d76b13f4-9bc5-4c1a-9a49-adc2ac418bdb
+type: text/vnd.tiddlywiki
+
+[[Github 地址|https://github.com/laobubu/HyperMD]]
+
+作者[[laobubu|https://github.com/laobubu]]跟我语音会议讲解了一下代码。
+
+!! 输入
+
+主要做语法解析的部分都在 `src/mode/hypermd.ts` 里。
+
+对于 codeblock 里的流程图语法，则是作为一整块保留，放到 `src/addon/fold-code.ts` 里再用 mermaid.js 做进一步解析处理。
+
+所以如果想要用它解析 TiddlyWiki 的宏，也可以在 parse 的时候只是简单做标记，整块保留到一个 addon 里面再用 TiddlyWiki 提供的第三方解析器做解析和渲染。
+
+接入第三方解析器（例如 remark）可能比较麻烦，需要像 typescript-eslint 那样把解析出的 AST 桥接到 codemirror 的 AST 上。并保证每个 token 上的 state 设置好。
+Codemirror 为了保证在有改动时不用把所有内容都重新解析一遍，通过 state 上的标记做了缓存。这种缓存机制也得和第三方库联系好，不要消耗太多性能。
+
+!! 输出
+
+以图片为例，最终是在 `src/addon/fold-image.ts` 里用 `var img = document.createElement("img")` 来创建元素，然后用 `cm.markText` 里的 `replacedWith: img,` 来把元素放到 codemirror 上。
+
+这个 addon 是 `src/addon/fold.ts` 里定义的自定义的 addon 概念，和 codemirror 官方的 addon 有一些区别。
+
+powerpack 则是对 addon 的进一步扩展，也是自定义的概念。
+
+接入第三方渲染器就是在 addon 里把第三方渲染结果作为 mark 传给 codemirror。
+
+!!! 折叠
+
+折叠就是从源码变成预览的过程。
+
+有时候会有 link 套 image 组件的情况，这时 image 在内层可能不需要折叠，因为之前在 link 里已经递归地处理过折叠了。这时需要用 `stream.requestRange` 来判断一下当前范围是否需要折叠。
+
+这个 stream 是自定义的一个类，用于处理折叠范围相关的计算，例如找出和当前的 `[` 字符相匹配的 `]` 字符，得到该折叠的区域。
+
+!! 修改
+
+当组件大小发生变化时，需要调用 `marker.changed()` 来让 codemirror 里的布局引擎知道需要重新布局了。
+
+拖动组件到 codemirror 里时，可能需要把拖动 target 绑定到 codemirror 的一个很小的 textarea 上，听说是在 onclick 的时候，这个 textarea 会瞬移到需要编辑的地方。
