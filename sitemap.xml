@@ -157,6 +157,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:HyperMD</loc>
+		<lastmod>2020-11-14</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:Index</loc>
 		<lastmod>2020-10-11</lastmod>
 		<changefreq>weekly</changefreq>
