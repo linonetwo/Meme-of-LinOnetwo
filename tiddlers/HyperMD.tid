@@ -1,6 +1,6 @@
 created: 20201114140435915
 creator: 林一二
-modified: 20201114142542172
+modified: 20201114153120671
 modifier: 林一二
 tags: 富文本编辑器
 title: HyperMD
@@ -19,7 +19,7 @@ type: text/vnd.tiddlywiki
 
 所以如果想要用它解析 TiddlyWiki 的宏，也可以在 parse 的时候只是简单做标记，整块保留到一个 addon 里面再用 TiddlyWiki 提供的第三方解析器做解析和渲染。
 
-接入第三方解析器（例如 remark）可能比较麻烦，需要像 typescript-eslint 那样把解析出的 AST 桥接到 codemirror 的 AST 上。并保证每个 token 上的 state 设置好。
+接入第三方解析器（例如 remark、[[micromark|https://github.com/syntax-tree/mdast-util-from-markdown]]）可能比较麻烦，需要像 typescript-eslint 那样把解析出的 AST 桥接到 codemirror 的 AST 上。并保证每个 token 上的 state 设置好。
 Codemirror 为了保证在有改动时不用把所有内容都重新解析一遍，通过 state 上的标记做了缓存。这种缓存机制也得和第三方库联系好，不要消耗太多性能。
 
 !! 输出
