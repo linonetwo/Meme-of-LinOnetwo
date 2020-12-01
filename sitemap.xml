@@ -990,6 +990,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:在CDDA里快速整理物品</loc>
+		<lastmod>2020-12-01</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:在Git上改了代码但是没有安装</loc>
 		<lastmod>2020-11-05</lastmod>
 		<changefreq>monthly</changefreq>
@@ -2072,6 +2078,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:目录模版%2520-.doc</loc>
 		<lastmod>2020-05-07</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:看CDDA的物品定义</loc>
+		<lastmod>2020-12-01</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
