@@ -1,0 +1,10 @@
+created: 20201207151114914
+creator: 林一二
+modified: 20201207151144238
+modifier: 林一二
+tags: 自改Mac
+title: 虚拟Touchbar
+tmap.id: 1372cf8b-8717-426a-81f2-d471cade885b
+type: text/vnd.tiddlywiki
+
+在老电脑或者黑苹果上，用[[Touch Bar Simulator |https://github.com/sindresorhus/touch-bar-simulator]]来搞出TouchBar
