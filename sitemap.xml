@@ -264,6 +264,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:Proxifier导致Electron应用无法启动</loc>
+		<lastmod>2020-12-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:QuantumLeague</loc>
 		<lastmod>2020-09-01</lastmod>
 		<changefreq>monthly</changefreq>
