@@ -1,0 +1,24 @@
+created: 20201210174749041
+creator: 林一二
+modified: 20201210175308087
+modifier: 林一二
+tags: 想法 技术细节
+title: Proxifier导致Electron应用无法启动
+tmap.id: ba35a6c4-cdbf-48d6-a2ce-2eef344d60f5
+type: text/vnd.tiddlywiki
+
+今晚打开电脑发现我的[[TiddlyGit]]一直在 loading，我最近也没咋写东西，就不管它了，开始写我的 [[Eternity Foundation]] 游戏。
+
+不过等我把 inversify IOC 和 lokijs 数据库搞得差不多了，准备启动应用看看效果的时候，发现居然一直报错
+
+```
+listen EPROTOTYPE: protocol wrong type for socket :::3000
+```
+
+我在 Electron Forge 的 Github issues 里也没搜到其他人有这个问题，我一开始以为是因为我前天升级到了 MacOS Big Sur 才会这样，不过又折腾了一会儿，换成 Google 搜 `listen EPROTOTYPE: protocol wrong type for socket`，看到有人反馈 [[AppProxy causes socket listen() to fail|https://developer.apple.com/forums/thread/661610]]，看到这标题我就灵光一闪，想到今天 Proxifier 代理工具不好使，难不成是它…
+
+果然关了 Proxifier 就好了。
+
+今天工作的时候，穿山甲代理工具也不好使，浪费了我 3 小时折腾，后来把它和 Charles 串联起来用才解决问题。
+
+代理工具的原理很简单，但小坑却一堆。
