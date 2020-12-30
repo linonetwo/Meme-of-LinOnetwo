@@ -1,6 +1,6 @@
 created: 20201230145645995
 creator: 林一二
-modified: 20201230150135911
+modified: 20201230151058782
 modifier: 林一二
 tags: 技术细节 想法
 title: 用TypeScript重构TiddlyGit
@@ -11,4 +11,9 @@ type: text/vnd.tiddlywiki
 
 在公司里用了 typedi 之后，我打算用 inversifyjs 来重构一下 TiddlyGit。第一步是先把它变成一个 Typescript 项目。
 
-我用 ts-migrate 来
+# 我用 ts-migrate 来批量把 JS 文件替换成 TS 文件
+# 然后改用 Electron-Forge 的 TS webpack 配置来启动 ts 版的项目
+# 改变 worker 的位置，以便能被新的编辑后的 JS 找到
+# 把各类代码重构成 inversifyjs 管理的 Service，例如 WindowService、PreferenceService
+# 先不管未重构到的代码对 Service 的调用，先解决重构后的代码之间的相互调用
+# 暂时无法解决的相互调用问题（例如打算把这个功能放到另一个 Service 里，但还没开始重构那个 Service）的先记为 TODO
