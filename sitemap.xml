@@ -121,12 +121,6 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
-		<loc>https://onetwo.ren/wiki/#:Draft%2520of%2520&apos;NewTiddler&apos;%2520by%2520林一二</loc>
-		<lastmod>2020-12-30</lastmod>
-		<changefreq>monthly</changefreq>
-		<priority>0.5</priority>
-	</url>
-	<url>
 		<loc>https://onetwo.ren/wiki/#:ECS是优化列表查询的结构</loc>
 		<lastmod>2020-08-29</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1982,6 +1976,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:用KinFilter做一个搜索，仅搜索当前Tiddlerwe中的文件</loc>
 		<lastmod>2020-08-10</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:用TypeScript重构TiddlyGit</loc>
+		<lastmod>2020-12-30</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
