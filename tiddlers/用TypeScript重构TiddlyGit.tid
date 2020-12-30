@@ -1,0 +1,14 @@
+created: 20201230145645995
+creator: 林一二
+modified: 20201230150135911
+modifier: 林一二
+tags: 技术细节 想法
+title: 用TypeScript重构TiddlyGit
+tmap.id: 4a3c53c9-485b-44b2-849b-2525905d3668
+type: text/vnd.tiddlywiki
+
+之前围绕 IPC 加功能，加得越来越乱，搞得我渐渐懒得维护这个项目了，因为每次都有漏改的地方，bug 越来越多。
+
+在公司里用了 typedi 之后，我打算用 inversifyjs 来重构一下 TiddlyGit。第一步是先把它变成一个 Typescript 项目。
+
+我用 ts-migrate 来
