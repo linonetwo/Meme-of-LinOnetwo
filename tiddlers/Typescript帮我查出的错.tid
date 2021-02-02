@@ -1,5 +1,7 @@
 created: 20190504080229268
-modified: 20200409033736704
+creator: 林一二
+modified: 20210202025727845
+modifier: 林一二
 tags: 列表整理
 title: Typescript帮我查出的错
 tmap.id: 0c8b8c39-e25b-4b20-975d-ff7e53deea4f
@@ -12,4 +14,14 @@ This condition will always return 'true' since the types '{ idx3d: number; err3d
 
 ```js
 useBlinking(props.notDetectedPoints.filter(id => id !== props.currentIndexToLookAt).map(({ idx3d }) => idx3d), detectedPointObjects, BLINK_FPS, [0xff4d4d, 0xb30000]);
+```
+
+2. This condition will always return true
+
+This condition will always return true since the function is always defined. Did you mean to call it instead?ts(2774)
+
+Props<IValues, unknown>.hasChildren(): boolean
+
+```ts
+if (props.hasChildren) {
 ```
