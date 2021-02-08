@@ -19,6 +19,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:2021年交易日记</loc>
+		<lastmod>2021-02-08</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:ALU.png</loc>
 		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
