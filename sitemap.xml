@@ -127,6 +127,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:ECS技能系统学习</loc>
+		<lastmod>2021-02-23</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:ECS是优化列表查询的结构</loc>
 		<lastmod>2020-08-29</lastmod>
 		<changefreq>monthly</changefreq>
