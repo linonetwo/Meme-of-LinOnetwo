@@ -1,0 +1,26 @@
+created: 20210223032135643
+creator: 林一二
+modified: 20210223033652984
+modifier: 林一二
+tags: 游戏开发 技术细节
+title: ECS技能系统学习
+tmap.id: 8b61d13a-6ff8-494b-8b1b-ec0b0caf872f
+type: text/vnd.tiddlywiki
+
+! ECS 基础
+
+[[http://bitsquid.blogspot.com/2014/08/building-data-oriented-entity-system.html]]
+ 
+[[Austin Morlan - A Simple Entity Component System (ECS) [C++]|https://austinmorlan.com/posts/entity_component_system/]]
+
+[[《守望先锋》架构设计与网络同步 -- GDC2017 精品分享实录-腾讯游戏学院|https://gameinstitute.qq.com/community/detail/114516]]
+
+[[games102作业框架 Ubpa Entity-Component-System (U ECS) in Unity3D-style - Ubpa/UECS|https://github.com/Ubpa/UECS]]
+
+[[Youtube game engine 系列|https://www.youtube.com/watch?v=Z-CILn2w9K0&list=PLlrATfBNZ98dC-V-N3m0Go4deliWHPFwT&index=76]]
+
+! 技能系统
+
+UE 自带的 Gameplay Ability System （不过和他们的游戏绑定过重，而且目前还没通用化重构）
+
+[[解析ActionRPG|https://www.jianshu.com/p/941c299e2e5a]]
