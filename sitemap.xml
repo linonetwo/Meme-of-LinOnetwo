@@ -1080,6 +1080,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:地图生成的例子</loc>
+		<lastmod>2021-03-12</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:地图生成的思路</loc>
 		<lastmod>2021-02-26</lastmod>
 		<changefreq>monthly</changefreq>
@@ -2306,6 +2312,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:自动备份TiddlyWiki</loc>
 		<lastmod>2020-04-13</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:自动家具布置</loc>
+		<lastmod>2021-03-12</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
