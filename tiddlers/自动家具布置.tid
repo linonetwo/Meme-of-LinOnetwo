@@ -1,0 +1,12 @@
+created: 20210312080208840
+creator: 林一二
+modified: 20210312080345445
+modifier: 林一二
+tags: 地图生成的思路 论文
+title: 自动家具布置
+tmap.id: bdc4bca2-7226-48b5-ae86-5355b4fddf74
+type: text/vnd.tiddlywiki
+
+[[Make it Home: Automatic Optimization of Furniture Arrangement|http://web.cs.ucla.edu/~dt/papers/siggraph11/siggraph11.pdf]]
+
+使用了深度学习。
