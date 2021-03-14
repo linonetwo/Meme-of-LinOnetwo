@@ -1,6 +1,6 @@
 created: 20210312072944052
 creator: 林一二
-modified: 20210312073316506
+modified: 20210314070438805
 modifier: 林一二
 tags: 地图生成的思路
 title: 地图生成的例子
@@ -9,3 +9,9 @@ type: text/vnd.tiddlywiki
 
 [[Dungeon Alchemist AI-Powered Procedural Fantasy Map Generator|https://80.lv/articles/ai-powered-procedural-fantasy-map-generator/]]
 [img[https://new-cdn.80.lv/upload/content/c9/60238b626ae05.gif]]
+
+!!! 暗黑破坏神3
+
+文字整理版 [[《暗黑3》是如何设计随机地下城的？ |https://mp.weixin.qq.com/s/ij6ZStEKHzeNP4QjPRorMA]] （ Google 了好久找不到之前看过的这篇，原来是在微信公众号上发的，垃圾微信。后来还是搜到了英文翻译版 [[how-did-diablo-3-design-random-dungeons|https://electrodealpro.com/how-did-diablo-3-design-random-dungeons/]] 才找回来）[[备份地址|https://www.gameres.com/869806.html]]
+
+[[视频 Diablo Dungeon Design ft. Ed Hanes|https://www.youtube.com/watch?v=tUFvhDOPA_w]]
