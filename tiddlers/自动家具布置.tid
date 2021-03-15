@@ -1,12 +1,36 @@
 created: 20210312080208840
 creator: 林一二
-modified: 20210312080345445
+modified: 20210315100608623
 modifier: 林一二
 tags: 地图生成的思路 论文
 title: 自动家具布置
 tmap.id: bdc4bca2-7226-48b5-ae86-5355b4fddf74
 type: text/vnd.tiddlywiki
 
-[[Make it Home: Automatic Optimization of Furniture Arrangement|http://web.cs.ucla.edu/~dt/papers/siggraph11/siggraph11.pdf]]
+!! [[Make it Home: Automatic Optimization of Furniture Arrangement|http://web.cs.ucla.edu/~dt/papers/siggraph11/siggraph11.pdf]]
 
-使用了深度学习。
+每次用模拟退火从随机排布花2W步左右重新排成合理的布局，每一步重排的合理度的量化主要是看有没有物品放到了别的物品的「工作区域」或「可视区域」上。
+
+使用了深度学习，从手编的例子中学习。先随便生成，然后搞一个考虑各种因素的损失函数：
+
+# human-accessibility
+# visibility
+# spatial relationships with respect to the room
+# hierarchical object relationships
+# pair-wise object relationships
+
+用手编的例子来初始化参数。最后循环更新随机生成的布局，每一步都模拟退火随机动一动，看看结果够不够好，大概 2.5W 迭代能从随机排布变成合理的布局。
+
+!!! Accessible space
+
+会给一些家具例如椅子配上Rimworld、修仙模拟器风格的「工作站立区域」，摆放的时候这些区域不能有其他物体。这个区域不是完全禁止放东西，而只是有东西时会大幅增加全局损失。
+
+visibility 也是用类似的方式生效的，只不过「可视区域」比「工作区域」会长很多。
+
+pair-wise orientation 类似桌子附近的椅子得对着桌子这样。
+
+!!! 随机移动
+
+# 每一步都看看动之后有没有减少损失，要多动一动，所以有时候会直接对调两个物品，常常会大幅改变价值
+# 平移和旋转分开来作为两个步骤的话优化更快，移动的幅度用正态分布生成，乘以当前退火温度
+# 门之间走路的区域是用三阶贝叶斯曲线表示的，然后在上面放一系列方形作为碰撞盒，退火时会调整曲线参数
