@@ -25,6 +25,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:ADN</loc>
+		<lastmod>2021-03-22</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:ALU.png</loc>
 		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -1892,6 +1898,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:流水线的单发射与多发射.gif</loc>
 		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:流量侧</loc>
+		<lastmod>2021-03-22</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
