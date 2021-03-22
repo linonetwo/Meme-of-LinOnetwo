@@ -45,7 +45,8 @@
     "linonetwo/preview-glass",
     "linonetwo/prevent-edit",
     "linonetwo/source-control-management",
-    "linonetwo/itonnote"
+    "linonetwo/itonnote",
+    "sobjornstad/TiddlyRemember"
   ],
   "themes": [
     "tiddlywiki/vanilla",
