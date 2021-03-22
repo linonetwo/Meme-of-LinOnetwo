@@ -31,6 +31,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:ADX</loc>
+		<lastmod>2021-03-22</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:ALU.png</loc>
 		<lastmod>2020-06-09</lastmod>
 		<changefreq>monthly</changefreq>
@@ -123,6 +129,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:Command%2520Palette%2520使用方法</loc>
 		<lastmod>2020-06-25</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:DSP</loc>
+		<lastmod>2021-03-22</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -314,6 +326,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:SRAM</loc>
 		<lastmod>2020-06-17</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:SSP</loc>
+		<lastmod>2021-03-22</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
@@ -1184,6 +1202,12 @@
 	<url>
 		<loc>https://onetwo.ren/wiki/#:如果类型假设错了就会去优化.png</loc>
 		<lastmod>2020-06-09</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
+		<loc>https://onetwo.ren/wiki/#:媒体</loc>
+		<lastmod>2021-03-22</lastmod>
 		<changefreq>monthly</changefreq>
 		<priority>0.5</priority>
 	</url>
