@@ -1,0 +1,16 @@
+created: 20210322054808201
+creator: 林一二
+modified: 20210322055947803
+modifier: 林一二
+tags: 广告传播
+title: ADX
+tmap.id: 9cd6a6b2-c76c-4d21-9144-e6c2c645d5fa
+type: text/vnd.tiddlywiki
+
+<<rememberq "20210322054809785"
+	"ADX是什么"
+	"Ad Exchange，程序化广告交易平台，通过技术对接的方式，客户（[[DSP]]需求方平台）进行媒体的流量（用户）采买。">>
+
+<<rememberq "20210322055008700"
+	"谁在接入ADX"
+	"ADX：相对中立的比价平台，[[DSP]]接入为ADX提供广告，[[ADN]]接入为ADX提供流量">>
