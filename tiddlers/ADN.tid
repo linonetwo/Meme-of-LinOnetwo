@@ -1,0 +1,18 @@
+created: 20210322050910622
+creator: 林一二
+modified: 20210322051557311
+modifier: 林一二
+tags: 广告传播
+title: ADN
+tmap.id: a8407da0-b319-402b-9b70-c90491a1217c
+type: text/vnd.tiddlywiki
+
+[[广告系列（十八）- 流量管理(上) - 产品随想录|https://zhuanlan.zhihu.com/p/150786689]] 里有不错的图。
+
+<<rememberq "20210322050920402"
+	"ADN是什么"
+	"Application Delivery Network，广告网络，聚合了大量App内的展示广告资源，主要包含中长尾App流量，帮助广告主实现媒体精准，灵活的投放">>
+	
+<<rememberq "20210322051234614"
+	"谁在接入[[ADN]]"
+	"ADN：[[中小媒体]]的主要选择，还有其他 ADN、[[SSP]] 作为流量供给方，即[[流量侧]]。广告供给方，即[[广告侧]]有[[ADX]]和[[DSP]]">>
