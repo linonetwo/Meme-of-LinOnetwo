@@ -1,8 +1,79 @@
 created: 20210328045325429
 creator: 林一二
-modified: 20210328045342889
+modified: 20210328055953245
 modifier: 林一二
 tags: 地图生成的例子 CDDA
 title: CDDA如何生成实验室地图
 tmap.id: f2b81f95-fc91-4571-9a3b-e07683851668
 type: text/vnd.tiddlywiki
+
+基础知识和术语解释详见官方文档 [[OVERMAP.md|https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/OVERMAP.md]] 和 [[MAPGEN.md|https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/MAPGEN.md]]，介绍了例如 ot 是 overmap terrain（大地图地形）等等。
+
+定义文件里有这样的几个 ot：
+
+```json
+{
+    "type": "overmap_terrain",
+    "id": "lab_stairs",
+    "name": "science lab",
+    "sym": "L",
+    "color": "blue",
+    "see_cost": 5,
+    "spawns": { "group": "GROUP_LAB", "population": [ 0, 5 ], "chance": 20 },
+    "flags": [ "KNOWN_DOWN", "NO_ROTATE", "RISK_HIGH" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "lab_core",
+    "name": "science lab",
+    "sym": "L",
+    "color": "light_blue",
+    "spawns": { "group": "GROUP_LAB", "population": [ 0, 8 ], "chance": 30 },
+    "see_cost": 5,
+    "flags": [ "NO_ROTATE", "RISK_HIGH" ]
+  },
+  {
+    "type": "overmap_terrain",
+    "id": "lab_escape_cells",
+    "name": "science lab",
+    "sym": "L",
+    "color": "light_blue",
+    "see_cost": 5,
+    "flags": [ "NO_ROTATE" ]
+  }
+```
+
+它在 `overmap.cpp` 里可以搜到，在 `overmap::build_lab` 方法里有一个 `generated_lab` 数组用于缓存生成的实验室地图，应该是用于算法判断。
+这里的 p 是实验室的起始位置。
+
+```cpp
+ter_set( p, labt );
+generated_lab.push_back( p );
+```
+
+然后有一个 `ter_set` 函数用于将 p 里存的 id（来自上面定义里的 `"id": "lab_core"` 等），放入世界总的大地图 `layer` 上的对应位置：
+
+```cpp
+layer[p.z() + OVERMAP_DEPTH].terrain[p.x()][p.y()] = id;
+```
+
+这个 p 是怎么定下来的呢？一般是在之前的步骤里根据已有信息+随机定下来的，例如冷冻实验室的地下部分的起始位置，是在一个很长的 `else if` 里判断地上部分是不是其他之前放好的冷冻实验室ot来决定的：
+
+```cpp
+else if( oter_above == "ice_lab_core" ||
+  ( z == -1 && oter_above == "ice_lab_stairs" ) ) {
+     ice_lab_points.push_back( city( p.xy(), rng( 1, 5 + z ) ) );
+}
+
+// ...
+// 然后对于每个确定好的冷冻实验室 p ，拿来调用 `overmap::build_lab` 方法，即 `build_lab( tripoint_om_omt( i.pos, z )` 这一句（ C++ 调用同类内的方法不需要加 `this` 等关键词。
+
+for( auto &i : ice_lab_points ) {
+  bool ice_lab = build_lab( tripoint_om_omt( i.pos, z ), i.size, &lab_train_points, "ice_",
+                            lab_train_odds );
+  requires_sub |= ice_lab;
+  if( !ice_lab && ter( tripoint_om_omt( i.pos, z ) ) == "ice_lab_core" ) {
+      ter_set( tripoint_om_omt( i.pos, z ), oter_id( "ice_lab" ) );
+  }
+}
+```
