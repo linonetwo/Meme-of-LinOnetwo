@@ -1,6 +1,6 @@
 created: 20210328045325429
 creator: 林一二
-modified: 20210328055953245
+modified: 20210328064237528
 modifier: 林一二
 tags: 地图生成的例子 CDDA
 title: CDDA如何生成实验室地图
@@ -77,3 +77,5 @@ for( auto &i : ice_lab_points ) {
   }
 }
 ```
+
+文档里提到建筑大都是 `SEEX*2 x SEEY*2` 宽高的，所以用 `maybe_insert_stairs` 在 id 为 `stairs` 的 ot 上生成楼梯时，会有 `SEEX * 2 - 2, SEEY * 2 - 2, abs_sub.z` 这样的代码。
