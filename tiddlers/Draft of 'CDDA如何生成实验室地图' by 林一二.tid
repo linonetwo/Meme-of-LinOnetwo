@@ -1,0 +1,13 @@
+created: 20210328045325429
+creator: 林一二
+draft.of: CDDA如何生成实验室地图
+draft.title: CDDA如何生成实验室地图
+modified: 20210328045739598
+modifier: 林一二
+tags: 地图生成的例子 CDDA
+title: Draft of 'CDDA如何生成实验室地图' by 林一二
+tmap.id: f2b81f95-fc91-4571-9a3b-e07683851668
+type: text/vnd.tiddlywiki
+
+基础知识和术语解释详见官方文档 [OVERMAP.md|https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/OVERMAP.md] 和 [MAPGEN.md|https://github.com/CleverRaven/Cataclysm-DDA/blob/master/doc/MAPGEN.md]
+
