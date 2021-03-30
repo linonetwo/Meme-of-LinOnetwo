@@ -414,6 +414,12 @@
 		<priority>0.5</priority>
 	</url>
 	<url>
+		<loc>https://onetwo.ren/wiki/#:TiddlyWiki的中文译名</loc>
+		<lastmod>2021-03-30</lastmod>
+		<changefreq>monthly</changefreq>
+		<priority>0.5</priority>
+	</url>
+	<url>
 		<loc>https://onetwo.ren/wiki/#:Typescript帮我查出的错</loc>
 		<lastmod>2021-02-02</lastmod>
 		<changefreq>monthly</changefreq>
