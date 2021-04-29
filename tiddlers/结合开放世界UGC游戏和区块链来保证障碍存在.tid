@@ -1,0 +1,12 @@
+created: 20210427030919659
+creator: 林一二
+modified: 20210427031143674
+modifier: 林一二
+tags: 想法
+title: 结合开放世界UGC游戏和区块链来保证障碍存在
+tmap.id: 41b8b83f-073f-4341-b4e1-518e8b2813c8
+type: text/vnd.tiddlywiki
+
+类似 CataclysmDDA 和边缘世界的游戏因为可以随意安装 UGC 的 Mod，所以难以制造出障碍来让玩家氪金为额外内容付费。
+
+区块链有没有可能保证在安装 Mod 的同时，也还是有一些核心内容是不可能出现在 Mod 里的呢？因为它们所需的 API 只在链上开放。而氪金也是通过发放 Token 来解除障碍。
